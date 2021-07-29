@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.user.mapper.GoMapper">
+	<!-- 
+	select문을 resultType으로 묶어줌 
+	-->
+	
+ 	<!-- <select id = "boardList" resultType="kr.smhrd.mapper.BoardVO" >
+    select * from tbl_board
+	</select> 
+	
+	<select id = "boardListAjax" resultType="kr.smhrd.mapper.BoardVO" >
+    select * from tbl_board order by idx desc
+	</select>
+	
+    
+    <insert id = "boardInsert" parameterType = "kr.smhrd.mapper.BoardVO">
+    insert into tbl_board(title, contents, writer)
+	values(#{title},#{contents},#{writer})
+    </insert>
+    
+	    파라미터값 하나일때 parameterType을 생략할 수도 있음
+    <select id = "boardContent" parameterType="int" 
+        						resultType="kr.smhrd.mapper.BoardVO" >
+        select * from tbl_board where idx = #{idx}
+    </select>
+    
+    
+    <update id = "boardUpdate" parameterType="kr.smhrd.mapper.BoardVO" >
+        update tbl_board set title=#{title}, contents=#{contents} where idx = #{idx}
+    </update>
+    
+    
+<delete id = "boardDelete" parameterType="int">
+        delete from tbl_board where idx = #{idx}
+    </delete>
+     -->
+    
+</mapper>
+
