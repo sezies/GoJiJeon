@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class NoticeVO {
 	private int user_num;
-	private int notice_num;
+	private int notice_num;   
 	private int notice_code;
 	private String notice_title;
 	private String pay_day;

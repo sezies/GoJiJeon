@@ -15,7 +15,7 @@ create table notice(
         pay_day varchar(50) not null,
         pay_money int not null,
         pay_bank varchar(30) not null,
-        img varchar(200) not null,
+        img varchar(200) not null,  
         regist_day datetime default now(),
         primary key(notice_num),
         foreign key(user_num) references users(user_num)
