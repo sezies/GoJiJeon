@@ -107,7 +107,6 @@ public class GoController {
 				GoMapper.NoticeDelete(notice_num);
 				return "redirect:/NoticeList.do";
 			}
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
 	 
 	
 	
