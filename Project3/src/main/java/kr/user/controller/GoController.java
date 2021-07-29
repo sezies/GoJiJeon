@@ -21,14 +21,14 @@ public class GoController {
 	
 	
 	
-	/* test
-	 * @Autowired private
-	 * 
-	 * @RequestMapping("/test.do") public String test () {
-	 * 
-	 * 
-	 * return "test"; }
-	 */
+	
+	  
+	 
+	  @RequestMapping("/test.do") public String test () {
+	 
+	 
+	  return "test"; }
+	 
 	
 	
 }
