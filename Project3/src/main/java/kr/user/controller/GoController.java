@@ -14,7 +14,7 @@ public class GoController {
 	  
 
 	 
-	  return "test"; }
+	  return "contact"; }
 	 
 	
 	
