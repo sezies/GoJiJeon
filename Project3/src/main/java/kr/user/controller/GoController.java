@@ -12,6 +12,7 @@ public class GoController {
 	
 	 @RequestMapping("/test.do") public String test () {
 	  
+
 	 
 	  return "test"; }
 	 
