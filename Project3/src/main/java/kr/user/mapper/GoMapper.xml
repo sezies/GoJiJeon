@@ -3,40 +3,65 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.user.mapper.GoMapper">
-	<!-- 
-	select문을 resultType으로 묶어줌 
-	-->
-	
- 	<!-- <select id = "boardList" resultType="kr.smhrd.mapper.BoardVO" >
-    select * from tbl_board
-	</select> 
-	
-	<select id = "boardListAjax" resultType="kr.smhrd.mapper.BoardVO" >
-    select * from tbl_board order by idx desc
-	</select>
-	
-    
-    <insert id = "boardInsert" parameterType = "kr.smhrd.mapper.BoardVO">
-    insert into tbl_board(title, contents, writer)
-	values(#{title},#{contents},#{writer})
+
+    <!-- users 부분 -->
+     <select id = "UsersListAjax" resultType="kr.user.mapper.UsersVO" >
+    select * from users order by idx desc
+   </select>
+   
+    <insert id="UsersInsert" parameterType="kr.user.mapper.UsersVO">
+        insert into users(id,pw,name,bank)
+		values(#{id},#{pw},#{name},#{bank})
     </insert>
     
-	    파라미터값 하나일때 parameterType을 생략할 수도 있음
-    <select id = "boardContent" parameterType="int" 
-        						resultType="kr.smhrd.mapper.BoardVO" >
-        select * from tbl_board where idx = #{idx}
+    <select id="UsersContent" parameterType="int" 
+        resultType="kr.user.mapper.UsersVO">
+        select * from users where user_num=#{user_num}
     </select>
     
-    
-    <update id = "boardUpdate" parameterType="kr.smhrd.mapper.BoardVO" >
-        update tbl_board set title=#{title}, contents=#{contents} where idx = #{idx}
-    </update>
-    
-    
-<delete id = "boardDelete" parameterType="int">
-        delete from tbl_board where idx = #{idx}
+    <update id="UsersUpdate" parameterType="kr.user.mapper.UsersVO">
+       update users set
+       pw=#{pw},
+       bank=#{bank}
+       where user_num=#{user_num}
+   </update>
+   
+   <delete id="UsersDelete" parameterType="int" >
+        delete from users where user_num=#{user_num}
+        
     </delete>
-     -->
+    
+   
+    <!-- notice 부분 -->
+        <select id = "NoticeListAjax" resultType="kr.user.mapper.NoticeVO" >
+    select * from notice order by idx desc
+   </select>
+   
+    <insert id="NoticeInsert" parameterType="kr.user.mapper.NoticeVO">
+        insert into notice(notice_code,notice_title,pay_day,pay_money,pay_bank,img)
+		values(#{notice_code},#{notice_title},#{pay_day},#{pay_money},#{pay_bank},#{img})
+    </insert>
+    
+    <select id="NoticeContent" parameterType="int" 
+        resultType="kr.user.mapper.NoticeVO">
+        select * from notice where notice_num=#{notice_num}
+    </select>
+    
+    <update id="NoticeUpdate" parameterType="kr.user.mapper.NoticeVO">
+       update notice set
+       notice_code=#{notice_code},
+       notice_title=#{notice_title},
+       pay_day=#{pay_day},
+       pay_money=#{pay_money},
+       pay_bank=#{pay_bank},
+       img=#{img}
+       where notice_num=#{notice_num}
+   </update>
+   
+   <delete id="NoticeDelete" parameterType="int" >
+        delete from notice where notice_num=#{notice_num}
+        
+    </delete>
     
 </mapper>
 
