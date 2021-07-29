@@ -10,22 +10,9 @@ public class GoController {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	 @RequestMapping("/test.do") public String test () {
 	  
-	 
-	  @RequestMapping("/test.do") public String test () {
-	 
+
 	 
 	  return "test"; }
 	 
