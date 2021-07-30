@@ -48,7 +48,7 @@ background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); backgroun
  </div> 
  <div class="mb-4">
  </div> 
- <button class="btn btn-primary btn-lg btn-block" type="submit">가입 완료</button> 
+ <button class="btn btn-primary btn-lg btn-block" type="submit">로그인하기</button> 
  </form> 
  </div> 
  </div> 
