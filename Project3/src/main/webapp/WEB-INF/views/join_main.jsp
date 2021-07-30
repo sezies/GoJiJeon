@@ -67,8 +67,8 @@ background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); backgroun
 </div> 
 </div> 
  <div class="col-md-6 mb-3"> 
- <label for="root">주거래 은행</label> 
- <select class="custom-select d-block w-100" id="bank"> 
+ <label for="bank">주거래 은행</label> 
+<select class="custom-select d-block w-100" id="bank"> 
 <option value="">항목 선택</option>  
 <option value="bnp">BNP파리바</option> 
 <option value="hsbc">HSBC</option> 

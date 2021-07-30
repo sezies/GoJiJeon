@@ -75,6 +75,11 @@ public class GoController {
 			return "login_main";
 		}
 		
+		@RequestMapping("/login_main2.do")
+		public String login_main2() {
+			return "login_main2";
+		}
+		
 		@RequestMapping("/join_main.do")
 		public String join_main() {
 			return "join_main";
