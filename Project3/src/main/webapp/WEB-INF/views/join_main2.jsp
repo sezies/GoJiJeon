@@ -257,8 +257,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h6><span class="icon_tag_alt"></span><a>원활한 서비스 이용을 위하여 먼저 회원가입을 진행해주세요</a>
-                    </h6>
                 </div>
             </div>
             <div class="checkout__form">
