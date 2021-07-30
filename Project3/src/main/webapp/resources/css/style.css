@@ -563,7 +563,7 @@ ol {
 -----------------------*/
 
 .hero {
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 }
 
 .hero.hero-normal {
@@ -637,7 +637,7 @@ ol {
 
 .hero__search {
 	overflow: hidden;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .hero__search__form {
