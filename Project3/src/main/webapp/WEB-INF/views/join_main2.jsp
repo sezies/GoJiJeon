@@ -233,7 +233,6 @@
                     <div class="breadcrumb__text">
                         <h2>회원가입</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index_main.do">메인으로</a>
                             <!-- <span>Join</span>  -->
                         </div>
                     </div>
@@ -289,6 +288,8 @@
                             
                             <div class="checkout__input">
                               <button type="submit" class="site-btn">PLACE ORDER</button>
+                               &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                               &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="./index_main.do">메인으로</a>
                             </div>
                         </div>         
     </section>

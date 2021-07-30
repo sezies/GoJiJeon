@@ -233,7 +233,6 @@
                     <div class="breadcrumb__text">
                         <h2>로그인</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index_main.do">메인으로</a>
                             <!-- <span>Join</span>  -->
                         </div>
                     </div>
@@ -248,8 +247,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h6><span class="icon_tag_alt"></span>
-                    </h6>
                 </div>
             </div>
             <div class="checkout__form">
@@ -274,6 +271,8 @@
                                                    
                             <div class="checkout__input">
                               <button type="submit" class="site-btn">로그인하기</button>
+                              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="./index_main.do">메인으로</a>
                             </div>
                         </div>         
     </section>
