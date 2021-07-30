@@ -7,6 +7,8 @@ create table users(
         primary key(user_num)
 );
 
+select * from users;
+
 create table notice(
         user_num int,
         notice_num int not null auto_increment,
@@ -20,3 +22,6 @@ create table notice(
         primary key(notice_num),
         foreign key(user_num) references users(user_num)
 );
+
+
+select * from notice;

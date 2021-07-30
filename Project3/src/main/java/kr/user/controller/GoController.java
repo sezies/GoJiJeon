@@ -42,10 +42,13 @@ public class GoController {
 		public String UsersForm() {
 			return "UsersForm"; //UsersForm.jsp
 		}
+		
+		
+		/* 회원가입 */
 		@RequestMapping("/UsersInsert.do")
 		public String UsersInsert(UsersVO vo) {
 			GoMapper.UsersInsert(vo); //정장
-			return "redirect:/UsersList.do"; //WEB-INF/views//UsersList.do.jsp
+			return "login_main"; //WEB-INF/views//UsersList.do.jsp
 			
 		}
 		@RequestMapping("/UsersContent.do")
