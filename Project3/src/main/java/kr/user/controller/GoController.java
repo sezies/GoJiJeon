@@ -74,6 +74,11 @@ public class GoController {
 		public String login_main() {
 			return "login_main";
 		}
+		
+		@RequestMapping("/join_main.do")
+		public String join_main() {
+			return "join_main";
+		}
 	
 
 		// 노티스부분

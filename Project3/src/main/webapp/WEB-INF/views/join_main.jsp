@@ -23,7 +23,7 @@ background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); backgroun
 <div class="container"> 
 <div class="input-form-backgroud row"> 
 <div class="input-form col-md-12 mx-auto"> 
-<h4 class="mb-3">로그인</h4>
+<h4 class="mb-3">회원가입</h4>
 <form class="validation-form" novalidate> 
 <div class="row"> 
 <div class="col-md-6 mb-3"> 
@@ -39,13 +39,70 @@ background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); backgroun
 </div> 
 </div> 
 </div> 
+<div class="row"> 
+<div class="col-md-6 mb-3"> 
+<label for="name">이름</label> 
+<input type="text" class="form-control" id="name" placeholder="이름을 입력해주세요" value="" required> 
+<div class="invalid-feedback"> 
+</div> 
+</div> 
+<div class="col-md-6 mb-3"> 
+<label for="tel">전화번호</label>
+<input type="text" class="form-control" id="tel" placeholder="전화번호를 입력해주세요" value="" required> 
+<div class="invalid-feedback">
+</div> 
+</div> 
+</div>  
+<div class="mb-3"> 
+<label for="eamil">이메일</label> 
+<input type="text" class="form-control" id="email" placeholder="이메일을 입력해주세요" required> 
+<div class="invalid-feedback"> 주소를 입력해주세요. 
+</div> 
+</div> 
+<div class="row"> 
+<div class="col-md-6 mb-3"> 
+ <label for="root">성별</label> 
+ <select class="custom-select d-block w-100" id="root"> 
+ <option value="gender">선택</option> 
+ <option>남자</option> 
+ <option>여자</option>
+ </select> 
+ <div class="invalid-feedback">
+ </div> 
+ </div> 
+ <div class="col-md-6 mb-3"> 
+ <label for="root">거주지</label> 
+ <select class="custom-select d-block w-100" id="root"> 
+  <option value="location">선택</option> 
+ <option>서울</option> 
+ <option>부산</option> 
+ <option>대구</option> 
+ <option>인천</option> 
+ <option>광주</option> 
+ <option>대전</option> 
+ <option>울산</option> 
+ <option>세종</option> 
+ <option>경기</option> 
+ <option>강원</option> 
+ <option>충북</option> 
+ <option>충남</option> 
+ <option>전북</option> 
+ <option>전남</option> 
+ <option>경북</option> 
+ <option>경남</option> 
+ <option>제주</option> 
+ </select> 
+ <div class="invalid-feedback">
+ </div> 
+ </div> 
  <hr class="mb-4"> 
  <div class="custom-control custom-checkbox"> 
  <input type="checkbox" class="custom-control-input" id="aggrement" required> 
- <label class="custom-control-label" for="aggrement">아이디 기억하기</label>
- &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+ <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
  <a href="./index_main.do">메인으로</a>
  </div> 
+ <br><br>
  <div class="mb-4">
  </div> 
  <button class="btn btn-primary btn-lg btn-block" type="submit">가입 완료</button> 

@@ -161,7 +161,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li><a href="./login_main.do" style="font-size:12px; color:gray;">로그인</a></li>
-                            <li><a href="./join-main.html" style="font-size:12px; color:gray;">회원가입</a></li>
+                            <li><a href="./join_main.do" style="font-size:12px; color:gray;">회원가입</a></li>
                         </ul>
                     </nav>
                 </div>
