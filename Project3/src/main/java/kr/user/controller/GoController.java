@@ -64,6 +64,21 @@ public class GoController {
 			GoMapper.UsersDelete(user_num);
 			return "redirect:/UsersList.do";
 		}
+		
+		@RequestMapping("/index_main.do")
+		public String index_main() {
+			return "index_main";
+		}
+		
+		@RequestMapping("/login_main.do")
+		public String login_main() {
+			return "login_main";
+		}
+		
+		@RequestMapping("/join_main.do")
+		public String join_main() {
+			return "join_main";
+		}
 	
 
 		// 노티스부분
