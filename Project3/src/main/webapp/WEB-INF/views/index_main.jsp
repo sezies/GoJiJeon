@@ -143,18 +143,17 @@
                 <div class="col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop-grid.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            <li class="active"><a href="./index_main.do">메인</a></li>
+                            <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="./shop-details.html">고지서 업로드</a></li>
+                                    <li><a href="./shoping-cart.html">고지서 관리</a></li>
+                                    <li><a href="./checkout.html">고지서 분석</a></li>
+                                    <li><a href="./blog-details.html">-</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./blog.html">커뮤니티</a></li>
+                            <li><a href="./contact.html">문의하기</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -309,9 +308,9 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-1.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <!--  <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -324,9 +323,9 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-2.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                 <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -339,9 +338,9 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-3.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -354,9 +353,9 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-4.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -369,9 +368,9 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-5.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                               <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -384,9 +383,9 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-6.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -399,9 +398,9 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-7.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                               <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -414,9 +413,9 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-8.jpg">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -431,7 +430,7 @@
     <!-- Featured Section End -->
 
     <!-- Banner Begin -->
-    <div class="banner">
+    <!--<div class="banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -446,11 +445,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- Banner End -->
 
     <!-- Latest Product Section Begin -->
-    <section class="latest-product spad">
+   <!-- <section class="latest-product spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -650,11 +649,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- Latest Product Section End -->
 
     <!-- Blog Section Begin -->
-    <section class="from-blog spad">
+    <!-- <section class="from-blog spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -711,7 +710,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
