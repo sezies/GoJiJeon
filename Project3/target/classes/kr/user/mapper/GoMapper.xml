@@ -21,7 +21,7 @@
         select * from users where user_num=#{user_num}
     </select>
     
-    
+    <!--  로그인 -->
     <select id="UsersLogin" resultType="kr.user.mapper.UsersVO">
         select * from users where user_id=#{user_id} and user_pw=#{user_pw}
     </select>
