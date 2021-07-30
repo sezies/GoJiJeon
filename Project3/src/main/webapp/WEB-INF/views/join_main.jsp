@@ -39,7 +39,7 @@ background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); backgroun
 </div> 
 </div> 
 </div> 
-<div class="row"> 
+<!-- <div class="row"> 
 <div class="col-md-6 mb-3"> 
 <label for="name">이름</label> 
 <input type="text" class="form-control" id="name" placeholder="이름을 입력해주세요" value="" required> 
@@ -58,39 +58,49 @@ background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); backgroun
 <input type="text" class="form-control" id="email" placeholder="이메일을 입력해주세요" required> 
 <div class="invalid-feedback"> 주소를 입력해주세요. 
 </div> 
-</div> 
+</div>  -->
 <div class="row"> 
 <div class="col-md-6 mb-3"> 
- <label for="root">성별</label> 
- <select class="custom-select d-block w-100" id="root"> 
- <option value="gender">선택</option> 
- <option>남자</option> 
- <option>여자</option>
- </select> 
- <div class="invalid-feedback">
- </div> 
- </div> 
+<label for="name">이름</label> 
+<input type="text" class="form-control" id="name" placeholder="이름을 입력해주세요" value="" required> 
+<div class="invalid-feedback"> 
+</div> 
+</div> 
  <div class="col-md-6 mb-3"> 
- <label for="root">거주지</label> 
+ <label for="root">주거래 은행</label> 
  <select class="custom-select d-block w-100" id="root"> 
   <option value="location">선택</option> 
- <option>서울</option> 
- <option>부산</option> 
- <option>대구</option> 
- <option>인천</option> 
- <option>광주</option> 
- <option>대전</option> 
- <option>울산</option> 
- <option>세종</option> 
- <option>경기</option> 
- <option>강원</option> 
- <option>충북</option> 
- <option>충남</option> 
- <option>전북</option> 
- <option>전남</option> 
- <option>경북</option> 
+ <option>BNP파리바</option> 
+ <option>HSBC</option> 
+ <option>JP모간체이스</option> 
+ <option>KB국민</option> 
  <option>경남</option> 
+ <option>광주</option> 
+ <option>기업</option> 
+ <option>농협</option> 
+ <option>대구</option> 
+ <option>도이치</option> 
+ <option>뱅크오브아메리카</option> 
+ <option>부산</option> 
+ <option>산림조합</option> 
+ <option>산업</option> 
+ <option>새마을금고</option> 
+ <option>수협</option> 
+ <option>신한</option>
+ <option>신협</option> 
+ <option>우리</option> 
+ <option>우체국</option> 
+ <option>저축</option> 
+ <option>전북</option> 
  <option>제주</option> 
+ <option>중국건설은행</option> 
+ <option>중국공상은행</option> 
+ <option>중국은행</option> 
+ <option>카카오뱅크</option> 
+ <option>케이뱅크</option> 
+ <option>토스뱅크</option> 
+ <option>하나</option> 
+ <option>한국씨티</option>  
  </select> 
  <div class="invalid-feedback">
  </div> 
