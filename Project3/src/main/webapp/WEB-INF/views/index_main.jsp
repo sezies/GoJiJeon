@@ -47,34 +47,24 @@
             <div class="header__cart__price">item: <span>$150.00</span></div>
         </div> -->
         <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src="${cpath}/resources/img/language.png" alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">KOREAN</a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
-            </div>
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i>로그인</a>
-                <a href="#"><i class="fa fa-user"></i>회원가입</a>
+                <a href="./login_main2.do"><i class="fa fa-user"></i>로그인</a>
+                <a href="./join_main2.do"><i class="fa fa-user"></i>회원가입</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
+                <li><a href="./index_main.do">Home</a></li>
+                 <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
+                        <li><a href="./bill_upload.do">고지서 업로드</a></li>
+                        <li><a href="./shoping-cart.html">고지서 관리</a></li>
+                        <li><a href="./checkout.html">고지서 통계</a></li>
+                        <li><a href="./blog-details.html">-</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./blog.html">커뮤니티</a></li>
+                <li><a href="./contact.html">문의하기</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
