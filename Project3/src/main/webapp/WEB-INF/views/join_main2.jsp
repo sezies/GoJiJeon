@@ -297,7 +297,7 @@
                             </div>
                             
                             <div class="checkout__input">
-                              <button type="submit" class="site-btn">PLACE ORDER</button>
+                              <button type="submit" class="site-btn">회원가입 하기</button>
                             </div>
                         </div>         
     </section>
