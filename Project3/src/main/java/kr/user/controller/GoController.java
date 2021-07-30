@@ -48,7 +48,7 @@ public class GoController {
 		@RequestMapping("/UsersInsert.do")
 		public String UsersInsert(UsersVO vo) {
 			GoMapper.UsersInsert(vo); //정장
-			return "login_main"; //WEB-INF/views//UsersList.do.jsp
+			return "login_main2"; //WEB-INF/views//UsersList.do.jsp
 			
 		}
 		@RequestMapping("/UsersContent.do")
@@ -78,9 +78,24 @@ public class GoController {
 			return "login_main";
 		}
 		
+		@RequestMapping("/login_main2.do")
+		public String login_main2() {
+			return "login_main2";
+		}
+		
 		@RequestMapping("/join_main.do")
 		public String join_main() {
 			return "join_main";
+		}
+		
+		@RequestMapping("/join_main2.do")
+		public String join_main2() {
+			return "join_main2";
+		}
+		
+		@RequestMapping("/bill_upload.do")
+		public String bill_upload() {
+			return "bill_upload";
 		}
 	
 
