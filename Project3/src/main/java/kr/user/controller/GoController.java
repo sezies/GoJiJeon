@@ -79,6 +79,16 @@ public class GoController {
 		public String join_main() {
 			return "join_main";
 		}
+		
+		@RequestMapping("/join_main2.do")
+		public String join_main2() {
+			return "join_main2";
+		}
+		
+		@RequestMapping("/bill_upload.do")
+		public String bill_upload() {
+			return "bill_upload";
+		}
 	
 
 		// 노티스부분

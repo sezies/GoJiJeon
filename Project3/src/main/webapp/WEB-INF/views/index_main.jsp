@@ -146,7 +146,7 @@
                             <li class="active"><a href="./index_main.do">메인</a></li>
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">고지서 업로드</a></li>
+                                    <li><a href="./bill_upload.do">고지서 업로드</a></li>
                                     <li><a href="./shoping-cart.html">고지서 관리</a></li>
                                     <li><a href="./checkout.html">고지서 분석</a></li>
                                     <li><a href="./blog-details.html">-</a></li>
