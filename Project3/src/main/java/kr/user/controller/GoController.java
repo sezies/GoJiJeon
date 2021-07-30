@@ -21,9 +21,10 @@ import kr.user.mapper.UsersVO;
 public class GoController {
 
 	// 유저부분
-	//@Autowired
-		@Inject
+	
+		@Autowired
 		private kr.user.mapper.GoMapper GoMapper;
+		
 		// HandLerMapping : 요청URL <--> Method
 		@RequestMapping("/UsersList.do")
 		public String UsersList(HttpServletRequest request){
@@ -51,6 +52,19 @@ public class GoController {
 			return "login_main2"; //WEB-INF/views//UsersList.do.jsp
 			
 		}
+		
+		/* 로그인 */
+		@RequestMapping("/UsersLogin.do")
+		public String UsersLogin(UsersVO vo) {
+			GoMapper.UsersLogin(vo); //정장
+			return "index_main"; //WEB-INF/views//UsersList.do.jsp
+			
+		}
+		
+		
+		
+		
+		
 		@RequestMapping("/UsersContent.do")
 		public String UsersContent(@RequestParam("user_num") int user_num, Model model) { //?idx=10
 			UsersVO vo=GoMapper.UsersContent(user_num);

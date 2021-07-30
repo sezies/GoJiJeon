@@ -21,6 +21,13 @@
         select * from users where user_num=#{user_num}
     </select>
     
+    
+    <select id="UsersLogin" resultType="kr.user.mapper.UsersVO">
+        select * from users where user_id=#{user_id} and user_pw=#{user_pw}
+    </select>
+    
+    
+    
     <update id="UsersUpdate" parameterType="kr.user.mapper.UsersVO">
        update users set
        pw=#{pw},

@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 </head>
 
 <body>
@@ -261,20 +265,20 @@
             </div>
             <div class="checkout__form">
                 <h4>로그인 화면</h4>
-                <form action="#">
+                <form action="${cpath}/UsersLogin.do" method = "post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
-                                        <input type="text">
+                                        <input type="text" name = "user_id">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>비밀번호</p>
-                                        <input type="password">
+                                        <input type="password" name = "user_pw">
                                     </div>
                                 </div>
                             </div>
@@ -282,7 +286,9 @@
                             <div class="checkout__input">
                               <button type="submit" class="site-btn">로그인하기</button>
                             </div>
-                        </div>         
+                        </div>  
+                         </div>>
+                         </form>       
     </section>
     <!-- Checkout Section End -->
 
