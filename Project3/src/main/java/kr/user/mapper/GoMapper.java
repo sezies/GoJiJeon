@@ -10,6 +10,7 @@ public interface GoMapper {
 	public void UsersUpdate(UsersVO vo); // update~ SQL	
 	public void UsersDelete(int idx); // delete~ SQL
 	public List<UsersVO> UsersListAjax(); // ajax SQL
+	public List<UsersVO> UsersLogin(UsersVO vo); //login SQL
 	
 	// 노티스 맵퍼
 	public List<NoticeVO> NoticeList();

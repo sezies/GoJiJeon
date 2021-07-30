@@ -70,7 +70,7 @@ public class GoController {
 			return "index_main";
 		}
 		
-		@RequestMapping("/login_main.do")
+		@RequestMapping("/UsersLogin.do", method = RequestMethod.POST)
 		public String login_main() {
 			return "login_main";
 		}
