@@ -137,7 +137,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+                        <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-7">
