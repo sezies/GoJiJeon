@@ -1,3 +1,4 @@
+<%@page import="kr.user.mapper.UsersVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -28,6 +29,13 @@
 </head>
 
 <body>
+<%
+UsersVO u_vo = null;
+if(session.getAttribute("login")!= null){
+u_vo = (UsersVO)session.getAttribute("login");
+System.out.println(u_vo+"||||이거는 맨 위에거");
+}
+%>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -149,10 +157,14 @@
                 </div>
                 <div class="col-lg-2">
                     <nav class="header__menu">
-                        <ul>
+                         <!--  로그인 배너 (찐) -->
+                         <%if(u_vo==null) {%>
                             <li><a href="./login_main2.do" style="font-size:12px; color:gray;">로그인</a></li>
                             <li><a href="./join_main2.do" style="font-size:12px; color:gray;">회원가입</a></li>
-                        </ul>
+                          <%}else {%>
+                            <li><a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray;" >로그아웃</a></li>
+                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">마이페이지</a></li>
+                            <%} %>
                     </nav>
                 </div>
                    <!--<div class="col-lg-3"> 
