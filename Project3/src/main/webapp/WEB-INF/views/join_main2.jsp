@@ -62,9 +62,9 @@
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                        <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                        <li><a href="./checkout.html">고지서 통계</a></li>
-                        <li><a href="./blog-details.html">-</a></li>
+                        <li><a href="./bill_manager.do">고지서 관리</a></li>
+                        <li><a href="./bill_graph.do">고지서 통계</a></li>
+                        <li><a href="#">-</a></li>
                     </ul>
                 </li>
                 <li><a href="#">커뮤니티</a></li>
@@ -141,9 +141,9 @@
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                                    <li><a href="./checkout.html">고지서 분석</a></li>
-                                    <li><a href="./blog-details.html">-</a></li>
+                                    <li><a href="./bill_manager.do">고지서 관리</a></li>
+                                    <li><a href="./bill_graph.do">고지서 분석</a></li>
+                                    <li><a href="#">-</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">커뮤니티</a></li>
@@ -255,7 +255,7 @@
             </div>
             <div class="checkout__form">
                 <h4>개인정보 입력</h4>
-                <<form action="${cpath}/UsersInsert.do" method="post">
+                <form action="${cpath}/UsersInsert.do" method="post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
