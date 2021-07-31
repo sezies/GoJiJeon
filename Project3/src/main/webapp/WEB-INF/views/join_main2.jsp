@@ -41,7 +41,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+            <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
         </div>
         <!-- <div class="humberger__menu__cart">
             <ul>
@@ -58,7 +58,7 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li><a href="./index_main.do">Home</a></li>
+                <li><a href="./index_main.do">메인</a></li>
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
