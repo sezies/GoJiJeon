@@ -111,6 +111,21 @@ public class GoController {
 		public String bill_upload() {
 			return "bill_upload";
 		}
+		
+		@RequestMapping("/bill_manager.do")
+		public String bill_manager() {
+			return "bill_manager";
+		}
+		
+		@RequestMapping("/bill_graph.do")
+		public String bill_graph() {
+			return "bill_graph";
+		}
+		
+		@RequestMapping("/contact.do")
+		public String contact() {
+			return "contact";
+		}
 	
 
 		// 노티스부분

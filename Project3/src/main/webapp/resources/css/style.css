@@ -2810,6 +2810,7 @@ ol {
 
 .map .map-inside .inside-widget {
 	width: 350px;
+	top: 100px;
 	background: #ffffff;
 	text-align: center;
 	padding: 23px 0;

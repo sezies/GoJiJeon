@@ -58,13 +58,13 @@
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                        <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                        <li><a href="./checkout.html">고지서 통계</a></li>
-                        <li><a href="./blog-details.html">-</a></li>
+                        <li><a href="./bill_manager.do">고지서 관리</a></li>
+                        <li><a href="./bill_graph.do">고지서 분석</a></li>
+                        <li><a href="#">-</a></li>
                     </ul>
                 </li>
                 <li><a href="./blog.html">커뮤니티</a></li>
-                <li><a href="./contact.html">문의하기</a></li>
+                <li><a href="./contact.do">문의하기</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -137,13 +137,13 @@
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                                    <li><a href="./checkout.html">고지서 분석</a></li>
-                                    <li><a href="./blog-details.html">-</a></li>
+                                    <li><a href="./bill_manager.do">고지서 관리</a></li>
+                                    <li><a href="./bill_graph.do">고지서 분석</a></li>
+                                    <li><a href="#">-</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.html">커뮤니티</a></li>
-                            <li><a href="./contact.html">문의하기</a></li>
+                            <li><a href="./contact.do">문의하기</a></li>
                         </ul>
                     </nav>
                 </div>
