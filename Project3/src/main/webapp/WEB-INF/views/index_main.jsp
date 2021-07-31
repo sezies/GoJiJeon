@@ -239,7 +239,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     <div class="hero__item set-bg" data-setbg="${cpath}/resources/img/hero/banner.jpg">
                         <div class="hero__text">
                             <span>QUICK START</span>
-                            <br><br>
+                            <br>
                             <h2>나만의 고지서 관리를 시작하세요</h2>
                             <p>Please upload your bill</p>
                             <a href="./bill_upload.do" class="primary-btn">업로드 하러 가기</a>
