@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import kr.user.mapper.GoMapper;
 import kr.user.mapper.NoticeVO;
 import kr.user.mapper.UsersVO;
 
@@ -26,9 +27,8 @@ import kr.user.mapper.UsersVO;
 public class GoController {
 
    // 유저부분
-       //@Autowired
-       @Inject
-       private kr.user.mapper.GoMapper GoMapper;
+       @Autowired
+       GoMapper GoMapper;
        
       // HandLerMapping : 요청URL <--> Method
       @RequestMapping("/UsersList.do")
@@ -44,6 +44,20 @@ public class GoController {
          List<UsersVO> list = GoMapper.UsersListAjax();
          return list; // list->JSON
       }
+      
+      
+		/* 회원가입 */
+      @RequestMapping("/UsersJoin.do")
+      public String UsersJoin(UsersVO vo) {
+    	  
+    	  GoMapper.UsersJoin(vo);
+    	  
+    	  return "login_main2";
+      }
+      
+      
+      
+      
       @RequestMapping("/UsersForm.do")
       public String UsersForm() {
          return "UsersForm"; //UsersForm.jsp
@@ -133,6 +147,26 @@ public class GoController {
       @RequestMapping("/bill_upload.do")
       public String bill_upload() {
          return "bill_upload";
+      }
+      
+      @RequestMapping("/bill_manager.do")
+      public String bill_manager() {
+         return "bill_manager";
+      }
+      
+      @RequestMapping("/bill_graph.do")
+      public String bill_graph() {
+         return "bill_graph";
+      }
+      
+      @RequestMapping("/contact.do")
+      public String contact() {
+         return "contact";
+      }
+      
+      @RequestMapping("/community.do")
+      public String community() {
+         return "community";
       }
    
 

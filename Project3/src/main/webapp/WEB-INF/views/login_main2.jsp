@@ -49,7 +49,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+            <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
         </div>
         <!-- <div class="humberger__menu__cart">
             <ul>
@@ -66,16 +66,16 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li><a href="./index_main.do">Home</a></li>
+                <li><a href="./index_main.do">메인</a></li>
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                        <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                        <li><a href="./checkout.html">고지서 통계</a></li>
-                        <li><a href="./blog-details.html">-</a></li>
+                        <li><a href="./bill_manager.do">고지서 관리</a></li>
+                        <li><a href="./bill_graph.do">고지서 통계</a></li>
+                        <li><a href="#">-</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">커뮤니티</a></li>
+                <li><a href="./community.do">커뮤니티</a></li>
                 <li><a href="./contact.do">문의하기</a></li>
             </ul>
         </nav>
@@ -149,12 +149,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                                    <li><a href="./checkout.html">고지서 분석</a></li>
-                                    <li><a href="./blog-details.html">-</a></li>
+                                    <li><a href="./bill_manager.do">고지서 관리</a></li>
+                                    <li><a href="./bill_graph.do">고지서 분석</a></li>
+                                    <li><a href="#">-</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">커뮤니티</a></li>
+                            <li><a href="./community.do">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
                         </ul>
                     </nav>
@@ -263,41 +263,36 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             </div>
             <div class="checkout__form">
                 <h4>로그인 화면</h4>
-
-
-
-                    <div class="row">
+                <div class="row">
                 <form action="${cpath}/UsersLogin.do" method="post">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
-
-                                        <input type="text" name="user_id">
+                                        <input type="text" name="user_id" style="width:200px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                     </div>
                                 </div>
+                                <br><br>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>비밀번호</p>
-
-                                        <input type="password" name="user_pw">
-
+                                        <input type="password" name="user_pw" style="width:200px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                     </div>
                                 </div>
+
                             </div>
                             <!-- 로그인실패시 문구 -->   
                             <c:if test="${msg==false}">
                             	<p style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</p>
                             </c:if>                    
+
                             <div class="checkout__input">
                               <button type="submit" class="site-btn">로그인하기</button>
                             </div>
-
                         </div>  
-                         </div>>
+                         </div>
                          </form>       
-
     </section>
     <!-- Checkout Section End -->
 

@@ -41,7 +41,7 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+            <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
         </div>
         <!-- <div class="humberger__menu__cart">
             <ul>
@@ -58,16 +58,16 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li><a href="./index_main.do">Home</a></li>
+                <li><a href="./index_main.do">메인</a></li>
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                        <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                        <li><a href="./checkout.html">고지서 통계</a></li>
-                        <li><a href="./blog-details.html">-</a></li>
+                        <li><a href="./bill_manager.do">고지서 관리</a></li>
+                        <li><a href="./bill_graph.do">고지서 통계</a></li>
+                        <li><a href="#">-</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">커뮤니티</a></li>
+                <li><a href="./community.do">커뮤니티</a></li>
                 <li><a href="./contact.do">문의하기</a></li>
             </ul>
         </nav>
@@ -141,12 +141,12 @@
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                                    <li><a href="./checkout.html">고지서 분석</a></li>
-                                    <li><a href="./blog-details.html">-</a></li>
+                                    <li><a href="./bill_manager.do">고지서 관리</a></li>
+                                    <li><a href="./bill_graph.do">고지서 분석</a></li>
+                                    <li><a href="#">-</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">커뮤니티</a></li>
+                            <li><a href="./community.do">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
                         </ul>
                     </nav>
@@ -255,7 +255,7 @@
             </div>
             <div class="checkout__form">
                 <h4>개인정보 입력</h4>
-                <<form action="${cpath}/UsersInsert.do" method="post">
+                <form action="${cpath}/UsersJoin.do" method="post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
@@ -277,13 +277,13 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>이름</p>
-                                        <input type="name" name = "user_name">
+                                        <input type="text" name = "user_name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>주거래 은행</p>
-                                        <input type="bank" name = "user_bank">
+                                        <input type="text" name = "user_bank">
                                     </div>
                                 </div>
                             </div>
@@ -291,7 +291,9 @@
                             <div class="checkout__input">
                               <button type="submit" class="site-btn">회원가입 하기</button>
                             </div>
-                        </div>         
+                        </div>   
+                        </div>
+                        </form>      
     </section>
     <!-- Checkout Section End -->
 

@@ -45,7 +45,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+            <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
         </div>
         <!-- <div class="humberger__menu__cart">
             <ul>
@@ -62,7 +62,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li><a href="./index_main.do">Home</a></li>
+                <li><a href="./index_main.do">메인</a></li>
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
@@ -71,7 +71,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         <li><a href="#">-</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">커뮤니티</a></li>
+                <li><a href="./community.do">커뮤니티</a></li>
                 <li><a href="./contact.do">문의하기</a></li>
             </ul>
         </nav>
@@ -150,7 +150,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                                     <li><a href="#">-</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">커뮤니티</a></li>
+                            <li><a href="./community.do">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
                         </ul>
                     </nav>
@@ -159,11 +159,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     <nav class="header__menu">
                          <!--  로그인 배너 (찐) -->
                          <%if(u_vo==null) {%>
-                            <li><a href="./login_main2.do" style="font-size:12px; color:gray;">로그인</a></li>
-                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">회원가입</a></li>
+                            <a href="./login_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">로그인</a>
+                            &emsp;&emsp;&emsp;
+                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">회원가입</a>
                           <%}else {%>
-                            <li><a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray;" >로그아웃</a></li>
-                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">마이페이지</a></li>
+                            <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray;" >로그아웃</a>
+                            <a href="./join_main2.do" style="font-size:12px; color:gray;">마이페이지</a>
                             <%} %>
                     </nav>
                 </div>
@@ -238,7 +239,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     <div class="hero__item set-bg" data-setbg="${cpath}/resources/img/hero/banner.jpg">
                         <div class="hero__text">
                             <span>QUICK START</span>
-                            <br><br>
+                            <br>
                             <h2>나만의 고지서 관리를 시작하세요</h2>
                             <p>Please upload your bill</p>
                             <a href="./bill_upload.do" class="primary-btn">업로드 하러 가기</a>
