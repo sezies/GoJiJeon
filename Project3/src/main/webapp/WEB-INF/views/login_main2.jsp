@@ -1,3 +1,4 @@
+<%@page import="kr.user.mapper.UsersVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -32,6 +33,13 @@
 </head>
 
 <body>
+<%
+UsersVO u_vo = null;
+if(session.getAttribute("login")!= null){
+u_vo = (UsersVO)session.getAttribute("login");
+System.out.println(u_vo+"||||이거는 맨 위에거");
+}
+%>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -278,7 +286,10 @@
                                     </div>
                                 </div>
                             </div>
-                                                   
+                            <!-- 로그인실패시 문구 -->   
+                            <c:if test="${msg==false}">
+                            	<p style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</p>
+                            </c:if>                    
                             <div class="checkout__input">
                               <button type="submit" class="site-btn">로그인하기</button>
                             </div>
