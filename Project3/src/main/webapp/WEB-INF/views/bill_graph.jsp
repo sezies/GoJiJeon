@@ -265,6 +265,70 @@
         </div>
     </section>
     <!-- Product Details Section End -->
+    
+    <!-- Related Product Section Begin -->
+    <section class="related-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title related__product__title">
+                        <h2>다른 고지서</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="${cpath}/resources/img/product/product-1.jpg">
+                            <ul class="product__item__pic__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">스인재아파트 2021년 7월 관리비</a></h6>
+                            <h5>\220,000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="${cpath}/resources/img/product/product-2.jpg">
+                            <ul class="product__item__pic__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">스인재아파트 2021년 6월 관리비</a></h6>
+                            <h5>\180,000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="${cpath}/resources/img/product/product-3.jpg">
+                            <ul class="product__item__pic__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">스인재아파트 2021년 5월 관리비</a></h6>
+                            <h5>\190,000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="${cpath}/resources/img/product/product-7.jpg">
+                            <ul class="product__item__pic__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">스인재아파트 2021년 4월 관리비</a></h6>
+                            <h5>\210,000</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related Product Section End -->
 
     <!-- Footer Section Begin -->
     <!-- <footer class="footer spad">
