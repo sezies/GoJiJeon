@@ -255,20 +255,32 @@
             </div>
             <div class="checkout__form">
                 <h4>로그인 화면</h4>
+<<<<<<< HEAD
+=======
                 <form action="${cpath}/UsersLogin.do" method = "post">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
                     <div class="row">
+                <form action="${cpath}/UsersLogin.do" method="post">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
+<<<<<<< HEAD
+                                        <input type="text" name="user_id">
+=======
                                         <input type="text" name = "user_id">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>비밀번호</p>
+<<<<<<< HEAD
+                                        <input type="password" name="user_pw">
+=======
                                         <input type="password" name = "user_pw">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
                                     </div>
                                 </div>
                             </div>
@@ -276,9 +288,14 @@
                             <div class="checkout__input">
                               <button type="submit" class="site-btn">로그인하기</button>
                             </div>
+<<<<<<< HEAD
+                        </div>    
+                      </form>     
+=======
                         </div>  
                          </div>>
                          </form>       
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
     </section>
     <!-- Checkout Section End -->
 

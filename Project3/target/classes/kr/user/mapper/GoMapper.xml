@@ -5,6 +5,11 @@
 <mapper namespace="kr.user.mapper.GoMapper">
 
     <!-- users 부분 -->
+    <select id="UsersLogin"  
+         resultType="kr.user.mapper.UsersVO" >
+        select * from users where user_id=#{user_id} and user_pw=#{user_pw}
+    </select>
+    
      <select id = "UsersListAjax" resultType="kr.user.mapper.UsersVO" >
     select * from users order by idx desc
    </select>
