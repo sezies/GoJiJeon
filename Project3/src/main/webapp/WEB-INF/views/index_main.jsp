@@ -71,7 +71,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         <li><a href="#">-</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">커뮤니티</a></li>
+                <li><a href="#">커뮤니티</a></li>
                 <li><a href="./contact.do">문의하기</a></li>
             </ul>
         </nav>
@@ -150,7 +150,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                                     <li><a href="#">-</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">커뮤니티</a></li>
+                            <li><a href="#">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
                         </ul>
                     </nav>

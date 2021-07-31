@@ -67,7 +67,7 @@
                         <li><a href="./blog-details.html">-</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">커뮤니티</a></li>
+                <li><a href="#">커뮤니티</a></li>
                 <li><a href="./contact.do">문의하기</a></li>
             </ul>
         </nav>
@@ -146,7 +146,7 @@
                                     <li><a href="./blog-details.html">-</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">커뮤니티</a></li>
+                            <li><a href="#">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
                         </ul>
                     </nav>
