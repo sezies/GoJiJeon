@@ -1,3 +1,4 @@
+<%@page import="kr.user.mapper.UsersVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -32,6 +33,15 @@
 </head>
 
 <body>
+<%
+UsersVO u_vo = null;
+if(session.getAttribute("login")!= null){
+u_vo = (UsersVO)session.getAttribute("login");
+System.out.println(u_vo+"||||이거는 맨 위에거");
+}
+%>
+
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -52,8 +62,13 @@
         </div> -->
         <div class="humberger__menu__widget">
             <div class="header__top__right__auth">
+                <%if(u_vo==null) {%>
                 <a href="./login_main2.do"><i class="fa fa-user"></i>로그인</a>
                 <a href="./join_main2.do"><i class="fa fa-user"></i>회원가입</a>
+                <%}else {%>
+                 <a href="${cpath}/UsersLogout.do"><i class="fa fa-user"></i>로그아웃</a>
+                <a href="./mypage_main.do"><i class="fa fa-user"></i>마이페이지</a>
+                <%} %>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -153,10 +168,16 @@
                 </div>
                 <div class="col-lg-2">
                     <nav class="header__menu">
-                        <ul>
-                            <li><a href="./login_main2.do" style="font-size:12px; color:gray;">로그인</a></li>
-                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">회원가입</a></li>
-                        </ul>
+                        <!--  로그인 배너 (찐) -->
+                         <%if(u_vo==null) {%>
+                            <a href="./login_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">로그인</a>
+                            &emsp;&emsp;&emsp;
+                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">회원가입</a>
+                          <%}else {%>
+                            <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;" >로그아웃</a>
+                            &emsp;
+                            <a href="./mypage_main.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">마이페이지</a>
+                            <%} %>
                     </nav>
                 </div>
                    <!--<div class="col-lg-3"> 
