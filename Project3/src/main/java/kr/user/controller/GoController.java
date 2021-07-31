@@ -83,8 +83,13 @@ public class GoController {
          return "redirect:/UsersList.do";
       }
       
-      @RequestMapping("/index_main.do")
+      @RequestMapping("/")
       public String index_main() {
+         return "index_main";
+      }
+      
+      @RequestMapping("/index_main.do")
+      public String index_main2() {
          return "index_main";
       }
 
