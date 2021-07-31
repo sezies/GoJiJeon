@@ -211,7 +211,6 @@
                             <li><b>납기 금액(기한 후)</b> <span>\220,000</span></li>
                             <li><b>납부 기한</b> <span>2021.07.31</span></li>
                             <li><b>납부 은행</b> <span>농협</span></li>
-                            </li>
                         </ul>
                     </div>
                 </div>
