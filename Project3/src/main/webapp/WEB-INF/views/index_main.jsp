@@ -159,11 +159,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     <nav class="header__menu">
                          <!--  로그인 배너 (찐) -->
                          <%if(u_vo==null) {%>
-                            <li><a href="./login_main2.do" style="font-size:12px; color:gray;">로그인</a></li>
-                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">회원가입</a></li>
+                            <a href="./login_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">로그인</a>
+                            &emsp;&emsp;&emsp;
+                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">회원가입</a>
                           <%}else {%>
-                            <li><a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray;" >로그아웃</a></li>
-                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">마이페이지</a></li>
+                            <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray;" >로그아웃</a>
+                            <a href="./join_main2.do" style="font-size:12px; color:gray;">마이페이지</a>
                             <%} %>
                     </nav>
                 </div>
