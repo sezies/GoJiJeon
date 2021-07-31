@@ -61,7 +61,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 <a href="./join_main2.do"><i class="fa fa-user"></i>회원가입</a>
                 <%}else {%>
                  <a href="${cpath}/UsersLogout.do"><i class="fa fa-user"></i>로그아웃</a>
-                <a href="./join_main2.do"><i class="fa fa-user"></i>마이페이지</a>
+                <a href="./mypage_main.do"><i class="fa fa-user"></i>마이페이지</a>
                 <%} %>
             </div>
             
@@ -172,7 +172,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                           <%}else {%>
                             <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;" >로그아웃</a>
                             &emsp;
-                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">마이페이지</a>
+                            <a href="./mypage_main.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">마이페이지</a>
                             <%} %>
                     </nav>
                 </div>

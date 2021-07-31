@@ -173,6 +173,11 @@ public class GoController {
       public String community() {
          return "community";
       }
+      
+      @RequestMapping("/mypage_main.do")
+      public String mypage_main() {
+         return "mypage_main";
+      }
    
 
       // 노티스부분
