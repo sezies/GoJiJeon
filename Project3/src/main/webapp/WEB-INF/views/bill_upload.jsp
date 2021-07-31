@@ -200,7 +200,7 @@
                 <form action="#">
                     <div class="row">
                     <div class="col-lg-6 text-center">
-                        <input type="file" name="FileName">
+                        <input type="file" name="img">
                         </div>
                        <div class="checkout__input">
                               <button type="submit" class="site-btn">파일 업로드</button>
