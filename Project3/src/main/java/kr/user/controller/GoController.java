@@ -149,6 +149,11 @@ public class GoController {
       public String contact() {
          return "contact";
       }
+      
+      @RequestMapping("/community.do")
+      public String community() {
+         return "community";
+      }
    
 
       // 노티스부분
