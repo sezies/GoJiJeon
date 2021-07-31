@@ -218,7 +218,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         <div class="hero__search__form">
                             <form action="#">
                                 <div class="hero__search__categories">
-                                  	  모든 종류
+                                       모든 종류
                                     <span class="arrow_carrot-down"></span>
                                 </div>
                                 <input type="text" placeholder="내 고지서를 찾아보세요">
