@@ -55,6 +55,7 @@ if(session.getAttribute("login")!= null){
             <div class="header__cart__price">item: <span>$150.00</span></div>
         </div> -->
         <div class="humberger__menu__widget">
+<<<<<<< HEAD
             <div class="header__top__right__language">
                 <img src="${cpath}/resources/img/language.png" alt="">
                 <div>English</div>
@@ -66,10 +67,17 @@ if(session.getAttribute("login")!= null){
             </div>
             <!-- 로그인 바꿔야하는 부분 -->
             <%if(u_vo==null) {%>
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
             <div class="header__top__right__auth">
+<<<<<<< HEAD
                 <a href="#"><i class="fa fa-user"></i>로그인</a>
                 <a href="#"><i class="fa fa-user"></i>회원가입</a>
                 <%System.out.println(u_vo+"|||||test입니당"); %>
+=======
+                <a href="./login_main2.do"><i class="fa fa-user"></i>로그인</a>
+                <a href="./join_main2.do"><i class="fa fa-user"></i>회원가입</a>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
             </div>
             <%}else {%>
             <div class="header__top__right__auth">
@@ -81,31 +89,30 @@ if(session.getAttribute("login")!= null){
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
+                <li><a href="./index_main.do">Home</a></li>
+                 <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
+                        <li><a href="./bill_upload.do">고지서 업로드</a></li>
+                        <li><a href="./bill_manager.do">고지서 관리</a></li>
+                        <li><a href="./bill_graph.do">고지서 분석</a></li>
+                        <li><a href="#">-</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./blog.html">커뮤니티</a></li>
+                <li><a href="./contact.do">문의하기</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
+            <!--  <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p"></i></a>-->
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>
+               <!-- <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                <li>Free Shipping for all Order of $99</li>-->
             </ul>
         </div>
     </div>
@@ -155,7 +162,7 @@ if(session.getAttribute("login")!= null){
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+                        <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -165,13 +172,13 @@ if(session.getAttribute("login")!= null){
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                                    <li><a href="./checkout.html">고지서 분석</a></li>
-                                    <li><a href="./blog-details.html">-</a></li>
+                                    <li><a href="./bill_manager.do">고지서 관리</a></li>
+                                    <li><a href="./bill_graph.do">고지서 분석</a></li>
+                                    <li><a href="#">-</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.html">커뮤니티</a></li>
-                            <li><a href="./contact.html">문의하기</a></li>
+                            <li><a href="./contact.do">문의하기</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -738,13 +745,13 @@ if(session.getAttribute("login")!= null){
     <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer spad">
+    <!-- <footer class="footer spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 60-49 Road 11378 New York</li>
@@ -795,14 +802,14 @@ if(session.getAttribute("login")!= null){
                 <div class="col-lg-12">
                     <div class="footer__copyright">
                         <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="${cpath}/resources/img/payment-item.png" alt=""></div>
+  <!--  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. </p></div>-->
+                       <!--  <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->

@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
+    
+    <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 </head>
 
 <body>
@@ -39,65 +43,57 @@
         <div class="humberger__menu__logo">
             <a href="#"><img src="${cpath}/resources/img/logo.png" alt=""></a>
         </div>
-        <div class="humberger__menu__cart">
+        <!-- <div class="humberger__menu__cart">
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
             <div class="header__cart__price">item: <span>$150.00</span></div>
-        </div>
+        </div> -->
         <div class="humberger__menu__widget">
-            <div class="header__top__right__language">
-                <img src="${cpath}/resources/img/language.png" alt="">
-                <div>English</div>
-                <span class="arrow_carrot-down"></span>
-                <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
-                </ul>
-            </div>
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href="./login_main2.do"><i class="fa fa-user"></i>로그인</a>
+                <a href="./join_main2.do"><i class="fa fa-user"></i>회원가입</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./shop-grid.html">Shop</a></li>
-                <li><a href="#">Pages</a>
+                <li><a href="./index_main.do">Home</a></li>
+                 <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Shop Details</a></li>
-                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                        <li><a href="./checkout.html">Check Out</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
+                        <li><a href="./bill_upload.do">고지서 업로드</a></li>
+                        <li><a href="./shoping-cart.html">고지서 관리</a></li>
+                        <li><a href="./checkout.html">고지서 통계</a></li>
+                        <li><a href="./blog-details.html">-</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./blog.html">커뮤니티</a></li>
+                <li><a href="./contact.do">문의하기</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
+            <!--  <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            <a href="#"><i class="fa fa-pinterest-p"></i></a>-->
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>
+               <!-- <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                <li>Free Shipping for all Order of $99</li>-->
             </ul>
         </div>
-    </div> 
+    </div>
     <!-- Humberger End -->
 
     <!-- Header Section Begin -->
-    <!-- <header class="header">
+    <header class="header">
+        <!--
         <div class="header__top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
                                 <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
@@ -105,7 +101,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -124,52 +120,60 @@
                             </div>
                             <div class="header__top__right__auth">
                                 <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>
+                            </div>   
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+       -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+                        <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li class="active"><a href="./shop-grid.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            <li class="active"><a href="./index_main.do">메인</a></li>
+                            <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="./bill_upload.do">고지서 업로드</a></li>
+                                    <li><a href="./shoping-cart.html">고지서 관리</a></li>
+                                    <li><a href="./checkout.html">고지서 분석</a></li>
+                                    <li><a href="./blog-details.html">-</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./blog.html">커뮤니티</a></li>
+                            <li><a href="./contact.do">문의하기</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
+                <div class="col-lg-2">
+                    <nav class="header__menu">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="./login_main2.do" style="font-size:12px; color:gray;">로그인</a></li>
+                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">회원가입</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                   <!--<div class="col-lg-3"> 
+                       <div class="header__cart">
+                         <ul>
+                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                             <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div class="humberger__open">
                 <i class="fa fa-bars"></i>
             </div>
         </div>
-    </header> -->
+    </header>
     <!-- Header Section End -->
 
     <!-- Hero Section Begin -->
@@ -226,14 +230,13 @@
     <!-- Hero Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="${cpath}/resources/img/breadcrumb.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="${cpath}/resources/img/menu_banner.png">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
                         <h2>회원가입</h2>
                         <div class="breadcrumb__option">
-                            <a href="./index_main.do">메인으로</a>
                             <!-- <span>Join</span>  -->
                         </div>
                     </div>
@@ -248,26 +251,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h6><span class="icon_tag_alt"></span><a>원활한 서비스 이용을 위하여 먼저 회원가입을 진행해주세요</a>
-                    </h6>
                 </div>
             </div>
             <div class="checkout__form">
                 <h4>개인정보 입력</h4>
-                <form action="#">
+                <<form action="${cpath}/UsersInsert.do" method="post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
-                                        <input type="text">
+                                        <input type="text" name = "user_id">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>비밀번호</p>
-                                        <input type="password">
+                                        <input type="password" name = "user_pw">
                                     </div>
                                 </div>
                             </div>
@@ -276,19 +277,19 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>이름</p>
-                                        <input type="name">
+                                        <input type="name" name = "user_name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>주거래 은행</p>
-                                        <input type="bank">
+                                        <input type="bank" name = "user_bank">
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="checkout__input">
-                              <button type="submit" class="site-btn">PLACE ORDER</button>
+                              <button type="submit" class="site-btn">회원가입 하기</button>
                             </div>
                         </div>         
     </section>

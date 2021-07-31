@@ -12,6 +12,8 @@ public interface GoMapper {
 	public List<UsersVO> UsersListAjax(); // ajax SQL
 	public UsersVO UsersLogin(UsersVO vo); //login SQL
 	
+	
+	
 	// 노티스 맵퍼
 	public List<NoticeVO> NoticeList();
 	public void NoticeInsert(NoticeVO vo); // insert~ SQL

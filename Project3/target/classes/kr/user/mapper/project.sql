@@ -7,10 +7,12 @@ create table users(
         primary key(user_num)
 );
 
+
 insert into users(user_id,user_pw,user_name,user_bank)
 value ('test','123','test','test');
 
 select * from users;
+
 
 
 create table notice(
@@ -26,3 +28,6 @@ create table notice(
         primary key(notice_num),
         foreign key(user_num) references users(user_num)
 );
+
+
+select * from notice;

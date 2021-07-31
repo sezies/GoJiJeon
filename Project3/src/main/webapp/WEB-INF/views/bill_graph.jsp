@@ -11,7 +11,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>고지서 관리 서비스</title>
+    <title>Ogani | Template</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -25,10 +25,6 @@
     <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
-
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
 </head>
 
 <body>
@@ -62,9 +58,9 @@
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                        <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                        <li><a href="./checkout.html">고지서 통계</a></li>
-                        <li><a href="./blog-details.html">-</a></li>
+                        <li><a href="./bill_manager.do">고지서 관리</a></li>
+                        <li><a href="./bill_graph.do">고지서 분석</a></li>
+                        <li><a href="#">-</a></li>
                     </ul>
                 </li>
                 <li><a href="./blog.html">커뮤니티</a></li>
@@ -140,11 +136,11 @@
                             <li class="active"><a href="./index_main.do">메인</a></li>
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="./shoping-cart.html">고지서 관리</a></li>
-                                    <li><a href="./checkout.html">고지서 분석</a></li>
-                                    <li><a href="./blog-details.html">-</a></li>
-                                </ul>
+                       				 <li><a href="./bill_upload.do">고지서 업로드</a></li>
+                       				 <li><a href="./bill_manager.do">고지서 관리</a></li>
+                       				 <li><a href="./bill_graph.do">고지서 분석</a></li>
+                        			<li><a href="#">-</a></li>
+                   				 </ul>
                             </li>
                             <li><a href="./blog.html">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
@@ -176,68 +172,14 @@
     </header>
     <!-- Header Section End -->
 
-    <!-- Hero Section Begin -->
-    <!--  <section class="hero hero-normal">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <!--  <span>All departments</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- Hero Section End -->
-
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="${cpath}/resources/img/menu_banner.png">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>로그인</h2>
+                        <h2>고지서 분석</h2>
                         <div class="breadcrumb__option">
-                            <!-- <span>Join</span>  -->
                         </div>
                     </div>
                 </div>
@@ -246,58 +188,94 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <!-- Checkout Section Begin -->
-    <section class="checkout spad">
+    <!-- Contact Form Begin -->
+    <section class="contact-form spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                 </div>
             </div>
             <div class="checkout__form">
-                <h4>로그인 화면</h4>
-<<<<<<< HEAD
-=======
-                <form action="${cpath}/UsersLogin.do" method = "post">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
+                <h4>고지서 파일 올리기</h4>
+                <form action="#">
                     <div class="row">
-                <form action="${cpath}/UsersLogin.do" method="post">
-                        <div class="col-lg-8 col-md-6">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>아이디</p>
-<<<<<<< HEAD
-                                        <input type="text" name="user_id">
-=======
-                                        <input type="text" name = "user_id">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>비밀번호</p>
-<<<<<<< HEAD
-                                        <input type="password" name="user_pw">
-=======
-                                        <input type="password" name = "user_pw">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
-                                    </div>
-                                </div>
+                    <div class="col-lg-6 text-center">
+                        <input type="file" name="FileName">
+                        </div>
+                       <div class="checkout__input">
+                              <button type="submit" class="site-btn">파일 업로드</button>
                             </div>
-                                                   
-                            <div class="checkout__input">
-                              <button type="submit" class="site-btn">로그인하기</button>
-                            </div>
-<<<<<<< HEAD
-                        </div>    
-                      </form>     
-=======
-                        </div>  
-                         </div>>
-                         </form>       
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
+                        </div>         
     </section>
-    <!-- Checkout Section End -->
+    <!-- Contact Form End -->
+
+    <!-- Footer Section Begin -->
+    <!-- <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 60-49 Road 11378 New York</li>
+                            <li>Phone: +65 11.188.888</li>
+                            <li>Email: hello@colorlib.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">About Our Shop</a></li>
+                            <li><a href="#">Secure Shopping</a></li>
+                            <li><a href="#">Delivery infomation</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Who We Are</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  <!--  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. </p></div>-->
+                       <!--  <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+    <!-- Footer Section End -->
 
     <!-- Js Plugins -->
     <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
@@ -308,6 +286,8 @@
     <script src="${cpath}/resources/js/mixitup.min.js"></script>
     <script src="${cpath}/resources/js/owl.carousel.min.js"></script>
     <script src="${cpath}/resources/js/main.js"></script>
+
+
 
 </body>
 

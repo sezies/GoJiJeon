@@ -2810,6 +2810,7 @@ ol {
 
 .map .map-inside .inside-widget {
 	width: 350px;
+	top: 100px;
 	background: #ffffff;
 	text-align: center;
 	padding: 23px 0;
@@ -3560,7 +3561,6 @@ ol {
 span {
     color: #777;
     font-size: 12px;
-    bottom: 68px;
     position: absolute;
 }
 #login {

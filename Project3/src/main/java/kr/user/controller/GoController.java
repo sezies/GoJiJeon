@@ -24,10 +24,10 @@ import kr.user.mapper.UsersVO;
 public class GoController {
 
 	// 유저부분
+
 	    //@Autowired
 	    @Inject
 	    private kr.user.mapper.GoMapper GoMapper;
-	    
 		// HandLerMapping : 요청URL <--> Method
 		@RequestMapping("/UsersList.do")
 		public String UsersList(HttpServletRequest request){
@@ -46,12 +46,28 @@ public class GoController {
 		public String UsersForm() {
 			return "UsersForm"; //UsersForm.jsp
 		}
+		
+		
+		/* 회원가입 */
 		@RequestMapping("/UsersInsert.do")
 		public String UsersInsert(UsersVO vo) {
 			GoMapper.UsersInsert(vo); //정장
-			return "redirect:/UsersList.do"; //WEB-INF/views//UsersList.do.jsp
+			return "login_main2"; //WEB-INF/views//UsersList.do.jsp
 			
 		}
+		
+		/* 로그인 */
+		@RequestMapping("/UsersLogin.do")
+		public String UsersLogin(UsersVO vo) {
+			GoMapper.UsersLogin(vo); //정장
+			return "index_main"; //WEB-INF/views//UsersList.do.jsp
+			
+		}
+		
+		
+		
+		
+		
 		@RequestMapping("/UsersContent.do")
 		public String UsersContent(@RequestParam("user_num") int user_num, Model model) { //?idx=10
 			UsersVO vo=GoMapper.UsersContent(user_num);
@@ -127,6 +143,21 @@ public class GoController {
 		@RequestMapping("/bill_upload.do")
 		public String bill_upload() {
 			return "bill_upload";
+		}
+		
+		@RequestMapping("/bill_manager.do")
+		public String bill_manager() {
+			return "bill_manager";
+		}
+		
+		@RequestMapping("/bill_graph.do")
+		public String bill_graph() {
+			return "bill_graph";
+		}
+		
+		@RequestMapping("/contact.do")
+		public String contact() {
+			return "contact";
 		}
 	
 
