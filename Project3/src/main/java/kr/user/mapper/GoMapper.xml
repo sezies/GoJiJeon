@@ -6,7 +6,7 @@
 
     <!-- users 부분 -->
     <select id="UsersLogin"  
-        parameterType="kr.user.mapper.UsersVO" resultType="kr.user.mapper.UsersVO" >
+         resultType="kr.user.mapper.UsersVO" >
         select * from users where user_id=#{user_id} and user_pw=#{user_pw}
     </select>
     

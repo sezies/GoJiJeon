@@ -5,12 +5,12 @@ import java.util.List;
 public interface GoMapper {
 	// 유저 맵퍼
 	public List<UsersVO> UsersList();
-	public void UsersInsert(UsersVO vo); // insert~ SQL
+	public void UsersInsert(UsersVO vo); // insert~ SQL	
 	public UsersVO UsersContent(int idx); // select~ SQL
 	public void UsersUpdate(UsersVO vo); // update~ SQL	
 	public void UsersDelete(int idx); // delete~ SQL
 	public List<UsersVO> UsersListAjax(); // ajax SQL
-	public List<UsersVO> UsersLogin(UsersVO vo); //login SQL
+	public UsersVO UsersLogin(UsersVO vo); //login SQL
 	
 	// 노티스 맵퍼
 	public List<NoticeVO> NoticeList();

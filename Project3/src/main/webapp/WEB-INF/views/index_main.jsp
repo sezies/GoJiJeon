@@ -1,3 +1,4 @@
+<%@page import="kr.user.mapper.UsersVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -28,6 +29,13 @@
 </head>
 
 <body>
+<%
+UsersVO u_vo = null;
+if(session.getAttribute("login")!= null){
+	u_vo = (UsersVO)session.getAttribute("login");
+	System.out.println(u_vo+"||||이거는 맨 위에거");
+}
+%>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -56,10 +64,20 @@
                     <li><a href="#">English</a></li>
                 </ul>
             </div>
+            <!-- 로그인 바꿔야하는 부분 -->
+            <%if(u_vo==null) {%>
             <div class="header__top__right__auth">
                 <a href="#"><i class="fa fa-user"></i>로그인</a>
                 <a href="#"><i class="fa fa-user"></i>회원가입</a>
+                <%System.out.println(u_vo+"|||||test입니당"); %>
             </div>
+            <%}else {%>
+            <div class="header__top__right__auth">
+                <a href="#"><i class="fa fa-user"></i>로그아웃</a>
+                <a href="#"><i class="fa fa-user"></i>마이페이지</a>
+            </div>
+                <%System.out.println("여기는 안들어오나요"); %>
+            <%} %>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
@@ -146,7 +164,7 @@
                             <li class="active"><a href="./index_main.do">메인</a></li>
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">고지서 업로드</a></li>
+                                    <li><a href="./bill_upload.do">고지서 업로드</a></li>
                                     <li><a href="./shoping-cart.html">고지서 관리</a></li>
                                     <li><a href="./checkout.html">고지서 분석</a></li>
                                     <li><a href="./blog-details.html">-</a></li>
@@ -160,8 +178,14 @@
                 <div class="col-lg-2">
                     <nav class="header__menu">
                         <ul>
-                            <li><a href="./login_main.do" style="font-size:12px; color:gray;">로그인</a></li>
-                            <li><a href="./join_main.do" style="font-size:12px; color:gray;">회원가입</a></li>
+                        <!--  로그인 배너 (찐) -->
+                         <%if(u_vo==null) {%>
+                            <li><a href="./login_main2.do" style="font-size:12px; color:gray;">로그인</a></li>
+                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">회원가입</a></li>
+                          <%}else {%>
+                            <li><a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray;" >로그아웃</a></li>
+                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">마이페이지</a></li>
+                            <%} %>
                         </ul>
                     </nav>
                 </div>

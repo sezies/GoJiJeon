@@ -1,9 +1,11 @@
 package kr.user.controller;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.user.mapper.NoticeVO;
 import kr.user.mapper.UsersVO;
@@ -21,9 +24,10 @@ import kr.user.mapper.UsersVO;
 public class GoController {
 
 	// 유저부분
-	//@Autowired
-		@Inject
-		private kr.user.mapper.GoMapper GoMapper;
+	    //@Autowired
+	    @Inject
+	    private kr.user.mapper.GoMapper GoMapper;
+	    
 		// HandLerMapping : 요청URL <--> Method
 		@RequestMapping("/UsersList.do")
 		public String UsersList(HttpServletRequest request){
@@ -70,14 +74,59 @@ public class GoController {
 			return "index_main";
 		}
 		
-		@RequestMapping("/UsersLogin.do", method = RequestMethod.POST)
-		public String login_main() {
-			return "login_main";
+		
+		
+		/* 로그인 */
+//		@RequestMapping("/UsersLogin.do")
+//		public String UsersLogin(UsersVO vo) {
+//			GoMapper.UsersLogin(vo);			
+//			return "index_main";
+//		}
+		/* 로그인 2*/
+		@RequestMapping("/UsersLogin.do")
+		public String UsersLogin(UsersVO vo,HttpSession session,Model model) {			
+					
+			if(session.getAttribute("UsersLogin")!=null) {
+				session.removeAttribute("UsersLogin");
+			}
+			UsersVO u_vo=GoMapper.UsersLogin(vo);
+			
+			if(u_vo!=null) {
+				session.setAttribute("login", u_vo);
+				System.out.println("세션넘기기성공");
+				return "index_main";
+			}else {
+				System.out.println("세션넘기기실패");
+				return "index_main";
+			}
+		}
+		/* 로그아웃 */
+		@RequestMapping("/UsersLogout.do")
+		public String UsersLogout(HttpSession session) {
+			session.invalidate();
+			System.out.println("로그아웃성공");
+			return "index_main"; 
+		}
+		
+		
+		@RequestMapping("/login_main2.do")
+		public String login_main2() {
+			return "login_main2";
 		}
 		
 		@RequestMapping("/join_main.do")
 		public String join_main() {
 			return "join_main";
+		}
+		
+		@RequestMapping("/join_main2.do")
+		public String join_main2() {
+			return "join_main2";
+		}
+		
+		@RequestMapping("/bill_upload.do")
+		public String bill_upload() {
+			return "bill_upload";
 		}
 	
 

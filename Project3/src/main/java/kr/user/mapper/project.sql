@@ -7,6 +7,12 @@ create table users(
         primary key(user_num)
 );
 
+insert into users(user_id,user_pw,user_name,user_bank)
+value ('test','123','test','test');
+
+select * from users;
+
+
 create table notice(
         user_num int,
         notice_num int not null auto_increment,

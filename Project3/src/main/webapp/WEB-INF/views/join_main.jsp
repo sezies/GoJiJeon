@@ -67,40 +67,40 @@ background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); backgroun
 </div> 
 </div> 
  <div class="col-md-6 mb-3"> 
- <label for="root">주거래 은행</label> 
- <select class="custom-select d-block w-100" id="root"> 
-  <option value="location">선택</option> 
- <option>BNP파리바</option> 
- <option>HSBC</option> 
- <option>JP모간체이스</option> 
- <option>KB국민</option> 
- <option>경남</option> 
- <option>광주</option> 
- <option>기업</option> 
- <option>농협</option> 
- <option>대구</option> 
- <option>도이치</option> 
- <option>뱅크오브아메리카</option> 
- <option>부산</option> 
- <option>산림조합</option> 
- <option>산업</option> 
- <option>새마을금고</option> 
- <option>수협</option> 
- <option>신한</option>
- <option>신협</option> 
- <option>우리</option> 
- <option>우체국</option> 
- <option>저축</option> 
- <option>전북</option> 
- <option>제주</option> 
- <option>중국건설은행</option> 
- <option>중국공상은행</option> 
- <option>중국은행</option> 
- <option>카카오뱅크</option> 
- <option>케이뱅크</option> 
- <option>토스뱅크</option> 
- <option>하나</option> 
- <option>한국씨티</option>  
+ <label for="bank">주거래 은행</label> 
+<select class="custom-select d-block w-100" id="bank"> 
+<option value="">항목 선택</option>  
+<option value="bnp">BNP파리바</option> 
+<option value="hsbc">HSBC</option> 
+<option value="jp">JP모간체이스</option> 
+<option value="kb">KB국민</option> 
+<option value="kn">경남</option> 
+<option value="kj">광주</option> 
+<option value="ibk">기업</option> 
+<option value="nh">농협</option> 
+<option value="dg">대구</option> 
+<option value="doich">도이치</option> 
+<option value="america">뱅크오브아메리카</option> 
+<option value="busan">부산</option> 
+<option value="nfcf">산림조합</option> 
+<option value="kdb">산업</option> 
+<option value="mg">새마을금고</option> 
+<option value="sh">수협</option> 
+<option value="shin">신한</option>
+<option value="shy">신협</option> 
+<option value="woori">우리</option> 
+<option value="post">우체국</option> 
+<option value="fsb">저축</option> 
+<option value="jb">전북</option> 
+<option value="jj">제주</option> 
+<option value="ccb">중국건설은행</option> 
+<option value="icbc">중국공상은행</option> 
+<option value="china">중국은행</option> 
+<option value="kakao">카카오뱅크</option> 
+<option value="kbank">케이뱅크</option> 
+<option value="toss">토스뱅크</option> 
+<option value="keb">하나</option> 
+<option value="city">한국씨티</option> 
  </select> 
  <div class="invalid-feedback">
  </div> 

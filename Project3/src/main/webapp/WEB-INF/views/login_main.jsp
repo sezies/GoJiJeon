@@ -56,7 +56,7 @@ background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%); backgroun
  
  <script> window.addEventListener('load', () => { const forms = document.getElementsByClassName('validation-form'); 
  Array.prototype.filter.call(forms, (form) => { form.addEventListener('submit', function (event) { if (form.checkValidity() === false) 
- { event.preventDefault(); event.stopPropagation(); } form.classList.add('was-validated'); }, false); }); }, false); 
+ { event.preventDefault(); event.stopPropagation(); } form.classList.add('was-validated'); }, false); }); }, false);
  </script> 
  </body> 
  </html>
