@@ -120,6 +120,11 @@ public class GoController {
       public String bill_upload() {
          return "bill_upload";
       }
+      
+      @RequestMapping("/contact.do")
+      public String contact() {
+         return "contact";
+      }
    
 
       // 노티스부분
