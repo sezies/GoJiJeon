@@ -255,7 +255,7 @@
             </div>
             <div class="checkout__form">
                 <h4>개인정보 입력</h4>
-                <<form action="${cpath}/UsersInsert.do" method="post">
+                <form action="${cpath}/UsersJoin.do" method="post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
@@ -277,13 +277,13 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>이름</p>
-                                        <input type="name" name = "user_name">
+                                        <input type="text" name = "user_name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>주거래 은행</p>
-                                        <input type="bank" name = "user_bank">
+                                        <input type="text" name = "user_bank">
                                     </div>
                                 </div>
                             </div>
@@ -291,7 +291,9 @@
                             <div class="checkout__input">
                               <button type="submit" class="site-btn">회원가입 하기</button>
                             </div>
-                        </div>         
+                        </div>   
+                        </div>
+                        </form>      
     </section>
     <!-- Checkout Section End -->
 

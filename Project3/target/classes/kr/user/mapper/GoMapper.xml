@@ -15,8 +15,14 @@
    </select>
    
     <insert id="UsersInsert" parameterType="kr.user.mapper.UsersVO">
-        insert into users(id,pw,name,bank)
-      values(#{id},#{pw},#{name},#{bank})
+        insert into users(user_id,user_pw,user_name,user_bank)
+      values(#{user_id},#{user_pw},#{user_name},#{user_bank})
+    </insert>
+    
+    
+     <insert id="UsersJoin" parameterType="kr.user.mapper.UsersVO">
+        insert into users(user_id,user_pw,user_name,user_bank)
+      values(#{user_id},#{user_pw},#{user_name},#{user_bank})
     </insert>
     
     <select id="UsersContent" parameterType="int" 
