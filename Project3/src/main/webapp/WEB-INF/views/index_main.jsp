@@ -266,10 +266,11 @@ if(session.getAttribute("login")!= null){
                     </div>
                     <div class="hero__item set-bg" data-setbg="${cpath}/resources/img/hero/banner.jpg">
                         <div class="hero__text">
-                            <span>FRUIT FRESH</span>
-                            <h2>내 인생 첫 고지서 관리를 시작하세요 <br />Quick Start</h2>
+                            <span>QUICK START</span>
+                            <br><br>
+                            <h2>나만의 고지서 관리를 시작하세요</h2>
                             <p>Please upload your bill</p>
-                            <a href="#" class="primary-btn">업로드 하기</a>
+                            <a href="./bill_upload.do" class="primary-btn">업로드 하러 가기</a>
                         </div>
                     </div>
                 </div>
@@ -315,7 +316,7 @@ if(session.getAttribute("login")!= null){
     <!-- Categories Section End -->
 
     <!-- Featured Section Begin -->
-    <section class="featured spad">
+    <!-- <section class="featured spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -339,9 +340,7 @@ if(session.getAttribute("login")!= null){
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-1.jpg">
                             <ul class="featured__item__pic__hover">
-                                <!--  <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
+
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -354,9 +353,7 @@ if(session.getAttribute("login")!= null){
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-2.jpg">
                             <ul class="featured__item__pic__hover">
-                                 <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
+
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -369,9 +366,7 @@ if(session.getAttribute("login")!= null){
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-3.jpg">
                             <ul class="featured__item__pic__hover">
-                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
+
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -384,9 +379,7 @@ if(session.getAttribute("login")!= null){
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-4.jpg">
                             <ul class="featured__item__pic__hover">
-                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
+
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -399,9 +392,7 @@ if(session.getAttribute("login")!= null){
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-5.jpg">
                             <ul class="featured__item__pic__hover">
-                               <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
+
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -414,9 +405,7 @@ if(session.getAttribute("login")!= null){
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-6.jpg">
                             <ul class="featured__item__pic__hover">
-                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
+
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -429,9 +418,7 @@ if(session.getAttribute("login")!= null){
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-7.jpg">
                             <ul class="featured__item__pic__hover">
-                               <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
+
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -444,9 +431,7 @@ if(session.getAttribute("login")!= null){
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-8.jpg">
                             <ul class="featured__item__pic__hover">
-                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
+
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -457,7 +442,7 @@ if(session.getAttribute("login")!= null){
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Featured Section End -->
 
     <!-- Banner Begin -->
