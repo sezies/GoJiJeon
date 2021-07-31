@@ -1,10 +1,12 @@
 package kr.user.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,14 +85,19 @@ public class GoController {
          return "redirect:/UsersList.do";
       }
       
-      @RequestMapping("/index_main.do")
+      @RequestMapping("/")
       public String index_main() {
+         return "index_main";
+      }
+      
+      @RequestMapping("/index_main.do")
+      public String index_main2() {
          return "index_main";
       }
 
       /* 로그인 2*/
       @RequestMapping("/UsersLogin.do")
-      public String UsersLogin(UsersVO vo,HttpSession session,Model model) {         
+      public String UsersLogin(UsersVO vo,HttpSession session,Model model,HttpServletResponse response,RedirectAttributes rttr) throws IOException {         
                
          if(session.getAttribute("UsersLogin")!=null) {
             session.removeAttribute("UsersLogin");
@@ -103,7 +110,19 @@ public class GoController {
             return "index_main";
          }else {
             System.out.println("세션넘기기실패");
-            return "index_main";
+            //로그인 실패시 문구
+            rttr.addFlashAttribute("msg", false);
+            //로그인 실패시 alert창
+//            response.setContentType("text/html; charset=UTF-8");
+//            PrintWriter out = response.getWriter();
+//
+//            out.println("<script language='javascript'>");
+//            out.println("alert('회원정보가 잘못입력 되었습니다.')");
+//            out.println("</script>");
+//
+//            out.flush();
+            
+            return "redirect:/login_main2.do";
          }
       }
       /* 로그아웃 */
