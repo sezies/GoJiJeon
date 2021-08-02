@@ -241,6 +241,14 @@ public class GoController {
             return "redirect:/NoticeList.do";
          }
     
-   
+         
+			/*test*/
+         @RequestMapping("/test.do")
+         public String test () {
+        	 return "test";
+         }
+         
+         
+         
    
 }
