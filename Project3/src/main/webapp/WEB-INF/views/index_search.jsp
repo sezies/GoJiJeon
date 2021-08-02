@@ -35,6 +35,31 @@ if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
 System.out.println(u_vo+"||||이거는 맨 위에거");
 }
+//검색 기능 구현
+request.setCharacterEncoding("euc-kr");
+String search1 =request.getParameter("search1");
+System.out.println(search1+"처음가져옴");
+String search2 =request.getParameter("search2");
+System.out.println(search2+"처음가져옴");
+
+String search1_ ="";
+if(search1 !=null)
+	search1_ = search1;
+System.out.println(search1_+"두번쨰가져옴");
+String search2_ ="";
+if(search2 !=null)
+	search2_ = search2;
+System.out.println(search2_+"두번쨰가져옴");
+
+/* if(search1_.equals("제목")){
+	arr2 = 
+}else if(search1_.equals("관리비용")){
+	arr2=
+}else if(search1_.equals("항목선택")){
+	response.sendRedirect("index_main.jsp");
+	System.out.println("메인페이지로이동");
+} */
+//검색 기능 구현
 %>
     <!-- Page Preloder -->
     <div id="preloder">
