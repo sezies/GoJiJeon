@@ -35,6 +35,31 @@ if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
 System.out.println(u_vo+"||||이거는 맨 위에거");
 }
+//검색 기능 구현
+request.setCharacterEncoding("euc-kr");
+String search1 =request.getParameter("search1");
+System.out.println(search1+"처음가져옴");
+String search2 =request.getParameter("search2");
+System.out.println(search2+"처음가져옴");
+
+String search1_ ="";
+if(search1 !=null)
+	search1_ = search1;
+System.out.println(search1_+"두번쨰가져옴");
+String search2_ ="";
+if(search2 !=null)
+	search2_ = search2;
+System.out.println(search2_+"두번쨰가져옴");
+
+/* if(search1_.equals("제목")){
+	arr2 = 
+}else if(search1_.equals("관리비용")){
+	arr2=
+}else if(search1_.equals("항목선택")){
+	response.sendRedirect("index_main.jsp");
+	System.out.println("메인페이지로이동");
+} */
+//검색 기능 구현
 %>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -68,12 +93,8 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             
         </div>
         <nav class="humberger__menu__nav mobile-menu">
-            <ul><%if(u_vo==null) {%>
+            <ul>
                 <li><a href="./index_main.do">메인</a></li>
-                <li><a href="./community.do">커뮤니티</a></li>
-                <li><a href="./contact.do">문의하기</a></li>
-            <%}else {%>
-                 <li><a href="./index_main.do">메인</a></li>
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
@@ -84,7 +105,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </li>
                 <li><a href="./community.do">커뮤니티</a></li>
                 <li><a href="./contact.do">문의하기</a></li>
-            <%} %></ul>
+            </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
@@ -151,11 +172,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
                 <div class="col-lg-7">
                     <nav class="header__menu">
-                        <ul><%if(u_vo==null) {%>
-                            <li class="active"><a href="./index_main.do">메인</a></li>
-                            <li><a href="./community.do">커뮤니티</a></li>
-                            <li><a href="./contact.do">문의하기</a></li>
-                            <%}else {%>
+                        <ul>
                             <li class="active"><a href="./index_main.do">메인</a></li>
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
@@ -167,7 +184,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </li>
                             <li><a href="./community.do">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
-                       <%} %></ul>
+                        </ul>
                     </nav>
                 </div>
                 <div class="col-lg-2">
@@ -230,21 +247,19 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     </div>-->
 
                 </div>
-
                <!--  <div class="col-lg-13">
                      <div class="hero__search">
                         <div class="hero__search__form">  -->
                             <form action="index_search.jsp" method="get" >		
                                 <!--  <div class="hero__search__categories">-->
-                                	<select name="search1" style="width:300px; height:40px; text-align-last:center; color:#323232;">
+                                	<select name="search1" style="width:160px; height:50px; text-align-last:center; color:#323232;">
                                 		<option value="항목 선택">항목 선택</option>
                                 		<option value="제목">제목</option>
                                 		<option value="관리비용">관리비용</option>
                                      </select>
+                                    <span class="arrow_carrot-down"></span>
                                 <!--</div>-->
-                                &nbsp;&nbsp;
-                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:300px; height:40px; text-align-last:center">
-                                &nbsp;
+                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2">
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
                         <!-- </div> -->
@@ -269,6 +284,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     </div>
                 <!-- </div> -->
             </div>
+        </div>
     </section>
     <!-- Hero Section End -->
 

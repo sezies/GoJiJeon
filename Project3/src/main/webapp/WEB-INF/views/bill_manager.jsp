@@ -329,8 +329,15 @@
                         </div>
                     </div>
                 </div>
+                        <div class="product__pagination" style="margin:auto;">
+                                <ul class="pagination justify-content-start">
+                                    <li><a href="#">1</a>&nbsp;</li>
+                                    <li><a href="#">2</a>&nbsp;</li>
+                                    <li><a href="#">3</a>&nbsp;</li>
+                                </ul>
+                        </div>
+                    </div>
             </div>
-        </div>
     </section>
     <!-- Featured Section End -->
 
