@@ -68,8 +68,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             
         </div>
         <nav class="humberger__menu__nav mobile-menu">
-            <ul>
+            <ul><%if(u_vo==null) {%>
                 <li><a href="./index_main.do">메인</a></li>
+                <li><a href="./community.do">커뮤니티</a></li>
+                <li><a href="./contact.do">문의하기</a></li>
+            <%}else {%>
+                 <li><a href="./index_main.do">메인</a></li>
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
@@ -80,7 +84,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </li>
                 <li><a href="./community.do">커뮤니티</a></li>
                 <li><a href="./contact.do">문의하기</a></li>
-            </ul>
+            <%} %></ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
@@ -147,7 +151,11 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
                 <div class="col-lg-7">
                     <nav class="header__menu">
-                        <ul>
+                        <ul><%if(u_vo==null) {%>
+                            <li class="active"><a href="./index_main.do">메인</a></li>
+                            <li><a href="./community.do">커뮤니티</a></li>
+                            <li><a href="./contact.do">문의하기</a></li>
+                            <%}else {%>
                             <li class="active"><a href="./index_main.do">메인</a></li>
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
@@ -159,7 +167,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </li>
                             <li><a href="./community.do">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
-                        </ul>
+                       <%} %></ul>
                     </nav>
                 </div>
                 <div class="col-lg-2">
@@ -227,7 +235,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         <div class="hero__search__form">
                             <form action="#">
                                 <div class="hero__search__categories">
-                                       모든 종류
+                                                          모든 종류
                                     <span class="arrow_carrot-down"></span>
                                 </div>
                                 <input type="text" placeholder="내 고지서를 찾아보세요">
@@ -255,7 +263,6 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- Hero Section End -->
 
