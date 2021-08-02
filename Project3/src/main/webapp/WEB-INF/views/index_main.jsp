@@ -242,8 +242,9 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                                 		<option value="관리비용">관리비용</option>
                                      </select>
                                 <!--</div>-->
-                                &nbsp;
+                                &nbsp;&nbsp;
                                 <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:300px; height:40px; text-align-last:center">
+                                &nbsp;
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
                         <!-- </div> -->
