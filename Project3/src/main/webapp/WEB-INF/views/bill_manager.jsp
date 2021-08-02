@@ -234,6 +234,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
             </div>
             <div class="row featured__filter">
+            <div class="categories__slider owl-carousel">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-1.jpg">
@@ -354,13 +355,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         </div>
                     </div>
                 </div>
-                        <div class="product__pagination" style="margin:auto;">
-                                <ul class="pagination justify-content-start">
-                                    <li><a href="#">1</a>&nbsp;</li>
-                                    <li><a href="#">2</a>&nbsp;</li>
-                                    <li><a href="#">3</a>&nbsp;</li>
-                                </ul>
-                        </div>
+                    </div>
                     </div>
             </div>
     </section>
