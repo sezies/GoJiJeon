@@ -197,6 +197,11 @@ public class GoController {
       public String mypage_main() {
          return "mypage_main";
       }
+      
+      @RequestMapping("/bill_contents.do")
+      public String bill_contents() {
+         return "bill_contents";
+      }
    
 
       // 노티스부분

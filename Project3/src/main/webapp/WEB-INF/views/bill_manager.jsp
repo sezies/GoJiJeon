@@ -245,12 +245,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-2.jpg">
                             <ul class="featured__item__pic__hover">
@@ -260,12 +260,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix slowfood fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-3.jpg">
                             <ul class="featured__item__pic__hover">
@@ -275,12 +275,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix slowfood oranges">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-4.jpg">
                             <ul class="featured__item__pic__hover">
@@ -290,12 +290,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix slowfood vegetables">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-5.jpg">
                             <ul class="featured__item__pic__hover">
@@ -305,7 +305,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
@@ -320,12 +320,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges vegetables">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-7.jpg">
                             <ul class="featured__item__pic__hover">
@@ -335,12 +335,12 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges vegetables">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-8.jpg">
                             <ul class="featured__item__pic__hover">
@@ -350,7 +350,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Crab Pool Security</a></h6>
+                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
                             <h5>$30.00</h5>
                         </div>
                     </div>
