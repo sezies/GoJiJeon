@@ -47,22 +47,23 @@ public class GoController {
       }
       
       
-		/* 회원가입 */
+      /* 회원가입 */
       @RequestMapping("/UsersJoin.do")
-      public String UsersJoin(UsersVO vo) {
-    	  
-    	  System.out.println(vo.getUser_id());
-    	  System.out.println(vo.getUser_name());
-    	  System.out.println(vo.getUser_num());
-    	  
-		/* 회원가입 정보를 모두 입력하지 않은 경우 다시 회원가입페이지로 돌아가고, DB에 담기지 않음 */
-    	  if (vo.getUser_id().equals("") || vo.getUser_name().equals("") || vo.getUser_pw().equals("") || vo.getUser_bank().equals("")  )  {
-    		  return "join_main2";
-    	  }
-    	  else {
-				/* 회원가입 정보를 모두 입력한 경우 디비에 데이터가 담기고 로그인페이지로 넘어감 */
-    		  GoMapper.UsersJoin(vo);
-    		  return "login_main2";
+      public String UsersJoin(UsersVO vo, RedirectAttributes rttr) {
+         
+         System.out.println(vo.getUser_id());
+       
+         
+         
+      /* 회원가입 정보를 모두 입력하지 않은 경우 다시 회원가입페이지로 돌아가고, DB에 담기지 않음 */
+         if (vo.getUser_id().equals("") || vo.getUser_name().equals("") || vo.getUser_pw().equals("") || vo.getUser_bank().equals("")  )  {
+            rttr.addFlashAttribute("msg", false);
+            return "redirect:/join_main2.do";
+         }
+         else {
+            /* 회원가입 정보를 모두 입력한 경우 디비에 데이터가 담기고 로그인페이지로 넘어감 */
+            GoMapper.UsersJoin(vo);
+            return "login_main2";
 }
       }
       
@@ -87,7 +88,7 @@ public class GoController {
       // 회원 업데이트
       @RequestMapping("/UsersUpdate.do")
       public String UsersUpdate(UsersVO vo,HttpSession session,Model model) {
-    	GoMapper.UsersUpdate(vo);  	  
+       GoMapper.UsersUpdate(vo);       
          System.out.println(vo+"회원정보변경한세션내용");    
          session.setAttribute("login", vo);
          System.out.println(vo+"회원정보변경성공");
@@ -240,6 +241,14 @@ public class GoController {
             return "redirect:/NoticeList.do";
          }
     
-   
+         
+         /*test*/
+         @RequestMapping("/test.do")
+         public String test () {
+            return "test";
+         }
+         
+         
+         
    
 }
