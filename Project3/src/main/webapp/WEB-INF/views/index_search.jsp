@@ -254,21 +254,20 @@ System.out.println(search2_+"두번쨰가져옴");
 
                 </div>
                <!--  <div class="col-lg-13">
-                     <div class="hero__search">
-                        <div class="hero__search__form">  -->
+                     <div class="hero__search">-->
+                        <div class="hero__search__form">  
                             <form action="index_search.jsp" method="get" >		
                                 <!--  <div class="hero__search__categories">-->
-                                	<select name="search1" style="width:160px; height:50px; text-align-last:center; color:#323232;">
+                                	<select name="search1" style="width:300px; height:40px; text-align-last:center; color:#323232;">
                                 		<option value="항목 선택">항목 선택</option>
                                 		<option value="제목">제목</option>
                                 		<option value="관리비용">관리비용</option>
                                      </select>
-                                    <span class="arrow_carrot-down"></span>
                                 <!--</div>-->
                                 <input type="text" placeholder="내 고지서를 찾아보세요" name="search2">
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
-                        <!-- </div> -->
+                        </div>
                         <!--<div class="hero__search__phone">
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
@@ -279,6 +278,7 @@ System.out.println(search2_+"두번쨰가져옴");
                             </div>
                         </div> -->
                    <!--  </div> -->
+                   <br><br><br>
                     <div class="hero__item set-bg" data-setbg="${cpath}/resources/img/hero/banner.jpg">
                         <div class="hero__text">
                             <span>QUICK START</span>

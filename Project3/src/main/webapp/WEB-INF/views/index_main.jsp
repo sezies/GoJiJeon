@@ -228,9 +228,9 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
 
                <!--  <div class="col-lg-13">
-                     <div class="hero__search">
-                        <div class="hero__search__form">  -->
-                            <form action="index_search.jsp" method="get" >		
+                     <div class="hero__search">-->
+                        <div class="hero__search__form" style="margin:auto;">
+                            <form action="index_search.jsp" method="get">		
                                 <!--  <div class="hero__search__categories">-->
                                 	<select name="search1" style="width:300px; height:40px; text-align-last:center; color:#323232;">
                                 		<option value="항목 선택">항목 선택</option>
@@ -239,11 +239,11 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                                      </select>
                                 <!--</div>-->
                                 &nbsp;&nbsp;
-                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:300px; height:40px; text-align-last:center">
+                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:300px; height:40px; text-align-last:center;">
                                 &nbsp;
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
-                        <!-- </div> -->
+						</div>
                         <!--<div class="hero__search__phone">
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
@@ -254,6 +254,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </div>
                         </div> -->
                    <!--  </div> -->
+                   <br> <br> <br>
                     <div class="hero__item set-bg" data-setbg="${cpath}/resources/img/hero/banner.jpg">
                         <div class="hero__text">
                             <span>QUICK START</span>
