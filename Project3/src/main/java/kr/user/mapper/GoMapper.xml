@@ -32,9 +32,9 @@
     
     <update id="UsersUpdate" parameterType="kr.user.mapper.UsersVO">
        update users set
-       pw=#{pw},
-       bank=#{bank}
-       where user_num=#{user_num}
+       user_pw=#{user_pw},
+       user_bank=#{user_bank}
+       where user_id=#{user_id}
    </update>
    
    <delete id="UsersDelete" parameterType="int" >

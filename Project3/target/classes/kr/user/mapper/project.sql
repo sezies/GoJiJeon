@@ -19,6 +19,10 @@ select * from users;
 
 drop table notice;
 
+update users set()
+
+
+
 create table notice(
         user_num int,
         notice_num int not null auto_increment,

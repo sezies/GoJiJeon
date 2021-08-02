@@ -186,28 +186,150 @@
             </div>
         </div>
     </section>
+    <br><br>
     <!-- Breadcrumb Section End -->
-
-    <!-- Contact Form Begin -->
-    <section class="contact-form spad">
+    
+        <!-- Related Product Section Begin -->
+    <section class="related-product">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class="section-title related__product__title">
+                        <h2>고지서 선택</h2>
+                    </div>
                 </div>
             </div>
-            <div class="checkout__form">
-                <h4>고지서 파일 올리기</h4>
-                <form action="#">
-                    <div class="row">
-                    <div class="col-lg-6 text-center">
-                        <input type="file" name="FileName">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="${cpath}/resources/img/product/product-1.jpg">
+                            <ul class="product__item__pic__hover">
+                            </ul>
                         </div>
-                       <div class="checkout__input">
-                              <button type="submit" class="site-btn">파일 업로드</button>
-                            </div>
-                        </div>         
+                        <div class="product__item__text">
+                            <h6><a href="#">스인재아파트 2021년 7월 관리비</a></h6>
+                            <h5>\220,000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="${cpath}/resources/img/product/product-2.jpg">
+                            <ul class="product__item__pic__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">스인재아파트 2021년 6월 관리비</a></h6>
+                            <h5>\180,000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="${cpath}/resources/img/product/product-3.jpg">
+                            <ul class="product__item__pic__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">스인재아파트 2021년 5월 관리비</a></h6>
+                            <h5>\190,000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="${cpath}/resources/img/product/product-7.jpg">
+                            <ul class="product__item__pic__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">스인재아파트 2021년 4월 관리비</a></h6>
+                            <h5>\210,000</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- Contact Form End -->
+    <!-- Related Product Section End -->
+
+    <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__pic">
+                        <div class="product__details__pic__item">
+                            <img class="product__details__pic__item--large"
+                                src="${cpath}/resources/img/product/details/product-details-1.jpg" alt="">
+                        </div>
+                       </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h3>스인재아파트 2021년 8월 관리비</h3>
+                        <div class="product__details__price">\200,000</div>
+                        <p>아파트 관리비는 크게 공용관리비와 개별사용료로 나뉩니다. 관리사무소 직원의 인건비 등 일반관리비와 청소비, 경비비, 소독비 등 단지 관리를 위해 
+                       	 공동 부담해야 하는 항목이 공용관리비입니다. 승강기 유지비와 건물 유지·보수에 사용되는 수선유지비, 위탁관리에 따른 수수료 등도 여기에 포함됩니다.</p>
+                        <ul>
+                            <li><b>납기 금액(기한 내)</b> <span>\200,000</span></li>
+                            <li><b>납기 금액(기한 후)</b> <span>\220,000</span></li>
+                            <li><b>납부 기한</b> <span>2021.07.31</span></li>
+                            <li><b>납부 은행</b> <span>농협</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                                    aria-selected="true">공통 관리비</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+                                    aria-selected="false">전기 에너지</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
+                                    aria-selected="false">열 에너지<span></span></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>지난 달</h6>
+                                    <p>너무 많이 썼어요!</p>
+                                    <br>
+                                    <h6>이번 달</h6>
+                                    <p>리즈 갱신 했어요!</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>지난 달</h6>
+                                    <p>피카츄가 되었어요!</p>
+                                    <br>
+                                    <h6>이번 달</h6>
+                                    <p>라이츄가 되었어요!</p>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>지난 달</h6>
+                                    <p>지하열이 되었어요!</p>
+                                    <br>
+                                    <h6>이번 달</h6>
+                                    <p>지상열이 되었어요!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Details Section End -->
 
     <!-- Footer Section Begin -->
     <!-- <footer class="footer spad">
