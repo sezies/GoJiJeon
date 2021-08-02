@@ -289,8 +289,7 @@ System.out.println(search2_+"두번쨰가져옴");
                         </div>
                     </div>
                 <!-- </div> -->
-            </div>
-        </div>
+       		 </div>
     </section>
     <!-- Hero Section End -->
 

@@ -254,7 +254,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </div>
                         </div> -->
                    <!--  </div> -->
-                   <br> <br> <br>
+                   <br><br><br>
                     <div class="hero__item set-bg" data-setbg="${cpath}/resources/img/hero/banner.jpg">
                         <div class="hero__text">
                             <span>QUICK START</span>
