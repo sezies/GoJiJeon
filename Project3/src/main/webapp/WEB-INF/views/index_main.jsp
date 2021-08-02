@@ -239,7 +239,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                                      </select>
                                 <!--</div>-->
                                 &nbsp;&nbsp;
-                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:200px; height:40px; text-align-last:center;">
+                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:250px; height:40px; text-align-last:center;">
                                 &nbsp;
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
