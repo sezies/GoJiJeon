@@ -236,15 +236,15 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         <div class="hero__search__form">  -->
                             <form action="index_search.jsp" method="get" >		
                                 <!--  <div class="hero__search__categories">-->
-                                	<select name="search1" style="width:160px; height:50px; text-align-last:center; color:#323232;">
+                                	<select name="search1" style="width:300px; height:40px; text-align-last:center; color:#323232;">
                                 		<option value="항목 선택">항목 선택</option>
                                 		<option value="제목">제목</option>
                                 		<option value="관리비용">관리비용</option>
                                      </select>
-
-                                    <span class="arrow_carrot-down"></span>
                                 <!--</div>-->
-                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2">
+                                &nbsp;&nbsp;
+                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:300px; height:40px; text-align-last:center">
+                                &nbsp;
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
                         <!-- </div> -->

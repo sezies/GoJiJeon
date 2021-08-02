@@ -50,6 +50,7 @@ public class GoController {
       /* 회원가입 */
       @RequestMapping("/UsersJoin.do")
       public String UsersJoin(UsersVO vo, RedirectAttributes rttr) {
+
          
          System.out.println(vo.getUser_id());
        
@@ -64,6 +65,7 @@ public class GoController {
             /* 회원가입 정보를 모두 입력한 경우 디비에 데이터가 담기고 로그인페이지로 넘어감 */
             GoMapper.UsersJoin(vo);
             return "login_main2";
+
 }
       }
       
