@@ -264,7 +264,7 @@ System.out.println(search2_+"두번쨰가져옴");
                                 		<option value="관리비용">관리비용</option>
                                      </select>
                                 <!--</div>-->
-                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2">
+                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:200px; height:40px; text-align-last:center;">
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
                         </div>
