@@ -1,3 +1,4 @@
+<%@page import="kr.user.mapper.UsersVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -25,9 +26,22 @@
     <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
+<script type="text/javascript">
+function gobtn(){
+		alert("문의하신 내용이 접수 완료 되었습니다.");
+		location.href="index_main"; 		
+	}
+</script>
 </head>
 
 <body>
+<%
+UsersVO u_vo = null;
+if(session.getAttribute("login")!= null){
+u_vo = (UsersVO)session.getAttribute("login");
+System.out.println(u_vo+"||||이거는 맨 위에거");
+}
+%>
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -136,11 +150,11 @@
                             <li class="active"><a href="./index_main.do">메인</a></li>
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
-                       				 <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                       				 <li><a href="./bill_manager.do">고지서 관리</a></li>
-                       				 <li><a href="./bill_graph.do">고지서 분석</a></li>
-                        			<li><a href="#">-</a></li>
-                   				 </ul>
+                                    <li><a href="./bill_upload.do">고지서 업로드</a></li>
+                                    <li><a href="./bill_manager.do">고지서 관리</a></li>
+                                    <li><a href="./bill_graph.do">고지서 분석</a></li>
+                                 <li><a href="#">-</a></li>
+                                </ul>
                             </li>
                             <li><a href="./community.do">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
@@ -149,10 +163,16 @@
                 </div>
                 <div class="col-lg-2">
                     <nav class="header__menu">
-                        <ul>
-                            <li><a href="./login_main2.do" style="font-size:12px; color:gray;">로그인</a></li>
-                            <li><a href="./join_main2.do" style="font-size:12px; color:gray;">회원가입</a></li>
-                        </ul>
+                        <!--  로그인 배너 (찐) -->
+                         <%if(u_vo==null) {%>
+                            <a href="./login_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">로그인</a>
+                            &emsp;&emsp;&emsp;
+                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">회원가입</a>
+                          <%}else {%>
+                            <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;" >로그아웃</a>
+                            &emsp;
+                            <a href="./mypage_main.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">마이페이지</a>
+                            <%} %>
                     </nav>
                 </div>
                    <!--<div class="col-lg-3"> 
@@ -208,7 +228,7 @@
                     </div>
                     <div class="col-lg-12 text-center">
                         <textarea placeholder="문의사항을 적어주세요"></textarea>
-                        <button type="submit" class="site-btn">문의 남기기</button>
+                        <button type="submit" class="site-btn" onclick="gobtn()">문의 남기기</button>
                    </div>
                 </div>
             </form>

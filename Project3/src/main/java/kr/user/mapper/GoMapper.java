@@ -23,4 +23,5 @@ public interface GoMapper {
 	public void NoticeUpdate(NoticeVO vo); // update~ SQL	
 	public void NoticeDelete(int idx); // delete~ SQL
 	public List<NoticeVO> NoticeListAjax(); // ajax SQL
+	
 }
