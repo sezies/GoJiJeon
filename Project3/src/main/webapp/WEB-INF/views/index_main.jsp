@@ -64,8 +64,6 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 <a href="./mypage_main.do"><i class="fa fa-user"></i>마이페이지</a>
                 <%} %>
             </div>
-            
-            
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul><%if(u_vo==null) {%>
@@ -79,7 +77,6 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
                         <li><a href="./bill_manager.do">고지서 관리</a></li>
                         <li><a href="./bill_graph.do">고지서 분석</a></li>
-                        <li><a href="#">-</a></li>
                     </ul>
                 </li>
                 <li><a href="./community.do">커뮤니티</a></li>
@@ -162,7 +159,6 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
                                     <li><a href="./bill_manager.do">고지서 관리</a></li>
                                     <li><a href="./bill_graph.do">고지서 분석</a></li>
-                                    <li><a href="#">-</a></li>
                                 </ul>
                             </li>
                             <li><a href="./community.do">커뮤니티</a></li>
