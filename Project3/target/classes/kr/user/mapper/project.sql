@@ -13,6 +13,8 @@ value ('test','123','test','test');
 
 select * from users;
 
+update users set()
+
 
 
 create table notice(

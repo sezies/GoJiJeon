@@ -37,8 +37,8 @@
 UsersVO u_vo = null;
 if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
-System.out.println(u_vo+"||||이거는 맨 위에거");
 }
+System.out.println(u_vo.getUser_id()+"|||||||d");
 %>
 
 
@@ -276,20 +276,22 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             </div>
             <div class="checkout__form">
                 <h4>개인정보 수정</h4>
-                <form action="${cpath}/UsersJoin.do" method="post">
+                <!--  개인정보 수정 -->
+                <form action="${cpath}/UsersUpdate.do" method="post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
-                                        <input type="text" name = "user_id">
+                                        <input type="text" name = "user_id" value="<%=u_vo.getUser_id() %>" readonly="readonly">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>비밀번호</p>
-                                        <input type="password" name = "user_pw">
+                                        <input type="password" name = "user_pw" value="<%=u_vo.getUser_pw() %>">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -298,13 +300,13 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>이름</p>
-                                        <input type="text" name = "user_name">
+                                        <input type="text" name = "user_name" value="<%=u_vo.getUser_name() %>" readonly="readonly">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>주거래 은행</p>
-                                        <input type="text" name = "user_bank">
+                                        <input type="text" name = "user_bank" value=<%=u_vo.getUser_bank() %>>
                                     </div>
                                 </div>
                             </div>

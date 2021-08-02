@@ -74,11 +74,19 @@ public class GoController {
          model.addAttribute("vo",vo);
          return "UsersContent"; // UsersContent.jsp
       }
+      // 회원 업데이트
       @RequestMapping("/UsersUpdate.do")
-      public String UsersUpdate(UsersVO vo) {
-         GoMapper.UsersUpdate(vo);
-         return "redirect:/UsersList.do";
+      public String UsersUpdate(UsersVO vo,HttpSession session,Model model) {
+    	GoMapper.UsersUpdate(vo);  	  
+         System.out.println(vo+"회원정보변경한세션내용");    
+         session.setAttribute("login", vo);
+         System.out.println(vo+"회원정보변경성공");
+         return "index_main";
       }
+      
+      
+      
+      
       @RequestMapping("/UsersDelete.do")
       public String UsersDelete(@RequestParam("user_num") int user_num) {
          GoMapper.UsersDelete(user_num);
