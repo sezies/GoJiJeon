@@ -8,12 +8,16 @@ create table users(
 );
 
 
+drop table users;
+truncate users;
+
 insert into users(user_id,user_pw,user_name,user_bank)
 value ('test','123','test','test');
 
 select * from users;
 
 
+drop table notice;
 
 create table notice(
         user_num int,

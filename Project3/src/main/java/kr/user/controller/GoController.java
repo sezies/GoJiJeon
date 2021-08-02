@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,11 +51,20 @@ public class GoController {
       @RequestMapping("/UsersJoin.do")
       public String UsersJoin(UsersVO vo) {
     	  
-    	  GoMapper.UsersJoin(vo);
+    	  System.out.println(vo.getUser_id());
+    	  System.out.println(vo.getUser_name());
+    	  System.out.println(vo.getUser_num());
     	  
-    	  return "login_main2";
+		/* 회원가입 정보를 모두 입력하지 않은 경우 다시 회원가입페이지로 돌아가고, DB에 담기지 않음 */
+    	  if (vo.getUser_id().equals("") || vo.getUser_name().equals("") || vo.getUser_pw().equals("") || vo.getUser_bank().equals("")  )  {
+    		  return "join_main2";
+    	  }
+    	  else {
+				/* 회원가입 정보를 모두 입력한 경우 디비에 데이터가 담기고 로그인페이지로 넘어감 */
+    		  GoMapper.UsersJoin(vo);
+    		  return "login_main2";
+}
       }
-      
       
       
       
