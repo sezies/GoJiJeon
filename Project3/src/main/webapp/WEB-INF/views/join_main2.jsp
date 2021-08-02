@@ -32,6 +32,10 @@
 </head>
 
 <body>
+
+
+	
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -283,7 +287,7 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>주거래 은행</p>
-                                        <input type="text" name = "user_bank">
+                                        <input type="text" name = "user_bank"  >
                                     </div>
                                 </div>
                             </div>
@@ -297,6 +301,18 @@
     </section>
     <!-- Checkout Section End -->
 
+	<script type="text/javascript"> 
+		let input = document.querySelector("input")
+		let btn = document.querySelecotr("button")
+		
+		btn.onclick = function () {
+			if ( input.value == "") {
+				alert("가입 정보를 확인해주세요");
+			}
+		}
+	
+	</script>
+	
     <!-- Js Plugins -->
     <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
     <script src="${cpath}/resources/js/bootstrap.min.js"></script>
