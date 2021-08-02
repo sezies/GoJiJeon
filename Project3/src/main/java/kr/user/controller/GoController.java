@@ -49,15 +49,16 @@ public class GoController {
       
 		/* 회원가입 */
       @RequestMapping("/UsersJoin.do")
-      public String UsersJoin(UsersVO vo) {
+      public String UsersJoin(UsersVO vo, RedirectAttributes rttr) {
     	  
     	  System.out.println(vo.getUser_id());
-    	  System.out.println(vo.getUser_name());
-    	  System.out.println(vo.getUser_num());
+    	
+    	  
     	  
 		/* 회원가입 정보를 모두 입력하지 않은 경우 다시 회원가입페이지로 돌아가고, DB에 담기지 않음 */
     	  if (vo.getUser_id().equals("") || vo.getUser_name().equals("") || vo.getUser_pw().equals("") || vo.getUser_bank().equals("")  )  {
-    		  return "join_main2";
+    		  rttr.addFlashAttribute("msg", false);
+    		  return "redirect:/join_main2.do";
     	  }
     	  else {
 				/* 회원가입 정보를 모두 입력한 경우 디비에 데이터가 담기고 로그인페이지로 넘어감 */

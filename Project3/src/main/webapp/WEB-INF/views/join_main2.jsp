@@ -259,20 +259,20 @@
             </div>
             <div class="checkout__form">
                 <h4>개인정보 입력</h4>
-                <form action="${cpath}/UsersJoin.do" method="post">
+                <form action="${cpath}/UsersJoin.do" method="post"  >
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
-                                        <input type="text" name = "user_id">
+                                        <input class = "input" type="text" name = "user_id">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>비밀번호</p>
-                                        <input type="password" name = "user_pw">
+                                        <input class = "input" type="password" name = "user_pw">
                                     </div>
                                 </div>
                             </div>
@@ -281,19 +281,22 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>이름</p>
-                                        <input type="text" name = "user_name">
+                                        <input class = "input" type="text" name = "user_name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>주거래 은행</p>
-                                        <input type="text" name = "user_bank"  >
+                                        <input class = "input" type="text" name = "user_bank"  >
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="checkout__input">
-                              <button type="submit" class="site-btn">회원가입 하기</button>
+                            <c:if test="${msg==false}">
+                            	<p style="color:#f00;">회원 정보를 모두 입력해주세요.</p>
+                            </c:if>                    
+                              <button id ="btns" type="submit" class="site-btn">회원가입 하기</button>
                             </div>
                         </div>   
                         </div>
@@ -301,17 +304,8 @@
     </section>
     <!-- Checkout Section End -->
 
-	<script type="text/javascript"> 
-		let input = document.querySelector("input")
-		let btn = document.querySelecotr("button")
-		
-		btn.onclick = function () {
-			if ( input.value == "") {
-				alert("가입 정보를 확인해주세요");
-			}
-		}
-	
-	</script>
+
+
 	
     <!-- Js Plugins -->
     <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
