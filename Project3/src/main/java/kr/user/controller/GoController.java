@@ -21,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kr.user.mapper.GoMapper;
 import kr.user.mapper.NoticeVO;
 import kr.user.mapper.UsersVO;
+import kr.user.mapper.imgVO;
 
 
 
@@ -255,5 +256,16 @@ public class GoController {
          
          
          
+         /*이미지 테스트*/
+         @RequestMapping("/imageStart.do")
+         public String imageStart() {
+        	 return "imageTest";
+         }
+         
+         @RequestMapping("/image.do")
+         public String image(imgVO vo) {
+        	 GoMapper.imageInsert(vo);
+        	 return "imageTest";
+         }
    
 }

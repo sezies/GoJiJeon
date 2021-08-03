@@ -24,4 +24,11 @@ public interface GoMapper {
 	public void NoticeDelete(int idx); // delete~ SQL
 	public List<NoticeVO> NoticeListAjax(); // ajax SQL
 	
+	
+	
+	
+	
+	/* 이미지 */
+	public void imageInsert(imgVO vo);
+	
 }

@@ -39,3 +39,16 @@ create table notice(
 
 
 select * from notice;
+
+
+--이미지 테스트
+create table test_img (
+
+img longblob not null
+
+)
+
+select * from test_img;
+
+drop table test_img;
+
