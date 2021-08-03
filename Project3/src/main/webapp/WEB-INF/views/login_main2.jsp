@@ -174,16 +174,6 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
                 <div class="col-lg-2">
                     <nav class="header__menu">
-                         <!--  로그인 배너 (찐) -->
-                         <%if(u_vo==null) {%>
-                            <a href="./login_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">로그인</a>
-                            &emsp;&emsp;&emsp;
-                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">회원가입</a>
-                          <%}else {%>
-                            <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;" >로그아웃</a>
-                            &emsp;
-                            <a href="./mypage_main.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">마이페이지</a>
-                            <%} %>
                     </nav>
                 </div>
                    <!--<div class="col-lg-3"> 
@@ -307,7 +297,8 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </c:if>                    
 
                             <div class="checkout__input">
-                              <button type="submit" class="site-btn">로그인하기</button>
+                              <button type="submit" class="site-btn">로그인 하기</button>
+                              <button type="button" class="site-btn" onclick="location.href='join_main2.do' ">회원가입 하기</button>
                             </div>
                         </div>  
                          </div>
