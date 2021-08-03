@@ -2862,8 +2862,8 @@ ol {
 }
 
 .contact-form {
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 .contact-form form input {
@@ -2918,7 +2918,7 @@ ol {
 		margin-right: 45px;
 	}
 	.hero__search__form {
-		width: 490px;
+		width: 550px;
 	}
 	.hero__categories__all {
 		padding: 10px 25px 10px 20px;
