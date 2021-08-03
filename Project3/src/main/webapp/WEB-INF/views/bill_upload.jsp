@@ -213,6 +213,18 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
         </div>
     </section>
     <!-- Breadcrumb Section End -->
+    
+    <!-- Map Begin -->
+    <!-- 고지서 파일은 선택하면 해당 아이프레임에 노출되도록... -->
+    <br>
+    <div class="map">
+    <p align="middle">
+        <iframe src="${cpath}/resources/img/cgi.jpg"
+            style="width:1000px; height:500px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </p>
+    </div>
+    
+    <!-- Map End -->
 
     <!-- Contact Form Begin -->
     <section class="contact-form spad">
