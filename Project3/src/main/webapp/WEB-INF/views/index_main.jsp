@@ -230,21 +230,19 @@ u_vo = (UsersVO)session.getAttribute("login");
 
                <!--  <div class="col-lg-13">
                      <div class="hero__search">-->
-                        <div class="hero__search__form" style="margin:auto;">
+                     <!--    <div class="hero__search__form" style="margin:auto;">
                             <form action="index_search.jsp" method="get">		
-                                <!--  <div class="hero__search__categories">-->
                                 	<select name="search1" style="width:300px; height:40px; text-align-last:center; color:#323232;">
                                 		<option value="항목 선택">항목 선택</option>
                                 		<option value="제목">제목</option>
                                 		<option value="관리비용">관리비용</option>
                                      </select>
-                                <!--</div>-->
                                 &nbsp;&nbsp;
                                 <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:250px; height:40px; text-align-last:center;">
                                 &nbsp;
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
-						</div>
+						</div>-->
                         <!--<div class="hero__search__phone">
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
