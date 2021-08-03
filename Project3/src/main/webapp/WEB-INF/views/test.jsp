@@ -31,8 +31,28 @@
 
 <body>
 
-<div class="detailinfo showstep1">
-    <div class="content"><!-- "실제 컨텐츠 표시 영역" --></div>
+
+
+
+
+
+this is test page
+
+
+<%-- 
+<%
+
+Kakao.Auth.authorize({
+	  redirectUri: '{REDIRECT_URI}'
+	});
+
+%>
+ --%>
+
+
+
+<!-- <div class="detailinfo showstep1">
+    <div class="content">"실제 컨텐츠 표시 영역"</div>
 </div>
 <a href="#" class="btn_open">더보기</a>
 <a href="#" class="btn_close hide">감추기</a>
@@ -85,7 +105,7 @@ window.addEventListener('load', function(){
     }
 });
 
-</script>
+</script> -->
 
 </body>
 </html>

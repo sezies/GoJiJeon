@@ -245,7 +245,7 @@ public class GoController {
 			/*test*/
          @RequestMapping("/test.do")
          public String test () {
-        	 return "test";
+        	 return "test2";
          }
          
          
