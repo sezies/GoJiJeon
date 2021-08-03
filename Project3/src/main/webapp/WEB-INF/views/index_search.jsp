@@ -93,19 +93,22 @@ System.out.println(search2_+"두번쨰가져옴");
             
         </div>
         <nav class="humberger__menu__nav mobile-menu">
-            <ul>
+           <ul><%if(u_vo==null) {%>
                 <li><a href="./index_main.do">메인</a></li>
+                <li><a href="./community.do">커뮤니티</a></li>
+                <li><a href="./contact.do">문의하기</a></li>
+            <%}else {%>
+                 <li><a href="./index_main.do">메인</a></li>
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
                         <li><a href="./bill_manager.do">고지서 관리</a></li>
                         <li><a href="./bill_graph.do">고지서 분석</a></li>
-                        <li><a href="#">-</a></li>
                     </ul>
                 </li>
                 <li><a href="./community.do">커뮤니티</a></li>
                 <li><a href="./contact.do">문의하기</a></li>
-            </ul>
+            <%} %></ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
@@ -172,19 +175,22 @@ System.out.println(search2_+"두번쨰가져옴");
                 </div>
                 <div class="col-lg-7">
                     <nav class="header__menu">
-                        <ul>
+                        <ul><%if(u_vo==null) {%>
+                            <li class="active"><a href="./index_main.do">메인</a></li>
+                            <li><a href="./community.do">커뮤니티</a></li>
+                            <li><a href="./contact.do">문의하기</a></li>
+                            <%}else {%>
                             <li class="active"><a href="./index_main.do">메인</a></li>
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
                                     <li><a href="./bill_manager.do">고지서 관리</a></li>
                                     <li><a href="./bill_graph.do">고지서 분석</a></li>
-                                    <li><a href="#">-</a></li>
                                 </ul>
                             </li>
                             <li><a href="./community.do">커뮤니티</a></li>
                             <li><a href="./contact.do">문의하기</a></li>
-                        </ul>
+                       <%} %></ul>
                     </nav>
                 </div>
                 <div class="col-lg-2">
@@ -248,21 +254,20 @@ System.out.println(search2_+"두번쨰가져옴");
 
                 </div>
                <!--  <div class="col-lg-13">
-                     <div class="hero__search">
-                        <div class="hero__search__form">  -->
+                     <div class="hero__search">-->
+                        <div class="hero__search__form">  
                             <form action="index_search.jsp" method="get" >		
                                 <!--  <div class="hero__search__categories">-->
-                                	<select name="search1" style="width:160px; height:50px; text-align-last:center; color:#323232;">
+                                	<select name="search1" style="width:300px; height:40px; text-align-last:center; color:#323232;">
                                 		<option value="항목 선택">항목 선택</option>
                                 		<option value="제목">제목</option>
                                 		<option value="관리비용">관리비용</option>
                                      </select>
-                                    <span class="arrow_carrot-down"></span>
                                 <!--</div>-->
-                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2">
+                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:200px; height:40px; text-align-last:center;">
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
-                        <!-- </div> -->
+                        </div>
                         <!--<div class="hero__search__phone">
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
@@ -273,6 +278,7 @@ System.out.println(search2_+"두번쨰가져옴");
                             </div>
                         </div> -->
                    <!--  </div> -->
+                   <br><br><br>
                     <div class="hero__item set-bg" data-setbg="${cpath}/resources/img/hero/banner.jpg">
                         <div class="hero__text">
                             <span>QUICK START</span>
@@ -283,8 +289,7 @@ System.out.println(search2_+"두번쨰가져옴");
                         </div>
                     </div>
                 <!-- </div> -->
-            </div>
-        </div>
+       		 </div>
     </section>
     <!-- Hero Section End -->
 

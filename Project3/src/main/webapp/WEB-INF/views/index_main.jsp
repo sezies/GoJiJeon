@@ -65,8 +65,6 @@ u_vo = (UsersVO)session.getAttribute("login");
                 <a href="./mypage_main.do"><i class="fa fa-user"></i>마이페이지</a>
                 <%} %>
             </div>
-            
-            
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul><%if(u_vo==null) {%>
@@ -80,7 +78,6 @@ u_vo = (UsersVO)session.getAttribute("login");
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
                         <li><a href="./bill_manager.do">고지서 관리</a></li>
                         <li><a href="./bill_graph.do">고지서 분석</a></li>
-                        <li><a href="#">-</a></li>
                     </ul>
                 </li>
                 <li><a href="./community.do">커뮤니티</a></li>
@@ -163,7 +160,6 @@ u_vo = (UsersVO)session.getAttribute("login");
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
                                     <li><a href="./bill_manager.do">고지서 관리</a></li>
                                     <li><a href="./bill_graph.do">고지서 분석</a></li>
-                                    <li><a href="#">-</a></li>
                                 </ul>
                             </li>
                             <li><a href="./community.do">커뮤니티</a></li>
@@ -233,9 +229,9 @@ u_vo = (UsersVO)session.getAttribute("login");
                 </div>
 
                <!--  <div class="col-lg-13">
-                     <div class="hero__search">
-                        <div class="hero__search__form">  -->
-                            <form action="index_search.jsp" method="get" >		
+                     <div class="hero__search">-->
+                        <div class="hero__search__form" style="margin:auto;">
+                            <form action="index_search.jsp" method="get">		
                                 <!--  <div class="hero__search__categories">-->
                                 	<select name="search1" style="width:300px; height:40px; text-align-last:center; color:#323232;">
                                 		<option value="항목 선택">항목 선택</option>
@@ -244,11 +240,11 @@ u_vo = (UsersVO)session.getAttribute("login");
                                      </select>
                                 <!--</div>-->
                                 &nbsp;&nbsp;
-                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:300px; height:40px; text-align-last:center">
+                                <input type="text" placeholder="내 고지서를 찾아보세요" name="search2" style="width:250px; height:40px; text-align-last:center;">
                                 &nbsp;
                                 <button type="submit" class="site-btn">찾아보기</button>
                             </form>
-                        <!-- </div> -->
+						</div>
                         <!--<div class="hero__search__phone">
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
@@ -259,6 +255,7 @@ u_vo = (UsersVO)session.getAttribute("login");
                             </div>
                         </div> -->
                    <!--  </div> -->
+                   <br><br><br>
                     <div class="hero__item set-bg" data-setbg="${cpath}/resources/img/hero/banner.jpg">
                         <div class="hero__text">
                             <span>QUICK START</span>
