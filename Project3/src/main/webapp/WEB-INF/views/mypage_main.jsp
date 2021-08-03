@@ -38,7 +38,6 @@ UsersVO u_vo = null;
 if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
 }
-System.out.println(u_vo.getUser_id()+"|||||||d");
 %>
 
 
@@ -308,7 +307,7 @@ System.out.println(u_vo.getUser_id()+"|||||||d");
                                         <p>주거래 은행</p>
                                         <input type="text" name = "user_bank" value=<%=u_vo.getUser_bank() %>>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                             
                             <div class="checkout__input">

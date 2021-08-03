@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+
 import kr.user.mapper.GoMapper;
 import kr.user.mapper.NoticeVO;
 import kr.user.mapper.UsersVO;
@@ -28,8 +29,9 @@ import kr.user.mapper.UsersVO;
 public class GoController {
 
    // 유저부분
-       @Autowired
+       @Autowired	
        GoMapper GoMapper;
+	
        
       // HandLerMapping : 요청URL <--> Method
       @RequestMapping("/UsersList.do")
@@ -90,11 +92,16 @@ public class GoController {
       // 회원 업데이트
       @RequestMapping("/UsersUpdate.do")
       public String UsersUpdate(UsersVO vo,HttpSession session,Model model) {
-       GoMapper.UsersUpdate(vo);       
-         System.out.println(vo+"회원정보변경한세션내용");    
-         session.setAttribute("login", vo);
-         System.out.println(vo+"회원정보변경성공");
-         return "index_main";
+    	  UsersVO u_vo = null;
+    	  if(session.getAttribute("login")!= null){
+    	  u_vo = (UsersVO)session.getAttribute("login");
+    	  int num =u_vo.getUser_num();
+    	  vo.setUser_num(num);   	  
+    	  System.out.println(vo.getUser_num()+"user_num");
+    	  GoMapper.UsersUpdate(vo);
+    	  session.setAttribute("login", vo);
+    	  }
+          return "redirect:/index_main.do";
       }
       
       
@@ -107,18 +114,28 @@ public class GoController {
       }
       
       @RequestMapping("/")
-      public String index_main() {
-         return "index_main";
-      }
-      
-      @RequestMapping("/index_main.do")
       public String index_main2() {
          return "index_main";
+      }
+      // 로그인 리스트 불러오기
+      @RequestMapping("/index_main.do")
+      public String index_main(UsersVO vo,HttpSession session,HttpServletRequest request) {
+    	  UsersVO u_vo = null;
+    	  if(session.getAttribute("login")!= null){
+    	  u_vo = (UsersVO)session.getAttribute("login");
+    	  System.out.println(u_vo+"||||로그인 리스트쪽 불러온값");
+    	  int num=u_vo.getUser_num();
+    	  List<NoticeVO> n_list=GoMapper.NoticeList(num); //1번 고맵퍼
+    	  System.out.println(num+"num의값 로그인시 리스트");
+    	  request.setAttribute("n_list",n_list);
+    	  }
+    	  
+    	  return "index_main";
       }
 
       /* 로그인 2*/
       @RequestMapping("/UsersLogin.do")
-      public String UsersLogin(UsersVO vo,HttpSession session,Model model,HttpServletResponse response,RedirectAttributes rttr) throws IOException {         
+      public String UsersLogin(UsersVO vo,HttpSession session,Model model,HttpServletResponse response,RedirectAttributes rttr,HttpServletRequest request) throws IOException {         
                
          if(session.getAttribute("UsersLogin")!=null) {
             session.removeAttribute("UsersLogin");
@@ -128,7 +145,10 @@ public class GoController {
          if(u_vo!=null) {
             session.setAttribute("login", u_vo);
             System.out.println("세션넘기기성공");
-            return "index_main";
+            // 고지서 부르기 
+            
+            //
+            return "redirect:/index_main.do";
          }else {
             System.out.println("세션넘기기실패");
             //로그인 실패시 문구
@@ -151,7 +171,7 @@ public class GoController {
       public String UsersLogout(HttpSession session) {
          session.invalidate();
          System.out.println("로그아웃성공");
-         return "index_main"; 
+         return "redirect:/index_main.do"; 
       }
       
       
@@ -203,12 +223,13 @@ public class GoController {
 
       // 노티스부분
       //@Autowired
+      //고지서 리스트 불러오기 기능
          @RequestMapping("/NoticeList.do")
          public String NoticeList(HttpServletRequest request){
             // 데이터베이스에서 게시판리스트를 가져오기(Model-DAO-SQL)
-            List<NoticeVO> list=GoMapper.NoticeList();      
-            request.setAttribute("list",list);
-            return "NoticeList"; //  -->viewResolver --> /WEB-INF/views/boardList.jsp
+        	 
+            
+            return "index_main"; //  -->viewResolver --> /WEB-INF/views/boardList.jsp
          }
          @RequestMapping("/NoticeListAjax.do")
          public @ResponseBody List<NoticeVO> NoticeListAjax() {

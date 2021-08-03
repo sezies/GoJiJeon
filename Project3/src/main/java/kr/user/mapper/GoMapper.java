@@ -2,6 +2,8 @@ package kr.user.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Select;
+
 public interface GoMapper {
 	// 유저 맵퍼
 	public List<UsersVO> UsersList();
@@ -17,9 +19,10 @@ public interface GoMapper {
 	public UsersVO UsersLogin(UsersVO vo); // select~ SQL
 	
 	// 노티스 맵퍼패
-	public List<NoticeVO> NoticeList();
+	
+	public List<NoticeVO> NoticeList(int num);
 	public void NoticeInsert(NoticeVO vo); // insert~ SQL
-	public NoticeVO NoticeContent(int idx); // select~ SQL
+	public NoticeVO NoticeContent(int user_num); // select~ SQL
 	public void NoticeUpdate(NoticeVO vo); // update~ SQL	
 	public void NoticeDelete(int idx); // delete~ SQL
 	public List<NoticeVO> NoticeListAjax(); // ajax SQL

@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="kr.user.mapper.NoticeVO"%>
 <%@page import="kr.user.mapper.UsersVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -33,7 +35,6 @@
 UsersVO u_vo = null;
 if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
-System.out.println(u_vo+"||||이거는 맨 위에거");
 }
 %>
     <!-- Page Preloder -->
@@ -277,11 +278,23 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
         <div class="container">
             <div class="row">
                 <div class="categories__slider owl-carousel">
+                <!--  반복문을 통해 리스트에 있는 값  불러오기 -->
+                <%if(u_vo!=null) {%>
+                <c:forEach var="n_vo" items="${n_list}">
+                	<div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="${n_vo.img}">
+                            <h5><a href="#">${n_vo.notice_title}</a></h5>
+                        </div>
+                    </div>
+                    </c:forEach> 
+                    <%} %>
+                    <!--  반복문을 통해 리스트에 있는 값  불러오기 -->
+                    
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="${cpath}/resources/img/categories/cat-1.jpg">
                             <h5><a href="#">스인재아파트 2021년 1월 관리비</a></h5>
                         </div>
-                    </div>
+                    </div>	
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="${cpath}/resources/img/categories/cat-2.jpg">
                             <h5><a href="#">스인재아파트 2021년 2월 관리비</a></h5>
