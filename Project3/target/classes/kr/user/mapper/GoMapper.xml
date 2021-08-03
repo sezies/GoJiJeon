@@ -34,7 +34,7 @@
        update users set
        user_pw=#{user_pw},
        user_bank=#{user_bank}
-       where user_id=#{user_id}
+       where user_num=#{user_num}
    </update>
    
    <delete id="UsersDelete" parameterType="int" >
@@ -53,10 +53,16 @@
       values(#{notice_code},#{notice_title},#{pay_day},#{pay_money},#{pay_bank},#{img})
     </insert>
     
-    <select id="NoticeContent" parameterType="int" 
+    <!-- 고지서 가져오기 -->
+    <select id = "NoticeList" parameterType="int" 
+        resultType="kr.user.mapper.NoticeVO" >
+    select * from notice where user_num=#{user_num}
+   </select>
+   
+    <!-- <select id="NoticeList" parameterType="int" 
         resultType="kr.user.mapper.NoticeVO">
-        select * from notice where notice_num=#{notice_num}
-    </select>
+        select * from notice where user_num=#{user_num}
+    </select> -->
     
     <update id="NoticeUpdate" parameterType="kr.user.mapper.NoticeVO">
        update notice set

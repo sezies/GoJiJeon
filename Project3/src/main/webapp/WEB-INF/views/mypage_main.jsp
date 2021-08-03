@@ -314,7 +314,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                                         <p>주거래 은행</p>
                                         <input type="text" name = "user_bank" value=<%=u_vo.getUser_bank() %>>
                                     </div>
-                                </div>
+                                </div>                                
                             </div>
                             
                             <div class="checkout__input">

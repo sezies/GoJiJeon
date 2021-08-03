@@ -37,8 +37,12 @@ create table notice(
         foreign key(user_num) references users(user_num)
 );
 
+insert into notice(user_num,notice_code,notice_title,pay_day,pay_money,pay_bank,img)
+value ('1','2','test고지서','2021.08.02','200000','국민은행','C:\Users\smhrd\Desktop\프로젝트3차\test1.jpg');
 
+select * from notice where user_num='1';
 select * from notice;
+<<<<<<< HEAD
 
 
 --이미지 테스트
@@ -52,3 +56,5 @@ select * from test_img;
 
 drop table test_img;
 
+delete from notice where notice_num ='1';
+update notice set(user_num) = '1' where(notice_num)='1';
