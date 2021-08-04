@@ -232,6 +232,11 @@ public class GoController {
       public String bill_contents() {
          return "bill_contents";
       }
+      
+      @RequestMapping("/comm_contents.do")
+      public String comm_contents() {
+         return "comm_contents";
+      }
    
 
       // 노티스부분

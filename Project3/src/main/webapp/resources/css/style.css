@@ -1662,7 +1662,7 @@ ol {
 -----------------------*/
 
 .product-details {
-	padding-top: 60px;
+	padding-top: 0px;
 }
 
 .product__details__pic__item {
@@ -1710,7 +1710,7 @@ ol {
 }
 
 .product__details__text p {
-	margin-bottom: 45px;
+	margin-bottom: 0px;
 }
 
 .product__details__text .primary-btn {
@@ -2562,7 +2562,7 @@ ol {
 
 .blog__details__author__text {
 	overflow: hidden;
-	padding-top: 30px;
+	padding-top: 0px;
 }
 
 .blog__details__author__text h6 {
