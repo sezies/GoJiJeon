@@ -24,4 +24,6 @@
 	</bean>	
 		
 	<mybatis-spring:scan base-package="kr.user.mapper"/>
+	
+	
 </beans>

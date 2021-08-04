@@ -30,7 +30,6 @@ public interface GoMapper {
 	
 	
 	
-	
 	/* 이미지 */
 	public void imageInsert(imgVO vo);
 	// 그래프 테스트

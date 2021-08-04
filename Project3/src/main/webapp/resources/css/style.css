@@ -144,7 +144,7 @@ ol {
 
 .spad {
 	padding-top: 0px;
-	padding-bottom: 50px;
+	padding-bottom: 0px;
 }
 
 .text-white h1,
@@ -2525,7 +2525,7 @@ ol {
 }
 
 .blog-details {
-	padding-bottom: 75px;
+	padding-bottom: 0px;
 	border-bottom: 1px solid #e1e1e1;
 }
 
