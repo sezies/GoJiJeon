@@ -31,6 +31,6 @@ public interface GoMapper {
 	
 	
 	/* 이미지 */
-	public void imageInsert(byte[] img);
+	public void imageInsert(imgVO vo);
 	
 }
