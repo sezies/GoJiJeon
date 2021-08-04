@@ -7,6 +7,9 @@
 <html lang="zxx">
 
 <head>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="${cpath}/resources/js/reply.js"></script>
 <meta charset="UTF-8">
 <meta name="description" content="Ogani Template">
 <meta name="keywords" content="Ogani, unica, creative, html">
@@ -36,6 +39,20 @@
 	type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
 	type="text/css">
+<style>
+textarea {
+	width: 100%;
+}
+
+.reply_reply {
+	border: 2px solid #FF50CF;
+}
+
+.reply_modify {
+	border: 2px solid #FFBB00;
+}
+</style>
+
 </head>
 
 <body>
@@ -46,6 +63,8 @@
 		System.out.println(u_vo + "||||이거는 맨 위에거");
 	}
 	%>
+
+
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -101,8 +120,7 @@
 			</ul>
 		</nav>
 		<div id="mobile-menu-wrap"></div>
-		<div class="header__top__right__social">
-		</div>
+		<div class="header__top__right__social"></div>
 		<div class="humberger__menu__contact">
 			<ul>
 			</ul>
@@ -184,160 +202,89 @@
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="breadcrumb__text">
-						<h2>고지서 관리</h2>
+						<h2>커뮤니티</h2>
 						<div class="breadcrumb__option"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<br>
+	<br>
 	<!-- Breadcrumb Section End -->
 
-	<!-- Featured Section Begin -->
-	<section class="featured spad">
+	<!-- Product Details Section Begin -->
+	<section class="product-details spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
-					<div class="section-title">
-						<h2>내 고지서 종류</h2>
+				<div class="col-lg-6 col-md-6">
+					<div class="product__details__pic">
+						<div class="product__details__pic__item">
+							<img class="product__details__pic__item--large"
+								src="${cpath}/resources/img/product/details/product-details-1.jpg"
+								alt="">
+						</div>
 					</div>
-					<div class="featured__controls">
-						<ul>
-							<li class="active" data-filter="*">All</li>
-							<li data-filter=".oranges">관리비</li>
-							<li data-filter=".fresh-meat">자동차세</li>
-							<li data-filter=".vegetables">지방세</li>
-							<li data-filter=".fastfood">주민세</li>
-							<li data-filter=".slowfood">과태료</li>
-						</ul>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="product__details__text">
+						<h3>제 관리비 좀 봐주세요...</h3>
+						<p>다른 집에 비해 저희 집 관리비가 많이 나오는 것 같아요... 분석 좀 해주세요!!!</p>
+						<br>
+						<div class="checkout__input">
+							<button type="button" class="site-btn"
+								onclick="location.href='community.do' ">목록으로</button>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row featured__filter">
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-1.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
-							</h6>
-							<h5>$30.00</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-2.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
-							</h6>
-							<h5>$30.00</h5>
+			<div class="blog__details__content">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="blog__details__author">
+							<div class="blog__details__author__text">
+								<h6>박정주</h6>
+								<ul>
+									<li>제가 볼 때는 적당히 나오는 것 같은데요... 걱정 안 하셔도 될 것 같아요!</li>
+								</ul>
+								<br>
+								<h6>나연호</h6>
+								<ul>
+									<li>저랑 동일 면적인데 저보다 훨씬 적게 나오시는데요? 잘 내고 계십니다!</li>
+								</ul>
+								<br>
+								<h6>박세욱</h6>
+								<ul>
+									<li>저는 평소에 금액을 크게 신경 안 써요~ 어차피 뭐 매달 비슷하더라고요!</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix slowfood fresh-meat">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-3.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
-							</h6>
-							<h5>$30.00</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix slowfood oranges">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-4.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
-							</h6>
-							<h5>$30.00</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix slowfood vegetables">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-5.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
-							</h6>
-							<h5>$30.00</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-6.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
-							</h6>
-							<h5>$30.00</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges vegetables">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-7.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
-							</h6>
-							<h5>$30.00</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges vegetables">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-8.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
-							</h6>
-							<h5>$30.00</h5>
-						</div>
-					</div>
-				</div>
+			</div>
+			<br>
+			<div>
+				<table border="2" style="width: 1000px;" bordercolor="#46AA46">
+					<tr>
+						<td width="500px">작성자 <input type="text" id="reply_writer"
+							name="reply_writer" style="width: 170px;" maxlength="10"
+							placeholder="작성자" /> 비밀번호 <input type="password"
+							id="reply_password" name="reply_password" style="width: 170px;"
+							maxlength="10" placeholder="패스워드" />
+							<button id="reply_save" name="reply_save">댓글 등록</button>
+						</td>
+					</tr>
+					<tr>
+						<td><textarea id="reply_content" name="reply_content"
+								rows="4" cols="50" placeholder="댓글을 입력하세요."
+								style="width: 1000px; height: 50px;"></textarea></td>
+					</tr>
+				</table>
 			</div>
 		</div>
+		</div>
 	</section>
-	<!-- Featured Section End -->
+	<!-- Product Details Section End -->
 
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
@@ -348,7 +295,6 @@
 	<script src="${cpath}/resources/js/mixitup.min.js"></script>
 	<script src="${cpath}/resources/js/owl.carousel.min.js"></script>
 	<script src="${cpath}/resources/js/main.js"></script>
-
 </body>
 
 </html>

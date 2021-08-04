@@ -32,6 +32,9 @@ public interface GoMapper {
 	
 	/* 이미지 */
 	public void imageInsert(imgVO vo);
+	public List<imgVO> imageSelect();
+	
+	
 	// 그래프 테스트
 	public List<NoticeVO> testlist(int num);
 	

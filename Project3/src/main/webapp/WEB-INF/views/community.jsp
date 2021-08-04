@@ -220,6 +220,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 <div class="col-lg-12">
                     <div class="section-title related-blog-title">
                         <h2>의견 게시판</h2>
+                        <button type="button" class="site-btn" onclick="location.href='#' ">글쓰기</button>
                     </div>
                 </div>
             </div>
@@ -231,11 +232,10 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                <li><i class="fa fa-calendar-o"></i> 2021/08/02</li>
+                                <li><i class="fa fa-comment-o"></i> 3</li>
                             </ul>
-                            <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            <h5><a href="./comm_contents.do">제 관리비 좀 봐주세요...</a></h5>
                         </div>
                     </div>
                 </div>
@@ -246,11 +246,10 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                <li><i class="fa fa-calendar-o"></i> 2021/08/02</li>
+                                <li><i class="fa fa-comment-o"></i> 1</li>
                             </ul>
-                            <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+							<h5><a href="./comm_contents.do">관리비 이 정도면 어떤가요?</a></h5>
                         </div>
                     </div>
                 </div>
@@ -261,11 +260,10 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                <li><i class="fa fa-calendar-o"></i> 2021/08/03</li>
+                                <li><i class="fa fa-comment-o"></i> 2</li>
                             </ul>
-                            <h5><a href="#">Visit the clean farm in the US</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            <h5><a href="./comm_contents.do">고지서 또 날아왔습니다 ㅠㅠ</a></h5>
                         </div>
                     </div>
                 </div>
@@ -278,11 +276,10 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                <li><i class="fa fa-calendar-o"></i> 2021/08/03</li>
+                                <li><i class="fa fa-comment-o"></i> 2</li>
                             </ul>
-                            <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            <h5><a href="./comm_contents.do">요즘 과태료 이렇게 비싼가요?</a></h5>
                         </div>
                     </div>
                 </div>
@@ -293,11 +290,10 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                <li><i class="fa fa-calendar-o"></i> 2021/08/04</li>
+                                <li><i class="fa fa-comment-o"></i> 1</li>
                             </ul>
-                            <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            <h5><a href="./comm_contents.do">관리비 엄청 올랐네요!</a></h5>
                         </div>
                     </div>
                 </div>
@@ -308,11 +304,10 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                                <li><i class="fa fa-comment-o"></i> 5</li>
+                                <li><i class="fa fa-calendar-o"></i> 2021/08/04</li>
+                                <li><i class="fa fa-comment-o"></i> 3</li>
                             </ul>
-                            <h5><a href="#">Visit the clean farm in the US</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            <h5><a href="./comm_contents.do">원룸 관리비도 만만치 않네요?</a></h5>
                         </div>
                     </div>
                 </div>
