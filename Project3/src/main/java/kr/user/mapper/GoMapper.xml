@@ -44,8 +44,9 @@
     
    
     <!-- notice 부분 -->
-        <select id = "NoticeListAjax" resultType="kr.user.mapper.NoticeVO" >
-    select * from notice order by idx desc
+        <select id = "NoticeListAjax" 
+            resultType="kr.user.mapper.NoticeVO" >
+    select * from notice where notice_num=#{notice_num}
    </select>
    
     <insert id="NoticeInsert" parameterType="kr.user.mapper.NoticeVO">
