@@ -21,11 +21,9 @@ if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
 }
 List<NoticeVO> t_list = (List<NoticeVO>)session.getAttribute("t_list");
-if(t_list!= null){
-System.out.println(t_list.get(0).getPay_day()+"그래프 날짜");
-System.out.println(t_list.get(0).getPay_money()+"그래프 돈");
+//System.out.println(t_list.get(0).getPay_day()+"그래프 날짜");
+//System.out.println(t_list.get(0).getPay_money()+"그래프 돈");
 System.out.println(t_list.size()+"리스트크기");
-}
 
 %>
 <div style="width: 900px; height: 900px;">
@@ -43,16 +41,16 @@ System.out.println(t_list.size()+"리스트크기");
                 data: { // 차트에 들어갈 데이터
                     labels: [
                         //x 축
-                        //'1','2','3','4','5','6','7'
-                        <%if(t_list.size()>5){%>
-                        '<%=t_list.get(4).getPay_day()%>',
-                    	'<%=t_list.get(3).getPay_day()%>',
-                    	'<%=t_list.get(2).getPay_day()%>',
-                    	'<%=t_list.get(1).getPay_day()%>',
-                    	'<%=t_list.get(0).getPay_day()%>'
+                        //'1','2','3','4','5','6','7'                  
+                    	<%if(t_list.size()==0){%>  
+                       	'등록된 고지서가 없습니다.'
+                    	<%}else if(t_list.size()>5){%>
+                    	 '<%=t_list.get(4).getPay_day()%>',
+                     	'<%=t_list.get(3).getPay_day()%>',
+                     	'<%=t_list.get(2).getPay_day()%>',
+                     	'<%=t_list.get(1).getPay_day()%>',
+                     	'<%=t_list.get(0).getPay_day()%>'
                     	<%}else{ for(int i =t_list.size(); i>0;i--){%>
-                    	// int i = t_list.size(); i>0 ; i--
-                    	// 이부분 고쳐야합니당
                     	'<%=t_list.get(i-1).getPay_day()%>',
                     	<%}%>
                     	<%}%>
@@ -64,7 +62,9 @@ System.out.println(t_list.size()+"리스트크기");
                             data: [
                             	
                             	//25,20,23,26,25 //x축 label에 대응되는 데이터 값
-                            	<%if(t_list.size()>5){%>
+                            	<%if(t_list.size()==0){%>  
+                            	0
+                            	<%}else if(t_list.size()>5){%>
                             	<%=t_list.get(4).getPay_money()%>,
                             	<%=t_list.get(3).getPay_money()%>,
                             	<%=t_list.get(2).getPay_money()%>,
