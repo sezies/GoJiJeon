@@ -220,7 +220,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 <div class="col-lg-12">
                     <div class="section-title">
                         <h2>내 고지서 종류</h2>
-                        <button type="button" class="site-btn" onclick="location.href='bill_manager.do'" style="height:40px; text-align: justify;">새로고침</button>
+                        <!--  <button type="button" class="site-btn" onclick="location.href='bill_manager.do'" style="height:40px; text-align: justify;">새로고침</button>-->
                     </div>
                     <div class="featured__controls">
                         <ul>
@@ -235,7 +235,6 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
             </div>
             <div class="row featured__filter">
-            <div class="categories__slider owl-carousel">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-1.jpg">
@@ -358,7 +357,6 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
                     </div>
                     </div>
-            </div>
     </section>
     <!-- Featured Section End -->
 
