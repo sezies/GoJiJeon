@@ -85,7 +85,7 @@
 	<!--이미지 -->
         <insert id="imageInsert" parameterType="kr.user.mapper.imgVO">
         insert into test_img(img)
-      values(#{img})
+        values(#{img})
     </insert>
    
    

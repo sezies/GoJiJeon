@@ -30,8 +30,7 @@ public interface GoMapper {
 	
 	
 	
-	
 	/* 이미지 */
-	public void imageInsert(imgVO vo);
+	public void imageInsert(byte[] img);
 	
 }

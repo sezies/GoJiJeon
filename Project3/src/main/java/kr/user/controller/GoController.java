@@ -287,7 +287,8 @@ public class GoController {
          
          @RequestMapping("/image.do")
          public String image(imgVO vo) {
-        	 GoMapper.imageInsert(vo);
+        	 System.out.println(vo.getImg());
+        	 GoMapper.imageInsert(vo.getImg());
         	 return "imageTest";
          }
    
