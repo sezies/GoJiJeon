@@ -89,8 +89,10 @@
    
    
    
-   
-   
+   <select id="imageSelect"  
+         resultType="kr.user.mapper.imgVO" >
+        select * from test_img 
+    </select>
    
    
    

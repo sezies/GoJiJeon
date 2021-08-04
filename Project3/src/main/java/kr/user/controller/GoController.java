@@ -1,8 +1,14 @@
 package kr.user.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +22,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
@@ -289,8 +296,23 @@ public class GoController {
          public String image(imgVO vo) {
         	 System.out.println(vo.getImg());
         	 GoMapper.imageInsert(vo);
-        	 return "imageTest";
+        	 return "redirect:/showImage.do";
          }
+         
+         @RequestMapping("/showImage.do")
+         public String showImage(HttpServletRequest request) {
+        	 
+        	 List<imgVO> list = GoMapper.imageSelect();
+        	 request.setAttribute("list", list);	
+        	
+        	 return "showImg";
+         }
+         
+         
+         
+         
+         
+         
          //그래프 테스트
          @RequestMapping("/testline.do")
          public String testline(UsersVO vo,HttpSession session,HttpServletRequest request) {
