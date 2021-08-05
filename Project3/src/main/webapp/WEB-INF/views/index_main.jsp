@@ -211,11 +211,13 @@
 					<%
 						if (u_vo != null) {
 					%>
+					
 					<c:forEach var="n_vo" items="${n_list}">
-						<div class="col-lg-3">
-							<div class="categories__item set-bg" data-setbg="${cpath}/resources/img/${n_vo.img}">
+						<div class="col-lg-3" >
+							<div class="categories__item set-bg" data-setbg="${cpath}/resources/img/${n_vo.img}" 
+							style="border: 3px solid white;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" >
 								<h5>
-									<a href="#">${n_vo.notice_title}</a>
+									<a href="${cpath}/bill_contents.do?notice_num=${n_vo.notice_num}">${n_vo.notice_title}</a>
 								</h5>
 							</div>
 						</div>
