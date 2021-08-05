@@ -90,7 +90,7 @@
 				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="./bill_upload.do">고지서 업로드</a></li>
-						<li><a href="./bill_manager.do">고지서 관리</a></li>
+						<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
@@ -135,7 +135,7 @@
 							<li><a href="#">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
 									<li><a href="./bill_upload.do">고지서 업로드</a></li>
-									<li><a href="./bill_manager.do">고지서 관리</a></li>
+									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
 									<li><a href="./bill_graph.do">고지서 분석</a></li>
 								</ul></li>
 							<li><a href="./community.do">커뮤니티</a></li>

@@ -44,22 +44,22 @@ create table notice(
 	value (2, '3', '고지서1', 'payDay', '30000', 'bank', 'car_sample2.jpg')
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '3', '고지서2', 'payDay', '30000', 'bank', 'car_sample3.jpg')
+	value (2, '3', '고지서2', 'payDay', '25000', 'bank', 'car_sample3.jpg')
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '3', '고지서3', 'payDay', '30000', 'bank', 'car_sample5.jpg')
+	value (2, '3', '고지서3', 'payDay', '10000', 'bank', 'car_sample5.jpg')
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
 	value (2, '3', '고지서4', 'payDay', '25000', 'bank', 'car_sample3.jpg')
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '3', '고지서5', 'payDay', '20000', 'bank', 'car_sample3.jpg')
+	value (2, '3', '고지서5', 'payDay', '80000', 'bank', 'car_sample3.jpg')
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '3', '고지서6', 'payDay', '30000', 'bank', 'car_sample7.jpg')
+	value (2, '3', '고지서6', 'payDay', '111100', 'bank', 'car_sample7.jpg')
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '3', '고지서7', 'payDay', '30000', 'bank', 'car_sample10.jpg')
+	value (2, '3', '고지서7', 'payDay', '78200', 'bank', 'car_sample10.jpg')
 	
 select * from notice where user_num='1';
 select * from notice;
