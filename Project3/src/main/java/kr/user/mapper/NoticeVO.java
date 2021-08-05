@@ -12,4 +12,5 @@ public class NoticeVO {
 	private int pay_money;
 	private String pay_bank;
 	private String img;
+	private String regist_day;
 }
