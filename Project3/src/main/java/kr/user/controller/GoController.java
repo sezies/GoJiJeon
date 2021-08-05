@@ -122,7 +122,7 @@ public class GoController {
          GoMapper.UsersDelete(user_num);
          return "redirect:/UsersList.do";
       }
-      
+            
       @RequestMapping("/index")
       public String index_main2() {
          return "index_main";
