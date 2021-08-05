@@ -208,7 +208,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/blog/blog-1.jpg" alt="">
+							<img src="${cpath}/resources/img/bill/bill1.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -216,7 +216,7 @@
 								<li><i class="fa fa-comment-o"></i> 3</li>
 							</ul>
 							<h5>
-								<a href="./comm_contents.do">제 관리비 좀 봐주세요...</a>
+								<a href="./comm_contents.do">제 가스요금 좀 봐주세요...</a>
 							</h5>
 						</div>
 					</div>
@@ -224,7 +224,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/blog/blog-2.jpg" alt="">
+							<img src="${cpath}/resources/img/bill/bill2.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -240,7 +240,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/blog/blog-3.jpg" alt="">
+							<img src="${cpath}/resources/img/bill/bill3.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -258,7 +258,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/blog/blog-1.jpg" alt="">
+							<img src="${cpath}/resources/img/bill/bill4.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -274,7 +274,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/blog/blog-2.jpg" alt="">
+							<img src="${cpath}/resources/img/bill/bill5.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -290,7 +290,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/blog/blog-3.jpg" alt="">
+							<img src="${cpath}/resources/img/bill/bill6.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>

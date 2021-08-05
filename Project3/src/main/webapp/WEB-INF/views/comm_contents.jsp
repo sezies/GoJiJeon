@@ -221,15 +221,15 @@ textarea {
 					<div class="product__details__pic">
 						<div class="product__details__pic__item">
 							<img class="product__details__pic__item--large"
-								src="${cpath}/resources/img/product/details/product-details-1.jpg"
+								src="${cpath}/resources/img/bill/bill1.jpg"
 								alt="">
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<div class="product__details__text">
-						<h3>제 관리비 좀 봐주세요...</h3>
-						<p>다른 집에 비해 저희 집 관리비가 많이 나오는 것 같아요... 분석 좀 해주세요!!!</p>
+						<h3>제 가스요금 좀 봐주세요...</h3>
+						<p>다른 집에 비해 저희 집 가스요금이 많이 나오는 것 같아요... 분석 좀 해주세요!!!</p>
 						<br>
 						<div class="checkout__input">
 							<button type="button" class="site-btn"
