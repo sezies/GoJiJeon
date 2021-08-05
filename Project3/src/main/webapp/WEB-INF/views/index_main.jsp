@@ -159,9 +159,9 @@
 							if (u_vo == null) {
 						%>
 						<a href="./login_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그인</a>
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;"></a>
 						&emsp;&emsp;&emsp; <a href="./join_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">회원가입</a>
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;"></a>
 						<%
 							} else {
 						%>
@@ -219,15 +219,16 @@
 	<%
 		if (u_vo == null) {
 	%>
-					<h2>고지서 관리가 처음이시라면?</h2>
-					<p>Are you new to bill management?</p>
-					<a href="./join_main2.do" class="primary-btn">회원가입 하러 가기</a>
+					<h2>고지서 관리를 시작하시려면?</h2>
+					<p>How do I start managing my bills?</p>
+					<a href="./login_main2.do" class="primary-btn">로그인</a>
+					<a href="./join_main2.do" class="primary-btn">회원가입</a>
 	<%
 		} else {
 	%>
 					<h2>고지서 업로드가 필요하시다면?</h2>
 					<p>What if I need to upload a bill?</p>
-					<a href="./bill_upload.do" class="primary-btn">업로드 하러 가기</a>
+					<a href="./bill_upload.do" class="primary-btn">업로드 하기</a>
 	<%
 		}
 	%>

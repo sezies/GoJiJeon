@@ -183,8 +183,8 @@ u_vo = (UsersVO)session.getAttribute("login");
                             </c:if>                    
 
                             <div class="checkout__input">
-                              <button type="submit" class="site-btn">로그인 하기</button>
-                              <button type="button" class="site-btn" onclick="location.href='join_main2.do' ">회원가입 하기</button>
+                              <button type="submit" class="site-btn">로그인</button>
+                              <!--  <button type="button" class="site-btn" onclick="location.href='join_main2.do' ">회원가입 하기</button>-->
                             </div>
                         </div>  
                          </div>
