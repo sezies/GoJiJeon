@@ -214,6 +214,7 @@
 				</div>
 			</div>
 			<div class="row featured__filter">
+			
 				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"
@@ -229,6 +230,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"

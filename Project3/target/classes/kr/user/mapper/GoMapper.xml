@@ -59,11 +59,17 @@
         resultType="kr.user.mapper.NoticeVO" >
     select * from notice where user_num=#{user_num}
    </select>
+   
+    
    <!-- 그래프 리스트가져오기-->
     <select id = "testlist" parameterType="int" 
         resultType="kr.user.mapper.NoticeVO" >
     select * from notice where user_num=#{user_num} order by pay_day desc
     </select>
+    
+    
+    
+    
     <update id="NoticeUpdate" parameterType="kr.user.mapper.NoticeVO">
        update notice set
        notice_code=#{notice_code},

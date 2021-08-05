@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="kr.user.mapper.NoticeVO"%>
 <%@page import="java.util.List"%>
 <%@page import="kr.user.mapper.UsersVO"%>
@@ -40,11 +41,8 @@
 	type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script type="text/javascript">
-
-
-
-
 
 function getJson(notice_num){		
 		$.ajax({
@@ -57,16 +55,16 @@ function getJson(notice_num){
 		});
 	}
 function ajaxHtml(data){ 
-	var result="<table >";
-	result+="<tr>";
-	result+="<td>번호</td>";
-	result+="<td>코드</td>";
-	result+="<td>제목</td>";
-	result+="<td>날짜</td>";
-	result+="<td>비용</td>";
-	result+="<td>은행</td>";
-	result+="<td>이미지</td>";
-	result+="<td>등록일자</td>";
+	var result="<table style='margin-left: auto; margin-right: auto; text-align: center;'>";
+	result+="<tr style='border-bottom: 1px solid #dee2e6;'>";
+	result+="<td width='10%'>번호</td>";
+	result+="<td width='10%'>코드</td>";
+	result+="<td width='10%'>제목</td>";
+	result+="<td width='10%'>날짜</td>";
+	result+="<td width='10%'>비용</td>";
+	result+="<td width='10%'>은행</td>";
+	result+="<td width='10%'>이미지</td>";
+	result+="<td width='10%'>등록일자</td>";
 	result+="</tr>";
 	// 여기에 반복문으로 게시물을 출력
 	// 이름없는 함수 
@@ -91,7 +89,7 @@ function ajaxHtml(data){
 </script>
 </head>
 
-<body>
+<body >
 <%
 UsersVO u_vo = null;
 if(session.getAttribute("login")!= null){
@@ -251,85 +249,182 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 	<!-- Breadcrumb Section End -->
 
 	<!-- Blog Details Section Begin -->
-	<section class="blog-details spad">
+	 <section class="blog-details spad">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-5 order-md-1 order-2">
-					<div class="blog__sidebar">
+			 <!-- <div class="row"> 
+				<div class="col-lg-8 col-md-7 order-md-1 order-1"> -->
+					<div class="blog__details__text"> 
+						<!-- 좌측 그래프를 선택하면 해당 아이프레임에 노출되도록... 
+						<!-- 최근고지서 부분 불러오는부분 -->
+						<table style="margin-left: auto; margin-right: auto; text-align: center;">
+						<tr style="border-bottom: 1px solid #dee2e6;">
+							<td width="10%">최근5개월</td>
+							<td width="10%">코드</td>
+							<td width="10%">제목</td>
+							<td width="10%">가격</td>
+							<td width="10%">은행</td>
+							<td width="10%">상세내역</td>
+						</tr>
+							
 						<div class="blog__sidebar__item">
-							<h4>그래프 종류</h4>
-							<ul>
-								<li><a href="#">선 그래프</a></li>
-								<li><a href="#">막대 그래프</a></li>
-								<li><a href="#">원 그래프</a></li>
-							</ul>
+					
+						<!-- 	<div class="blog__sidebar__recent">	 -->
+						<%if(t_list.size()>=5){%>
+						<%for (int i =0; i<5;i++){  %>	
+						<!-- <div class="blog__sidebar__recent__item__text" > -->
+						<tr style="border-bottom: 1px solid #dee2e6;">
+							<td><%=t_list.get(i).getPay_day() %></td>
+							<td>코드</td>
+							<td><h6><%=t_list.get(i).getNotice_title()%></h6></td>
+							<td>가격</td>
+							<td>은행</td>
+							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)"><%=t_list.get(i).getNotice_num()%>리스트</button></td>
+						</tr>
+						
+							<!-- </div> -->
+						<% }} else{%>
+						<%for (int i =0; i<t_list.size();i++){  %>	
+						<!-- <div class="blog__sidebar__recent__item__text" > -->
+						<tr style="border-bottom: 1px solid #dee2e6;">
+							<td><%=t_list.get(i).getPay_day() %></td>
+							<td>코드</td>
+							<td><h6><%=t_list.get(i).getNotice_title()%></h6></td>
+							<td>가격</td>
+							<td>은행</td>
+							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)"><%=t_list.get(i).getNotice_num()%>리스트</button></td>
+						</tr>
+							<%}} %>
+						
+							<!-- </div> -->
+						
+						
+						
+						
+						
+						
+						
+						
+							
+								<!-- </div> -->
+						</div>					
+						</table>
+						
+						
+						<br><br><br>
+							<!-- 최근고지서 부분 불러오는부분 -->	
+						
+						<div id="c_list" align="center">여기에 게시판 리스트를 출력하시오						
 						</div>
-						<div class="blog__sidebar__item">
-							<h4>그래프 분석</h4>
-							<div class="blog__sidebar__item__tags">
-								<a href="#">유형별 보기</a> <br> <a href="#">평균치 비교</a>
-							</div>
-						</div>
-						<div class="blog__sidebar__item">
-							<h4>최근 고지서</h4>
-							<div class="blog__sidebar__recent">
-							<!-- 최근고지서 부분 불러오는부분 -->
-								 <c:forEach var="n_vo" items="${n_list}" >
-								<a href="#" class="blog__sidebar__recent__item" >
-									<div class="blog__sidebar__recent__item__pic">
-										<img src="${n_vo.img}" alt="">
-									</div>
-									<div class="blog__sidebar__recent__item__text" >
-										<button class="btn btn-info btn-sm" onclick="getJson(${n_vo.notice_num})">${n_vo.notice_num}리스트</button>
-										<h6>${n_vo.notice_title}</h6>
-										<span>${n_vo.pay_day}</span>
-									</div>
-									</c:forEach> 
-									
-									
-									
-								<%-- <%for(int i = 0 ; i < n_list.size(); i++) {%>						
-									<a href="#" class="blog__sidebar__recent__item" >
-									<div class="blog__sidebar__recent__item__pic">
-										<img src="<%=n_list.get(i).getImg() %>" alt="">
-									</div>
-									<div class="blog__sidebar__recent__item__text" >
-										<button class="btn btn-info btn-sm" onclick="getJson()" ><%=n_list.get(i).getNotice_num()%>리스트</button>
-										<h6><%=n_list.get(i).getNotice_title() %></h6>
-										<span><%=n_list.get(i).getPay_day()%></span>
-									</div>
-									<%} %> --%>
-									
-									
-									
-							<!-- 최근고지서 부분 불러오는부분 -->		
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-8 col-md-7 order-md-1 order-1">
-					<div class="blog__details__text">
-						<!-- 좌측 그래프를 선택하면 해당 아이프레임에 노출되도록... -->
-						
-						
-						<div id="c_list">여기에 게시판 리스트를 출력하시오</div>
 						
 						
 						
-						<%-- <h3>스인재아파트 2021년 8월 관리비</h3>
-						<p align="middle">
-							<iframe src="${cpath}/resources/img/blog/details/details-pic.jpg"
-								style="width: 800px; height: 650px; border: 0;"
-								allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-						</p> --%>
+						
+					
+						
+						
+						<p align="center">그래프 관련 상세 내용</p>
+												<!-- 그래프 부분 -->
+				<div align="center" style="width: 600px; height: 600px;">
+	<!--차트가 그려질 부분-->
+	
+	<canvas align="center" id="myChart"></canvas>
+</div>
+
+<script type="text/javascript">
+            var context = document
+                .getElementById('myChart')
+                .getContext('2d');
+            
+            var myChart = new Chart(context, {
+                type: 'bar', // 차트의 형태
+                data: { // 차트에 들어갈 데이터
+                    labels: [
+                        //x 축
+                        //'1','2','3','4','5','6','7'                  
+                    	<%if(t_list.size()==0){%>  
+                       	'등록된 고지서가 없습니다.'
+                    	<%}else if(t_list.size()>5){%>
+                    	 '<%=t_list.get(4).getPay_day()%>',
+                     	'<%=t_list.get(3).getPay_day()%>',
+                     	'<%=t_list.get(2).getPay_day()%>',
+                     	'<%=t_list.get(1).getPay_day()%>',
+                     	'<%=t_list.get(0).getPay_day()%>'
+                    	<%}else{ for(int i =t_list.size(); i>0;i--){%>
+                    	'<%=t_list.get(i-1).getPay_day()%>',
+                    	<%}%>
+                    	<%}%>
+                    ],
+                    datasets: [
+                        { //데이터
+                            label: '고지서', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                            	
+                            	//25,20,23,26,25 //x축 label에 대응되는 데이터 값
+                            	<%if(t_list.size()==0){%>  
+                            	0
+                            	<%}else if(t_list.size()>5){%>
+                            	<%=t_list.get(4).getPay_money()%>,
+                            	<%=t_list.get(3).getPay_money()%>,
+                            	<%=t_list.get(2).getPay_money()%>,
+                            	<%=t_list.get(1).getPay_money()%>,
+                            	<%=t_list.get(0).getPay_money()%>
+                            	<%}else{ for(int i =t_list.size(); i>0;i--){%>
+                            	<%=t_list.get(i-1).getPay_money()%>,
+                            	<%}%>
+                            	<%}%>
+                            ],
+                            backgroundColor: [
+                                //색상
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                //경계선 색상
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1 //경계선 굵기
+                        }/* ,
+                        {
+                            label: 'test2',
+                            fill: false,
+                            data: [
+                                8, 34, 12, 24
+                            ],
+                            backgroundColor: 'rgb(157, 109, 12)',
+                            borderColor: 'rgb(157, 109, 12)'
+                        } */
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }
+                        ]
+                    }
+                }
+            });
+        </script>
+				
 						
 						
 						
-						<p>그래프 관련 상세 내용</p>
-					</div>
-				</div>
-			</div>
+			 		</div>
+			 <!--	</div> 
+			 </div>  -->
 		</div>
 	</section>
 	<!-- Blog Details Section End -->
