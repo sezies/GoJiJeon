@@ -255,7 +255,8 @@ u_vo = (UsersVO)session.getAttribute("login");
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                 
                     <div class="featured__item">
-                       <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/${vo.img}" onclick="location.href='${cpath}/bill_contents.do?notice_num=${vo.notice_num}' ">
+                       <div style="border: 3px solid white;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" 
+                       class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/${vo.img}" onclick="location.href='${cpath}/bill_contents.do?notice_num=${vo.notice_num}' ">
                                <ul>
                                 <!--  <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>

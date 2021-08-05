@@ -63,7 +63,6 @@ function ajaxHtml(data){
 	result+="<td width='10%'>날짜</td>";
 	result+="<td width='10%'>비용</td>";
 	result+="<td width='10%'>은행</td>";
-	result+="<td width='10%'>이미지</td>";
 	result+="<td width='10%'>등록일자</td>";
 	result+="</tr>";
 	// 여기에 반복문으로 게시물을 출력
@@ -76,7 +75,6 @@ function ajaxHtml(data){
   		result+="<td>"+obj.pay_day+"</td>";
   		result+="<td>"+obj.pay_money+"</td>";
   		result+="<td>"+obj.pay_bank+"</td>";
-  		result+="<td>"+obj.img+"</td>";
   		result+="<td>"+obj.regist_day+"</td>";
   		result+="</tr>";
 		
@@ -278,7 +276,8 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 							<td><h6><%=t_list.get(i).getNotice_title()%></h6></td>
 							<td>가격</td>
 							<td>은행</td>
-							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)"><%=t_list.get(i).getNotice_num()%>리스트</button></td>
+							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">   클   릭   </button></td>
+							<%-- <%=t_list.get(i).getNotice_num()%> --%>
 						</tr>
 						
 							<!-- </div> -->
@@ -320,11 +319,11 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						
 						
 					
+						<p>ㅤ</p>
 						
-						
-						<p align="center">그래프 관련 상세 내용</p>
+						<p align="center"><%= u_vo.getUser_name() %> 님의 관리비 월별 추이</p>
 												<!-- 그래프 부분 -->
-				<div align="center" style="width: 600px; height: 600px;">
+				<div align="center" style="width: 600px; height: 600px; margin-left: 250px;">
 	<!--차트가 그려질 부분-->
 	
 	<canvas align="center" id="myChart"></canvas>

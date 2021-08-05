@@ -234,6 +234,7 @@ public class GoController {
       
       @RequestMapping("/community.do")
       public String community() {
+    	  
          return "community";
       }
       

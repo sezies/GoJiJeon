@@ -36,6 +36,17 @@
 	type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
 	type="text/css">
+	
+	<style>
+	
+		img {
+		border: 3px solid black;
+		border-radius: 7px;
+		-moz-border-radius: 7px;
+		-khtml-border-radius: 7px;
+		-webkit-border-radius: 7px;
+				}
+	</style>
 </head>
 
 <body>
@@ -116,7 +127,7 @@
 				<div class="col-lg-3">
 					<div class="header__logo">
 						<a href="./index_main.do"><img
-							src="${cpath}/resources/img/logo.png" alt=""></a>
+							src="${cpath}/resources/img/logo.png" alt="" style = "border-style:1px solid black"></a>
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -199,8 +210,10 @@
 				<div class="col-lg-12">
 					<div class="section-title related-blog-title">
 						<h2>의견 게시판</h2>
+						<p>ㅤ</p>
 						<button type="button" class="site-btn"
 							onclick="location.href='#' ">글쓰기</button>
+						<p>ㅤ</p>
 					</div>
 				</div>
 			</div>
@@ -208,7 +221,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill1.jpg" alt="">
+							<img src="${cpath}/resources/img/bill/bill1.jpg" alt="" >
 						</div>
 						<div class="blog__item__text">
 							<ul>
