@@ -35,7 +35,11 @@ if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
 System.out.println(u_vo+"||||이거는 맨 위에거");
 }
+
+u_vo = (UsersVO)session.getAttribute("login");
 %>
+
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -75,7 +79,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                  <li><a href="#">고지서 서랍</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                        <li><a href="./bill_manager.do">고지서 관리</a></li>
+                        <li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
                         <li><a href="./bill_graph.do">고지서 분석</a></li>
                     </ul>
                 </li>
@@ -157,7 +161,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="./bill_manager.do">고지서 관리</a></li>
+                                    <li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
                                     <li><a href="./bill_graph.do">고지서 분석</a></li>
                                 </ul>
                             </li>
@@ -234,23 +238,26 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     </div>
                 </div>
             </div>
-            <div class="row featured__filter">
+  <!-- a --><div class="row featured__filter">
+                <c:forEach var = "vo" items = "${list}"> 
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-1.jpg">
-                            <ul class="featured__item__pic__hover">
+                       <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/${vo.img}">
+                               <ul>
                                 <!--  <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
+                            <h6><a href="./bill_contents.do">${vo.notice_title}</a></h6>
+                            <h5>${vo.pay_money}</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+                </c:forEach>
+                <%-- <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-2.jpg">
                             <ul class="featured__item__pic__hover">
@@ -354,9 +361,9 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             <h5>$30.00</h5>
                         </div>
                     </div>
-                </div>
-                    </div>
-                    </div>
+                </div> --%>
+<!-- a --> </div>
+        </div>
     </section>
     <!-- Featured Section End -->
 

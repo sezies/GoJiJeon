@@ -91,7 +91,7 @@
 				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="./bill_upload.do">고지서 업로드</a></li>
-						<li><a href="./bill_manager.do">고지서 관리</a></li>
+						<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
@@ -169,7 +169,7 @@
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="./bill_manager.do">고지서 관리</a></li>
+                                    <li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
                                     <li><a href="./bill_graph.do">고지서 분석</a></li>
                                 </ul>
                             </li>
@@ -252,7 +252,7 @@
 					%>
 					<c:forEach var="n_vo" items="${n_list}">
 						<div class="col-lg-3">
-							<div class="categories__item set-bg" data-setbg="${n_vo.img}">
+							<div class="categories__item set-bg" data-setbg="${cpath}/resources/img/${n_vo.img}">
 								<h5>
 									<a href="#">${n_vo.notice_title}</a>
 								</h5>
@@ -264,7 +264,7 @@
 					%>
 					<!--  반복문을 통해 리스트에 있는 값  불러오기 -->
 
-					<div class="col-lg-3">
+					<%-- <div class="col-lg-3">
 						<div class="categories__item set-bg"
 							data-setbg="${cpath}/resources/img/categories/cat-1.jpg">
 							<h5>
@@ -303,7 +303,7 @@
 								<a href="#">속도위반 과태료</a>
 							</h5>
 						</div>
-					</div>
+					</div> --%>
 				</div>
 			</div>
 		</div>

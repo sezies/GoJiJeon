@@ -44,7 +44,15 @@
     
    
     <!-- notice 부분 -->
-        <select id = "NoticeListAjax" resultType="kr.user.mapper.NoticeVO" >
+    <!-- 고지서 셀렉터 -->
+     <select id="NoticeSelect"  parameterType = "String"
+         resultType="kr.user.mapper.NoticeVO" >
+        select * from notice where user_num = #{user_num}
+    </select>
+    
+    
+    
+   <select id = "NoticeListAjax" resultType="kr.user.mapper.NoticeVO" >
     select * from notice order by idx desc
    </select>
    

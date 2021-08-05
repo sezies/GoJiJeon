@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<form action = "${cpath}/image.do" enctype="multipart/form-data">
+<form action = "${cpath}/NoticeList.do" enctype="multipart/form-data">
 <input type="file" name="img">
 <input type="submit" value = "제출">
 </form>
