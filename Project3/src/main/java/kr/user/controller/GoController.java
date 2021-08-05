@@ -14,6 +14,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.text.html.HTMLEditorKit.Parser;
 import javax.xml.ws.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.mysql.jdbc.PreparedStatement.ParseInfo;
 
 import kr.user.mapper.GoMapper;
 import kr.user.mapper.NoticeVO;
@@ -121,7 +123,7 @@ public class GoController {
          return "redirect:/UsersList.do";
       }
       
-      @RequestMapping("/")
+      @RequestMapping("/index")
       public String index_main2() {
          return "index_main";
       }
@@ -240,8 +242,18 @@ public class GoController {
          return "mypage_main";
       }
       
+      
+      
+		/* 고지서 클릭시 고지서 번호를 받아와 select-where 행 하나 뽑아와서 객체에 남아서 내보내기 */
       @RequestMapping("/bill_contents.do")
-      public String bill_contents() {
+      public String bill_contents(HttpServletRequest request, @RequestParam("notice_num") String notice_num, Model model) {
+    	  
+    	  System.out.println("고지서 번호 : " + notice_num);
+    	  
+    	  NoticeVO vo = GoMapper.NoticeOne(notice_num);
+    	  
+    	  model.addAttribute("vo", vo);
+    	  
          return "bill_contents";
       }
       
@@ -253,19 +265,27 @@ public class GoController {
 
       // 노티스부분
       //@Autowired
+      
+      
+      
+      
       //고지서 리스트 불러오기 기능
          @RequestMapping("/NoticeList.do")
-         public String NoticeList(HttpServletRequest request){
+         public String NoticeList(HttpServletRequest request, @RequestParam("user_num") String user_num){
             // 데이터베이스에서 게시판리스트를 가져오기(Model-DAO-SQL)
         	 
+        	 System.out.println("유저넘버 = " + user_num);
+        	 
+        	List<NoticeVO> list =  GoMapper.NoticeSelect(user_num);
+        	
+        	request.setAttribute("list", list);
             
-            return "index_main"; //  -->viewResolver --> /WEB-INF/views/boardList.jsp
-         }   
+
+            return "bill_manager"; //  -->viewResolver --> /WEB-INF/views/boardList.jsp
+         }
+
          
-         
-         
-         
-         // ajax통한 보여주기
+         //github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
          @RequestMapping("/NoticeListAjax.do")
          public @ResponseBody List<NoticeVO> NoticeListAjax(NoticeVO n_vo,HttpSession session) {
           //게시판 리스트를 JSON형식으로 JS클라이언트에게 내려보낸다.

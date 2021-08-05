@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class imgVO {
 
-	private byte[] img ;
+	private String img ;
 	//private MultipartFile img ;
 	
 }

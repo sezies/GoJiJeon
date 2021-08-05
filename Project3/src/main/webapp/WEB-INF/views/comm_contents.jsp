@@ -109,7 +109,7 @@ textarea {
 				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="./bill_upload.do">고지서 업로드</a></li>
-						<li><a href="./bill_manager.do">고지서 관리</a></li>
+						<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
@@ -154,7 +154,7 @@ textarea {
 							<li><a href="#">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
 									<li><a href="./bill_upload.do">고지서 업로드</a></li>
-									<li><a href="./bill_manager.do">고지서 관리</a></li>
+									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
 									<li><a href="./bill_graph.do">고지서 분석</a></li>
 								</ul></li>
 							<li><a href="./community.do">커뮤니티</a></li>
@@ -221,15 +221,15 @@ textarea {
 					<div class="product__details__pic">
 						<div class="product__details__pic__item">
 							<img class="product__details__pic__item--large"
-								src="${cpath}/resources/img/product/details/product-details-1.jpg"
+								src="${cpath}/resources/img/bill/bill1.jpg"
 								alt="">
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<div class="product__details__text">
-						<h3>제 관리비 좀 봐주세요...</h3>
-						<p>다른 집에 비해 저희 집 관리비가 많이 나오는 것 같아요... 분석 좀 해주세요!!!</p>
+						<h3>제 가스요금 좀 봐주세요...</h3>
+						<p>다른 집에 비해 저희 집 가스요금이 많이 나오는 것 같아요... 분석 좀 해주세요!!!</p>
 						<br>
 						<div class="checkout__input">
 							<button type="button" class="site-btn"

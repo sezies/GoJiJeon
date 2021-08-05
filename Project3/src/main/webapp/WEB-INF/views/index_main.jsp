@@ -91,7 +91,7 @@
 				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="./bill_upload.do">고지서 업로드</a></li>
-						<li><a href="./bill_manager.do">고지서 관리</a></li>
+						<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
@@ -113,44 +113,6 @@
 
     <!-- Header Section Begin -->
     <header class="header">
-        <!--
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src="${cpath}/resources/img/language.png" alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -169,7 +131,7 @@
                             <li><a href="#">고지서 서랍</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="./bill_manager.do">고지서 관리</a></li>
+                                    <li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
                                     <li><a href="./bill_graph.do">고지서 분석</a></li>
                                 </ul>
                             </li>
@@ -251,7 +213,7 @@
 					%>
 					<c:forEach var="n_vo" items="${n_list}">
 						<div class="col-lg-3">
-							<div class="categories__item set-bg" data-setbg="${n_vo.img}">
+							<div class="categories__item set-bg" data-setbg="${cpath}/resources/img/${n_vo.img}">
 								<h5>
 									<a href="#">${n_vo.notice_title}</a>
 								</h5>
@@ -261,9 +223,11 @@
 					<%
 						}
 					%>
+					
+					<hr>
 					<!--  반복문을 통해 리스트에 있는 값  불러오기 -->
 
-					<div class="col-lg-3">
+					<%-- <div class="col-lg-3">
 						<div class="categories__item set-bg"
 							data-setbg="${cpath}/resources/img/categories/cat-1.jpg">
 							<h5>
@@ -302,7 +266,7 @@
 								<a href="#">속도위반 과태료</a>
 							</h5>
 						</div>
-					</div>
+					</div> --%>
 				</div>
 			</div>
 		</div>

@@ -38,8 +38,29 @@ create table notice(
 );
 
 	insert into notice(user_num,notice_code,notice_title,pay_day,pay_money,pay_bank,img)
-	value ('2','1','test고지서2','2021.02.22','100000','국민은행','C:\Users\smhrd\Desktop\프로젝트3차\test1.jpg');
+	value (1, '2','1','test고지서2','2021.02.22','100000','국민은행','C:\Users\smhrd\Desktop\프로젝트3차\test1.jpg');
 
+	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
+	value (2, '3', '전기세', '2021.05.24', '30000', '농협', 'car_sample2.jpg')
+	
+	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
+	value (2, '3', '수도세', '2021.06.22', '25000', '광주', 'car_sample3.jpg')
+	
+	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
+	value (2, '3', '전기세', '2021.07.11', '10000', '우리', 'car_sample5.jpg')
+	
+	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
+	value (2, '3', '전기세', '2021.08.42', '25000', '신협', 'car_sample3.jpg')
+	
+	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
+	value (2, '3', '전기세', '2021.09.24', '80000', '부산', 'car_sample3.jpg')
+	
+	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
+	value (2, '3', '수도세', '2021.10.24', '111100', '카카오뱅크', 'car_sample7.jpg')
+	
+	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
+	value (2, '3', '전기세', '2021.11.24', '78200', '토스', 'car_sample10.jpg')
+	
 select * from notice where user_num='1';
 select * from notice;
 
@@ -48,11 +69,14 @@ select * from notice;
 --이미지 테스트
 create table test_img (
 
-img longblob not null
+img varchar(200) not null
 
 )
 
 select * from test_img;
+
+insert into test_img(img)
+values ('car_sample1.jpg')
 
 drop table test_img;
 
