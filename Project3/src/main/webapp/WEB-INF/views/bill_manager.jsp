@@ -204,133 +204,133 @@
 					<div class="featured__controls">
 						<ul>
 							<li class="active" data-filter="*">All</li>
-							<li data-filter=".oranges">관리비</li>
-							<li data-filter=".fresh-meat">자동차세</li>
-							<li data-filter=".vegetables">지방세</li>
-							<li data-filter=".fastfood">주민세</li>
-							<li data-filter=".slowfood">과태료</li>
+							<li data-filter=".aptfees">관리비</li>
+							<li data-filter=".carfees">자동차세</li>
+							<li data-filter=".localfees">지방세</li>
+							<li data-filter=".usefees">각종 요금</li>
+							<li data-filter=".finefees">과태료</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="row featured__filter">
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+				<div class="col-lg-3 col-md-4 col-sm-6 mix usefees fresh-meat">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-1.jpg">
+							data-setbg="${cpath}/resources/img/bill/bill1.jpg">
 							<ul class="featured__item__pic__hover">
 							</ul>
 						</div>
 						<div class="featured__item__text">
 							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
+								<a href="./bill_contents.do">2019년 10월 도시가스 요금</a>
 							</h6>
-							<h5>$30.00</h5>
+							<h5>5,840원</h5>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+				<div class="col-lg-3 col-md-4 col-sm-6 mix carfees fastfood">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-2.jpg">
+							data-setbg="${cpath}/resources/img/bill/bill2.jpg">
 							<ul class="featured__item__pic__hover">
 							</ul>
 						</div>
 						<div class="featured__item__text">
 							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
+								<a href="./bill_contents.do">2018년 자동차세</a>
 							</h6>
-							<h5>$30.00</h5>
+							<h5>71,040</h5>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix slowfood fresh-meat">
+				<div class="col-lg-3 col-md-4 col-sm-6 mix usefees fresh-meat">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-3.jpg">
+							data-setbg="${cpath}/resources/img/bill/bill3.jpg">
 							<ul class="featured__item__pic__hover">
 							</ul>
 						</div>
 						<div class="featured__item__text">
 							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
+								<a href="./bill_contents.do">2020년 7월 도시가스 요금</a>
 							</h6>
-							<h5>$30.00</h5>
+							<h5>14,900원</h5>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix slowfood oranges">
+				<div class="col-lg-3 col-md-4 col-sm-6 mix localfees oranges">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-4.jpg">
+							data-setbg="${cpath}/resources/img/bill/bill4.jpg">
 							<ul class="featured__item__pic__hover">
 							</ul>
 						</div>
 						<div class="featured__item__text">
 							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
+								<a href="./bill_contents.do">2019년 지방세</a>
 							</h6>
-							<h5>$30.00</h5>
+							<h5>194,890원</h5>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix slowfood vegetables">
+				<div class="col-lg-3 col-md-4 col-sm-6 mix carfees vegetables">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-5.jpg">
+							data-setbg="${cpath}/resources/img/bill/bill5.jpg">
 							<ul class="featured__item__pic__hover">
 							</ul>
 						</div>
 						<div class="featured__item__text">
 							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
+								<a href="./bill_contents.do">2018년 자동차세</a>
 							</h6>
-							<h5>$30.00</h5>
+							<h5>116,320원</h5>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+				<div class="col-lg-3 col-md-4 col-sm-6 mix carfees fastfood">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-6.jpg">
+							data-setbg="${cpath}/resources/img/bill/bill6.jpg">
 							<ul class="featured__item__pic__hover">
 							</ul>
 						</div>
 						<div class="featured__item__text">
 							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
+								<a href="./bill_contents.do">2020년 자동차세</a>
 							</h6>
-							<h5>$30.00</h5>
+							<h5>330,050원</h5>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges vegetables">
+				<div class="col-lg-3 col-md-4 col-sm-6 mix usefees vegetables">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-7.jpg">
+							data-setbg="${cpath}/resources/img/bill/bill1.jpg">
 							<ul class="featured__item__pic__hover">
 							</ul>
 						</div>
 						<div class="featured__item__text">
 							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
+								<a href="./bill_contents.do">2019년 11월 도시가스 요금</a>
 							</h6>
-							<h5>$30.00</h5>
+							<h5>5,840원</h5>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix oranges vegetables">
+				<div class="col-lg-3 col-md-4 col-sm-6 mix carfees vegetables">
 					<div class="featured__item">
 						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/featured/feature-8.jpg">
+							data-setbg="${cpath}/resources/img/bill/bill2.jpg">
 							<ul class="featured__item__pic__hover">
 							</ul>
 						</div>
 						<div class="featured__item__text">
 							<h6>
-								<a href="./bill_contents.do">Crab Pool Security</a>
+								<a href="./bill_contents.do">2018년 자동차세</a>
 							</h6>
-							<h5>$30.00</h5>
+							<h5>71,040</h5>
 						</div>
 					</div>
 				</div>

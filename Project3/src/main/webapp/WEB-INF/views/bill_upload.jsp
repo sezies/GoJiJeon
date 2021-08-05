@@ -198,12 +198,11 @@
 	<br>
 	<div class="map">
 		<p align="middle">
-			<iframe src="${cpath}/resources/img/cgi.jpg"
-				style="width: 1000px; height: 500px; border: 0;" allowfullscreen=""
+			<iframe src="${cpath}/resources/img/bill/bill6.jpg"
+				style="width: 500px; height: 1000px; border: 0;" allowfullscreen=""
 				aria-hidden="false" tabindex="0"></iframe>
 		</p>
 	</div>
-
 	<!-- Map End -->
 
 	<!-- Contact Form Begin -->
