@@ -7,6 +7,9 @@
 <html lang="zxx">
 
 <head>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="${cpath}/resources/js/reply.js"></script>
 <meta charset="UTF-8">
 <meta name="description" content="Ogani Template">
 <meta name="keywords" content="Ogani, unica, creative, html">
@@ -36,6 +39,20 @@
 	type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
 	type="text/css">
+<style>
+textarea {
+	width: 100%;
+}
+
+.reply_reply {
+	border: 2px solid #FF50CF;
+}
+
+.reply_modify {
+	border: 2px solid #FFBB00;
+}
+</style>
+
 </head>
 
 <body>
@@ -46,6 +63,8 @@
 		System.out.println(u_vo + "||||이거는 맨 위에거");
 	}
 	%>
+
+
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -190,123 +209,82 @@
 			</div>
 		</div>
 	</section>
+	<br>
+	<br>
 	<!-- Breadcrumb Section End -->
 
-	<!-- Related Blog Section Begin -->
-	<section class="related-blog spad">
+	<!-- Product Details Section Begin -->
+	<section class="product-details spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
-					<div class="section-title related-blog-title">
-						<h2>의견 게시판</h2>
-						<button type="button" class="site-btn"
-							onclick="location.href='#' ">글쓰기</button>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill1.jpg" alt="">
-						</div>
-						<div class="blog__item__text">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> 2021/08/02</li>
-								<li><i class="fa fa-comment-o"></i> 3</li>
-							</ul>
-							<h5>
-								<a href="./comm_contents.do">제 가스요금 좀 봐주세요...</a>
-							</h5>
+				<div class="col-lg-6 col-md-6">
+					<div class="product__details__pic">
+						<div class="product__details__pic__item">
+							<img class="product__details__pic__item--large"
+								src="${cpath}/resources/img/bill/bill1.jpg"
+								alt="">
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill2.jpg" alt="">
-						</div>
-						<div class="blog__item__text">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> 2021/08/02</li>
-								<li><i class="fa fa-comment-o"></i> 1</li>
-							</ul>
-							<h5>
-								<a href="./comm_contents.do">관리비 이 정도면 어떤가요?</a>
-							</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill3.jpg" alt="">
-						</div>
-						<div class="blog__item__text">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> 2021/08/03</li>
-								<li><i class="fa fa-comment-o"></i> 2</li>
-							</ul>
-							<h5>
-								<a href="./comm_contents.do">고지서 또 날아왔습니다 ㅠㅠ</a>
-							</h5>
+				<div class="col-lg-6 col-md-6">
+					<div class="product__details__text">
+						<h3>제 가스요금 좀 봐주세요...</h3>
+						<p>다른 집에 비해 저희 집 가스요금이 많이 나오는 것 같아요... 분석 좀 해주세요!!!</p>
+						<br>
+						<div class="checkout__input">
+							<button type="button" class="site-btn"
+								onclick="location.href='community.do' ">목록으로</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill4.jpg" alt="">
-						</div>
-						<div class="blog__item__text">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> 2021/08/03</li>
-								<li><i class="fa fa-comment-o"></i> 2</li>
-							</ul>
-							<h5>
-								<a href="./comm_contents.do">요즘 과태료 이렇게 비싼가요?</a>
-							</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill5.jpg" alt="">
-						</div>
-						<div class="blog__item__text">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> 2021/08/04</li>
-								<li><i class="fa fa-comment-o"></i> 1</li>
-							</ul>
-							<h5>
-								<a href="./comm_contents.do">관리비 엄청 올랐네요!</a>
-							</h5>
+			<div class="blog__details__content">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="blog__details__author">
+							<div class="blog__details__author__text">
+								<h6>박정주</h6>
+								<ul>
+									<li>제가 볼 때는 적당히 나오는 것 같은데요... 걱정 안 하셔도 될 것 같아요!</li>
+								</ul>
+								<br>
+								<h6>나연호</h6>
+								<ul>
+									<li>저랑 동일 면적인데 저보다 훨씬 적게 나오시는데요? 잘 내고 계십니다!</li>
+								</ul>
+								<br>
+								<h6>박세욱</h6>
+								<ul>
+									<li>저는 평소에 금액을 크게 신경 안 써요~ 어차피 뭐 매달 비슷하더라고요!</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill6.jpg" alt="">
-						</div>
-						<div class="blog__item__text">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> 2021/08/04</li>
-								<li><i class="fa fa-comment-o"></i> 3</li>
-							</ul>
-							<h5>
-								<a href="./comm_contents.do">원룸 관리비도 만만치 않네요?</a>
-							</h5>
-						</div>
-					</div>
-				</div>
+			</div>
+			<br>
+			<div>
+				<table border="2" style="width: 1000px;" bordercolor="#46AA46">
+					<tr>
+						<td width="500px">작성자 <input type="text" id="reply_writer"
+							name="reply_writer" style="width: 170px;" maxlength="10"
+							placeholder="작성자" /> 비밀번호 <input type="password"
+							id="reply_password" name="reply_password" style="width: 170px;"
+							maxlength="10" placeholder="패스워드" />
+							<button id="reply_save" name="reply_save">댓글 등록</button>
+						</td>
+					</tr>
+					<tr>
+						<td><textarea id="reply_content" name="reply_content"
+								rows="4" cols="50" placeholder="댓글을 입력하세요."
+								style="width: 1000px; height: 50px;"></textarea></td>
+					</tr>
+				</table>
 			</div>
 		</div>
+		</div>
 	</section>
-	<!-- Related Blog Section End -->
+	<!-- Product Details Section End -->
 
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
@@ -317,7 +295,6 @@
 	<script src="${cpath}/resources/js/mixitup.min.js"></script>
 	<script src="${cpath}/resources/js/owl.carousel.min.js"></script>
 	<script src="${cpath}/resources/js/main.js"></script>
-
 </body>
 
 </html>

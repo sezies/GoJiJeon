@@ -21,10 +21,6 @@ if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
 }
 List<NoticeVO> t_list = (List<NoticeVO>)session.getAttribute("t_list");
-//System.out.println(t_list.get(0).getPay_day()+"그래프 날짜");
-//System.out.println(t_list.get(0).getPay_money()+"그래프 돈");
-System.out.println(t_list.size()+"리스트크기");
-
 %>
 <div style="width: 900px; height: 900px;">
 	<!--차트가 그려질 부분-->

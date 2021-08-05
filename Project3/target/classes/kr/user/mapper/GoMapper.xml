@@ -44,6 +44,7 @@
     
    
     <!-- notice 부분 -->
+
     <!-- 고지서 셀렉터 -->
      <select id="NoticeSelect"  parameterType = "String"
          resultType="kr.user.mapper.NoticeVO" >
@@ -52,8 +53,10 @@
     
     
     
-   <select id = "NoticeListAjax" resultType="kr.user.mapper.NoticeVO" >
-    select * from notice order by idx desc
+
+        <select id = "NoticeListAjax" 
+            resultType="kr.user.mapper.NoticeVO" >
+    select * from notice where notice_num=#{notice_num}
    </select>
    
     <insert id="NoticeInsert" parameterType="kr.user.mapper.NoticeVO">

@@ -1,3 +1,5 @@
+<%@page import="kr.user.mapper.NoticeVO"%>
+<%@page import="java.util.List"%>
 <%@page import="kr.user.mapper.UsersVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -36,16 +38,68 @@
 	type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
 	type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+
+
+
+
+function getJson(notice_num){		
+		$.ajax({
+			url:"${cpath}/NoticeListAjax.do",
+			type : "get",
+			data : {"notice_num": notice_num},	
+			dataType:"json",
+			success : ajaxHtml,
+			error :function(){alert("error");}
+		});
+	}
+function ajaxHtml(data){ 
+	var result="<table >";
+	result+="<tr>";
+	result+="<td>번호</td>";
+	result+="<td>코드</td>";
+	result+="<td>제목</td>";
+	result+="<td>날짜</td>";
+	result+="<td>비용</td>";
+	result+="<td>은행</td>";
+	result+="<td>이미지</td>";
+	result+="<td>등록일자</td>";
+	result+="</tr>";
+	// 여기에 반복문으로 게시물을 출력
+	// 이름없는 함수 
+	$.each(data,function(index,obj){
+		result+="<tr>";
+  		result+="<td>"+obj.notice_num+"</td>";
+  		result+="<td>"+obj.notice_code+"</td>";
+  		result+="<td>"+obj.notice_title+"</td>";
+  		result+="<td>"+obj.pay_day+"</td>";
+  		result+="<td>"+obj.pay_money+"</td>";
+  		result+="<td>"+obj.pay_bank+"</td>";
+  		result+="<td>"+obj.img+"</td>";
+  		result+="<td>"+obj.regist_day+"</td>";
+  		result+="</tr>";
+		
+	});
+	 
+	result+="</table>";
+	$("#c_list").html(result);
+}	
+	
+</script>
 </head>
 
 <body>
-	<%
-		UsersVO u_vo = null;
-	if (session.getAttribute("login") != null) {
-		u_vo = (UsersVO) session.getAttribute("login");
-		System.out.println(u_vo + "||||이거는 맨 위에거");
-	}
-	%>
+<%
+UsersVO u_vo = null;
+if(session.getAttribute("login")!= null){
+u_vo = (UsersVO)session.getAttribute("login");
+}
+List<NoticeVO> t_list = (List<NoticeVO>)session.getAttribute("t_list");
+List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
+%>
 
 
 	<!-- Page Preloder -->
@@ -219,30 +273,36 @@
 						<div class="blog__sidebar__item">
 							<h4>최근 고지서</h4>
 							<div class="blog__sidebar__recent">
-								<a href="#" class="blog__sidebar__recent__item">
+							<!-- 최근고지서 부분 불러오는부분 -->
+								 <c:forEach var="n_vo" items="${n_list}" >
+								<a href="#" class="blog__sidebar__recent__item" >
 									<div class="blog__sidebar__recent__item__pic">
-										<img src="${cpath}/resources/img/blog/sidebar/sr-1.jpg" alt="">
+										<img src="${n_vo.img}" alt="">
 									</div>
-									<div class="blog__sidebar__recent__item__text">
-										<h6>스인재아파트 2021년 7월 관리비</h6>
-										<span>MAR 05, 2019</span>
+									<div class="blog__sidebar__recent__item__text" >
+										<button class="btn btn-info btn-sm" onclick="getJson(${n_vo.notice_num})">${n_vo.notice_num}리스트</button>
+										<h6>${n_vo.notice_title}</h6>
+										<span>${n_vo.pay_day}</span>
 									</div>
-								</a> <a href="#" class="blog__sidebar__recent__item">
+									</c:forEach> 
+									
+									
+									
+								<%-- <%for(int i = 0 ; i < n_list.size(); i++) {%>						
+									<a href="#" class="blog__sidebar__recent__item" >
 									<div class="blog__sidebar__recent__item__pic">
-										<img src="${cpath}/resources/img/blog/sidebar/sr-2.jpg" alt="">
+										<img src="<%=n_list.get(i).getImg() %>" alt="">
 									</div>
-									<div class="blog__sidebar__recent__item__text">
-										<h6>스인재아파트 2021년 6월 관리비</h6>
-										<span>MAR 05, 2019</span>
+									<div class="blog__sidebar__recent__item__text" >
+										<button class="btn btn-info btn-sm" onclick="getJson()" ><%=n_list.get(i).getNotice_num()%>리스트</button>
+										<h6><%=n_list.get(i).getNotice_title() %></h6>
+										<span><%=n_list.get(i).getPay_day()%></span>
 									</div>
-								</a> <a href="#" class="blog__sidebar__recent__item">
-									<div class="blog__sidebar__recent__item__pic">
-										<img src="${cpath}/resources/img/blog/sidebar/sr-3.jpg" alt="">
-									</div>
-									<div class="blog__sidebar__recent__item__text">
-										<h6>스인재아파트 2021년 5월 관리비</h6>
-										<span>MAR 05, 2019</span>
-									</div>
+									<%} %> --%>
+									
+									
+									
+							<!-- 최근고지서 부분 불러오는부분 -->		
 								</a>
 							</div>
 						</div>
@@ -251,12 +311,21 @@
 				<div class="col-lg-8 col-md-7 order-md-1 order-1">
 					<div class="blog__details__text">
 						<!-- 좌측 그래프를 선택하면 해당 아이프레임에 노출되도록... -->
-						<h3>스인재아파트 2021년 8월 관리비</h3>
+						
+						
+						<div id="c_list">여기에 게시판 리스트를 출력하시오</div>
+						
+						
+						
+						<%-- <h3>스인재아파트 2021년 8월 관리비</h3>
 						<p align="middle">
 							<iframe src="${cpath}/resources/img/blog/details/details-pic.jpg"
 								style="width: 800px; height: 650px; border: 0;"
 								allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-						</p>
+						</p> --%>
+						
+						
+						
 						<p>그래프 관련 상세 내용</p>
 					</div>
 				</div>
@@ -274,7 +343,8 @@
 	<script src="${cpath}/resources/js/mixitup.min.js"></script>
 	<script src="${cpath}/resources/js/owl.carousel.min.js"></script>
 	<script src="${cpath}/resources/js/main.js"></script>
-	
+
 </body>
+
 
 </html>

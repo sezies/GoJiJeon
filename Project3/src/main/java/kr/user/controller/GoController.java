@@ -138,6 +138,7 @@ public class GoController {
     	  List<NoticeVO> n_list=GoMapper.NoticeList(num); //1번 고맵퍼
     	  System.out.println(num+"num의값 로그인시 리스트");
     	  request.setAttribute("n_list",n_list);
+    	  session.setAttribute("n_list",n_list);
     	  }
     	  
     	  return "index_main";
@@ -234,6 +235,11 @@ public class GoController {
       public String bill_contents() {
          return "bill_contents";
       }
+      
+      @RequestMapping("/comm_contents.do")
+      public String comm_contents() {
+         return "comm_contents";
+      }
    
 
       // 노티스부분
@@ -253,18 +259,28 @@ public class GoController {
         	
         	request.setAttribute("list", list);
             
+
             return "bill_manager"; //  -->viewResolver --> /WEB-INF/views/boardList.jsp
          }
+
          
-         
-         
-         
+         //github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
          @RequestMapping("/NoticeListAjax.do")
-         public @ResponseBody List<NoticeVO> NoticeListAjax() {
+         public @ResponseBody List<NoticeVO> NoticeListAjax(NoticeVO n_vo,HttpSession session) {
           //게시판 리스트를 JSON형식으로 JS클라이언트에게 내려보낸다.
-            List<NoticeVO> list = GoMapper.NoticeListAjax();
-            return list; // list->JSON
+        	 int n_num = n_vo.getNotice_num();
+        	 System.out.println("이쪽으로옴 번호"+n_vo.getNotice_num());
+        	 
+            List<NoticeVO> c_list = GoMapper.NoticeListAjax(n_num);
+            System.out.println("이쪽으로옴 c_list에 담긴내용"+c_list);
+            //session.setAttribute("c_list",c_list);
+            return c_list; // list->JSON
          }
+         
+         
+         
+         
+         
          @RequestMapping("/NoticeForm.do")
          public String NoticeForm() {
             return "NoticeForm"; //NoticeForm.jsp
