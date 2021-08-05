@@ -91,7 +91,9 @@
 				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="./bill_upload.do">고지서 업로드</a></li>
-						<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
+						<li><a
+							href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서
+								관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
@@ -111,50 +113,70 @@
 	<!-- Humberger End -->
 
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <nav class="header__menu">
-                        <ul><%if(u_vo==null) {%>
-                            <li class="active"><a href="./index_main.do">메인</a></li>
-                            <li><a href="./community.do">커뮤니티</a></li>
-                            <li><a href="./contact.do">문의하기</a></li>
-                            <%}else {%>
-                            <li class="active"><a href="./index_main.do">메인</a></li>
-                            <li><a href="#">고지서 서랍</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./bill_upload.do">고지서 업로드</a></li>
-                                    <li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
-                                    <li><a href="./bill_graph.do">고지서 분석</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./community.do">커뮤니티</a></li>
-                            <li><a href="./contact.do">문의하기</a></li>
-                       <%} %></ul>
-                    </nav>
-                </div>
-                <div class="col-lg-2">
-                    <nav class="header__menu">
-                         <!--  로그인 배너 (찐) -->
-                         <%if(u_vo==null) {%>
-                            <a href="./login_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">로그인</a>
-                            &emsp;&emsp;&emsp;
-                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">회원가입</a>
-                          <%}else {%>
-                            <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;" >로그아웃</a>
-                            &emsp;
-                            <a href="./mypage_main.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">마이페이지</a>
-                            <%} %>
-                    </nav>
-                </div>
-                   <!--<div class="col-lg-3"> 
+	<!-- Header Section Begin -->
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="header__logo">
+						<a href="./index_main.do"><img
+							src="${cpath}/resources/img/logo.png" alt=""></a>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<nav class="header__menu">
+						<ul>
+							<%
+								if (u_vo == null) {
+							%>
+							<li class="active"><a href="./index_main.do">메인</a></li>
+							<li><a href="./community.do">커뮤니티</a></li>
+							<li><a href="./contact.do">문의하기</a></li>
+							<%
+								} else {
+							%>
+							<li class="active"><a href="./index_main.do">메인</a></li>
+							<li><a href="#">고지서 서랍</a>
+								<ul class="header__menu__dropdown">
+									<li><a href="./bill_upload.do">고지서 업로드</a></li>
+									<li><a
+										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서
+											관리</a></li>
+									<li><a href="./bill_graph.do">고지서 분석</a></li>
+								</ul></li>
+							<li><a href="./community.do">커뮤니티</a></li>
+							<li><a href="./contact.do">문의하기</a></li>
+							<%
+								}
+							%>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-lg-2">
+					<nav class="header__menu">
+						<!--  로그인 배너 (찐) -->
+						<%
+							if (u_vo == null) {
+						%>
+						<a href="./login_main2.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그인</a>
+						&emsp;&emsp;&emsp; <a href="./join_main2.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">회원가입</a>
+						<%
+							} else {
+						%>
+						<a href="${cpath}/UsersLogout.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
+						&emsp; <a href="./mypage_main.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
+						<a href="${cpath}/testline.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">그래프연습</a>
+						<%
+							}
+						%>
+					</nav>
+				</div>
+				<!--<div class="col-lg-3"> 
                        <div class="header__cart">
                          <ul>
                          <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
@@ -163,16 +185,17 @@
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
                 </div>-->
-            </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
+			</div>
+			<div class="humberger__open">
+				<i class="fa fa-bars"></i>
+			</div>
+		</div>
+	</header>
+	<!-- Header Section End -->
 
 
 	<!-- Hero Section Begin -->
+
 	<section class="hero">
 		<div class="container">
 			<div class="row"></div>
@@ -190,12 +213,24 @@
 			</div>-->
 			<br>
 			<div class="hero__item set-bg"
-				data-setbg="${cpath}/resources/img/hero/banner.jpg">
+				data-setbg="${cpath}/resources/img/hero/sample_banner2.jpg">
 				<div class="hero__text">
-					<span>QUICK START</span> <br>
-					<h2>나만의 고지서 관리를 시작하세요</h2>
-					<p>Please upload your bill</p>
+					<span>EASY START</span> <br>
+	<%
+		if (u_vo == null) {
+	%>
+					<h2>고지서 관리가 처음이시라면?</h2>
+					<p>Are you new to bill management?</p>
+					<a href="./join_main2.do" class="primary-btn">회원가입 하러 가기</a>
+	<%
+		} else {
+	%>
+					<h2>고지서 업로드가 필요하시다면?</h2>
+					<p>What if I need to upload a bill?</p>
 					<a href="./bill_upload.do" class="primary-btn">업로드 하러 가기</a>
+	<%
+		}
+	%>
 				</div>
 			</div>
 		</div>
@@ -203,31 +238,55 @@
 	<!-- Hero Section End -->
 	<br>
 	<!-- Categories Section Begin -->
+	<%
+		if (u_vo != null) {
+	%>
 	<section class="categories">
 		<div class="container">
 			<div class="row">
 				<div class="categories__slider owl-carousel">
 					<!--  반복문을 통해 리스트에 있는 값  불러오기 -->
-					<%
-						if (u_vo != null) {
-					%>
 					<c:forEach var="n_vo" items="${n_list}">
 						<div class="col-lg-3">
-							<div class="categories__item set-bg" data-setbg="${cpath}/resources/img/${n_vo.img}">
+							<div class="categories__item set-bg"
+								data-setbg="${cpath}/resources/img/${n_vo.img}">
 								<h5>
 									<a href="#">${n_vo.notice_title}</a>
 								</h5>
 							</div>
 						</div>
 					</c:forEach>
-					<%
-						}
-					%>
-					
-					<hr>
-					<!--  반복문을 통해 리스트에 있는 값  불러오기 -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Categories Section End -->
+	<%
+		} else {
+	%>
+	<div class="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					<div class="banner__pic">
+						<img src="${cpath}/resources/img/banner/no_login_banner1.jpg"
+							alt="">
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					<div class="banner__pic">
+						<img src="${cpath}/resources/img/banner/no_login_banner2.jpg"
+							alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%
+		}
+	%>
 
-					<%-- <div class="col-lg-3">
+	<%-- <div class="col-lg-3">
 						<div class="categories__item set-bg"
 							data-setbg="${cpath}/resources/img/categories/cat-1.jpg">
 							<h5>
@@ -267,11 +326,6 @@
 							</h5>
 						</div>
 					</div> --%>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Categories Section End -->
 
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
