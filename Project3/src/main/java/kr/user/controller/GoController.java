@@ -231,8 +231,18 @@ public class GoController {
          return "mypage_main";
       }
       
+      
+      
+		/* 고지서 클릭시 고지서 번호를 받아와 select-where 행 하나 뽑아와서 객체에 남아서 내보내기 */
       @RequestMapping("/bill_contents.do")
-      public String bill_contents() {
+      public String bill_contents(HttpServletRequest request, @RequestParam("notice_num") String notice_num, Model model) {
+    	  
+    	  System.out.println("고지서 번호 : " + notice_num);
+    	  
+    	  NoticeVO vo = GoMapper.NoticeOne(notice_num);
+    	  
+    	  model.addAttribute("vo", vo);
+    	  
          return "bill_contents";
       }
       

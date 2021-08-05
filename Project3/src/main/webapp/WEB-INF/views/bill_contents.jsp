@@ -92,7 +92,7 @@
 				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="./bill_upload.do">고지서 업로드</a></li>
-						<li><a href="./bill_manager.do">고지서 관리</a></li>
+						<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
@@ -137,7 +137,7 @@
 							<li><a href="#">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
 									<li><a href="./bill_upload.do">고지서 업로드</a></li>
-									<li><a href="./bill_manager.do">고지서 관리</a></li>
+									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
 									<li><a href="./bill_graph.do">고지서 분석</a></li>
 								</ul></li>
 							<li><a href="./community.do">커뮤니티</a></li>
@@ -200,32 +200,42 @@
 	<section class="product-details spad">
 		<div class="container">
 			<div class="row">
+			
 				<div class="col-lg-6 col-md-6">
 					<div class="product__details__pic">
 						<div class="product__details__pic__item">
-							<img class="product__details__pic__item--large"
-								src="${cpath}/resources/img/product/details/product-details-1.jpg"
-								alt="">
+							
+							<img class="product__details__pic__item--large "
+								src="${cpath}/resources/img/${vo.img}"
+								alt=""
+								style="cursor:pointer" 
+								onclick="window.open((this.src),'asdfo8or','scrollbars=yes,width=500,height=500,top=10,left=20');"
+								>
+						
+						
 						</div>
 					</div>
 				</div>
+		
 				<div class="col-lg-6 col-md-6">
 					<div class="product__details__text">
-						<h3>스인재아파트 2021년 8월 관리비</h3>
-						<div class="product__details__price">\200,000</div>
+						<h3>${vo.notice_title}</h3>
+						<div class="product__details__price">${vo.pay_money} won</div>
 						<p>아파트 관리비는 크게 공용관리비와 개별사용료로 나뉩니다. 관리사무소 직원의 인건비 등 일반관리비와 청소비,
 							경비비, 소독비 등 단지 관리를 위해 공동 부담해야 하는 항목이 공용관리비입니다. 승강기 유지비와 건물 유지·보수에
 							사용되는 수선유지비, 위탁관리에 따른 수수료 등도 여기에 포함됩니다.</p>
 						<ul>
-							<li><b>납기 금액(기한 내)</b> <span>\200,000</span></li>
-							<li><b>납기 금액(기한 후)</b> <span>\220,000</span></li>
-							<li><b>납부 기한</b> <span>2021.07.31</span></li>
-							<li><b>납부 은행</b> <span>농협</span></li>
+							<li><b>납기 금액(기한 내)</b> <span style="font-weight:bold">${vo.pay_money} won</span></li>
+							<li><b>납기 금액(기한 후)</b> <span style="font-weight:bold">300,000 won</span></li>
+							<li><b>납부 기한</b> <span style="font-weight:bold">${vo.pay_day}</span></li>
+							<li><b>납부 은행</b> <span style="font-weight:bold">${vo.pay_bank} 은행</span></li>
 						</ul>
+						
+						
 						<br>
 						<div class="checkout__input">
 							<button type="button" class="site-btn"
-								onclick="location.href='bill_manager.do' ">목록으로</button>
+								onclick="location.href='${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>'">목록으로</button>
 						</div>
 					</div>
 				</div>
@@ -276,6 +286,9 @@
 		</div>
 	</section>
 	<!-- Product Details Section End -->
+
+
+
 
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>

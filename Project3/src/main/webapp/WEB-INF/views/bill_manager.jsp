@@ -255,7 +255,7 @@ u_vo = (UsersVO)session.getAttribute("login");
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                 
                     <div class="featured__item">
-                       <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/${vo.img}">
+                       <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/${vo.img}" onclick="location.href='${cpath}/bill_contents.do?notice_num=${vo.notice_num}' ">
                                <ul>
                                 <!--  <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -263,8 +263,9 @@ u_vo = (UsersVO)session.getAttribute("login");
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="./bill_contents.do">${vo.notice_title}</a></h6>
-                            <h5>${vo.pay_money}</h5>
+                            <h6><a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">납부기한 : ${vo.pay_day}</a></h6>
+                            <h6><a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">고지서 종류 : ${vo.notice_title}</a></h6>
+                            <h5>납부할 금액 : ${vo.pay_money} 원</h5>
                         </div>
                     </div>
                 </div>

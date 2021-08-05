@@ -29,6 +29,7 @@ public interface GoMapper {
 	
 	// 고지서 셀렉터
 	public List<NoticeVO> NoticeSelect(String user_num);
+	public NoticeVO NoticeOne(String notice_num);
 	
 	
 	/* 이미지 */
