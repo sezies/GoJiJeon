@@ -211,26 +211,30 @@
 				</form>
 			</div>-->
 			<br>
-			<div class="hero__item set-bg"
-				data-setbg="${cpath}/resources/img/hero/sample_banner2.jpg">
-				<div class="hero__text">
-					<span>EASY START</span> <br>
 	<%
 		if (u_vo == null) {
-	%>
+	%>				
+			<div class="hero__item set-bg"
+				data-setbg="${cpath}/resources/img/hero/logout_banner.png">
+				<div class="hero__text">
+					<span>EASY START</span> <br>
 					<h2>고지서 관리가 필요하시다면?</h2>
 					<p>로그인 혹은 회원가입 후 이용해주세요</p>
 					<a href="./login_main2.do" class="primary-btn">로그인</a>
 					<a href="./join_main2.do" class="primary-btn">회원가입</a>
 	<%
 		} else {
-	%>
+	%>		<div class="hero__item set-bg"
+				data-setbg="${cpath}/resources/img/hero/login_banner.png">
+				<div class="hero__text">
+					<span>EASY START</span> <br>
 					<h2>고지서 관리를 시작하시려면?</h2>
 					<p>고지서를 업로드 해서 목록에 넣어주세요</p>
 					<a href="./bill_upload.do" class="primary-btn">업로드 하기</a>
 	<%
 		}
 	%>
+				</div>
 				</div>
 			</div>
 		</div>
