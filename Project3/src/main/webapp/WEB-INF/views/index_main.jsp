@@ -282,13 +282,13 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="banner__pic">
-						<img src="${cpath}/resources/img/banner/no_login_banner1.jpg"
+						<img src="${cpath}/resources/img/banner/banner_left.png"
 							alt="">
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="banner__pic">
-						<img src="${cpath}/resources/img/banner/no_login_banner2.jpg"
+						<img src="${cpath}/resources/img/banner/banner_right.png"
 							alt="">
 					</div>
 				</div>
