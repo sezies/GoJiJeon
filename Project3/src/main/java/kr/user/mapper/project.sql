@@ -32,13 +32,13 @@ create table notice(
         pay_money int not null,
         pay_bank varchar(30) not null,
         img varchar(200) not null,  
-        regist_day datetime default now(),
+        regist_day TIMESTAMP DEFAULT NOW(),
         primary key(notice_num),
         foreign key(user_num) references users(user_num)
 );
 
 	insert into notice(user_num,notice_code,notice_title,pay_day,pay_money,pay_bank,img)
-	value (1, '2','1','test고지서2','2021.02.22','100000','국민은행','C:\Users\smhrd\Desktop\프로젝트3차\test1.jpg');
+	value (1, '1','test고지서7','2021.07.22','200000','국민은행','C:\Users\smhrd\Desktop\프로젝트3차\test1.jpg');
 
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
 	value (2, '3', '전기세', '2021.05.24', '30000', '농협', 'car_sample2.jpg')
@@ -63,7 +63,7 @@ create table notice(
 	
 select * from notice where user_num='1';
 select * from notice;
-
+drop table notice;
 
 
 --이미지 테스트
