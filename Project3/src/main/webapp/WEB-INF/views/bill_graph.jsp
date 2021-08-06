@@ -108,7 +108,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 	<div class="humberger__menu__wrapper">
 		<div class="humberger__menu__logo">
 			<a href="./index_main.do"><img
-				src="${cpath}/resources/img/logo.png" alt=""></a>
+				src="${cpath}/resources/img/logo1.png" alt=""></a>
 		</div>
 		<div class="humberger__menu__widget">
 			<div class="header__top__right__auth">
@@ -132,17 +132,23 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 				<%
 					if (u_vo == null) {
 				%>
-				<li><a href="./index_main.do">메인</a></li>
+				<li><a href="#">고지서 서랍</a>
+					<ul class="header__menu__dropdown">
+						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 업로드</a></li>
+						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
+						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 분석</a></li>
+					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
 				<li><a href="./contact.do">문의하기</a></li>
 				<%
 					} else {
 				%>
-				<li><a href="./index_main.do">메인</a></li>
 				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="./bill_upload.do">고지서 업로드</a></li>
-						<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
+						<li><a
+							href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서
+								관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
@@ -168,7 +174,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 				<div class="col-lg-3">
 					<div class="header__logo">
 						<a href="./index_main.do"><img
-							src="${cpath}/resources/img/logo.png" alt=""></a>
+							src="${cpath}/resources/img/logo1.png" alt=""></a>
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -177,21 +183,27 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 							<%
 								if (u_vo == null) {
 							%>
-							<li class="active"><a href="./index_main.do">메인</a></li>
-							<li><a href="./community.do">커뮤니티</a></li>
-							<li><a href="./contact.do">문의하기</a></li>
+							<li class="active">
+							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+								<ul class="header__menu__dropdown">
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 업로드</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
+								</ul></li>
+							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
-							<li class="active"><a href="./index_main.do">메인</a></li>
-							<li><a href="#">고지서 서랍</a>
+							<li class="active">
+							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do">고지서 업로드</a></li>
-									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>">고지서 관리</a></li>
-									<li><a href="./bill_graph.do">고지서 분석</a></li>
+									<li><a href="./bill_upload.do" style="font-size:16px;">고지서 업로드</a></li>
+									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>" style="font-size:16px;">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size:16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="./community.do">커뮤니티</a></li>
-							<li><a href="./contact.do">문의하기</a></li>
+							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
 							<%
 								}
 							%>
@@ -318,8 +330,9 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 					
 						<p>ㅤ</p>
 						
-						<p align="center"><%= u_vo.getUser_name() %> 님의 월별 관리비 추이</p>
+						<h2 align="center">"<%=u_vo.getUser_name()%>"님의 월별 관리비 추이</h2>
 												<!-- 그래프 부분 -->
+						<p>ㅤ</p>
 				<div align="center" style="width: 600px; height: 600px; margin-left: 250px;">
 	<!--차트가 그려질 부분-->
 	

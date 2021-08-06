@@ -57,7 +57,9 @@
 	<div class="humberger__menu__wrapper">
 		<div class="humberger__menu__logo">
 			<a href="./index_main.do"><img
-				src="${cpath}/resources/img/logo2.png" alt=""></a>
+
+				src="${cpath}/resources/img/logo1.png" alt=""></a>
+
 		</div>
 		<div class="humberger__menu__widget">
 			<div class="header__top__right__auth">
@@ -81,13 +83,17 @@
 				<%
 					if (u_vo == null) {
 				%>
-				<li><a href="./index_main.do">메인</a></li>
+				<li><a href="#">고지서 서랍</a>
+					<ul class="header__menu__dropdown">
+						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 업로드</a></li>
+						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
+						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 분석</a></li>
+					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
 				<li><a href="./contact.do">문의하기</a></li>
 				<%
 					} else {
 				%>
-				<li><a href="./index_main.do">메인</a></li>
 				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="./bill_upload.do">고지서 업로드</a></li>
@@ -120,7 +126,7 @@
 				<div class="col-lg-3">
 					<div class="header__logo">
 						<a href="./index_main.do"><img
-							src="${cpath}/resources/img/logo.png" alt=""></a>
+							src="${cpath}/resources/img/logo1.png" alt=""></a>
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -232,6 +238,7 @@
 				data-setbg="${cpath}/resources/img/hero/login_banner.png">
 				<div class="hero__text">
 					<span>EASY START</span> <br>
+					<h2>"<%=u_vo.getUser_name()%>"님 환영합니다!</h2>
 					<h2>고지서 관리를 시작하시려면?</h2>
 					<p>고지서를 업로드 해서 목록에 넣어주세요</p>
 					<a href="./bill_upload.do" class="primary-btn">업로드 하기</a>
@@ -277,13 +284,13 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="banner__pic">
-						<img src="${cpath}/resources/img/banner/no_login_banner1.jpg"
+						<img src="${cpath}/resources/img/banner/banner_left.png"
 							alt="">
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="banner__pic">
-						<img src="${cpath}/resources/img/banner/no_login_banner2.jpg"
+						<img src="${cpath}/resources/img/banner/banner_right.png"
 							alt="">
 					</div>
 				</div>

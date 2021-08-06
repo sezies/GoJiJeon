@@ -1,6 +1,6 @@
 create table users(
         user_num int not null auto_increment,
-        user_id varchar(30) not null,
+        user_id varchar(30) not null unique,
         user_pw varchar(30) not null,
         user_name varchar(15) not null,
         user_bank varchar(30) not null,
@@ -13,6 +13,10 @@ truncate users;
 
 insert into users(user_id,user_pw,user_name,user_bank)
 value ('test','123','test','test');
+
+insert into users(user_id,user_pw,user_name,user_bank)
+value ('kite','123','KITE','광주');
+
 
 select * from users;
 
