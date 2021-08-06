@@ -193,6 +193,22 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     </div>
                 </div>
             </div>
+            <%if(u_vo==null) {%>
+            <form action="#">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <input type="text" placeholder="작성자 이름을 적어주세요" readonly>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <input type="text" placeholder="회신받을 이메일을 적어주세요">
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <textarea placeholder="문의사항을 적어주세요"></textarea>
+                        <button type="submit" class="site-btn" onclick="gobtn()">문의 남기기</button>
+                   </div>
+                </div>
+            </form>
+            <%}else {%>
             <form action="#">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
@@ -207,6 +223,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                    </div>
                 </div>
             </form>
+            <%} %>
         </div>
     </div>
     <!--  Contact Form End -->
