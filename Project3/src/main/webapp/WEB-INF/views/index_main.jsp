@@ -81,13 +81,17 @@
 				<%
 					if (u_vo == null) {
 				%>
-				<li><a href="./index_main.do">메인</a></li>
+				<li><a href="#">고지서 서랍</a>
+					<ul class="header__menu__dropdown">
+						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 업로드</a></li>
+						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
+						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 분석</a></li>
+					</ul></li>
 				<li><a href="./community.do">커뮤니티</a></li>
 				<li><a href="./contact.do">문의하기</a></li>
 				<%
 					} else {
 				%>
-				<li><a href="./index_main.do">메인</a></li>
 				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="./bill_upload.do">고지서 업로드</a></li>
