@@ -48,7 +48,7 @@ u_vo = (UsersVO)session.getAttribute("login");
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+            <a href="./index_main.do"><img src="${cpath}/resources/img/logo1.png" alt=""></a>
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__auth">
@@ -96,7 +96,7 @@ u_vo = (UsersVO)session.getAttribute("login");
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index_main.do"><img src="${cpath}/resources/img/logo.png" alt=""></a>
+                        <a href="./index_main.do"><img src="${cpath}/resources/img/logo1.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-7">
