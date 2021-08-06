@@ -212,7 +212,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             <form action="#">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="<%=u_vo.getUser_name()%>"><!--readonly-->
+                        <input type="text" placeholder="<%=u_vo.getUser_name()%>"readonly>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <input type="text" placeholder="회신받을 이메일을 적어주세요">
