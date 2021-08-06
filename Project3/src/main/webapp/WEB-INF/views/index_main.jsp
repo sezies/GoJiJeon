@@ -57,7 +57,7 @@
 	<div class="humberger__menu__wrapper">
 		<div class="humberger__menu__logo">
 			<a href="./index_main.do"><img
-				src="${cpath}/resources/img/logo.png" alt=""></a>
+				src="${cpath}/resources/img/logo2.png" alt=""></a>
 		</div>
 		<div class="humberger__menu__widget">
 			<div class="header__top__right__auth">
