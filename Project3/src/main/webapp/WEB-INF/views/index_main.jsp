@@ -120,7 +120,7 @@
 				<div class="col-lg-3">
 					<div class="header__logo">
 						<a href="./index_main.do"><img
-							src="${cpath}/resources/img/logo.png" alt=""></a>
+							src="${cpath}/resources/img/logo_new.png" alt=""></a>
 					</div>
 				</div>
 				<div class="col-lg-7">
