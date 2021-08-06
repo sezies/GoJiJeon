@@ -169,8 +169,7 @@
 							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
 						&emsp; <a href="./mypage_main.do"
 							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
-						<a href="${cpath}/testline.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">그래프연습</a>
+						
 						<%
 							}
 						%>
