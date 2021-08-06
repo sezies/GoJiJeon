@@ -236,6 +236,7 @@
 				data-setbg="${cpath}/resources/img/hero/login_banner.png">
 				<div class="hero__text">
 					<span>EASY START</span> <br>
+					<h2>"<%=u_vo.getUser_name()%>"님 환영합니다!</h2>
 					<h2>고지서 관리를 시작하시려면?</h2>
 					<p>고지서를 업로드 해서 목록에 넣어주세요</p>
 					<a href="./bill_upload.do" class="primary-btn">업로드 하기</a>

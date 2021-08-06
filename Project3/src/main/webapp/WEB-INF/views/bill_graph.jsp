@@ -318,8 +318,9 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 					
 						<p>ㅤ</p>
 						
-						<p align="center"><%= u_vo.getUser_name() %> 님의 월별 관리비 추이</p>
+						<h2 align="center">"<%=u_vo.getUser_name()%>"님의 월별 관리비 추이</h2>
 												<!-- 그래프 부분 -->
+						<p>ㅤ</p>
 				<div align="center" style="width: 600px; height: 600px; margin-left: 250px;">
 	<!--차트가 그려질 부분-->
 	
