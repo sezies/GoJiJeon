@@ -126,8 +126,7 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="header__logo">
-						<a href="./index_main.do"><img
-							src="${cpath}/resources/img/logo.png" alt="" style = "border-style:1px solid black"></a>
+						<a href="./index_main.do"><img src="${cpath}/resources/img/logo.png"><!-- alt="" style = "border-style:1px solid black"--></a>
 					</div>
 				</div>
 				<div class="col-lg-7">
