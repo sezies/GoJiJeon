@@ -169,7 +169,8 @@
 							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
 						&emsp; <a href="./mypage_main.do"
 							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
-						
+						<a href="${cpath}/testline.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">그래프연습</a>
 						<%
 							}
 						%>
@@ -246,16 +247,12 @@
 			<div class="row">
 				<div class="categories__slider owl-carousel">
 					<!--  반복문을 통해 리스트에 있는 값  불러오기 -->
-					<%
-						if (u_vo != null) {
-					%>
-
 					<c:forEach var="n_vo" items="${n_list}">
-							<div class="categories__item set-bg" data-setbg="${cpath}/resources/img/${n_vo.img}" 
-							style="border: 3px solid white;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" >
-
+						<div class="col-lg-3">
+							<div class="categories__item set-bg"
+								data-setbg="${cpath}/resources/img/${n_vo.img}">
 								<h5>
-									<a href="${cpath}/bill_contents.do?notice_num=${n_vo.notice_num}">${n_vo.notice_title}</a>
+									<a href="#">${n_vo.notice_title}</a>
 								</h5>
 							</div>
 						</div>
@@ -286,7 +283,9 @@
 			</div>
 		</div>
 	</div>
-	<%}}%>
+	<%
+		}
+	%>
 
 	<%-- <div class="col-lg-3">
 						<div class="categories__item set-bg"
