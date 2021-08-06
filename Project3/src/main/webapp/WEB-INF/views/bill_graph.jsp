@@ -56,14 +56,14 @@ function getJson(notice_num){
 	}
 function ajaxHtml(data){ 
 	var result="<table style='margin-left: auto; margin-right: auto; text-align: center;'>";
-	result+="<tr style='border-bottom: 1px solid #dee2e6;'>";
+	result+="<tr style='border-bottom: 1px solid #dee2e6;' bgcolor='#D2D2FF'; height=45px;>";
 	result+="<td width='10%'>번호</td>";
-	result+="<td width='10%'>코드</td>";
-	result+="<td width='10%'>제목</td>";
-	result+="<td width='10%'>날짜</td>";
-	result+="<td width='10%'>비용</td>";
-	result+="<td width='10%'>은행</td>";
-	result+="<td width='10%'>등록일자</td>";
+	result+="<td width='10%'>종류</td>";
+	result+="<td width='10%'>고지서</td>";
+	result+="<td width='10%'>납부 날짜</td>";
+	result+="<td width='10%'>납부 비용</td>";
+	result+="<td width='10%'>납부 은행</td>";
+	result+="<td width='10%'>등록 일자</td>";
 	result+="</tr>";
 	// 여기에 반복문으로 게시물을 출력
 	// 이름없는 함수 
@@ -255,13 +255,12 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						<!-- 좌측 그래프를 선택하면 해당 아이프레임에 노출되도록... 
 						<!-- 최근고지서 부분 불러오는부분 -->
 						<table style="margin-left: auto; margin-right: auto; text-align: center;">
-						<tr style="border-bottom: 1px solid #dee2e6;">
-							<td width="10%">최근5개월</td>
-							<td width="10%">코드</td>
-							<td width="10%">제목</td>
-							<td width="10%">가격</td>
-							<td width="10%">은행</td>
-							<td width="10%">상세내역</td>
+						<tr style="border-bottom: 1px solid #dee2e6;" bgcolor="EBFBFF"; height=45px; >
+							<td width="10%"><h5>최근 5개월<h5></td>							
+							<td width="10%"><h5>고지서<h5></td>
+							<td width="10%"><h5>납부 비용<h5></td>
+							<td width="10%"><h5>납부 은행<h5></td>
+							<td width="10%"><h5>상세 내역<h5></td>
 						</tr>
 							
 						<div class="blog__sidebar__item">
@@ -271,13 +270,11 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						<%for (int i =0; i<5;i++){  %>	
 						<!-- <div class="blog__sidebar__recent__item__text" > -->
 						<tr style="border-bottom: 1px solid #dee2e6;">
-							<td><%=t_list.get(i).getPay_day() %></td>
-							<td>코드</td>
-							<td><h6><%=t_list.get(i).getNotice_title()%></h6></td>
-							<td>가격</td>
-							<td>은행</td>
-							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">   클   릭   </button></td>
-							<%-- <%=t_list.get(i).getNotice_num()%> --%>
+							<td><font color="#b4b4b4";><%=t_list.get(i).getPay_day() %></font></td>							
+							<td><%=t_list.get(i).getNotice_title()%></td>
+							<td><%=t_list.get(i).getPay_money()%></td>
+							<td><%=t_list.get(i).getPay_bank()%></td>							
+							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인 하기</button></td>							
 						</tr>
 						
 							<!-- </div> -->
@@ -312,7 +309,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						<br><br><br>
 							<!-- 최근고지서 부분 불러오는부분 -->	
 						
-						<div id="c_list" align="center">여기에 게시판 리스트를 출력하시오						
+						<div id="c_list" align="center">						
 						</div>
 						
 						
@@ -321,7 +318,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 					
 						<p>ㅤ</p>
 						
-						<p align="center"><%= u_vo.getUser_name() %> 님의 관리비 월별 추이</p>
+						<p align="center"><%= u_vo.getUser_name() %> 님의 월별 관리비 추이</p>
 												<!-- 그래프 부분 -->
 				<div align="center" style="width: 600px; height: 600px; margin-left: 250px;">
 	<!--차트가 그려질 부분-->
