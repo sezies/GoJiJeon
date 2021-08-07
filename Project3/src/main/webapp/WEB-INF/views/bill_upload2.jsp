@@ -292,7 +292,7 @@ label {
 					})
 				},
 				error : function() {
-					alert('요청 실패쓰');
+					alert('요청되지 못했습니다.');
 				}
 			})
 

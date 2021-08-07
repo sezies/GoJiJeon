@@ -7,6 +7,15 @@ create table users(
         primary key(user_num)
 );
 
+-----------------이거 만들분 모집-----------------
+create table contacts(
+        user_num int not null auto_increment,
+        user_id varchar(30) not null unique,
+        user_mail varchar(30) not null unique,
+		user_opinion VARCHAR(2000) not null
+        primary key(user_num)
+);
+
 
 drop table users;
 truncate users;
