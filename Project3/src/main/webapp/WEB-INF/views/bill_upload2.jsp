@@ -235,21 +235,23 @@ label {
 	<!-- Breadcrumb Section End -->
 
 	<!-- Contact Form Begin -->
+	
 	<section class="contact-form spad">
 		<div class="container">
 			<div id="div_img"></div>
-			<label style="margin-left: 720px; margin-top: 50px;">금액</label> <label
-				style="margin-left: 720px; margin-top: 150px;">기한</label> <label
-				style="margin-left: 720px; margin-top: 250px;">은행</label> <input
-				name="pay_money" id="inp_chn" type="text" value="hi"
+			<label style="font-size:20px; color: midnight; margin-left: 720px; margin-top: 50px;">금액</label>
+			<label style="font-size:20px; color: midnight; margin-left: 720px; margin-top: 125px;">기한</label>
+			<label style="font-size:20px; color: midnight; margin-left: 720px; margin-top: 200px;">은행</label> 
+			<input name="pay_money" id="inp_chn" type="text" value="hi"
 				style="margin-left: 800px; margin-top: 50px;" oninput='fill_inp()'>
 			<input name='pay_day' class="inp" disabled="disabled" type="text"
-				style="margin-left: 800px; margin-top: 150px;" onchange='fill_inp()'>
+				style="margin-left: 800px; margin-top: 125px;" onchange='fill_inp()'>
 			<input name="pay_bank" class="inp" disabled="disabled" type="text"
-				style="margin-left: 800px; margin-top: 250px;" onchange='fill_inp()'>
-		</div>
-		<div class="checkout__input">
+				style="margin-left: 800px; margin-top: 200px;" onchange='fill_inp()'>
+			<br><br>
+			<div class="checkout__input" style="margin-left: 850px; margin-top: 250px;">
 			<button type="submit" class="site-btn">고지서 저장</button>
+			</div>
 		</div>
 	</section>
 	<!-- Contact Form End -->
@@ -323,6 +325,7 @@ label {
 			$("#inp_chn").attr("disabled", false);
 		}
 	</script>
+
 
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
