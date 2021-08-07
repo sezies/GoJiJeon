@@ -327,12 +327,20 @@ public class GoController {
          public String NoticeForm() {
             return "NoticeForm"; //NoticeForm.jsp
          }
+         
+         
+         // 값집어넣기
          @RequestMapping("/NoticeInsert.do")
          public String NoticeInsert(NoticeVO vo) {
+        	
             GoMapper.NoticeInsert(vo); //정장
-            return "redirect:/NoticeList.do"; //WEB-INF/views//UsersList.do.jsp
+            System.out.println("고지서 등록하기"+vo);
+            return "redirect:/index_main.do"; //WEB-INF/views//UsersList.do.jsp
             
          }
+         
+         
+      // 값집어넣기
          @RequestMapping("/NoticeContent.do")
          public String NoticeContent(@RequestParam("notice_num") int notice_num, Model model) { //?idx=10
             NoticeVO vo=GoMapper.NoticeContent(notice_num);

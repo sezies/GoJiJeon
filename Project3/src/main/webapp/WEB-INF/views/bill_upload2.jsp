@@ -65,6 +65,7 @@ label {
 	if (session.getAttribute("login") != null) {
 		u_vo = (UsersVO) session.getAttribute("login");
 		System.out.println(u_vo + "||||이거는 맨 위에거");
+		System.out.println(u_vo.getUser_num()+"고지서부분 유저넘값넘오오는지");
 	}
 	%>
 
@@ -236,7 +237,7 @@ label {
 	<!-- Breadcrumb Section End -->
 
 	<!-- Contact Form Begin -->
-	
+	<form action="${cpath}/NoticeInsert.do" method="post">
 	<section class="contact-form spad">
 	
 		<div class="container" align="center">
@@ -251,8 +252,18 @@ label {
 				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
 			<input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
 				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
+			<p>유저번호</p>
+			<input type="number" name="user_num" value="<%=u_vo.getUser_num()%>">
+			<p>고지서 종류</p>
+			<input type="number" name="notice_code" >
+			<p>고지서 제목</p>
+			<input type="text" name="notice_title">
+			<p>이미지</p>
+			<input type="text" name="img" value="<%=session.getAttribute("img")%>">
+			
 			<button type="submit" class="site-btn">고지서 저장</button>
 			<h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
+			</form>
 		</div>
 	</section>
 		<div id="div_img" style="margin:0px auto;"></div>
@@ -303,8 +314,15 @@ label {
       // id가 inp_chn인 녀석의 value 값을 클릭한 div 태그의 value 값으로 바꾼다
       // div 태그의 value 값은 가져온 json data의 infertext(OCR 결과)이다.
       function data_send(tex){
-         $('#inp_chn').attr('value', $('#'+tex).attr('value'))
-         fill_inp();
+    	  $('#inp_chn').attr('value', $('#'+tex).attr('value'))
+    	  var data = $('input[name=pay_money]').val().replace(/,/,"");
+    	  console.log(data);
+    	  $('input[name=pay_money]').attr('value', data);    	  
+    	  console.log(typeof parseInt(data));    	  
+          fill_inp();
+    	 
+    	 
+         
       }
       
       // div 태그 클릭과 동시에 발생하는 함수
@@ -314,6 +332,8 @@ label {
          $(".inp").attr('id',"inp_chn").attr("class","")
          $("#inp_chn").attr("disabled",false);
       }
+      
+      
    </script>
 
 
