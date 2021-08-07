@@ -110,7 +110,7 @@
         values(#{img})
     </insert>
    
-   
+   <!-- ㄴㅁ -->
    
    <select id="imageSelect"  
          resultType="kr.user.mapper.imgVO" >
