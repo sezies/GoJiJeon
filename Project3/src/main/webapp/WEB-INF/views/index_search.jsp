@@ -118,7 +118,7 @@
 						<li><a href="./bill_manager.do">고지서 관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
-				<li><a href="./community.do">커뮤니티</a></li>
+				<li><a href="${cpath}/communityList.do">커뮤니티</a></li>
 				<li><a href="./contact.do">문의하기</a></li>
 				<%
 					}
@@ -163,7 +163,7 @@
 									<li><a href="./bill_manager.do">고지서 관리</a></li>
 									<li><a href="./bill_graph.do">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="./community.do">커뮤니티</a></li>
+							<li><a href="${cpath}/communityList.do">커뮤니티</a></li>
 							<li><a href="./contact.do">문의하기</a></li>
 							<%
 								}

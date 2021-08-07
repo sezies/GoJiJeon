@@ -26,12 +26,11 @@
     <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
-<script type="text/javascript">
-function gobtn(){
-		alert("문의하신 내용이 접수 완료 되었습니다.");
-		location.href="index_main"; 		
-	}
-</script>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -173,7 +172,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>문의하기</h2>
+                        <h2>글쓰기</h2>
                         <div class="breadcrumb__option">
                         </div>
                     </div>
@@ -189,46 +188,33 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact__form__title">
-                        <h2>문의사항</h2>
+                        <h2></h2>
                     </div>
                 </div>
             </div>
-            <%if(u_vo==null) {%>
-            <form action="#">
+           
+            <form action="${cpath}/comInsert.do" method="post"  >
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="작성자 이름을 적어주세요">
+                    <div class="col-lg-5 col-md-5"> 
+                        <input name = "user_num"  value= "<%=u_vo.getUser_num()%>" type="text" placeholder="작성자 : <%=u_vo.getUser_name()%>"readonly>
+                        <input type = "file" name = "board_img">
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="회신받을 이메일을 적어주세요">
-                    </div>
+                    
                     <div class="col-lg-12 text-center">
-                        <textarea placeholder="문의사항을 적어주세요"></textarea>
-                        <button type="submit" class="site-btn" onclick="gobtn()">문의 남기기</button>
+                        <input name = "board_title" type="text" placeholder="제목을 입력해주세요">
+                        <textarea name = "board_content" placeholder="글을 입력해주세요"></textarea>
+                        <button type="submit" class="site-btn" >글 등록하기</button>
                    </div>
+                   <div class="col-lg-6 col-md-6">
+                    </div>
                 </div>
             </form>
-            <%}else {%>
-            <form action="#">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="<%=u_vo.getUser_name()%>"readonly>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="회신받을 이메일을 적어주세요">
-                    </div>
-                    <div class="col-lg-12 text-center">
-                        <textarea placeholder="문의사항을 적어주세요"></textarea>
-                        <button type="submit" class="site-btn" onclick="gobtn()">문의 남기기</button>
-                   </div>
-                </div>
-            </form>
-            <%} %>
+        
         </div>
     </div>
     <!--  Contact Form End -->
 
-    <!-- Map Begin -->
+    <%-- <!-- Map Begin -->
     <div class="map">
         <iframe
             src="${cpath}/resources/img/cgi.jpg"
@@ -244,7 +230,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             </div>
         </div>
     </div>
-    <!-- Map End -->
+    <!-- Map End --> --%>
 
     <!-- Js Plugins -->
     <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>

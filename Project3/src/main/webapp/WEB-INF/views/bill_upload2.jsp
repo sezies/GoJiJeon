@@ -120,7 +120,7 @@ label {
 								관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
-				<li><a href="./community.do">커뮤니티</a></li>
+				<li><a href="${cpath}/communityList.do">커뮤니티</a></li>
 				<li><a href="./contact.do">문의하기</a></li>
 				<%
 					}
@@ -180,7 +180,7 @@ label {
 									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
 											분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="${cpath}/communityList.do" style="font-size: 20px;">커뮤니티</a></li>
 							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
@@ -268,7 +268,7 @@ label {
 					success : function(res) {
 						$('#div_img')
 								.append(
-										"<img id='img' src='/controller/resources/img/place2_sample9.jpg'>")
+										"<img id='img' src='/controller/resources/img/place2_sample12.jpg'>")
 						$.each(res.fields, function(a, b) {
 							// cor --> 영역 처리 되어있는 부분의 x,y 좌표 값
 							var cor = res.fields[a].boundingPoly.vertices

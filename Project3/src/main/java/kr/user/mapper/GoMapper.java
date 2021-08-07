@@ -40,4 +40,15 @@ public interface GoMapper {
 	// 그래프 테스트
 	public List<NoticeVO> testlist(int num);
 	
+	
+	
+	// 글쓰기 insert
+	public void comInsert(boardVO vo);
+	// 글쓰기 select
+	@Select("select * from board order by board_num desc")
+	public List<boardVO> communityList();
+	// 글쓰기 에이젝스
+	public boardVO boardListOne(int board_num); 
+
+	
 }

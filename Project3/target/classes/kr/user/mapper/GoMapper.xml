@@ -118,7 +118,16 @@
     </select>
    
    
-   
+      <!--글쓰기 인서트 -->
+   <insert id="comInsert" parameterType="kr.user.mapper.boardVO">
+        insert into board(user_num, board_title, board_content,board_img )
+      values(#{user_num},#{board_title},#{board_content},#{board_img})
+    </insert>
+    
+  <!--  글쓰기 하나 -->
+     <select id = "boardListOne" parameterType="int" resultType="kr.user.mapper.boardVO" >
+    select * from board where board_num = #{board_num}
+   </select>
    
     
 </mapper>

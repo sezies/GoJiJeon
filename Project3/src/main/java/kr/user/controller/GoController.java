@@ -31,6 +31,7 @@ import com.mysql.jdbc.PreparedStatement.ParseInfo;
 import kr.user.mapper.GoMapper;
 import kr.user.mapper.NoticeVO;
 import kr.user.mapper.UsersVO;
+import kr.user.mapper.boardVO;
 import kr.user.mapper.imgVO;
 
 
@@ -335,11 +336,36 @@ public class GoController {
             return "redirect:/NoticeList.do";
          }
     
+         // 글쓰기 페이지로 이동
+         @RequestMapping("/comWrite.do")
+         public String comWrite() {
+        	 System.out.println("여기까지는 오나?");
+        	 return "com_wirte";
+         }
+         
+         // 글 작성 저장 insert
+         @RequestMapping("/comInsert.do")
+         public String comInsert(boardVO vo) {
+        	 GoMapper.comInsert(vo);
+        	 return "redirect:communityList.do";
+         }
          
          
+         // 글 리스트
+         @RequestMapping("/communityList.do")
+         public String communityList(HttpServletRequest request){
+            List<boardVO> list=GoMapper.communityList();      
+            request.setAttribute("list",list);
+            
+            System.out.println("잘가니?");
+            return "community"; 
+         }
          
-         
-         
-         
-       
+         // 글 리스트 클릭시 에이젝스
+         @RequestMapping("/boardListOne.do")
+         public @ResponseBody boardVO boardListOne(@RequestParam("board_num") int board_num, Model model) {
+        	 boardVO vo=GoMapper.boardListOne(board_num);
+        	 model.addAttribute("vo", vo);
+            return vo; // UsersContent.jsp
+         }
 }
