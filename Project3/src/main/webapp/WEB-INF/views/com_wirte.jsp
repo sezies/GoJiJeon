@@ -196,7 +196,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             <form action="${cpath}/comInsert.do" method="post"  >
                 <div class="row">
                     <div class="col-lg-5 col-md-5"> 
-                        <input name = "user_name"  value= "<%=u_vo.getUser_name()%>" type="text" placeholder="작성자 : <%=u_vo.getUser_name()%>"readonly>
+                        <input name = "user_id"  value= "<%=u_vo.getUser_id()%>" type="text" placeholder="작성자 : <%=u_vo.getUser_id()%>"readonly>
                         <input type = "file" name = "board_img">
                     </div>
                     

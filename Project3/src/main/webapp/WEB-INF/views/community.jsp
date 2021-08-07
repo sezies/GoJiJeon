@@ -246,7 +246,7 @@
                         </div>
                         <div class="featured__item__text">
                             <h3><a href="#">제목: ${vo.board_title}</a></h3>
-                            <h5><a href="#">작성자 : ${vo.user_name}</a></h5>
+                            <h5><a href="#">작성자 : ${vo.user_id}</a></h5>
                             <h6><a href="#">작성일 : ${vo.board_day}</a></h6>
                         </div>
                     </div>

@@ -106,21 +106,22 @@ update notice set(user_num) = '1' where(notice_num)='1';
 
 create table board(
         user_num int,
-        user_name varchar(30),
+        user_id varchar(30),
         board_num int not null auto_increment,
         board_title varchar(100) not null,
         board_content varchar(500) not null,
         board_img varchar(200) not null,  
         board_day TIMESTAMP DEFAULT NOW(),
         primary key(board_num),
-        foreign key(user_num) references users(user_num)
+        foreign key(user_num) references users(user_num),
+        foreign key(user_id) references users(user_id)
 );
 
 
 select * from board;
 
 
-drop table board
+drop table board;
 
 
 
