@@ -7,6 +7,15 @@ create table users(
         primary key(user_num)
 );
 
+-----------------이거 만들분 모집-----------------
+create table contacts(
+        user_num int not null auto_increment,
+        user_id varchar(30) not null unique,
+        user_mail varchar(30) not null unique,
+		user_opinion VARCHAR(2000) not null
+        primary key(user_num)
+);
+
 
 drop table users;
 truncate users;
@@ -69,6 +78,7 @@ select * from notice where user_num='1';
 select * from notice;
 drop table notice;
 select * from notice where user_num='1' order by pay_day desc;
+insert into notice(notice_code,img) values('1','car_sample1.jpg')
 
 --이미지 테스트
 create table test_img (
@@ -84,7 +94,7 @@ values ('car_sample1.jpg')
 
 drop table test_img;
 
-delete from notice where user_num ='1';
+delete from notice where notice_code ='0';
 update notice set(user_num) = '1' where(notice_num)='1';
 
 

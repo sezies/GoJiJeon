@@ -185,25 +185,32 @@ u_vo = (UsersVO)session.getAttribute("login");
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
-                                        <input type="text" name="user_id" style="width:200px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                        <input type="text" name="user_id" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                     </div>
                                 </div>
-                                <br><br>
+                                <div class="col-lg-8 col-md-6">
+                                <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>비밀번호</p>
-                                        <input type="password" name="user_pw" style="width:200px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                        <input type="password" name="user_pw" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                     </div>
                                 </div>
-
+								</div>
                             </div>
                             <!-- 로그인실패시 문구 -->   
                             <c:if test="${msg==false}">
-                            	<p style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</p>
-                            </c:if>                    
-
+                            	<h4 style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</h4>
+                            </c:if>
                             <div class="checkout__input">
-                              <button type="submit" class="site-btn">로그인</button>
+                              <button type="submit" class="site-btn" style="height:40px; width:250px; margin-left:15px;">로그인</button>
+                              <br><br>
+                              &nbsp;&nbsp;
+                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/kakao_login.png"></button>
+                              &nbsp;
+                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/naver_login.png"></button>
+                              &nbsp;
+                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/google_login.png"></button>
                               <!--  <button type="button" class="site-btn" onclick="location.href='join_main2.do' ">회원가입 하기</button>-->
                             </div>
                         </div>  

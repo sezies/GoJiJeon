@@ -257,8 +257,9 @@ u_vo = (UsersVO)session.getAttribute("login");
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>"<%=u_vo.getUser_name()%>"님의 고지서 종류</h2>
-                        <!--  <button type="button" class="site-btn" onclick="location.href='bill_manager.do'" style="height:40px; text-align: justify;">새로고침</button>-->
+                    <a style="font-size: 44px; color: black; font-weight: bold;"><%=u_vo.getUser_name()%></a>
+					<a style="font-size: 32px; color: midnight; font-weight: bold;">님의 고지서 종류</a><br>
+					 <!--  <button type="button" class="site-btn" onclick="location.href='bill_manager.do'" style="height:40px; text-align: justify;">새로고침</button>-->
                     </div>
                     <div class="featured__controls">
                         <ul>

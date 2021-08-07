@@ -207,10 +207,25 @@ public class GoController {
          return "bill_upload";
       }
       
+      
+      
+      
+      // 이미지 이름 저장 하는 메소드
       @RequestMapping("/bill_upload2.do")
-      public String bill_upload2() {
+      public String bill_upload2(HttpSession session,NoticeVO vo) {
+    	 String img =vo.getImg();
+    	 System.out.println(img+"테스트 이미지 값 가져오기");
+    	 session.setAttribute("img", img);
+    	 
+    	 
+    	  
+    	  
          return "bill_upload2";
       }
+      
+      
+      
+      
       
       @RequestMapping("/bill_manager.do")
       public String bill_manager() {
@@ -313,12 +328,20 @@ public class GoController {
          public String NoticeForm() {
             return "NoticeForm"; //NoticeForm.jsp
          }
+         
+         
+         // 값집어넣기
          @RequestMapping("/NoticeInsert.do")
          public String NoticeInsert(NoticeVO vo) {
+        	
             GoMapper.NoticeInsert(vo); //정장
-            return "redirect:/NoticeList.do"; //WEB-INF/views//UsersList.do.jsp
+            System.out.println("고지서 등록하기"+vo);
+            return "redirect:/index_main.do"; //WEB-INF/views//UsersList.do.jsp
             
          }
+         
+         
+      // 값집어넣기
          @RequestMapping("/NoticeContent.do")
          public String NoticeContent(@RequestParam("notice_num") int notice_num, Model model) { //?idx=10
             NoticeVO vo=GoMapper.NoticeContent(notice_num);

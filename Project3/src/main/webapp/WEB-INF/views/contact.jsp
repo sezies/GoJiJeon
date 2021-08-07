@@ -189,7 +189,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             <div class="row">
                 <div class="col-lg-12">
                     <div class="contact__form__title">
-                        <h2>문의사항</h2>
+                        <a style="font-size: 36px; color: black; font-weight: bold;">문의사항</a>
                     </div>
                 </div>
             </div>

@@ -35,18 +35,19 @@
 <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css"
    type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
-   type="text/css">
-   
-   <style>
-   
-      .bill {
-      border: 3px solid black;
-      border-radius: 7px;
-      -moz-border-radius: 7px;
-      -khtml-border-radius: 7px;
-      -webkit-border-radius: 7px;
-            }
-   </style>
+
+	type="text/css">
+	
+	<style>
+	
+		.bill {
+		border: 3px solid black;
+		border-radius: 7px;
+		-moz-border-radius: 7px;
+		-khtml-border-radius: 7px;
+		-webkit-border-radius: 7px;
+				}
+	</style>
 </head>
 
 <body>
@@ -362,6 +363,124 @@
       </div>
    </section>
    <!-- Related Blog Section End -->
+=======
+	<%-- <!-- Related Blog Section Begin -->
+	<section class="related-blog spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-title related-blog-title">
+						<a style="font-size: 36px; color: black; font-weight: bold;">의견 게시판</a>
+						<br>
+						<button type="button" class="site-btn"
+							onclick="location.href='#' ">글쓰기</button>
+						<p>ㅤ</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="blog__item">
+						<div class="blog__item__pic">
+							<img class="bill" src="${cpath}/resources/img/bill/bill1.jpg" alt="" >
+						</div>
+						<div class="blog__item__text">
+							<ul>
+								<li><i class="fa fa-calendar-o"></i> 2021/08/02</li>
+								<li><i class="fa fa-comment-o"></i> 3</li>
+							</ul>
+							<h5>
+								<a href="./comm_contents.do">제 가스요금 좀 봐주세요...</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="blog__item">
+						<div class="blog__item__pic">
+							<img class="bill" src="${cpath}/resources/img/bill/bill2.jpg" alt="">
+						</div>
+						<div class="blog__item__text">
+							<ul>
+								<li><i class="fa fa-calendar-o"></i> 2021/08/02</li>
+								<li><i class="fa fa-comment-o"></i> 1</li>
+							</ul>
+							<h5>
+								<a href="./comm_contents.do">관리비 이 정도면 어떤가요?</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="blog__item">
+						<div class="blog__item__pic">
+							<img class="bill" src="${cpath}/resources/img/bill/bill3.jpg" alt="">
+						</div>
+						<div class="blog__item__text">
+							<ul>
+								<li><i class="fa fa-calendar-o"></i> 2021/08/03</li>
+								<li><i class="fa fa-comment-o"></i> 2</li>
+							</ul>
+							<h5>
+								<a href="./comm_contents.do">고지서 또 날아왔습니다 ㅠㅠ</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="blog__item">
+						<div class="blog__item__pic">
+							<img class="bill" src="${cpath}/resources/img/bill/bill4.jpg" alt="">
+						</div>
+						<div class="blog__item__text">
+							<ul>
+								<li><i class="fa fa-calendar-o"></i> 2021/08/03</li>
+								<li><i class="fa fa-comment-o"></i> 2</li>
+							</ul>
+							<h5>
+								<a href="./comm_contents.do">요즘 과태료 이렇게 비싼가요?</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="blog__item">
+						<div class="blog__item__pic">
+							<img class="bill" src="${cpath}/resources/img/bill/bill5.jpg" alt="">
+						</div>
+						<div class="blog__item__text">
+							<ul>
+								<li><i class="fa fa-calendar-o"></i> 2021/08/04</li>
+								<li><i class="fa fa-comment-o"></i> 1</li>
+							</ul>
+							<h5>
+								<a href="./comm_contents.do">관리비 엄청 올랐네요!</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<div class="blog__item">
+						<div class="blog__item__pic">
+							<img class="bill" src="${cpath}/resources/img/bill/bill6.jpg" alt="">
+						</div>
+						<div class="blog__item__text">
+							<ul>
+								<li><i class="fa fa-calendar-o"></i> 2021/08/04</li>
+								<li><i class="fa fa-comment-o"></i> 3</li>
+							</ul>
+							<h5>
+								<a href="./comm_contents.do">원룸 관리비도 만만치 않네요?</a>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Related Blog Section End --> --%>
 
    <!-- Js Plugins -->
    <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>

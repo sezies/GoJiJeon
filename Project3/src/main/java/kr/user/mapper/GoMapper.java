@@ -39,6 +39,7 @@ public interface GoMapper {
 	
 	// 그래프 테스트
 	public List<NoticeVO> testlist(int num);
+	public void bill_upload2(NoticeVO n_vo);
 	
 	
 	
