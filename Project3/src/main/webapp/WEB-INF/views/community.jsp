@@ -219,8 +219,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="section-title related-blog-title">
-						<h2>의견 게시판</h2>
-						<p>ㅤ</p>
+						<a style="font-size: 36px; color: black; font-weight: bold;">의견 게시판</a>
+						<br>
 						<button type="button" class="site-btn"
 							onclick="location.href='#' ">글쓰기</button>
 						<p>ㅤ</p>
