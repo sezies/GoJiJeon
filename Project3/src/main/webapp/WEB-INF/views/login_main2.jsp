@@ -200,9 +200,8 @@ u_vo = (UsersVO)session.getAttribute("login");
                             </div>
                             <!-- 로그인실패시 문구 -->   
                             <c:if test="${msg==false}">
-                            	<p style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</p>
-                            </c:if>                    
-
+                            	<h4 style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</h4>
+                            </c:if>
                             <div class="checkout__input">
                               <button type="submit" class="site-btn" style="height:40px; width:250px; margin-left:15px;">로그인</button>
                               <br><br>
