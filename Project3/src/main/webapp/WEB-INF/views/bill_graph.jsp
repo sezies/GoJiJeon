@@ -294,12 +294,11 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						<%for (int i =0; i<t_list.size();i++){  %>	
 						<!-- <div class="blog__sidebar__recent__item__text" > -->
 						<tr style="border-bottom: 1px solid #dee2e6;">
-							<td><%=t_list.get(i).getPay_day() %></td>
-							<td>코드</td>
+							<td><%=t_list.get(i).getPay_day() %></td>							
 							<td><h6><%=t_list.get(i).getNotice_title()%></h6></td>
-							<td>가격</td>
-							<td>은행</td>
-							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)"><%=t_list.get(i).getNotice_num()%>리스트</button></td>
+							<td><%=t_list.get(i).getPay_money()%></td>
+							<td><%=t_list.get(i).getPay_bank()%></td>
+							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인 하기</button></td>
 						</tr>
 							<%}} %>
 						
@@ -378,8 +377,8 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
                             	<%=t_list.get(2).getPay_money()%>,
                             	<%=t_list.get(1).getPay_money()%>,
                             	<%=t_list.get(0).getPay_money()%>
-                            	<%}else{ for(int i =t_list.size(); i>0;i--){%>
-                            	<%=t_list.get(i-1).getPay_money()%>,
+                            	<%}else{ for(int i =t_list.size(); i>0;i--){%>                        	
+                            	<%=t_list.get(i-1).getPay_money()%>,	
                             	<%}%>
                             	<%}%>
                             ],
