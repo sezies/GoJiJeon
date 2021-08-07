@@ -206,6 +206,11 @@ public class GoController {
          return "bill_upload";
       }
       
+      @RequestMapping("/bill_upload2.do")
+      public String bill_upload2() {
+         return "bill_upload2";
+      }
+      
       @RequestMapping("/bill_manager.do")
       public String bill_manager() {
          return "bill_manager";
@@ -336,17 +341,5 @@ public class GoController {
          
          
          
-         //그래프 테스트
-			/*
-			 * @RequestMapping("/testline.do") public String testline(UsersVO vo,HttpSession
-			 * session,HttpServletRequest request) { UsersVO u_vo = null;
-			 * if(session.getAttribute("login")!= null){ u_vo =
-			 * (UsersVO)session.getAttribute("login");
-			 * System.out.println(u_vo+"||||로그인 리스트쪽 불러온값"); int num=u_vo.getUser_num();
-			 * 
-			 * // 비용과 날짜를 통한 리스트 불러오기 List<NoticeVO> t_list=GoMapper.testlist(num); //1번 고맵퍼
-			 * session.setAttribute("t_list",t_list);
-			 * System.out.println("t_list를 세션에 담았습니다"+t_list); } return "testline"; }
-			 */
-   
+       
 }

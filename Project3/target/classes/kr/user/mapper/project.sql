@@ -42,7 +42,7 @@ create table notice(
 );
 
 	insert into notice(user_num,notice_code,notice_title,pay_day,pay_money,pay_bank,img)
-	value (1, '1','test고지서7','2021.07.22','200000','국민은행','C:\Users\smhrd\Desktop\프로젝트3차\test1.jpg');
+	value (1, '1','test고지서3','2021.03.22','450000','국민은행','C:\Users\smhrd\Desktop\프로젝트3차\test1.jpg');
 
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
 	value (2, '3', '전기세', '2021.05.24', '30000', '농협', 'car_sample2.jpg')
@@ -68,7 +68,7 @@ create table notice(
 select * from notice where user_num='1';
 select * from notice;
 drop table notice;
-
+select * from notice where user_num='1' order by pay_day desc;
 
 --이미지 테스트
 create table test_img (

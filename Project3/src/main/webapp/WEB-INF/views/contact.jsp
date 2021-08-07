@@ -74,8 +74,8 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 분석</a></li>
 					</ul></li>
-				<li><a href="./community.do">커뮤니티</a></li>
-				<li><a href="./contact.do">문의하기</a></li>
+				<li><a href="#" onClick="alert('로그인 후 이용해주세요')">커뮤니티</a></li>
+				<li><a href="#" onClick="alert('로그인 후 이용해주세요')">문의하기</a></li>
 				<%
 					} else {
 				%>
@@ -126,8 +126,8 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
 									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
 									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">커뮤니티</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
@@ -193,10 +193,11 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     </div>
                 </div>
             </div>
+            <%if(u_vo==null) {%>
             <form action="#">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="<%=u_vo.getUser_name()%>" readonly>
+                        <input type="text" placeholder="작성자 이름을 적어주세요">
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <input type="text" placeholder="회신받을 이메일을 적어주세요">
@@ -207,6 +208,22 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                    </div>
                 </div>
             </form>
+            <%}else {%>
+            <form action="#">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <input type="text" placeholder="<%=u_vo.getUser_name()%>"readonly>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <input type="text" placeholder="회신받을 이메일을 적어주세요">
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <textarea placeholder="문의사항을 적어주세요"></textarea>
+                        <button type="submit" class="site-btn" onclick="gobtn()">문의 남기기</button>
+                   </div>
+                </div>
+            </form>
+            <%} %>
         </div>
     </div>
     <!--  Contact Form End -->

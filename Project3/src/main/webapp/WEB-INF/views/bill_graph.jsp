@@ -57,13 +57,13 @@ function getJson(notice_num){
 function ajaxHtml(data){ 
 	var result="<table style='margin-left: auto; margin-right: auto; text-align: center;'>";
 	result+="<tr style='border-bottom: 1px solid #dee2e6;' bgcolor='#D2D2FF'; height=45px;>";
-	result+="<td width='10%'>번호</td>";
-	result+="<td width='10%'>종류</td>";
-	result+="<td width='10%'>고지서</td>";
-	result+="<td width='10%'>납부 날짜</td>";
-	result+="<td width='10%'>납부 비용</td>";
-	result+="<td width='10%'>납부 은행</td>";
-	result+="<td width='10%'>등록 일자</td>";
+	result+="<td width='10%'><h5>번호<h5></td>";
+	result+="<td width='10%'><h5>종류<h5></td>";
+	result+="<td width='10%'><h5>고지서<h5></td>";
+	result+="<td width='10%'><h5>납부 날짜<h5></td>";
+	result+="<td width='10%'><h5>납부 비용<h5></td>";
+	result+="<td width='10%'><h5>납부 은행<h5></td>";
+	result+="<td width='10%'><h5>등록 일자<h5></td>";
 	result+="</tr>";
 	// 여기에 반복문으로 게시물을 출력
 	// 이름없는 함수 
@@ -138,8 +138,8 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 분석</a></li>
 					</ul></li>
-				<li><a href="./community.do">커뮤니티</a></li>
-				<li><a href="./contact.do">문의하기</a></li>
+				<li><a href="#" onClick="alert('로그인 후 이용해주세요')">커뮤니티</a></li>
+				<li><a href="#" onClick="alert('로그인 후 이용해주세요')">문의하기</a></li>
 				<%
 					} else {
 				%>
@@ -190,8 +190,8 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
 									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">커뮤니티</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
@@ -270,8 +270,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						<tr style="border-bottom: 1px solid #dee2e6;" bgcolor="EBFBFF"; height=45px; >
 							<td width="10%"><h5>최근 5개월<h5></td>							
 							<td width="10%"><h5>고지서<h5></td>
-							<td width="10%"><h5>납부 비용<h5></td>
-							<td width="10%"><h5>납부 은행<h5></td>
+							<td width="10%"><h5>납부 비용<h5></td>							
 							<td width="10%"><h5>상세 내역<h5></td>
 						</tr>
 							
@@ -285,7 +284,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 							<td><font color="#b4b4b4";><%=t_list.get(i).getPay_day() %></font></td>							
 							<td><%=t_list.get(i).getNotice_title()%></td>
 							<td><%=t_list.get(i).getPay_money()%></td>
-							<td><%=t_list.get(i).getPay_bank()%></td>							
+														
 							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인 하기</button></td>							
 						</tr>
 						
@@ -294,12 +293,11 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						<%for (int i =0; i<t_list.size();i++){  %>	
 						<!-- <div class="blog__sidebar__recent__item__text" > -->
 						<tr style="border-bottom: 1px solid #dee2e6;">
-							<td><%=t_list.get(i).getPay_day() %></td>
-							<td>코드</td>
+							<td><%=t_list.get(i).getPay_day() %></td>							
 							<td><h6><%=t_list.get(i).getNotice_title()%></h6></td>
-							<td>가격</td>
-							<td>은행</td>
-							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)"><%=t_list.get(i).getNotice_num()%>리스트</button></td>
+							<td><%=t_list.get(i).getPay_money()%></td>
+							
+							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인 하기</button></td>
 						</tr>
 							<%}} %>
 						
@@ -378,8 +376,8 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
                             	<%=t_list.get(2).getPay_money()%>,
                             	<%=t_list.get(1).getPay_money()%>,
                             	<%=t_list.get(0).getPay_money()%>
-                            	<%}else{ for(int i =t_list.size(); i>0;i--){%>
-                            	<%=t_list.get(i-1).getPay_money()%>,
+                            	<%}else{ for(int i =t_list.size(); i>0;i--){%>                        	
+                            	<%=t_list.get(i-1).getPay_money()%>,	
                             	<%}%>
                             	<%}%>
                             ],
