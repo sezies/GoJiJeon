@@ -14,6 +14,7 @@
 <title>고지서 관리 서비스</title>
 <style>
 input {
+	vertical-align:middle
 	position: absolute;
 }
 
@@ -236,26 +237,25 @@ label {
 
 	<!-- Contact Form Begin -->
 	
-	
-	
-	<!--  여기가 불러 오는 부분 -->
 	<section class="contact-form spad">
-		<div class="container">
-			<div id="div_img"></div>
-			<label style="margin-left: 720px; margin-top: 50px;">금액</label> <label
-				style="margin-left: 720px; margin-top: 150px;">기한</label> <label
-				style="margin-left: 720px; margin-top: 250px;">은행</label> <input
-				name="pay_money" id="inp_chn" type="text" value="hi"
-				style="margin-left: 800px; margin-top: 50px;" oninput='fill_inp()'>
-			<input name='pay_day' class="inp" disabled="disabled" type="text"
-				style="margin-left: 800px; margin-top: 150px;" onchange='fill_inp()'>
-			<input name="pay_bank" class="inp" disabled="disabled" type="text"
-				style="margin-left: 800px; margin-top: 250px;" onchange='fill_inp()'>
-		</div>
-		<div class="checkout__input">
+	
+		<div class="container" align="center">
+		
+			<!--  <label style="font-size:20px; color: midnight; margin-ieft: auto; margin-top: 50px;">금액</label>
+			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
+			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
+			
+			<input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
+				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" oninput='fill_inp()'>&nbsp;
+			<input name='pay_day' class="inp" disabled="disabled" type="text" placeholder='납부 기한'
+				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
+			<input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
+				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
 			<button type="submit" class="site-btn">고지서 저장</button>
+			<h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
 		</div>
 	</section>
+		<div id="div_img" style="margin:0px auto;"></div>
 	<!-- Contact Form End -->
 
 	<script src="${cpath }/resources/js/jquery-3.3.1.min.js"></script>
@@ -315,6 +315,7 @@ label {
          $("#inp_chn").attr("disabled",false);
       }
    </script>
+
 
 
 	<!-- Js Plugins -->

@@ -217,7 +217,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             
                             <div class="checkout__input">
                             <c:if test="${msg==false}">
-                            	<p style="color:#f00;">회원 정보를 모두 입력해주세요.</p>
+                            	<h4 style="color:#f00;">회원 정보를 모두 입력해주세요.</p>
                             </c:if>                    
                               <button id ="btns" type="submit" class="site-btn">작성 완료</button>
                             </div>

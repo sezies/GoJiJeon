@@ -39,7 +39,7 @@
 	
 	<style>
 	
-		img {
+		.bill {
 		border: 3px solid black;
 		border-radius: 7px;
 		-moz-border-radius: 7px;
@@ -219,8 +219,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="section-title related-blog-title">
-						<h2>의견 게시판</h2>
-						<p>ㅤ</p>
+						<a style="font-size: 36px; color: black; font-weight: bold;">의견 게시판</a>
+						<br>
 						<button type="button" class="site-btn"
 							onclick="location.href='#' ">글쓰기</button>
 						<p>ㅤ</p>
@@ -231,7 +231,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill1.jpg" alt="" >
+							<img class="bill" src="${cpath}/resources/img/bill/bill1.jpg" alt="" >
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -247,7 +247,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill2.jpg" alt="">
+							<img class="bill" src="${cpath}/resources/img/bill/bill2.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -263,7 +263,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill3.jpg" alt="">
+							<img class="bill" src="${cpath}/resources/img/bill/bill3.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -281,7 +281,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill4.jpg" alt="">
+							<img class="bill" src="${cpath}/resources/img/bill/bill4.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -297,7 +297,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill5.jpg" alt="">
+							<img class="bill" src="${cpath}/resources/img/bill/bill5.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
@@ -313,7 +313,7 @@
 				<div class="col-lg-4 col-md-4 col-sm-6">
 					<div class="blog__item">
 						<div class="blog__item__pic">
-							<img src="${cpath}/resources/img/bill/bill6.jpg" alt="">
+							<img class="bill" src="${cpath}/resources/img/bill/bill6.jpg" alt="">
 						</div>
 						<div class="blog__item__text">
 							<ul>
