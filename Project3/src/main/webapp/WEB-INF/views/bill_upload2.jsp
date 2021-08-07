@@ -243,12 +243,12 @@ label {
 			<!--  <label style="font-size:20px; color: midnight; margin-ieft: auto; margin-top: 50px;">금액</label>
 			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
 			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
-			<input name="pay_money" id="inp_chn" type="text" placeholder='금액'
-				style="margin: auto; margin-top: 0px;" oninput='fill_inp()'>
-			<input name='pay_day' class="inp" disabled="disabled" type="text" placeholder='기한'
-				style="margin: auto; margin-top: 0px;" onchange='fill_inp()'>
-			<input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='은행'
-				style="margin: auto; margin-top: 0px;" onchange='fill_inp()'>
+			<input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
+				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" oninput='fill_inp()'>&nbsp;
+			<input name='pay_day' class="inp" disabled="disabled" type="text" placeholder='납부 기한'
+				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
+			<input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
+				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
 			<button type="submit" class="site-btn">고지서 저장</button>
 		</div>
 	</section>
