@@ -106,6 +106,7 @@ update notice set(user_num) = '1' where(notice_num)='1';
 
 create table board(
         user_num int,
+        user_name varchar(30),
         board_num int not null auto_increment,
         board_title varchar(100) not null,
         board_content varchar(500) not null,
@@ -119,7 +120,7 @@ create table board(
 select * from board;
 
 
-
+drop table board
 
 
 

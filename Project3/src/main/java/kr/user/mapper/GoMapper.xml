@@ -120,8 +120,8 @@
    
       <!--글쓰기 인서트 -->
    <insert id="comInsert" parameterType="kr.user.mapper.boardVO">
-        insert into board(user_num, board_title, board_content,board_img )
-      values(#{user_num},#{board_title},#{board_content},#{board_img})
+        insert into board(user_num,user_name, board_title, board_content,board_img )
+      values(#{user_num},#{user_name}, #{board_title},#{board_content},#{board_img})
     </insert>
     
   <!--  글쓰기 하나 -->

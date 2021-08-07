@@ -196,12 +196,13 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             <form action="${cpath}/comInsert.do" method="post"  >
                 <div class="row">
                     <div class="col-lg-5 col-md-5"> 
-                        <input name = "user_num"  value= "<%=u_vo.getUser_num()%>" type="text" placeholder="작성자 : <%=u_vo.getUser_name()%>"readonly>
+                        <input name = "user_name"  value= "<%=u_vo.getUser_name()%>" type="text" placeholder="작성자 : <%=u_vo.getUser_name()%>"readonly>
                         <input type = "file" name = "board_img">
                     </div>
                     
                     <div class="col-lg-12 text-center">
                         <input name = "board_title" type="text" placeholder="제목을 입력해주세요">
+                        <input name = "user_num" value = "<%=u_vo.getUser_num() %>" type="hidden" >
                         <textarea name = "board_content" placeholder="글을 입력해주세요"></textarea>
                         <button type="submit" class="site-btn" >글 등록하기</button>
                    </div>

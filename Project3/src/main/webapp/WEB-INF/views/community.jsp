@@ -222,6 +222,7 @@
                <div class="section-title related-blog-title">
                   <a style="font-size: 36px; color: black; font-weight: bold;">의견 게시판</a>
                   <br>
+                  <br>
                   <button type="button" class="site-btn"
                      onclick="location.href='${cpath}/comWrite.do' ">글쓰기</button>
                   <p>ㅤ</p>
@@ -244,10 +245,9 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">제목: ${vo.board_title}</a></h6>
-                            <h6><a href="#">내용: ${vo.board_content}</a></h6>
+                            <h3><a href="#">제목: ${vo.board_title}</a></h3>
+                            <h5><a href="#">작성자 : ${vo.user_name}</a></h5>
                             <h6><a href="#">작성일 : ${vo.board_day}</a></h6>
-                            <h5>${vo.board_content} 원</h5>
                         </div>
                     </div>
                 </div>
@@ -363,7 +363,6 @@
       </div>
    </section>
    <!-- Related Blog Section End -->
-=======
 	<%-- <!-- Related Blog Section Begin -->
 	<section class="related-blog spad">
 		<div class="container">
