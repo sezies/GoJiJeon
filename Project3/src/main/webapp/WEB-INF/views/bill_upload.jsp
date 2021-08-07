@@ -234,14 +234,13 @@
 			</div>
 			<div class="checkout__form">
 				<h4>고지서 파일 올리기</h4>
-				<form action="#">
+				<form action="${cpath}/bill_upload2.do" method="post">
 					<div class="row">
 						<div class="col-lg-6 text-center">
 							<input type="file" name="img">
 						</div>
 						<div class="checkout__input">
-							<button type="submit" class="site-btn"
-								onclick="location.href='bill_upload2.jsp'">파일 업로드</button>
+							<button type="submit" class="site-btn">파일 업로드</button>
 						</div>
 					</div>
 				</form>
