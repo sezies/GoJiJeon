@@ -239,7 +239,7 @@ label {
 	
 	<section class="contact-form spad">
 	
-		<div class="container">
+		<div class="container" align="center">
 			<!--  <label style="font-size:20px; color: midnight; margin-ieft: auto; margin-top: 50px;">금액</label>
 			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
 			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
