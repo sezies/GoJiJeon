@@ -133,26 +133,35 @@
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 업로드</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">문의하기</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+											업로드</a></li>
+									<li><a
+										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+											분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
+							<li><a href="./community.do" style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
 							%>
@@ -211,7 +220,7 @@
 	<div class="map">
 		<p align="middle">
 			<iframe src="${cpath}/resources/img/bill/bill6.jpg"
-				style="width: 500px; height: 1000px; border: 0;" allowfullscreen=""
+				style="width: 500px; height: 500px; border: 0;" allowfullscreen=""
 				aria-hidden="false" tabindex="0"></iframe>
 		</p>
 	</div>
@@ -231,9 +240,13 @@
 							<input type="file" name="img">
 						</div>
 						<div class="checkout__input">
-							<button type="submit" class="site-btn">파일 업로드</button>
+							<button type="submit" class="site-btn"
+								onclick="location.href='bill_upload2.jsp'">파일 업로드</button>
 						</div>
 					</div>
+				</form>
+			</div>
+		</div>
 	</section>
 	<!-- Contact Form End -->
 
