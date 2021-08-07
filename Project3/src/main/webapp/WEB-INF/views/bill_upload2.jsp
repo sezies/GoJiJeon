@@ -14,6 +14,7 @@
 <title>고지서 관리 서비스</title>
 <style>
 input {
+	vertical-align:middle
 	position: absolute;
 }
 
@@ -237,23 +238,21 @@ label {
 	<!-- Contact Form Begin -->
 	
 	<section class="contact-form spad">
+	
 		<div class="container">
-			<div id="div_img"></div>
-			<label style="font-size:20px; color: midnight; margin-left: 720px; margin-top: 50px;">금액</label>
-			<label style="font-size:20px; color: midnight; margin-left: 720px; margin-top: 125px;">기한</label>
-			<label style="font-size:20px; color: midnight; margin-left: 720px; margin-top: 200px;">은행</label> 
-			<input name="pay_money" id="inp_chn" type="text" value="hi"
-				style="margin-left: 800px; margin-top: 50px;" oninput='fill_inp()'>
-			<input name='pay_day' class="inp" disabled="disabled" type="text"
-				style="margin-left: 800px; margin-top: 125px;" onchange='fill_inp()'>
-			<input name="pay_bank" class="inp" disabled="disabled" type="text"
-				style="margin-left: 800px; margin-top: 200px;" onchange='fill_inp()'>
-			<br><br>
-			<div class="checkout__input" style="margin-left: 850px; margin-top: 250px;">
+			<!--  <label style="font-size:20px; color: midnight; margin-ieft: auto; margin-top: 50px;">금액</label>
+			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
+			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
+			<input name="pay_money" id="inp_chn" type="text" placeholder='금액'
+				style="margin: auto; margin-top: 0px;" oninput='fill_inp()'>
+			<input name='pay_day' class="inp" disabled="disabled" type="text" placeholder='기한'
+				style="margin: auto; margin-top: 0px;" onchange='fill_inp()'>
+			<input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='은행'
+				style="margin: auto; margin-top: 0px;" onchange='fill_inp()'>
 			<button type="submit" class="site-btn">고지서 저장</button>
-			</div>
 		</div>
 	</section>
+		<div id="div_img" style="margin-left: 450px;"></div>
 	<!-- Contact Form End -->
 
 	<script src="${cpath }/resources/js/jquery-3.3.1.min.js"></script>
@@ -261,43 +260,41 @@ label {
 		// 이미지 태그 가져오기
 		var img = document.getElementById("img");
 
-		$
-				.ajax({
-					type : 'post',
-					url : 'http://127.0.0.1:5000/',
-					data : "place2_sample9.jpg",
-					dataType : 'json',
-					success : function(res) {
-						$('#div_img')
-								.append(
-										"<img id='img' src='/controller/resources/img/place2_sample9.jpg'>")
-						$.each(res.fields, function(a, b) {
-							// cor --> 영역 처리 되어있는 부분의 x,y 좌표 값
-							var cor = res.fields[a].boundingPoly.vertices
+		$.ajax({type : 'post',
+				url : 'http://127.0.0.1:5000/',
+				data : "place2_sample12.jpg",
+				dataType : 'json',
+				success : function(res) {
+					alert(res.im_path);
+					$('#div_img').append(
+									"<img id='img' src='/controller/resources/img/place2_sample11.jpg'>")
+					$.each(res.fields, function(a, b) {
+						// cor --> 영역 처리 되어있는 부분의 x,y 좌표 값
+						var cor = res.fields[a].boundingPoly.vertices
 
-							// tex --> 선택한 영역의 OCR 결과(text값)
-							var tex = res.fields[a].inferText
+						// tex --> 선택한 영역의 OCR 결과(text값)
+						var tex = res.fields[a].inferText
 
-							// 미리 hover를 주었기 때문에 해당 좌표값을 기준으로 div 태그를 생성
-							// id 값은 해당 영역의 json 기반 번호(인덱스값)이고, value값은 text값을 줌
-							// 클릭 시 data_send라는 function을 통해 선택한 영역의 value 값을 input 태그에 채움
-							$('#div_img').append(
-									"<div style='margin-left:" + cor[0].x
-											+ "px;margin-top:" + cor[0].y
-											+ "px;padding-left:"
-											+ (cor[2].x - cor[0].x)
-											+ "px;padding-top:"
-											+ (cor[2].y - cor[0].y)
-											+ "px;' class='div_rec' value='"
-											+ res.fields[a].inferText
-											+ "' onclick='data_send(" + a
-											+ ")' id='" + a + "'></div>")
-						})
-					},
-					error : function() {
-						alert('요청 실패쓰');
-					}
-				})
+						// 미리 hover를 주었기 때문에 해당 좌표값을 기준으로 div 태그를 생성
+						// id 값은 해당 영역의 json 기반 번호(인덱스값)이고, value값은 text값을 줌
+						// 클릭 시 data_send라는 function을 통해 선택한 영역의 value 값을 input 태그에 채움
+						$('#div_img').append(
+								"<div style='margin-left:" + cor[0].x
+										+ "px;margin-top:" + cor[0].y
+										+ "px;padding-left:"
+										+ (cor[2].x - cor[0].x)
+										+ "px;padding-top:"
+										+ (cor[2].y - cor[0].y)
+										+ "px;' class='div_rec' value='"
+										+ res.fields[a].inferText
+										+ "' onclick='data_send(" + a
+										+ ")' id='" + a + "'></div>")
+					})
+				},
+				error : function() {
+					alert('요청 실패쓰');
+				}
+			})
 
 		// back 버튼을 위한 함수
 		// class 명이 inp_re인 놈들을 다 비활성화 시키고 class는 inp, id 값은 inp_chn으로 전환
