@@ -206,10 +206,25 @@ public class GoController {
          return "bill_upload";
       }
       
+      
+      
+      
+      // 이미지 이름 저장 하는 메소드
       @RequestMapping("/bill_upload2.do")
-      public String bill_upload2() {
+      public String bill_upload2(HttpSession session,NoticeVO vo) {
+    	 String img =vo.getImg();
+    	 System.out.println(img+"테스트 이미지 값 가져오기");
+    	 session.setAttribute("img", img);
+    	 
+    	 
+    	  
+    	  
          return "bill_upload2";
       }
+      
+      
+      
+      
       
       @RequestMapping("/bill_manager.do")
       public String bill_manager() {
