@@ -151,26 +151,35 @@ textarea {
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 업로드</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">문의하기</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+											업로드</a></li>
+									<li><a
+										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+											분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
+							<li><a href="./community.do" style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
 							%>
@@ -233,8 +242,7 @@ textarea {
 					<div class="product__details__pic">
 						<div class="product__details__pic__item">
 							<img class="product__details__pic__item--large"
-								src="${cpath}/resources/img/bill/bill1.jpg"
-								alt="">
+								src="${cpath}/resources/img/bill/bill1.jpg" alt="">
 						</div>
 					</div>
 				</div>
@@ -278,17 +286,15 @@ textarea {
 			<div>
 				<table border="2" style="width: 1000px;" bordercolor="#46AA46">
 					<tr>
-						<td width="500px">작성자 <input type="text" id="reply_writer"
-							name="reply_writer" style="width: 170px;" maxlength="10"
-							placeholder="작성자" /> 비밀번호 <input type="password"
-							id="reply_password" name="reply_password" style="width: 170px;"
-							maxlength="10" placeholder="패스워드" />
-							<button id="reply_save" name="reply_save">댓글 등록</button>
+						<td width="500px">작성자
+						<input type="text" id="reply_writer" name="reply_writer" style="width: 170px;" maxlength="10" placeholder="<%=u_vo.getUser_name()%>" readonly />
+						비밀번호<input type="password" id="reply_password" name="reply_password" style="width: 170px;" maxlength="10" placeholder="비밀번호를 입력하세요" />
+						<button id="reply_save" name="reply_save">댓글 등록</button>
 						</td>
 					</tr>
 					<tr>
 						<td><textarea id="reply_content" name="reply_content"
-								rows="4" cols="50" placeholder="댓글을 입력하세요."
+								rows="4" cols="50" placeholder="댓글을 입력하세요"
 								style="width: 1000px; height: 50px;"></textarea></td>
 					</tr>
 				</table>
