@@ -89,8 +89,8 @@
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 분석</a></li>
 					</ul></li>
-				<li><a href="./community.do">커뮤니티</a></li>
-				<li><a href="./contact.do">문의하기</a></li>
+				<li><a href="#" onClick="alert('로그인 후 이용해주세요')">커뮤니티</a></li>
+				<li><a href="#" onClick="alert('로그인 후 이용해주세요')">문의하기</a></li>
 				<%
 					} else {
 				%>
@@ -142,8 +142,8 @@
 									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
 									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">커뮤니티</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
@@ -227,7 +227,8 @@
 			<div class="hero__item set-bg"
 				data-setbg="${cpath}/resources/img/hero/logout_banner.png">
 				<div class="hero__text">
-					<span>EASY START</span> <br>
+					<a style="font-size: 20px; color: black;">사이트</a>
+					<a style="font-size: 20px; color: midnight;">접속을 환영합니다!</a><br>
 					<h2>고지서 관리가 필요하시다면?</h2>
 					<p>로그인 혹은 회원가입 후 이용해주세요</p>
 					<a href="./login_main2.do" class="primary-btn">로그인</a>
@@ -237,8 +238,8 @@
 	%>		<div class="hero__item set-bg"
 				data-setbg="${cpath}/resources/img/hero/login_banner.png">
 				<div class="hero__text">
-					<span>EASY START</span> <br>
-					<h2>"<%=u_vo.getUser_name()%>"님 환영합니다!</h2>
+					<a style="font-size: 28px; color: black; font-weight: bold;"><%=u_vo.getUser_name()%></a>
+					<a style="font-size: 20px; color: midnight;">님 접속을 환영합니다!</a><br>
 					<h2>고지서 관리를 시작하시려면?</h2>
 					<p>고지서를 업로드 해서 목록에 넣어주세요</p>
 					<a href="./bill_upload.do" class="primary-btn">업로드 하기</a>

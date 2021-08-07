@@ -105,8 +105,8 @@ textarea {
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 분석</a></li>
 					</ul></li>
-				<li><a href="./community.do">커뮤니티</a></li>
-				<li><a href="./contact.do">문의하기</a></li>
+				<li><a href="#" onClick="alert('로그인 후 이용해주세요')">커뮤니티</a></li>
+				<li><a href="#" onClick="alert('로그인 후 이용해주세요')">문의하기</a></li>
 				<%
 					} else {
 				%>
@@ -157,8 +157,8 @@ textarea {
 									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
 									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">커뮤니티</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
