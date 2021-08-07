@@ -206,6 +206,11 @@ public class GoController {
          return "bill_upload";
       }
       
+      @RequestMapping("/bill_upload2.do")
+      public String bill_upload2() {
+         return "bill_upload2";
+      }
+      
       @RequestMapping("/bill_manager.do")
       public String bill_manager() {
          return "bill_manager";
