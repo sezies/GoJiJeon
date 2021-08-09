@@ -39,11 +39,25 @@
 	    <init-param> 
 	       <param-name>forceEncoding</param-name> 
 	       <param-value>true</param-value> 
-	    </init-param> 
-	 </filter> 
+	    </init-param>
+	    
+	 </filter>
+	 <!-- MultipartFilter -->
+	 <filter>
+		<filter-name>MultipartFilter</filter-name>
+		<filter-class>org.springframework.web.multipart.support.MultipartFilter</filter-class>
+	</filter>
+
 	 <filter-mapping> 
 	    <filter-name>encodingFilter</filter-name> 
 	    <url-pattern>/*</url-pattern> 
-	 </filter-mapping> 
+	 </filter-mapping>
+	 
+	 <!-- MultipartFilter -->
+	<filter-mapping>
+		<filter-name>MultipartFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 
 </web-app>
