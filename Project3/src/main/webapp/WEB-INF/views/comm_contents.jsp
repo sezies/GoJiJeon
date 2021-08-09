@@ -288,7 +288,7 @@ textarea {
 					<form action="#">
 						<div class="row">
 							<div class="col-lg-2 col-md-2">
-								<input style="width: 180px;" type="text" value="<%=u_vo.getUser_name()%>" placeholder="작성자">
+								<input style="width: 180px;" type="text" value="<%=u_vo.getUser_name()%>"readonly placeholder="작성자">
 							</div>
 							<div class="col-lg-2 col-md-2">
 								<input style="width: 180px;" type="password" placeholder="비밀번호">
