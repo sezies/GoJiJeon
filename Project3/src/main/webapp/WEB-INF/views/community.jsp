@@ -237,7 +237,7 @@
                 
                     <div class="featured__item">
                        <div style="border: 3px solid white;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" 
-                       class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/${vo.board_img}" onclick="location.href='#' ">
+                       class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/${vo.board_img}" onclick="location.href='${cpath}/comm_contents.do?board_num=${vo.board_num}' ">
                                <ul>
                                 <!--  <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -245,7 +245,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h3><a href="#">제목: ${vo.board_title}</a></h3>
+                            <h3><a href="${cpath}/comm_contents.do?board_num=${vo.board_num}">제목: ${vo.board_title}</a></h3>
                             <h5><a href="#">작성자 : ${vo.user_id}</a></h5>
                             <h6><a href="#">작성일 : ${vo.board_day}</a></h6>
                         </div>

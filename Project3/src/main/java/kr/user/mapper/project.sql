@@ -28,7 +28,7 @@ value ('kite','123','KITE','광주');
 
 
 select * from users;
-
+delete from users where user_num ='2';
 
 drop table notice;
 

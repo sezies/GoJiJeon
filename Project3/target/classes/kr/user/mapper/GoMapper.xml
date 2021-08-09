@@ -59,6 +59,13 @@
     </select>
     
     
+     <!-- 커뮤니티 상세 -->
+     <select id="comm_contents"  parameterType = "String"
+         resultType="kr.user.mapper.boardVO" >
+        select * from board where board_num = #{board_num}
+    </select>
+     
+     
 
         <select id = "NoticeListAjax" 
             resultType="kr.user.mapper.NoticeVO" >

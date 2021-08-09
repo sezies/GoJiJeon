@@ -240,16 +240,19 @@ textarea {
 			<div class="row">
 				<div class="col-lg-6 col-md-6">
 					<div class="product__details__pic">
+					<h3>제목 : ${vo.board_title} </h3>
 						<div class="product__details__pic__item">
 							<img class="product__details__pic__item--large"
-								src="${cpath}/resources/img/bill/bill1.jpg" alt="">
+								src="${cpath}/resources/img/${vo.board_img}" alt="">
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<div class="product__details__text">
-						<h3>제 가스요금 좀 봐주세요...</h3>
-						<p>다른 집에 비해 저희 집 가스요금이 많이 나오는 것 같아요... 분석 좀 해주세요!!!</p>
+						
+						<p>${vo.board_content}</p>
+						<p>작성자 : ${vo.user_id}</p>
+						<p>${vo.board_day}</p>
 						<br>
 						<div class="checkout__input">
 							<button type="button" class="site-btn"

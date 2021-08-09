@@ -32,6 +32,9 @@ public interface GoMapper {
 	public NoticeVO NoticeOne(String notice_num);
 	
 	
+	// 커뮤니티
+	public boardVO comm_contents(String board_num);
+	
 	/* 이미지 */
 	public void imageInsert(imgVO vo);
 	public List<imgVO> imageSelect();
@@ -51,5 +54,8 @@ public interface GoMapper {
 	// 글쓰기 에이젝스
 	public boardVO boardListOne(int board_num); 
 
+	
+	
+	
 	
 }

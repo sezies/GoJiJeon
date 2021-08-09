@@ -260,6 +260,7 @@
 	<section class="categories">
 		<div class="container">
 			<div class="row">
+				<a style="font-size: 20px; color: midnight; font-weight: bold;">※ 고지서가 기존 목록에 있는 경우에만 표출됩니다.</a><br>
 				<div class="categories__slider owl-carousel">
 					<!--  반복문을 통해 리스트에 있는 값  불러오기 -->
 					<c:forEach var="n_vo" items="${n_list}">
