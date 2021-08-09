@@ -362,7 +362,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
                     	<%}%>
                     ],
                     datasets: [
-                        { //데이터
+                        { //데이터 
                             label: '고지서', //차트 제목
                             fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
                             data: [

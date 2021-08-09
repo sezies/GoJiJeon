@@ -52,7 +52,10 @@ public interface GoMapper {
 	@Select("select * from board order by board_num desc")
 	public List<boardVO> communityList();
 	// 글쓰기 에이젝스
-	public boardVO boardListOne(int board_num); 
+	public boardVO boardListOne(int board_num);
+	//회원탈퇴
+	
+	public void delete2(UsersVO vo); 
 
 	
 	

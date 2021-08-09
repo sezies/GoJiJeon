@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
-    
-    <script
+
+<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
 </head>
@@ -37,11 +37,8 @@
 UsersVO u_vo = null;
 if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
-System.out.println(u_vo+"||||이거는 맨 위에거");
 }
 %>
-
-
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -53,13 +50,6 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
         <div class="humberger__menu__logo">
             <a href="./index_main.do"><img src="${cpath}/resources/img/logo1.png" alt=""></a>
         </div>
-        <!-- <div class="humberger__menu__cart">
-            <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-            </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
-        </div> -->
         <div class="humberger__menu__widget">
             <div class="header__top__right__auth">
                 <%if(u_vo==null) {%>
@@ -75,7 +65,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             <ul><%
 					if (u_vo == null) {
 				%>
-				<li><a href="#">고지서 서랍</a>
+			<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 업로드</a></li>
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
@@ -102,15 +92,9 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
-            <!--  <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>-->
         </div>
         <div class="humberger__menu__contact">
             <ul>
-               <!-- <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>-->
             </ul>
         </div>
     </div>
@@ -118,44 +102,6 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
 
     <!-- Header Section Begin -->
     <header class="header">
-        <!--
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src="${cpath}/resources/img/language.png" alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -165,7 +111,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
                 <div class="col-lg-7">
                     <nav class="header__menu">
-                       <ul><%
+                        <ul><%
 								if (u_vo == null) {
 							%>
 							<li class="active">
@@ -196,27 +142,8 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
                 <div class="col-lg-2">
                     <nav class="header__menu">
-                        <!--  로그인 배너 (찐) -->
-                         <%if(u_vo==null) {%>
-                            <a href="./login_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">로그인</a>
-                            &emsp;&emsp;&emsp;
-                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">회원가입</a>
-                          <%}else {%>
-                            <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;" >로그아웃</a>
-                            &emsp;
-                            <a href="./mypage_main.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">마이페이지</a>
-                            <%} %>
                     </nav>
                 </div>
-                   <!--<div class="col-lg-3"> 
-                       <div class="header__cart">
-                         <ul>
-                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
-                    </div>
-                </div>-->
             </div>
             <div class="humberger__open">
                 <i class="fa fa-bars"></i>
@@ -225,66 +152,13 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
     </header>
     <!-- Header Section End -->
 
-    <!-- Hero Section Begin -->
-    <!--  <section class="hero hero-normal">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="hero__categories">
-                        <div class="hero__categories__all">
-                            <i class="fa fa-bars"></i>
-                            <!--  <span>All departments</span>
-                        </div>
-                        <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="hero__search">
-                        <div class="hero__search__form">
-                            <form action="#">
-                                <div class="hero__search__categories">
-                                    All Categories
-                                    <span class="arrow_carrot-down"></span>
-                                </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
-                            </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!-- Hero Section End -->
-
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="${cpath}/resources/img/menu_banner.png">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>마이페이지</h2>
+                        <h2>회원 탈퇴</h2>
                         <div class="breadcrumb__option">
                             <!-- <span>Join</span>  -->
                         </div>
@@ -303,51 +177,39 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
             </div>
             <div class="checkout__form">
-                <h4>개인정보 수정</h4>
-                <!--  개인정보 수정 -->
-                <form action="${cpath}/UsersUpdate.do" method="post">
-                    <div class="row">
+                <h4>회원탈퇴 화면</h4>
+                <div class="row">
+                <form action="${cpath}/delete2.do" method="post">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
-                                        <input type="text" name = "user_id" value="<%=u_vo.getUser_id() %>" readonly="readonly">
+                                        <input type="text" name="user_id" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                     </div>
                                 </div>
+                                <div class="col-lg-8 col-md-6">
+                                <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>비밀번호</p>
-                                        <input type="password" name = "user_pw" value="<%=u_vo.getUser_pw() %>">
-                                        
+                                        <input type="password" name="user_pw" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                     </div>
                                 </div>
+								</div>
                             </div>
-                            
-                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>이름</p>
-                                        <input type="text" name = "user_name" value="<%=u_vo.getUser_name() %>" readonly="readonly">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>주거래 은행</p>
-                                        <input type="text" name = "user_bank" value=<%=u_vo.getUser_bank() %>>
-                                    </div>
-                                </div>                                
-                            </div>
-                            
+                            <!-- 회원탈퇴 실패시 문구 -->   
+                            <c:if test="${msg==false}">
+                            	<h4 style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</h4>
+                            </c:if>
                             <div class="checkout__input">
-                              <button type="submit" class="site-btn">정보 수정하기</button>
+                              <button type="submit" class="site-btn" style="height:40px; width:250px; margin-left:15px;">회원탈퇴</button>
+                            
+                             
                             </div>
-                        </div>   
-                        </div>
-                        </form>      
-                              <form action="${cpath}/delete.do" method="post">
-                              <button class="site-btn" >회원 탈퇴하기</button>
-                              </form>
+                        </div>  
+                         </div>
+                         </form>       
     </section>
     <!-- Checkout Section End -->
 
