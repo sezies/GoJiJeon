@@ -341,6 +341,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             
                             <div class="checkout__input">
                               <button type="submit" class="site-btn">정보 수정하기</button>
+                              <button type="submit" class="site-btn">회원 탈퇴하기</button>
                             </div>
                         </div>   
                         </div>
