@@ -29,7 +29,7 @@ insert into users(user_id,user_pw,user_name,user_bank)
 value ('kite','123','KITE','광주');
 
 
-select * from users;
+select * from users where user_num="";
 delete from users where user_num ='2';
 
 drop table notice;

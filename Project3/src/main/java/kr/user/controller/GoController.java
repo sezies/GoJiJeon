@@ -510,14 +510,18 @@ public class GoController {
          
          @RequestMapping("/ID_Check.do")
          public @ResponseBody String ID_Check(@RequestParam("user_id") String user_id) {
-        	 System.out.println(user_id);
+        	 System.out.println(user_id+"이곳이 유저아이디값을 받아온값");
+        	 if(user_id.equals("")) {
+        		return  "2";
+        	 }else { 
         	 UsersVO vo = GoMapper.ID_Check(user_id);
-        	 if (vo == null) {
+        	 if (vo == null) {        		 
         		 System.out.println("중복아이디없음");
         		 return "0";
         	 }else {
         		 System.out.println("이미있는아이디");
-        	 return "11";
+        	 return "1";
+        	 }
         	 }
          }
          
