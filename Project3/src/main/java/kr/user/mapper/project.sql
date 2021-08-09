@@ -18,6 +18,7 @@ create table contacts(
 );
 drop table contacts;
 select * from contacts;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
 
 drop table users;
 truncate users;
@@ -119,6 +120,7 @@ create table board(
         foreign key(user_id) references users(user_id)
 );
 
+delete from board where user_num ='3';
 
 select * from board;
 
