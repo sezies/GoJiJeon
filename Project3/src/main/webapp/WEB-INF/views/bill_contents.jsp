@@ -251,7 +251,7 @@
 							사용되는 수선유지비, 위탁관리에 따른 수수료 등도 여기에 포함됩니다.</p>
 						<ul>
 							<li><b>납기 금액(기한 내)</b> <span style="font-weight:bold"><fmt:formatNumber value="${vo.pay_money}" pattern="#,###"/> won</span></li>
-							<li><b>납기 금액(기한 후)</b> <span style="font-weight:bold">300,000 won</span></li>
+							<li><b>납기 금액(기한 후)</b> <span style="font-weight:bold"><fmt:formatNumber value="${vo.pay_money*1.05}" pattern="#,###"/> won</span></li>
 							<li><b>납부 기한</b> <span style="font-weight:bold">${vo.pay_day}</span></li>
 							<li><b>납부 은행</b> <span style="font-weight:bold">${vo.pay_bank} 은행</span></li>
 						</ul>
