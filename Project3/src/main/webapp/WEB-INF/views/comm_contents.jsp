@@ -290,7 +290,7 @@ textarea {
 				<table border="2" style="width: 1000px;" bordercolor="#46AA46">
 					<tr>
 						<td width="500px">작성자
-						<input type="text" id="reply_writer" name="reply_writer" style="width: 170px;" maxlength="10" placeholder="<%=u_vo.getUser_name()%>" readonly />
+						<input type="text" id="reply_writer" name="reply_writer" style="width: 170px;" maxlength="10" value="<%=u_vo.getUser_name()%>" readonly />
 						비밀번호<input type="password" id="reply_password" name="reply_password" style="width: 170px;" maxlength="10" placeholder="비밀번호를 입력하세요" />
 						<button id="reply_save" name="reply_save">댓글 등록</button>
 						</td>
