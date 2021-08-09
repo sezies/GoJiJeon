@@ -1,16 +1,28 @@
 package kr.user.controller;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.Principal;
+import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
 import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -18,12 +30,17 @@ import javax.swing.text.html.HTMLEditorKit.Parser;
 import javax.xml.ws.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mysql.jdbc.PreparedStatement.ParseInfo;
@@ -81,6 +98,12 @@ public class GoController {
 }
       }
       
+      
+      
+      @RequestMapping("/Join.do")
+      public String Join() {
+    	  return "join_main2";
+      }
       
       
       @RequestMapping("/UsersForm.do")
@@ -239,15 +262,55 @@ public class GoController {
       
       // 이미지 이름 저장 하는 메소드
       @RequestMapping("/bill_upload2.do")
-      public String bill_upload2(HttpSession session,NoticeVO vo) {
-    	 String img =vo.getImg();
-    	 System.out.println(img+"테스트 이미지 값 가져오기");
-    	 session.setAttribute("img", img);
-    	 
-    	 
+      public String bill_upload2(MultipartHttpServletRequest mhsr) throws IOException{
+    	  String path = mhsr.getSession().getServletContext().getRealPath("/resources/img");
+    	  System.out.println(path+"  이건 내가 test하는것");
+    	  String path2 = "/controller/resources/img/";
+    	  System.out.println(path);
     	  
-    	  
-         return "bill_upload2";
+    	  Map returnObject = new HashMap();
+    	  try {
+    		  // MultipartHttpServletRequest 생성 
+    		  Iterator iter = mhsr.getFileNames();
+    		  System.out.println(iter);
+    		  MultipartFile mfile = null;
+    		  String fieldName = "";
+    		  List resultList = new ArrayList();
+    		  
+    		// 값이 나올때까지 
+              while (iter.hasNext()) { 
+                  fieldName = (String) iter.next(); // 내용을 가져와서 
+                  mfile = mhsr.getFile(fieldName); 
+                  String origName; 
+                  origName = new String(mfile.getOriginalFilename().getBytes("8859_1"), "UTF-8"); //한글꺠짐 방지 
+                  
+                  System.out.println("origName: " + origName);
+                  System.out.println("origName의 경로인듯|| " + mfile.getOriginalFilename());
+                  // 파일명이 없다면 
+                  if ("".equals(origName)) {
+                      continue; 
+                  } 
+                  
+                  String saveFileName = origName;
+                  
+                  System.out.println("saveFileName : " + saveFileName);
+                  
+                  // 설정한 path에 파일저장 
+                  File serverFile = new File(path + File.separator + saveFileName);
+                  System.out.println("서버파일입니다"+serverFile);
+                  mfile.transferTo(serverFile);
+                  
+                  Map file = new HashMap();
+                  file.put("origName", origName); file.put("sfile", serverFile);
+                  resultList.add(file);
+              }
+              
+              returnObject.put("files", resultList); 
+              returnObject.put("params", mhsr.getParameterMap()); 
+              } catch(Exception e) {
+            	  e.printStackTrace();
+    	  }
+    	  return "bill_upload2";
       }
       
       
@@ -440,4 +503,32 @@ public class GoController {
         	 model.addAttribute("vo", vo);
             return vo; // UsersContent.jsp
          }
+         
+         
+         
+         // 아이디 중복체크
+         
+         @RequestMapping("/ID_Check.do")
+         public @ResponseBody String ID_Check(@RequestParam("user_id") String user_id) {
+        	 System.out.println(user_id);
+        	 UsersVO vo = GoMapper.ID_Check(user_id);
+        	 if (vo == null) {
+        		 System.out.println("중복아이디없음");
+        		 return "0";
+        	 }else {
+        		 System.out.println("이미있는아이디");
+        	 return "11";
+        	 }
+         }
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
 }

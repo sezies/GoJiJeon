@@ -3,6 +3,9 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -36,6 +39,17 @@
 	type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
 	type="text/css">
+	
+	
+	<style>
+	
+	#img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+}
+	</style>
+	
 </head>
 
 <body>
@@ -216,7 +230,7 @@
 					<div class="product__details__pic">
 						<div class="product__details__pic__item">
 							
-							<img class="product__details__pic__item--large "
+							<img id="img" class="product__details__pic__item--large "
 								src="${cpath}/resources/img/${vo.img}"
 								alt=""
 								style="cursor:pointer" 
@@ -231,12 +245,12 @@
 				<div class="col-lg-6 col-md-6">
 					<div class="product__details__text">
 						<h3>${vo.notice_title}</h3>
-						<div class="product__details__price">${vo.pay_money} won</div>
+						<div class="product__details__price"><fmt:formatNumber value="${vo.pay_money}" pattern="#,###"/> won</div>
 						<p>아파트 관리비는 크게 공용관리비와 개별사용료로 나뉩니다. 관리사무소 직원의 인건비 등 일반관리비와 청소비,
 							경비비, 소독비 등 단지 관리를 위해 공동 부담해야 하는 항목이 공용관리비입니다. 승강기 유지비와 건물 유지·보수에
 							사용되는 수선유지비, 위탁관리에 따른 수수료 등도 여기에 포함됩니다.</p>
 						<ul>
-							<li><b>납기 금액(기한 내)</b> <span style="font-weight:bold">${vo.pay_money} won</span></li>
+							<li><b>납기 금액(기한 내)</b> <span style="font-weight:bold"><fmt:formatNumber value="${vo.pay_money}" pattern="#,###"/> won</span></li>
 							<li><b>납기 금액(기한 후)</b> <span style="font-weight:bold">300,000 won</span></li>
 							<li><b>납부 기한</b> <span style="font-weight:bold">${vo.pay_day}</span></li>
 							<li><b>납부 은행</b> <span style="font-weight:bold">${vo.pay_bank} 은행</span></li>

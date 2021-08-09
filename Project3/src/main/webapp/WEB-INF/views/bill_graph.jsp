@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="kr.user.mapper.NoticeVO"%>
 <%@page import="java.util.List"%>
@@ -5,6 +6,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="zxx">
@@ -95,6 +99,10 @@ u_vo = (UsersVO)session.getAttribute("login");
 }
 List<NoticeVO> t_list = (List<NoticeVO>)session.getAttribute("t_list");
 List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
+
+DecimalFormat formatter = new DecimalFormat("###,###");
+
+
 %>
 
 
@@ -283,7 +291,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						<tr style="border-bottom: 1px solid #dee2e6;">
 							<td><font color="#b4b4b4";><%=t_list.get(i).getPay_day() %></font></td>							
 							<td><%=t_list.get(i).getNotice_title()%></td>
-							<td><%=t_list.get(i).getPay_money()%></td>
+							<td><%=formatter.format(t_list.get(i).getPay_money())%></td>
 														
 							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인 하기</button></td>							
 						</tr>
@@ -295,7 +303,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 						<tr style="border-bottom: 1px solid #dee2e6;">
 							<td><%=t_list.get(i).getPay_day() %></td>							
 							<td><h6><%=t_list.get(i).getNotice_title()%></h6></td>
-							<td><%=t_list.get(i).getPay_money()%></td>
+							<td><%=formatter.format(t_list.get(i).getPay_money())%></td>
 							
 							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인 하기</button></td>
 						</tr>
