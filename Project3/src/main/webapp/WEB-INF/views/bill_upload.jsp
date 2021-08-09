@@ -250,7 +250,7 @@
 	</section>
 	<!-- Contact Form End -->
 	<script>
-		var formdata = new FormData($('#fileform')[0]);
+		/* var formdata = new FormData($('#fileform')[0]);
 		
 		$.ajax({
 			type: "POST",
@@ -265,7 +265,7 @@
 			},
 			error: function (e) {
 				alert("실패");
-			} });
+			} }); */
 
 		
 	</script>
