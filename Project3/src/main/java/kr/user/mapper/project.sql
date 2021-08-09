@@ -9,13 +9,16 @@ create table users(
 
 -----------------이거 만들분 모집-----------------
 create table contacts(
-        user_num int not null auto_increment,
-        user_id varchar(30) not null unique,
-        user_mail varchar(30) not null unique,
-		user_opinion VARCHAR(2000) not null
-        primary key(user_num)
+        user_num int,
+        contacts_num int not null auto_increment,
+        user_mail varchar(50) not null,
+		user_opinion VARCHAR(2000) not null,
+        primary key(contacts_num),
+        foreign key(user_num) references users(user_num)
 );
-
+drop table contacts;
+select * from contacts;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
 
 drop table users;
 truncate users;
@@ -27,7 +30,7 @@ insert into users(user_id,user_pw,user_name,user_bank)
 value ('kite','123','KITE','광주');
 
 
-select * from users;
+select * from users where user_num="";
 delete from users where user_num ='2';
 
 drop table notice;
@@ -117,6 +120,7 @@ create table board(
         foreign key(user_id) references users(user_id)
 );
 
+delete from board where user_num ='3';
 
 select * from board;
 

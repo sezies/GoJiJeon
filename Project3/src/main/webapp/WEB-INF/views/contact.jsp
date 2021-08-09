@@ -26,12 +26,7 @@
     <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
-<script type="text/javascript">
-function gobtn(){
-		alert("문의하신 내용이 접수 완료 되었습니다.");
-		location.href="index_main"; 		
-	}
-</script>
+
 </head>
 
 <body>
@@ -193,37 +188,23 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                     </div>
                 </div>
             </div>
-            <%if(u_vo==null) {%>
-            <form action="#">
+            
+            <form action="${cpath}/contactInsert.do" method="post" onsubmit = "return yes()">
                 <div class="row">
+                	<input type="hidden" name="user_num" value="<%=u_vo.getUser_num()%>">
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="작성자 이름을 적어주세요">
+                        <input type="text" placeholder="작성자 이름을 적어주세요" value="<%=u_vo.getUser_name()%>" readonly="readonly">
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="회신받을 이메일을 적어주세요">
+                        <input type="text" name="user_mail" placeholder="회신받을 이메일을 적어주세요">
                     </div>
                     <div class="col-lg-12 text-center">
-                        <textarea placeholder="문의사항을 적어주세요"></textarea>
-                        <button type="submit" class="site-btn" onclick="gobtn()">문의 남기기</button>
+                        <textarea placeholder="문의사항을 적어주세요" name="user_opinion"></textarea>
+                        <button type="submit" class="site-btn" >문의 남기기</button>
                    </div>
                 </div>
             </form>
-            <%}else {%>
-            <form action="#">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="<%=u_vo.getUser_name()%>"readonly>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="회신받을 이메일을 적어주세요">
-                    </div>
-                    <div class="col-lg-12 text-center">
-                        <textarea placeholder="문의사항을 적어주세요"></textarea>
-                        <button type="submit" class="site-btn" onclick="gobtn()">문의 남기기</button>
-                   </div>
-                </div>
-            </form>
-            <%} %>
+           
         </div>
     </div>
     <!--  Contact Form End -->
@@ -246,6 +227,16 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
     </div>
     <!-- Map End -->
 
+    <!-- 빈칸인 경우에는 여기에서 모달창을 띄워주기! Controller로 넘어가면 안됨!!!!!!!! -->
+    <!-- form태그가 지금은 기본적으로 무조건 submit을 진행하는데 그렇게 하지말고 javascript사용해서
+    	submit시 실행할 별도의 함수 지정할 것!
+    	---빈칸인지 아닌지 여부 판별해서
+    	-- 그렇지 않은 경우에는 보내주기!
+    
+     -->
+    
+    
+    
     <!-- Js Plugins -->
     <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
     <script src="${cpath}/resources/js/bootstrap.min.js"></script>
@@ -255,6 +246,20 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
     <script src="${cpath}/resources/js/mixitup.min.js"></script>
     <script src="${cpath}/resources/js/owl.carousel.min.js"></script>
     <script src="${cpath}/resources/js/main.js"></script>
+    <script>
+    function yes(){
+    	// input 태그안에 있는 값이 빈칸이면 alert
+    	if($('input[name=user_mail]').val()=='' || $('textarea[name=user_opinion]').val()==''){
+    		alert("빈칸을 모두 작성해주세요.");
+    		return false;
+    	}else{
+    		alert("문의가 등록되었습니다.")
+    		return true;
+    	}  	
+    	
+    }
+    
+    </script>
 
 </body>
 
