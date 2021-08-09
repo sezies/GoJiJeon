@@ -245,7 +245,7 @@ textarea {
 						<h4>${vo.user_id}</h4>${vo.board_day}
 						<img src="${cpath}/resources/img/${vo.board_img}" alt="">
 						<p>${vo.board_content}</p>
-						<button style="height:45px; font-size:14px;" type="button" class="site-btn"	onclick="location.href='community.do'">목록으로</button>	
+						<button style="height:45px; font-size:14px;" type="button" class="site-btn"	onclick="location.href='communityList.do'">목록으로</button>	
 					</div>
 				</div>
 			</div>
