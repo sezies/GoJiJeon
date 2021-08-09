@@ -245,10 +245,7 @@ textarea {
 						<h4>${vo.user_id}</h4>${vo.board_day}
 						<img src="${cpath}/resources/img/${vo.board_img}" alt="">
 						<p>${vo.board_content}</p>
-						<div class="checkout__input">
-							<button type="button" class="site-btn"
-								onclick="location.href='community.do' ">목록으로</button>
-						</div>
+						<button style="height:45px; font-size:14px;" type="button" class="site-btn"	onclick="location.href='community.do'">목록으로</button>	
 					</div>
 				</div>
 			</div>
@@ -290,19 +287,19 @@ textarea {
 				<div class="container">
 					<form action="#">
 						<div class="row">
-							<div class="col-lg-6 col-md-3">
-								<input style="width: 540px;" type="text" value="<%=u_vo.getUser_name()%>" placeholder="작성자">
-								
+							<div class="col-lg-2 col-md-2">
+								<input style="width: 180px;" type="text" value="<%=u_vo.getUser_name()%>" placeholder="작성자">
 							</div>
-							<div class="col-lg-6 col-md-3">
-								<input style="width: 530px;" type="password" placeholder="비밀번호">
+							<div class="col-lg-2 col-md-2">
+								<input style="width: 180px;" type="password" placeholder="비밀번호">
 							</div>
-							<div class="col-lg-12 text-center">
+							<div class="col-lg-5 text-center">
 								<textarea style="height:50px;" placeholder="댓글을 입력해주세요"></textarea>
-								<button style="height:45px; font-size:15px;" type="submit" class="site-btn">댓글 달기</button>
-								<button style="height:45px; font-size:15px;" type="button" class="site-btn"
-								onclick="location.href='community.do'">목록으로</button>
 							</div>
+							<div class="col-lg-3 col-md-3">
+								<button style="height:45px; font-size:14px;" type="submit" class="site-btn">댓글 달기</button>
+							</div>
+							
 						</div>
 					</form>
 				</div>
