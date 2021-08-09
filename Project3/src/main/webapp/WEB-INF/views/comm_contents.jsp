@@ -178,7 +178,8 @@ textarea {
 									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
 											분석</a></li>
 								</ul></li>
-							<li><a href="${cpath}/communityList.do" style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="${cpath}/communityList.do"
+								style="font-size: 20px;">커뮤니티</a></li>
 							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
@@ -234,26 +235,16 @@ textarea {
 	<br>
 	<!-- Breadcrumb Section End -->
 
-	<!-- Product Details Section Begin -->
-	<section class="product-details spad">
+	<!-- Blog Details Section Begin -->
+	<section class="blog-details spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-md-6">
-					<div class="product__details__pic">
-					<h3>제목 : ${vo.board_title} </h3>
-						<div class="product__details__pic__item">
-							<img class="product__details__pic__item--large"
-								src="${cpath}/resources/img/${vo.board_img}" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6">
-					<div class="product__details__text">
-						
+				<div class="col-lg-8 col-md-7 order-md-1 order-1">
+					<div class="blog__details__text">
+						<h3>${vo.board_title}</h3>
+						<h4>${vo.user_id}</h4>${vo.board_day}
+						<img src="${cpath}/resources/img/${vo.board_img}" alt="">
 						<p>${vo.board_content}</p>
-						<p>작성자 : ${vo.user_id}</p>
-						<p>${vo.board_day}</p>
-						<br>
 						<div class="checkout__input">
 							<button type="button" class="site-btn"
 								onclick="location.href='community.do' ">목록으로</button>
@@ -261,6 +252,14 @@ textarea {
 					</div>
 				</div>
 			</div>
+		</div>
+	</section>
+	<!-- Blog Details Section End -->
+
+	<!-- Product Details Section Begin -->
+	<br>
+	<section class="product-details spad">
+		<div class="container">
 			<div class="blog__details__content">
 				<div class="row">
 					<div class="col-lg-6">
@@ -286,23 +285,29 @@ textarea {
 				</div>
 			</div>
 			<br>
-			<div>
-				<table border="2" style="width: 1000px;" bordercolor="#46AA46">
-					<tr>
-						<td width="500px">작성자
-						<input type="text" id="reply_writer" name="reply_writer" style="width: 170px;" maxlength="10" value="<%=u_vo.getUser_name()%>" readonly />
-						비밀번호<input type="password" id="reply_password" name="reply_password" style="width: 170px;" maxlength="10" placeholder="비밀번호를 입력하세요" />
-						<button id="reply_save" name="reply_save">댓글 등록</button>
-						</td>
-					</tr>
-					<tr>
-						<td><textarea id="reply_content" name="reply_content"
-								rows="4" cols="50" placeholder="댓글을 입력하세요"
-								style="width: 1000px; height: 50px;"></textarea></td>
-					</tr>
-				</table>
+			<!-- Contact Form Begin -->
+			<div class="contact-form spad">
+				<div class="container">
+					<form action="#">
+						<div class="row">
+							<div class="col-lg-6 col-md-3">
+								<input style="width: 540px;" type="text" value="<%=u_vo.getUser_name()%>" placeholder="작성자">
+								
+							</div>
+							<div class="col-lg-6 col-md-3">
+								<input style="width: 530px;" type="password" placeholder="비밀번호">
+							</div>
+							<div class="col-lg-12 text-center">
+								<textarea style="height:50px;" placeholder="댓글을 입력해주세요"></textarea>
+								<button style="height:45px; font-size:15px;" type="submit" class="site-btn">댓글 달기</button>
+								<button style="height:45px; font-size:15px;" type="button" class="site-btn"
+								onclick="location.href='community.do'">목록으로</button>
+							</div>
+						</div>
+					</form>
+				</div>
 			</div>
-		</div>
+			<!-- Contact Form End -->
 		</div>
 	</section>
 	<!-- Product Details Section End -->
