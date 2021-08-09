@@ -39,7 +39,7 @@ update users set()
 create table notice(
         user_num int,
         notice_num int not null auto_increment,
-        notice_code int not null,
+        notice_code varchar(50) not null,
         notice_title varchar(100) not null,
         pay_day varchar(50) not null,
         pay_money int not null,

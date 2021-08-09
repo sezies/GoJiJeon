@@ -257,19 +257,19 @@ label {
 			<p>고지서 종류 선택</p>
 			<!-- <input type="number" name="notice_code" > -->
 			<div>
-			<input type="radio" id="1" name="notice_code" value="1">관리비
+			<input type="radio" id="관리비" name="notice_code" value="관리비">관리비
 			</div>
 			<div>
-			<input type="radio" id="2" name="notice_code" value="2">자동차세
+			<input type="radio" id="자동차세" name="notice_code" value="자동차세">자동차세
 			</div>
 			<div>
-			<input type="radio" id="3" name="notice_code" value="3">지방세
+			<input type="radio" id="지방세" name="notice_code" value="지방세">지방세
 			</div>
 			<div>
-			<input type="radio" id="4" name="notice_code" value="4">주민세
+			<input type="radio" id="주민세" name="notice_code" value="주민세">주민세
 			</div>
 			<div>
-			<input type="radio" id="5" name="notice_code" value="5">과태료
+			<input type="radio" id="과태료" name="notice_code" value="과태료">과태료
 			</div>
 			
 			<p>고지서 제목</p>
