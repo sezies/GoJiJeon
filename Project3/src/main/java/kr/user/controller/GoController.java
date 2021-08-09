@@ -189,6 +189,7 @@ public class GoController {
       public String UsersLogout(HttpSession session) {
          session.invalidate();
          System.out.println("로그아웃성공");
+         //세션 삭제
          return "redirect:/index_main.do"; 
       }
       
@@ -213,6 +214,31 @@ public class GoController {
          return "bill_upload";
       }
       
+      //회원 탈퇴 부분
+      @RequestMapping("/delete.do")
+      public String delete() {    	  
+         return "delete";
+      }
+      //회원 탈퇴 부분
+      @RequestMapping("/delete2.do")
+      public String delete2(UsersVO vo ,HttpSession session,RedirectAttributes rttr,HttpServletResponse response) {
+    	  UsersVO u_vo = null;
+    	  if(session.getAttribute("login")!= null){
+    	  u_vo = (UsersVO)session.getAttribute("login");
+    	  }
+    	  if(u_vo.getUser_id().equals(vo.getUser_id()) && u_vo.getUser_pw().equals(vo.getUser_pw())){
+    		  GoMapper.delete2(vo);
+        	  System.out.println("회원탈퇴 성공");
+        	  session.invalidate();
+             return "redirect:/index_main.do";
+    	  }else {
+    		  System.out.println("회원탈퇴 실패");
+    		  rttr.addFlashAttribute("msg", false);
+    		  return  "redirect:/delete.do";
+    	  }
+    	  
+    	  
+      }
       
       
       

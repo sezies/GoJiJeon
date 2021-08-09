@@ -26,65 +26,9 @@
     <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
-    
-    <script
+
+<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <script>
-	function check(){
-		user_id = $("#user_id").val();
-		
-		$.ajax({
-		    url: '${cpath}/ID_Check.do?user_id='+user_id,
-		    type: 'GET',
-	
-		    success: function(data){
-		         if(data == 0){
-		         console.log("아이디 없음");
-		         	if ( user_id == "" ){
-		        	 location.href="${cpath}/UsersJoin.do";
-		        	 }else{
-		       	 		 alert("사용하실 수 있는 아이디입니다.");
-		        	 }
-		         }else{
-		         	console.log("아이디 있음");
-		         	alert("중복된 아이디가 존재합니다.");
-		         	
-		         }
-		    },
-		    error: function (){        
-		                      
-		    }
-		  });
-	}
-	
-	function check2(){
-		user_id = $("#user_id").val();
-		
-		$.ajax({
-		    url: '${cpath}/ID_Check.do?user_id='+user_id,
-		    type: 'GET',
-	
-		    success: function(data){
-		         if(data == 0){
-		         console.log("아이디 없음");
-		         	if ( user_id == "" ){
-		        	 location.href="${cpath}/UsersJoin.do";
-		        	 }else{
-		        	 }
-		         }else{
-		         	console.log("아이디 있음");
-		         	alert("중복된 아이디가 존재합니다.");
-		         	location.href="${cpath}/Join.do";
-		         }
-		    },
-		    error: function (){        
-		                      
-		    }
-		  });
-	}
-</script>
-    
     
 </head>
 
@@ -93,12 +37,8 @@
 UsersVO u_vo = null;
 if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
-System.out.println(u_vo+"||||이거는 맨 위에거");
 }
 %>
-
-	
-
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -125,7 +65,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             <ul><%
 					if (u_vo == null) {
 				%>
-				<li><a href="#">고지서 서랍</a>
+			<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 업로드</a></li>
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
@@ -218,7 +158,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>회원가입</h2>
+                        <h2>회원 탈퇴</h2>
                         <div class="breadcrumb__option">
                             <!-- <span>Join</span>  -->
                         </div>
@@ -237,54 +177,42 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                 </div>
             </div>
             <div class="checkout__form">
-                <h4>개인정보 입력</h4>
-                <form action="${cpath}/UsersJoin.do" method="post"  >
-                    <div class="row">
+                <h4>회원탈퇴 화면</h4>
+                <div class="row">
+                <form action="${cpath}/delete2.do" method="post">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
-                                        <input class = "input" type="text" name = "user_id" id="user_id">
-                                        <br>
-                                        <button id="duplicate_check" type="button" onclick="check();">중복체크</button>
+                                        <input type="text" name="user_id" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                     </div>
                                 </div>
+                                <div class="col-lg-8 col-md-6">
+                                <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>비밀번호</p>
-                                        <input class = "input" type="password" name = "user_pw">
+                                        <input type="password" name="user_pw" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                     </div>
                                 </div>
+								</div>
                             </div>
-                            
-                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>이름</p>
-                                        <input class = "input" type="text" name = "user_name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>주거래 은행</p>
-                                        <input class = "input" type="text" name = "user_bank"  >
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="checkout__input">
+                            <!-- 회원탈퇴 실패시 문구 -->   
                             <c:if test="${msg==false}">
-                            	<h4 style="color:#f00;">회원 정보를 모두 입력해주세요.</p>
-                            </c:if>                    
-                              <button  id ="btns" type="submit" class="site-btn" onclick="check2();" >작성 완료</button>
+                            	<h4 style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</h4>
+                            </c:if>
+                            <div class="checkout__input">
+                              <button type="submit" class="site-btn" style="height:40px; width:250px; margin-left:15px;">회원탈퇴</button>
+                            
+                             
                             </div>
-                        </div>   
-                        </div>
-                        </form>      
+                        </div>  
+                         </div>
+                         </form>       
     </section>
     <!-- Checkout Section End -->
-	
+
     <!-- Js Plugins -->
     <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
     <script src="${cpath}/resources/js/bootstrap.min.js"></script>
