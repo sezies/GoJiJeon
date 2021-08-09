@@ -82,6 +82,12 @@ public class GoController {
       
       
       
+      @RequestMapping("/Join.do")
+      public String Join() {
+    	  return "join_main2";
+      }
+      
+      
       @RequestMapping("/UsersForm.do")
       public String UsersForm() {
          return "UsersForm"; //UsersForm.jsp
