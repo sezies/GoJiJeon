@@ -252,14 +252,30 @@ label {
 				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
 			<input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
 				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
-			<p>유저번호</p>
-			<input type="number" name="user_num" value="<%=u_vo.getUser_num()%>">
-			<p>고지서 종류</p>
-			<input type="number" name="notice_code" >
+			
+			<input type="hidden" name="user_num" value="<%=u_vo.getUser_num()%>" readonly="readonly">
+			<p>고지서 종류 선택</p>
+			<!-- <input type="number" name="notice_code" > -->
+			<div>
+			<input type="radio" id="1" name="notice_code" value="1">관리비
+			</div>
+			<div>
+			<input type="radio" id="2" name="notice_code" value="2">자동차세
+			</div>
+			<div>
+			<input type="radio" id="3" name="notice_code" value="3">지방세
+			</div>
+			<div>
+			<input type="radio" id="4" name="notice_code" value="4">주민세
+			</div>
+			<div>
+			<input type="radio" id="5" name="notice_code" value="5">과태료
+			</div>
+			
 			<p>고지서 제목</p>
 			<input type="text" name="notice_title">
-			<p>이미지</p>
-			<input type="text" name="img" value="<%=session.getAttribute("img")%>">
+			<p>이미지 파일명</p>
+			<input type="text" name="img" value="<%=session.getAttribute("img")%>" readonly="readonly">
 			
 			<button type="submit" class="site-btn">고지서 저장</button>
 			<h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
