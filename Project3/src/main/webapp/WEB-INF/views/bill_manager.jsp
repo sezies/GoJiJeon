@@ -3,6 +3,9 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -18,6 +21,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
 	rel="stylesheet">
+	
+
 
 <!-- Css Styles -->
 <link rel="stylesheet" href="${cpath}/resources/css/bootstrap.min.css"
@@ -285,11 +290,13 @@ u_vo = (UsersVO)session.getAttribute("login");
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
                             </ul>
-                        </div>
+                        </div> 	
+
+
                         <div class="featured__item__text">
                             <h6><a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">납부기한 : ${vo.pay_day}</a></h6>
                             <h6><a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">고지서 명 : ${vo.notice_title}</a></h6>
-                            <h5>납부할 금액 : ${vo.pay_money} 원</h5>
+                            <h5>납부할 금액 : <fmt:formatNumber value="${vo.pay_money}" pattern="#,###"/> 원</h5>
                         </div>
                     </div>
                 </div>
