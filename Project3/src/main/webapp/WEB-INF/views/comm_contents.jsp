@@ -39,7 +39,20 @@
 	type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
 	type="text/css">
+	
+	
+	
+	
 <style>
+
+
+			#img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+	
+	
 textarea {
 	width: 100%;
 }
@@ -243,7 +256,7 @@ textarea {
 					<div class="blog__details__text">
 						<h3>${vo.board_title}</h3>
 						<h4>${vo.user_id}</h4>${vo.board_day}
-						<img src="${cpath}/resources/img/${vo.board_img}" alt="">
+						<img id="img" src="${cpath}/resources/img/${vo.board_img}" alt="">
 						<p>${vo.board_content}</p>
 						<button style="height:45px; font-size:14px;" type="button" class="site-btn"	onclick="location.href='communityList.do'">목록으로</button>	
 					</div>

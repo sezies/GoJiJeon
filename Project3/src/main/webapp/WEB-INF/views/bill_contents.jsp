@@ -39,6 +39,17 @@
 	type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
 	type="text/css">
+	
+	
+	<style>
+	
+	#img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+}
+	</style>
+	
 </head>
 
 <body>
@@ -219,7 +230,7 @@
 					<div class="product__details__pic">
 						<div class="product__details__pic__item">
 							
-							<img class="product__details__pic__item--large "
+							<img id="img" class="product__details__pic__item--large "
 								src="${cpath}/resources/img/${vo.img}"
 								alt=""
 								style="cursor:pointer" 

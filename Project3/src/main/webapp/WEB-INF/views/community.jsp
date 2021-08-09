@@ -47,7 +47,14 @@
 		-khtml-border-radius: 7px;
 		-webkit-border-radius: 7px;
 				}
+				
+					#img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
 	</style>
+	
 </head>
 
 <body>
@@ -236,7 +243,7 @@
                 <div class="col-lg-6 col-md-7 col-sm-10 mix oranges fresh-meat">
                 
                     <div class="featured__item">
-                       <div style="border: 3px solid white;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" 
+                       <div id = "img" style="border: 3px solid white;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" 
                        class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/${vo.board_img}" onclick="location.href='${cpath}/comm_contents.do?board_num=${vo.board_num}' ">
                                <ul>
                                 <!--  <li><a href="#"><i class="fa fa-heart"></i></a></li>
