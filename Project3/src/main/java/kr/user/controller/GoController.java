@@ -280,8 +280,14 @@ public class GoController {
       }
       
       @RequestMapping("/comm_contents.do")
-      public String comm_contents() {
-         return "comm_contents";
+      public String comm_contents(@RequestParam("board_num") String board_num, Model model) {
+    	  System.out.println("게시판번호 : " + board_num);
+    	  
+    	  boardVO vo = GoMapper.comm_contents(board_num);
+    	  
+    	  model.addAttribute("vo", vo);
+    	  
+    	  return "comm_contents";
       }
    
 
