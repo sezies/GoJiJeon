@@ -68,10 +68,7 @@
 		    success: function(data){
 		         if(data == 0){
 		         console.log("아이디 없음");
-		         	if ( user_id == "" ){
-		        	 location.href="${cpath}/UsersJoin.do";
-		        	 }else{
-		        	 }
+		
 		         }else{
 		         	console.log("아이디 있음");
 		         	alert("중복된 아이디가 존재합니다.");
