@@ -273,7 +273,6 @@ label {
 				<div>
 					<input type="radio" id="과태료" name="notice_code" value="과태료">과태료
 				</div>
-
 				<p>고지서 제목</p>
 				<input type="text" name="notice_title">
 				<p>이미지 파일명</p>
@@ -283,14 +282,12 @@ label {
 					value="<%=session.getAttribute("path")%>">
 				<button type="submit" class="site-btn">고지서 저장</button>
 				<h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
+			</div>
+		</section>
 	</form>
-	<br>
-	<div id="div_img" style="margin: 0 auto;"></div>
-	</div>
-	</section>
 
 	<!-- Contact Form End -->
-
+	<div id="div_img" style="margin-left:30%; margin-right:30%"></div>
 	<script src="${cpath }/resources/js/jquery-3.3.1.min.js"></script>
 	<script>
 		// 이미지 태그 가져오기
