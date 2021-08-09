@@ -397,4 +397,32 @@ public class GoController {
         	 model.addAttribute("vo", vo);
             return vo; // UsersContent.jsp
          }
+         
+         
+         
+         // 아이디 중복체크
+         
+         @RequestMapping("/ID_Check.do")
+         public @ResponseBody String ID_Check(@RequestParam("user_id") String user_id) {
+        	 System.out.println(user_id);
+        	 UsersVO vo = GoMapper.ID_Check(user_id);
+        	 if (vo == null) {
+        		 System.out.println("중복아이디없음");
+        		 return "0";
+        	 }else {
+        		 System.out.println("이미있는아이디");
+        	 return "11";
+        	 }
+         }
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
 }

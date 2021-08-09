@@ -56,6 +56,7 @@ public interface GoMapper {
 
 	
 	
-	
+	// 아이디 중복체크
+	public UsersVO ID_Check(String user_id);
 	
 }

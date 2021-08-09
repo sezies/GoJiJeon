@@ -30,6 +30,38 @@
     <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+    <script>
+	function check(){
+		user_id = $("#user_id").val();
+		
+		$.ajax({
+		    url: '${cpath}/ID_Check.do?user_id='+user_id,
+		    type: 'GET',
+	
+		    success: function(data){
+		         if(data == 0){
+		         console.log("아이디 없음");
+		         if ( user_id == "" ){
+		        	 location.herf="${cpath}/UsersJoin.do";
+		        	 }else{
+		       	 		 alert("사용하실 수 있는 아이디입니다.");
+		        	 }
+		         }else{
+		         	console.log("아이디 있음");
+		         	alert("중복된 아이디가 존재합니다.");
+		         	
+		         }
+		    },
+		    error: function (){        
+		                      
+		    }
+		  });
+
+	
+	}
+</script>
+    
+    
 </head>
 
 <body>
@@ -189,7 +221,9 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>아이디</p>
-                                        <input class = "input" type="text" name = "user_id">
+                                        <input class = "input" type="text" name = "user_id" id="user_id">
+                                        <br>
+                                        <button id="duplicate_check" type="button" onclick="check();">중복체크</button>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -219,7 +253,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             <c:if test="${msg==false}">
                             	<h4 style="color:#f00;">회원 정보를 모두 입력해주세요.</p>
                             </c:if>                    
-                              <button id ="btns" type="submit" class="site-btn">작성 완료</button>
+                              <button  id ="btns" type="submit" class="site-btn" onclick="check();" >작성 완료</button>
                             </div>
                         </div>   
                         </div>
