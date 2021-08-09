@@ -256,7 +256,6 @@
 							<li><b>납부 은행</b> <span style="font-weight:bold">${vo.pay_bank} 은행</span></li>
 						</ul>
 						
-						
 						<br>
 						<div class="checkout__input">
 							<button type="button" class="site-btn"
