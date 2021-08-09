@@ -275,7 +275,8 @@ label {
 			<p>고지서 제목</p>
 			<input type="text" name="notice_title">
 			<p>이미지 파일명</p>
-			<input type="text" name="img" value="<%=session.getAttribute("img")%>" readonly="readonly">
+			<%request.setCharacterEncoding("utf-8"); %>
+			<input type="text" name="img" value="<%=request.getAttribute("img")%>" readonly="readonly">
 			<input type="hidden" name="path" value="<%=session.getAttribute("path")%>">
 			<button type="submit" class="site-btn">고지서 저장</button>
 			<h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
@@ -289,6 +290,7 @@ label {
 	<script>
       // 이미지 태그 가져오기
       var img = document.getElementById("img");
+      var path_img = encodeURI($('input[name=img]').val());
       var path = {'path':$('input[name=path]').val()+"\\",'img':$('input[name=img]').val()}
       $.ajax({
         type : 'post',
@@ -315,7 +317,7 @@ label {
               })
         },
         error : function() {
-           alert('요청 실패쓰');
+           alert($('input[name=img]').val());
         }
       })
       
