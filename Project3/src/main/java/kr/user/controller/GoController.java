@@ -28,6 +28,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mysql.jdbc.PreparedStatement.ParseInfo;
 
+import kr.user.mapper.ContactVO;
 import kr.user.mapper.GoMapper;
 import kr.user.mapper.NoticeVO;
 import kr.user.mapper.UsersVO;
@@ -277,6 +278,22 @@ public class GoController {
       @RequestMapping("/contact.do")
       public String contact() {
          return "contact";
+      }
+      //문의사항 적기
+      @RequestMapping("/contactInsert.do")
+      public String contactInsert(ContactVO vo,HttpServletResponse response) throws IOException {
+    	  if(vo.getUser_mail().equals("")||vo.getUser_opinion().equals("")) {
+    		  System.out.println("이쪽으로 들어옴111111111");  		  	  
+    		  return "contact";
+    	  }else {
+    		  
+    		  GoMapper.contactInsert(vo); 
+    		  System.out.println("문의 잘저장됨"+vo);
+    		  return "contact";
+    	  }
+    	  
+    	  
+    	  
       }
       
       @RequestMapping("/community.do")

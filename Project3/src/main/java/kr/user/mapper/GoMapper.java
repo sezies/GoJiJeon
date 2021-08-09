@@ -55,7 +55,9 @@ public interface GoMapper {
 	public boardVO boardListOne(int board_num);
 	//회원탈퇴
 	
-	public void delete2(UsersVO vo); 
+	public void delete2(UsersVO vo);
+	// 문의사항 적기
+	public void contactInsert(ContactVO vo); 
 
 	
 	

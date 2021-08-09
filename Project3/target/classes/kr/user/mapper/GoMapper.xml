@@ -142,4 +142,10 @@
    	insert into notice(notice_code,notice_title,pay_day,pay_money,pay_bank,img)
     values(0,'제목','납부기간',0,'납부은행',#{img})
     </insert> -->
+    
+    <!-- 문의사항 -->
+    <insert id="contactInsert" parameterType="kr.user.mapper.ContactVO">
+        insert into contacts(user_num,user_mail,user_opinion)
+      values(#{user_num},#{user_mail},#{user_opinion})
+    </insert>
 </mapper>

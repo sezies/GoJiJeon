@@ -9,13 +9,15 @@ create table users(
 
 -----------------이거 만들분 모집-----------------
 create table contacts(
-        user_num int not null auto_increment,
-        user_id varchar(30) not null unique,
-        user_mail varchar(30) not null unique,
-		user_opinion VARCHAR(2000) not null
-        primary key(user_num)
+        user_num int,
+        contacts_num int not null auto_increment,
+        user_mail varchar(50) not null,
+		user_opinion VARCHAR(2000) not null,
+        primary key(contacts_num),
+        foreign key(user_num) references users(user_num)
 );
-
+drop table contacts;
+select * from contacts;
 
 drop table users;
 truncate users;
