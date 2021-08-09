@@ -120,6 +120,7 @@ create table board(
         foreign key(user_id) references users(user_id)
 );
 
+delete from board where user_num ='3';
 
 select * from board;
 
