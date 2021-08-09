@@ -12,10 +12,13 @@ create table contacts(
         user_num int,
         contacts_num int not null auto_increment,
         user_mail varchar(50) not null,
-        user_opinion VARCHAR(2000) not null,
+		user_opinion VARCHAR(2000) not null,
         primary key(contacts_num),
         foreign key(user_num) references users(user_num)
 );
+drop table contacts;
+select * from contacts;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
 
 drop table users;
 truncate users;
