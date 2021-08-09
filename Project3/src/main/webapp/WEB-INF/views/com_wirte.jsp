@@ -27,9 +27,10 @@
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -37,6 +38,7 @@
 UsersVO u_vo = null;
 if(session.getAttribute("login")!= null){
 u_vo = (UsersVO)session.getAttribute("login");
+System.out.println(u_vo+"||||이거는 맨 위에거");
 }
 %>
     <!-- Page Preloder -->
@@ -52,7 +54,7 @@ u_vo = (UsersVO)session.getAttribute("login");
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__auth">
-                <%if(u_vo==null) {%>
+                 <%if(u_vo==null) {%>
                 <a href="./login_main2.do"><i class="fa fa-user"></i>로그인</a>
                 <a href="./join_main2.do"><i class="fa fa-user"></i>회원가입</a>
                 <%}else {%>
@@ -65,7 +67,7 @@ u_vo = (UsersVO)session.getAttribute("login");
             <ul><%
 					if (u_vo == null) {
 				%>
-			<li><a href="#">고지서 서랍</a>
+				<li><a href="#">고지서 서랍</a>
 					<ul class="header__menu__dropdown">
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 업로드</a></li>
 						<li><a href="#" onClick="alert('로그인 후 이용해주세요')">고지서 관리</a></li>
@@ -95,6 +97,8 @@ u_vo = (UsersVO)session.getAttribute("login");
         </div>
         <div class="humberger__menu__contact">
             <ul>
+               <!-- <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                <li>Free Shipping for all Order of $99</li>-->
             </ul>
         </div>
     </div>
@@ -142,6 +146,16 @@ u_vo = (UsersVO)session.getAttribute("login");
                 </div>
                 <div class="col-lg-2">
                     <nav class="header__menu">
+                        <!--  로그인 배너 (찐) -->
+                         <%if(u_vo==null) {%>
+                            <a href="./login_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">로그인</a>
+                            &emsp;&emsp;&emsp;
+                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">회원가입</a>
+                          <%}else {%>
+                            <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;" >로그아웃</a>
+                            &emsp;
+                            <a href="./mypage_main.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">마이페이지</a>
+                            <%} %>
                     </nav>
                 </div>
             </div>
@@ -158,9 +172,8 @@ u_vo = (UsersVO)session.getAttribute("login");
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>로그인</h2>
+                        <h2>글쓰기</h2>
                         <div class="breadcrumb__option">
-                            <!-- <span>Join</span>  -->
                         </div>
                     </div>
                 </div>
@@ -168,56 +181,57 @@ u_vo = (UsersVO)session.getAttribute("login");
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-
-    <!-- Checkout Section Begin -->
-    <section class="checkout spad">
+    
+    <!-- Contact Form Begin -->
+    <div class="contact-form spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class="contact__form__title">
+                        <h2></h2>
+                    </div>
                 </div>
             </div>
-            <div class="checkout__form">
-                <h4>로그인 화면</h4>
+           
+            <form action="${cpath}/comInsert.do" method="post"  >
                 <div class="row">
-                <form action="${cpath}/UsersLogin.do" method="post">
-                        <div class="col-lg-8 col-md-6">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>아이디</p>
-                                        <input type="text" name="user_id" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-md-6">
-                                <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>비밀번호</p>
-                                        <input type="password" name="user_pw" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                    </div>
-                                </div>
-								</div>
-                            </div>
-                            <!-- 로그인실패시 문구 -->   
-                            <c:if test="${msg==false}">
-                            	<h4 style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</h4>
-                            </c:if>
-                            <div class="checkout__input">
-                              <button type="submit" class="site-btn" style="height:40px; width:250px; margin-left:15px;">로그인</button>
-                              <br><br>
-                              &nbsp;&nbsp;
-                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/kakao_login.png"></button>
-                              &nbsp;
-                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/naver_login.png"></button>
-                              &nbsp;
-                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/google_login.png"></button>
-                              <!--  <button type="button" class="site-btn" onclick="location.href='join_main2.do' ">회원가입 하기</button>-->
-                            </div>
-                        </div>  
-                         </div>
-                         </form>       
-    </section>
-    <!-- Checkout Section End -->
+                    <div class="col-lg-5 col-md-5"> 
+                        <input name = "user_id"  value= "<%=u_vo.getUser_id()%>" type="text" placeholder="작성자 : <%=u_vo.getUser_id()%>"readonly>
+                        <input type = "file" name = "board_img">
+                    </div>
+                    
+                    <div class="col-lg-12 text-center">
+                        <input name = "board_title" type="text" placeholder="제목을 입력해주세요">
+                        <input name = "user_num" value = "<%=u_vo.getUser_num() %>" type="hidden" >
+                        <textarea name = "board_content" placeholder="글을 입력해주세요"></textarea>
+                        <button type="submit" class="site-btn" >글 등록하기</button>
+                   </div>
+                   <div class="col-lg-6 col-md-6">
+                    </div>
+                </div>
+            </form>
+        
+        </div>
+    </div>
+    <!--  Contact Form End -->
+
+    <%-- <!-- Map Begin -->
+    <div class="map">
+        <iframe
+            src="${cpath}/resources/img/cgi.jpg"
+            height="1000" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <div class="map-inside">
+            <i class="icon_pin"></i>
+            <div class="inside-widget">
+                <h4>스마트인재개발원</h4>
+                <ul>
+                    <li>전화 : 062-655-3509</li>
+                    <li>주소 : 광주광역시 남구 송암로60 2층</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Map End --> --%>
 
     <!-- Js Plugins -->
     <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>

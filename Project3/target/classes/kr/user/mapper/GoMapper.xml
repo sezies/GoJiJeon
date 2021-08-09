@@ -110,13 +110,26 @@
         values(#{img})
     </insert>
    
-   
+   <!-- ㄴㅁ -->
    
    <select id="imageSelect"  
          resultType="kr.user.mapper.imgVO" >
         select * from test_img 
     </select>
    
+   
+      <!--글쓰기 인서트 -->
+   <insert id="comInsert" parameterType="kr.user.mapper.boardVO">
+        insert into board(user_num,user_id, board_title, board_content,board_img )
+      values(#{user_num},#{user_id}, #{board_title},#{board_content},#{board_img})
+    </insert>
+    
+  <!--  글쓰기 하나 -->
+     <select id = "boardListOne" parameterType="int" resultType="kr.user.mapper.boardVO" >
+    select * from board where board_num = #{board_num}
+   </select>
+   
+    
   <!--  <insert id="bill_upload2" parameterType="kr.user.mapper.NoticeVO">
    	insert into notice(notice_code,notice_title,pay_day,pay_money,pay_bank,img)
     values(0,'제목','납부기간',0,'납부은행',#{img})
