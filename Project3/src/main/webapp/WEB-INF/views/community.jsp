@@ -245,20 +245,14 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h3><a href="${cpath}/comm_contents.do?board_num=${vo.board_num}">제목: ${vo.board_title}</a></h3>
-                            <h5><a href="#">작성자 : ${vo.user_id}</a></h5>
-                            <h6><a href="#">작성일 : ${vo.board_day}</a></h6>
+                            <h3><a href="${cpath}/comm_contents.do?board_num=${vo.board_num}">${vo.board_title}</a></h3>
+                            <h5>${vo.user_id}</a></h5>
+                            <h6>${vo.board_day}</a></h6>
                         </div>
                     </div>
                 </div>
                 </c:forEach> 
          	</div>
-         
-         
-         
-         
-         
-         
          
     <%--      <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6">
