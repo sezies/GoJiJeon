@@ -40,16 +40,16 @@
 	
 		    success: function(data){
 		         if(data == 0){
-		         console.log("아이디 없음");
-		         	if ( user_id == "" ){
-		        	 location.href="${cpath}/UsersJoin.do";
-		        	 }else{
-		       	 		 alert("사용하실 수 있는 아이디입니다.");
-		        	 }
-		         }else{
+		         	console.log("아이디 없음");		         	
+		       	 	alert("사용하실 수 있는 아이디입니다.");
+		         	
+		         }else if(data==1){
 		         	console.log("아이디 있음");
 		         	alert("중복된 아이디가 존재합니다.");
 		         	
+		         	
+		         }else{
+		        	 alert("아이디를 입력해주세요.")
 		         }
 		    },
 		    error: function (){        
@@ -69,12 +69,15 @@
 		         if(data == 0){
 		         console.log("아이디 없음");
 		
-		         }else{
-		         	console.log("아이디 있음");
-		         	alert("중복된 아이디가 존재합니다.");
-		         	location.href="${cpath}/Join.do";
-		         }
-		    },
+		         }else if(data==1){
+			         	console.log("아이디 있음");
+			         	alert("중복된 아이디가 존재합니다.");
+			         	location.href="${cpath}/Join.do";
+			         	
+			         }else{
+			        	 alert("아이디를 입력해주세요.")
+			         }
+			    },
 		    error: function (){        
 		                      
 		    }
@@ -269,10 +272,10 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
                             </div>
                             
                             <div class="checkout__input">
-                            <button id="duplicate_check" class="site-btn" type="button" onclick="check();">아이디 중복 확인</button>
                             <c:if test="${msg==false}">
                             	<h4 style="color:#f00;">회원 정보를 모두 입력해주세요.</p>
                             </c:if>                    
+                            <button id="duplicate_check" class="site-btn" type="button" onclick="check();">아이디 중복 확인</button>
                               <button id ="btns" type="submit" class="site-btn" onclick="check2();" >작성 완료</button>
                             </div>
                         </div>   

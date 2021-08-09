@@ -262,11 +262,11 @@ public class GoController {
       
       // 이미지 이름 저장 하는 메소드
       @RequestMapping("/bill_upload2.do")
-      public String bill_upload2(MultipartHttpServletRequest mhsr) throws IOException{
+      public String bill_upload2(MultipartHttpServletRequest mhsr, HttpSession session, HttpServletRequest request) throws IOException{
+//    	  String path = "C:/Users/smhrd/git/GoJiJeon/Project3/src/main/webapp/resources/img";
     	  String path = mhsr.getSession().getServletContext().getRealPath("/resources/img");
-    	  System.out.println(path+"  이건 내가 test하는것");
-    	  String path2 = "/controller/resources/img/";
-    	  System.out.println(path);
+    	  
+    	  
     	  
     	  Map returnObject = new HashMap();
     	  try {
@@ -284,8 +284,10 @@ public class GoController {
                   String origName; 
                   origName = new String(mfile.getOriginalFilename().getBytes("8859_1"), "UTF-8"); //한글꺠짐 방지 
                   
+                  session.setAttribute("img", origName);
+                  session.setAttribute("path", path);
+                  System.out.println("경로입니다"+path);
                   System.out.println("origName: " + origName);
-                  System.out.println("origName의 경로인듯|| " + mfile.getOriginalFilename());
                   // 파일명이 없다면 
                   if ("".equals(origName)) {
                       continue; 
@@ -297,7 +299,6 @@ public class GoController {
                   
                   // 설정한 path에 파일저장 
                   File serverFile = new File(path + File.separator + saveFileName);
-                  System.out.println("서버파일입니다"+serverFile);
                   mfile.transferTo(serverFile);
                   
                   Map file = new HashMap();
@@ -510,14 +511,18 @@ public class GoController {
          
          @RequestMapping("/ID_Check.do")
          public @ResponseBody String ID_Check(@RequestParam("user_id") String user_id) {
-        	 System.out.println(user_id);
+        	 System.out.println(user_id+"이곳이 유저아이디값을 받아온값");
+        	 if(user_id.equals("")) {
+        		return  "2";
+        	 }else { 
         	 UsersVO vo = GoMapper.ID_Check(user_id);
-        	 if (vo == null) {
+        	 if (vo == null) {        		 
         		 System.out.println("중복아이디없음");
         		 return "0";
         	 }else {
         		 System.out.println("이미있는아이디");
-        	 return "11";
+        	 return "1";
+        	 }
         	 }
          }
          

@@ -276,7 +276,7 @@ label {
 			<input type="text" name="notice_title">
 			<p>이미지 파일명</p>
 			<input type="text" name="img" value="<%=session.getAttribute("img")%>" readonly="readonly">
-			
+			<input type="hidden" name="path" value="<%=session.getAttribute("path")%>">
 			<button type="submit" class="site-btn">고지서 저장</button>
 			<h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
 			</form>
@@ -289,14 +289,15 @@ label {
 	<script>
       // 이미지 태그 가져오기
       var img = document.getElementById("img");
-      
+      var path = {'path':$('input[name=path]').val()+"\\",'img':$('input[name=img]').val()}
       $.ajax({
         type : 'post',
         url : 'http://127.0.0.1:5000/',
-        data : "place2_sample3.jpg",
+        data :path ,
         dataType : 'json',
         success : function(res) {
-           $('#div_img').append("<img id='img' src='/controller/resources/img/"+res.im_path+"'>")
+        	console.log(path);
+           $('#div_img').append("<img id='img' src='resources/img/"+res.im_path+"'>")
            $.each(res.fields, function(a,b){
               // cor --> 영역 처리 되어있는 부분의 x,y 좌표 값
               var cor = res.fields[a].boundingPoly.vertices
