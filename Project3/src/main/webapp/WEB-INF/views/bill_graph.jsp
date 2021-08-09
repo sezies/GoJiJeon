@@ -151,7 +151,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 								관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
-				<li><a href="./community.do">커뮤니티</a></li>
+				<li><a href="${cpath}/communityList.do">커뮤니티</a></li>
 				<li><a href="./contact.do">문의하기</a></li>
 				<%
 					}
@@ -202,7 +202,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
 									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>" style="font-size:16px;">고지서 관리</a></li>
 									<li><a href="./bill_graph.do" style="font-size:16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
+							<li><a href="${cpath}/communityList.do" style="font-size:20px;">커뮤니티</a></li>
 							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
 							<%
 								}
@@ -362,7 +362,7 @@ List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
                     	<%}%>
                     ],
                     datasets: [
-                        { //데이터
+                        { //데이터 
                             label: '고지서', //차트 제목
                             fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
                             data: [

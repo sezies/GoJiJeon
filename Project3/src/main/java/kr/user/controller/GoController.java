@@ -48,6 +48,7 @@ import com.mysql.jdbc.PreparedStatement.ParseInfo;
 import kr.user.mapper.GoMapper;
 import kr.user.mapper.NoticeVO;
 import kr.user.mapper.UsersVO;
+import kr.user.mapper.boardVO;
 import kr.user.mapper.imgVO;
 
 
@@ -96,6 +97,12 @@ public class GoController {
 }
       }
       
+      
+      
+      @RequestMapping("/Join.do")
+      public String Join() {
+    	  return "join_main2";
+      }
       
       
       @RequestMapping("/UsersForm.do")
@@ -199,6 +206,7 @@ public class GoController {
       public String UsersLogout(HttpSession session) {
          session.invalidate();
          System.out.println("로그아웃성공");
+         //세션 삭제
          return "redirect:/index_main.do"; 
       }
       
@@ -223,7 +231,35 @@ public class GoController {
          return "bill_upload";
       }
       
+      //회원 탈퇴 부분
+      @RequestMapping("/delete.do")
+      public String delete() {    	  
+         return "delete";
+      }
+      //회원 탈퇴 부분
+      @RequestMapping("/delete2.do")
+      public String delete2(UsersVO vo ,HttpSession session,RedirectAttributes rttr,HttpServletResponse response) {
+    	  UsersVO u_vo = null;
+    	  if(session.getAttribute("login")!= null){
+    	  u_vo = (UsersVO)session.getAttribute("login");
+    	  }
+    	  if(u_vo.getUser_id().equals(vo.getUser_id()) && u_vo.getUser_pw().equals(vo.getUser_pw())){
+    		  GoMapper.delete2(vo);
+        	  System.out.println("회원탈퇴 성공");
+        	  session.invalidate();
+             return "redirect:/index_main.do";
+    	  }else {
+    		  System.out.println("회원탈퇴 실패");
+    		  rttr.addFlashAttribute("msg", false);
+    		  return  "redirect:/delete.do";
+    	  }
+    	  
+    	  
+      }
       
+      
+      
+      // 이미지 이름 저장 하는 메소드
       @RequestMapping("/bill_upload2.do")
       public String bill_upload2(MultipartHttpServletRequest mhsr) throws IOException{
     	  String path = mhsr.getSession().getServletContext().getRealPath("/resources/img");
@@ -275,6 +311,10 @@ public class GoController {
     	  }
     	  return "bill_upload2";
       }
+      
+      
+      
+      
       
       @RequestMapping("/bill_manager.do")
       public String bill_manager() {
@@ -329,8 +369,14 @@ public class GoController {
       }
       
       @RequestMapping("/comm_contents.do")
-      public String comm_contents() {
-         return "comm_contents";
+      public String comm_contents(@RequestParam("board_num") String board_num, Model model) {
+    	  System.out.println("게시판번호 : " + board_num);
+    	  
+    	  boardVO vo = GoMapper.comm_contents(board_num);
+    	  
+    	  model.addAttribute("vo", vo);
+    	  
+    	  return "comm_contents";
       }
    
 
@@ -377,12 +423,20 @@ public class GoController {
          public String NoticeForm() {
             return "NoticeForm"; //NoticeForm.jsp
          }
+         
+         
+         // 값집어넣기
          @RequestMapping("/NoticeInsert.do")
          public String NoticeInsert(NoticeVO vo) {
+        	
             GoMapper.NoticeInsert(vo); //정장
-            return "redirect:/NoticeList.do"; //WEB-INF/views//UsersList.do.jsp
+            System.out.println("고지서 등록하기"+vo);
+            return "redirect:/index_main.do"; //WEB-INF/views//UsersList.do.jsp
             
          }
+         
+         
+      // 값집어넣기
          @RequestMapping("/NoticeContent.do")
          public String NoticeContent(@RequestParam("notice_num") int notice_num, Model model) { //?idx=10
             NoticeVO vo=GoMapper.NoticeContent(notice_num);
@@ -400,11 +454,64 @@ public class GoController {
             return "redirect:/NoticeList.do";
          }
     
+         // 글쓰기 페이지로 이동
+         @RequestMapping("/comWrite.do")
+         public String comWrite() {
+        	 System.out.println("여기까지는 오나?");
+        	 return "com_wirte";
+         }
+         
+         // 글 작성 저장 insert
+         @RequestMapping("/comInsert.do")
+         public String comInsert(boardVO vo) {
+        	 GoMapper.comInsert(vo);
+        	 return "redirect:communityList.do";
+         }
+         
+         
+         // 글 리스트
+         @RequestMapping("/communityList.do")
+         public String communityList(HttpServletRequest request){
+            List<boardVO> list=GoMapper.communityList();      
+            request.setAttribute("list",list);
+            
+            System.out.println("잘가니?");
+            return "community"; 
+         }
+         
+         // 글 리스트 클릭시 에이젝스
+         @RequestMapping("/boardListOne.do")
+         public @ResponseBody boardVO boardListOne(@RequestParam("board_num") int board_num, Model model) {
+        	 boardVO vo=GoMapper.boardListOne(board_num);
+        	 model.addAttribute("vo", vo);
+            return vo; // UsersContent.jsp
+         }
+         
+         
+         
+         // 아이디 중복체크
+         
+         @RequestMapping("/ID_Check.do")
+         public @ResponseBody String ID_Check(@RequestParam("user_id") String user_id) {
+        	 System.out.println(user_id);
+        	 UsersVO vo = GoMapper.ID_Check(user_id);
+        	 if (vo == null) {
+        		 System.out.println("중복아이디없음");
+        		 return "0";
+        	 }else {
+        		 System.out.println("이미있는아이디");
+        	 return "11";
+        	 }
+         }
          
          
          
          
          
          
-       
+         
+         
+         
+         
+         
 }

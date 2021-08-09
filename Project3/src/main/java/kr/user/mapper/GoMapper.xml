@@ -10,6 +10,7 @@
         select * from users where user_id=#{user_id} and user_pw=#{user_pw}
     </select>
     
+    
      <select id = "UsersListAjax" resultType="kr.user.mapper.UsersVO" >
     select * from users order by idx desc
    </select>
@@ -37,8 +38,8 @@
        where user_num=#{user_num}
    </update>
    
-   <delete id="UsersDelete" parameterType="int" >
-        delete from users where user_num=#{user_num}
+   <delete id="delete2" parameterType="kr.user.mapper.UsersVO" >
+        delete from users where user_id=#{user_id} and user_pw=#{user_pw}
         
     </delete>
     
@@ -59,6 +60,13 @@
     </select>
     
     
+     <!-- 커뮤니티 상세 -->
+     <select id="comm_contents"  parameterType = "String"
+         resultType="kr.user.mapper.boardVO" >
+        select * from board where board_num = #{board_num}
+    </select>
+     
+     
 
         <select id = "NoticeListAjax" 
             resultType="kr.user.mapper.NoticeVO" >
@@ -66,8 +74,8 @@
    </select>
    
     <insert id="NoticeInsert" parameterType="kr.user.mapper.NoticeVO">
-        insert into notice(notice_code,notice_title,pay_day,pay_money,pay_bank,img)
-      values(#{notice_code},#{notice_title},#{pay_day},#{pay_money},#{pay_bank},#{img})
+        insert into notice(user_num,notice_code,notice_title,pay_day,pay_money,pay_bank,img)
+      values(#{user_num},#{notice_code},#{notice_title},#{pay_day},#{pay_money},#{pay_bank},#{img})
     </insert>
     
     <!-- 고지서 가져오기 -->
@@ -110,7 +118,7 @@
         values(#{img})
     </insert>
    
-   
+   <!-- ㄴㅁ -->
    
    <select id="imageSelect"  
          resultType="kr.user.mapper.imgVO" >
@@ -118,7 +126,31 @@
     </select>
    
    
+      <!--글쓰기 인서트 -->
+   <insert id="comInsert" parameterType="kr.user.mapper.boardVO">
+        insert into board(user_num,user_id, board_title, board_content,board_img )
+      values(#{user_num},#{user_id}, #{board_title},#{board_content},#{board_img})
+    </insert>
+    
+  <!--  글쓰기 하나 -->
+     <select id = "boardListOne" parameterType="int" resultType="kr.user.mapper.boardVO" >
+    select * from board where board_num = #{board_num}
+   </select>
    
-   
+    
+  <!--  <insert id="bill_upload2" parameterType="kr.user.mapper.NoticeVO">
+   	insert into notice(notice_code,notice_title,pay_day,pay_money,pay_bank,img)
+    values(0,'제목','납부기간',0,'납부은행',#{img})
+    </insert> -->
+    
+    
+<!-- 아이디중복확인 -->
+    <select id = "ID_Check" parameterType="String" resultType="kr.user.mapper.UsersVO" >
+    select * from users where user_id = #{user_id}
+   </select>
+    
+    
+    
+    
     
 </mapper>

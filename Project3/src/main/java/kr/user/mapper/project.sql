@@ -28,7 +28,7 @@ value ('kite','123','KITE','광주');
 
 
 select * from users;
-
+delete from users where user_num ='2';
 
 drop table notice;
 
@@ -39,7 +39,7 @@ update users set()
 create table notice(
         user_num int,
         notice_num int not null auto_increment,
-        notice_code int not null,
+        notice_code varchar(50) not null,
         notice_title varchar(100) not null,
         pay_day varchar(50) not null,
         pay_money int not null,
@@ -78,6 +78,7 @@ select * from notice where user_num='1';
 select * from notice;
 drop table notice;
 select * from notice where user_num='1' order by pay_day desc;
+insert into notice(notice_code,img) values('1','car_sample1.jpg')
 
 --이미지 테스트
 create table test_img (
@@ -93,5 +94,34 @@ values ('car_sample1.jpg')
 
 drop table test_img;
 
-delete from notice where user_num ='1';
+delete from notice where notice_code ='0';
 update notice set(user_num) = '1' where(notice_num)='1';
+
+
+
+
+
+
+-- 게시판 board
+
+create table board(
+        user_num int,
+        user_id varchar(30),
+        board_num int not null auto_increment,
+        board_title varchar(100) not null,
+        board_content varchar(500) not null,
+        board_img varchar(200) not null,  
+        board_day TIMESTAMP DEFAULT NOW(),
+        primary key(board_num),
+        foreign key(user_num) references users(user_num),
+        foreign key(user_id) references users(user_id)
+);
+
+
+select * from board;
+
+
+drop table board;
+
+
+

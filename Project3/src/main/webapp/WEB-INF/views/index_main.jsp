@@ -102,7 +102,7 @@
 								관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
-				<li><a href="./community.do">커뮤니티</a></li>
+				<li><a href="${cpath}/communityList.do">커뮤니티</a></li>
 				<li><a href="./contact.do">문의하기</a></li>
 				<%
 					}
@@ -154,7 +154,7 @@
 									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>" style="font-size:16px;">고지서 관리</a></li>
 									<li><a href="./bill_graph.do" style="font-size:16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
+							<li><a href="${cpath}/communityList.do" style="font-size:20px;">커뮤니티</a></li>
 							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
 							<%
 								}
@@ -260,6 +260,7 @@
 	<section class="categories">
 		<div class="container">
 			<div class="row">
+				<a style="font-size: 20px; color: midnight; font-weight: bold;">※ 고지서가 기존 목록에 있는 경우에만 표출됩니다.</a><br>
 				<div class="categories__slider owl-carousel">
 					<!--  반복문을 통해 리스트에 있는 값  불러오기 -->
 					<c:forEach var="n_vo" items="${n_list}">

@@ -860,7 +860,7 @@ ol {
 }
 
 .featured__item__pic {
-	height: 270px;
+	height: 0px;
 	position: relative;
 	overflow: hidden;
 	background-position: center center;
@@ -2071,7 +2071,7 @@ ol {
 -----------------------*/
 
 .checkout {
-	padding-top: 80px;
+	padding-top: 50px;
 	padding-bottom: 60px;
 }
 

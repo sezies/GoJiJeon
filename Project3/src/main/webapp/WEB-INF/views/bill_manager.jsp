@@ -103,7 +103,7 @@ u_vo = (UsersVO)session.getAttribute("login");
 								관리</a></li>
 						<li><a href="./bill_graph.do">고지서 분석</a></li>
 					</ul></li>
-				<li><a href="./community.do">커뮤니티</a></li>
+				<li><a href="${cpath}/communityList.do">커뮤니티</a></li>
 				<li><a href="./contact.do">문의하기</a></li>
 				<%
 					}
@@ -196,7 +196,7 @@ u_vo = (UsersVO)session.getAttribute("login");
 									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>" style="font-size:16px;">고지서 관리</a></li>
 									<li><a href="./bill_graph.do" style="font-size:16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="./community.do" style="font-size:20px;">커뮤니티</a></li>
+							<li><a href="${cpath}/communityList.do" style="font-size:20px;">커뮤니티</a></li>
 							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
 							<%
 								}
@@ -264,18 +264,18 @@ u_vo = (UsersVO)session.getAttribute("login");
                     <div class="featured__controls">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">관리비</li>
-                            <li data-filter=".fresh-meat">자동차세</li>
-                            <li data-filter=".vegetables">지방세</li>
-                            <li data-filter=".fastfood">주민세</li>
-                            <li data-filter=".slowfood">과태료</li>
+                            <li data-filter=".관리비">관리비</li>
+                            <li data-filter=".자동차세">자동차세</li>
+                            <li data-filter=".지방세">지방세</li>
+                            <li data-filter=".주민세">주민세</li>
+                            <li data-filter=".과태료">과태료</li>
                         </ul>
                     </div>
                 </div>
             </div>
   <!-- a --><div class="row featured__filter">
                 <c:forEach var = "vo" items = "${list}"> 
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix ${vo.notice_code}">
                 
                     <div class="featured__item">
                        <div style="border: 3px solid white;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" 
@@ -288,7 +288,7 @@ u_vo = (UsersVO)session.getAttribute("login");
                         </div>
                         <div class="featured__item__text">
                             <h6><a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">납부기한 : ${vo.pay_day}</a></h6>
-                            <h6><a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">고지서 종류 : ${vo.notice_title}</a></h6>
+                            <h6><a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">고지서 명 : ${vo.notice_title}</a></h6>
                             <h5>납부할 금액 : ${vo.pay_money} 원</h5>
                         </div>
                     </div>
