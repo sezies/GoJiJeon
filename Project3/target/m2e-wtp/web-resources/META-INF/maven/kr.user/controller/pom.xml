@@ -14,6 +14,21 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+		<!-- firebase 위한 dependency -->
+		<dependency>
+			<groupId>com.google.firebase</groupId>
+			<artifactId>firebase-admin</artifactId>
+			<version>6.11.0</version>
+		</dependency>
+		
+		<!-- JSON 위한 dependency -->
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>1.1.1</version>
+		</dependency>		
+
+	
 	<!-- 파일 업로드를 위한 dependency -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>

@@ -63,8 +63,6 @@ label {
       UsersVO u_vo = null;
    if (session.getAttribute("login") != null) {
       u_vo = (UsersVO) session.getAttribute("login");
-      System.out.println(u_vo + "||||이거는 맨 위에거");
-      System.out.println(u_vo.getUser_num() + "고지서부분 유저넘값넘오오는지");
    }
    %>
 
@@ -278,13 +276,14 @@ label {
          <%request.setCharacterEncoding("utf-8"); %>
          <input type="text" name="img" value="<%=request.getAttribute("img")%>" readonly="readonly">
          <input type="hidden" name="path" value="<%=session.getAttribute("path")%>">
+         <input type="hidden" name="notice_json">
+         <input type="hidden" name="notice_json_name">
          <button type="submit" class="site-btn">고지서 저장</button>
          <h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
          </form>
       </div>
    </section>
       <div id="div_img" style="margin:0px auto;"></div>
-   </form>
 
    <!-- Contact Form End -->
    <div id="div_img" style="margin-left:30%; margin-right:30%">
@@ -293,7 +292,6 @@ label {
    <h3 style="text-align:center"> < 고지서 이미지 > </h3>
    <p>ㅤ</p>
    </div>
-
    <script src="${cpath }/resources/js/jquery-3.3.1.min.js"></script>
    <script>
       // 이미지 태그 가져오기
@@ -307,6 +305,8 @@ label {
         dataType : 'json',
         success : function(res) {
            console.log(path);
+           $('input[name=notice_json]').attr("value",JSON.stringify(res));
+           //console.log($('input[name=notice_json]').val());
            $('#div_img').append("<img id='img' src='resources/img/"+res.im_path+"'>")
            $.each(res.fields, function(a,b){
               // cor --> 영역 처리 되어있는 부분의 x,y 좌표 값

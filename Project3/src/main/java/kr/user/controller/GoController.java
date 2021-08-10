@@ -2,6 +2,7 @@ package kr.user.controller;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -29,6 +30,8 @@ import javax.servlet.http.HttpSession;
 import javax.swing.text.html.HTMLEditorKit.Parser;
 import javax.xml.ws.Response;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -43,6 +46,18 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.google.api.client.json.Json;
+import com.google.api.core.ApiFuture;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.DocumentSnapshot;
+import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.WriteResult;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
+import com.google.firebase.cloud.FirestoreClient;
+import com.google.gson.JsonObject;
 import com.mysql.jdbc.PreparedStatement.ParseInfo;
 
 import kr.user.mapper.ContactVO;
@@ -289,8 +304,6 @@ public class GoController {
                   request.setCharacterEncoding("utf-8");
                   request.setAttribute("img", origName);;
                   session.setAttribute("path", path);
-                  System.out.println("경로입니다"+path);
-                  System.out.println("origName: " + origName);
                   // 파일명이 없다면 
                   if ("".equals(origName)) {
                       continue; 
@@ -331,7 +344,6 @@ public class GoController {
        	 UsersVO u_vo = null;
       	  if(session.getAttribute("login")!= null){
       	  u_vo = (UsersVO)session.getAttribute("login");
-      	  System.out.println(u_vo+"||||로그인 리스트쪽 불러온값");
       	  int num=u_vo.getUser_num();
       	  
       	  // 비용과 날짜를 통한 리스트 불러오기 
@@ -428,10 +440,8 @@ public class GoController {
          public @ResponseBody List<NoticeVO> NoticeListAjax(NoticeVO n_vo,HttpSession session) {
           //게시판 리스트를 JSON형식으로 JS클라이언트에게 내려보낸다.
         	 int n_num = n_vo.getNotice_num();
-        	 System.out.println("이쪽으로옴 번호"+n_vo.getNotice_num());
         	 
             List<NoticeVO> c_list = GoMapper.NoticeListAjax(n_num);
-            System.out.println("이쪽으로옴 c_list에 담긴내용"+c_list);
             //session.setAttribute("c_list",c_list);
             return c_list; // list->JSON
          }
@@ -448,10 +458,18 @@ public class GoController {
          
          // 값집어넣기
          @RequestMapping("/NoticeInsert.do")
-         public String NoticeInsert(NoticeVO vo) {
-        	System.out.println("들어오긴 하니");
+         public String NoticeInsert(NoticeVO vo, HttpServletRequest req, 
+        		 @RequestParam("notice_json") String notice_json) throws Exception {
+        	int notice_num = GoMapper.NoticeSelect_notice_num();
+        	String notice_json_name = vo.getUser_num()+"_"+notice_num;
             GoMapper.NoticeInsert(vo); //정장
-            System.out.println("고지서 등록하기"+vo);
+            JSONParser parser = new JSONParser();
+            Object test_notice = parser.parse(notice_json);
+            JSONObject notice_json_conv = (JSONObject) test_notice;
+//            JsonObject notice_json = (JsonObject) req.getAttribute("notice_json");
+            initialize(notice_json_name);
+			insert_firebase(notice_json_conv, notice_json_name);
+			System.out.println("firebase 서버 저장 완료");
             return "redirect:/index_main.do"; //WEB-INF/views//UsersList.do.jsp
             
          }
@@ -478,7 +496,6 @@ public class GoController {
          // 글쓰기 페이지로 이동
          @RequestMapping("/comWrite.do")
          public String comWrite() {
-        	 System.out.println("여기까지는 오나?");
         	 return "com_wirte";
          }
          
@@ -496,7 +513,6 @@ public class GoController {
             List<boardVO> list=GoMapper.communityList();      
             request.setAttribute("list",list);
             
-            System.out.println("잘가니?");
             return "community"; 
          }
          
@@ -514,7 +530,6 @@ public class GoController {
          
          @RequestMapping("/ID_Check.do")
          public @ResponseBody String ID_Check(@RequestParam("user_id") String user_id) {
-        	 System.out.println(user_id+"이곳이 유저아이디값을 받아온값");
         	 if(user_id.equals("")) {
         		return  "2";
         	 }else { 
@@ -531,9 +546,34 @@ public class GoController {
          
          
          
+       //==========================================삐빅 FireBase 구간입니다==========================================
          
+         public static String insert_firebase(JSONObject notice_json, String notice_json_name) throws Exception{
+        	 Firestore firestore = FirestoreClient.getFirestore();
+             // 추가할 데이터의 필드 명
+             ApiFuture<WriteResult> apiFuture = firestore.collection("notice").document(notice_json_name).set(notice_json);
+             return apiFuture.get().getUpdateTime().toString();
+         }
          
-         
+         public static void initialize(String test) {
+             try {
+                 String path = GoController.class.getResource("").getPath();
+                 System.out.println(path);
+                 
+                 FileInputStream serviceAccount = new FileInputStream(path+"notice_firebase.json");
+                 
+                 FirebaseOptions options = new FirebaseOptions.Builder()
+                                                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                                                 .setDatabaseUrl("https://gojijeon-d98c9-default-rtdb.firebaseio.com")
+                                                 .build();
+                 if(FirebaseApp.getApps().isEmpty()) {
+                 FirebaseApp.initializeApp(options);
+                 }
+                 System.out.println("성공");
+                 } catch (Exception e) {
+                     e.printStackTrace();
+                 }
+         }
          
          
          
