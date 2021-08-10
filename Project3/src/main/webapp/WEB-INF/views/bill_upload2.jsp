@@ -14,8 +14,7 @@
 <title>고지서 관리 서비스</title>
 <style>
 input {
-	vertical-align:middle
-	position: absolute;
+	vertical-align: middle position: absolute;
 }
 
 label {
@@ -65,7 +64,7 @@ label {
 	if (session.getAttribute("login") != null) {
 		u_vo = (UsersVO) session.getAttribute("login");
 		System.out.println(u_vo + "||||이거는 맨 위에거");
-		System.out.println(u_vo.getUser_num()+"고지서부분 유저넘값넘오오는지");
+		System.out.println(u_vo.getUser_num() + "고지서부분 유저넘값넘오오는지");
 	}
 	%>
 
@@ -182,7 +181,8 @@ label {
 									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
 											분석</a></li>
 								</ul></li>
-							<li><a href="${cpath}/communityList.do" style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="${cpath}/communityList.do"
+								style="font-size: 20px;">커뮤니티</a></li>
 							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
@@ -238,11 +238,11 @@ label {
 
 	<!-- Contact Form Begin -->
 	<form action="${cpath}/NoticeInsert.do" method="post">
-	<section class="contact-form spad">
-	
-		<div class="container" align="center">
-		
-			<!--  <label style="font-size:20px; color: midnight; margin-ieft: auto; margin-top: 50px;">금액</label>
+		<section class="contact-form spad">
+
+			<div class="container" align="center">
+
+				<!--  <label style="font-size:20px; color: midnight; margin-ieft: auto; margin-top: 50px;">금액</label>
 			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
 			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
 			
@@ -284,8 +284,10 @@ label {
 		</div>
 	</section>
 		<div id="div_img" style="margin:0px auto;"></div>
-	<!-- Contact Form End -->
+	</form>
 
+	<!-- Contact Form End -->
+	<div id="div_img" style="margin-left:30%; margin-right:30%"></div>
 	<script src="${cpath }/resources/js/jquery-3.3.1.min.js"></script>
 	<script>
       // 이미지 태그 가져오기
