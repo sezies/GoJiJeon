@@ -264,55 +264,60 @@ public class GoController {
 	public String bill_upload2(MultipartHttpServletRequest mhsr, HttpSession session, HttpServletRequest request)
 			throws IOException {
 //    	  String path = "C:/Users/smhrd/git/GoJiJeon/Project3/src/main/webapp/resources/img";
-		String path = mhsr.getSession().getServletContext().getRealPath("/resources/img");
 
-		Map returnObject = new HashMap();
-		try {
-			// MultipartHttpServletRequest 생성
-			Iterator iter = mhsr.getFileNames();
-			System.out.println(iter);
-			MultipartFile mfile = null;
-			String fieldName = "";
-			List resultList = new ArrayList();
-
-			// 값이 나올때까지
-			while (iter.hasNext()) {
-				fieldName = (String) iter.next(); // 내용을 가져와서
-				mfile = mhsr.getFile(fieldName);
-				String origName;
-				origName = new String(mfile.getOriginalFilename().getBytes("8859_1"), "UTF-8"); // 한글꺠짐 방지
-
-				session.setAttribute("img", origName);
-				session.setAttribute("path", path);
-				System.out.println("경로입니다" + path);
-				System.out.println("origName: " + origName);
-				// 파일명이 없다면
-				if ("".equals(origName)) {
-					continue;
-				}
-
-				String saveFileName = origName;
-
-				System.out.println("saveFileName : " + saveFileName);
-
-				// 설정한 path에 파일저장
-				File serverFile = new File(path + File.separator + saveFileName);
-				mfile.transferTo(serverFile);
-
-				Map file = new HashMap();
-				file.put("origName", origName);
-				file.put("sfile", serverFile);
-				resultList.add(file);
-			}
-
-			returnObject.put("files", resultList);
-			returnObject.put("params", mhsr.getParameterMap());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "bill_upload2";
-	}
-
+    	  mhsr.setCharacterEncoding("UTF-8");
+    	  String path = mhsr.getSession().getServletContext().getRealPath("/resources/img");
+    	  
+    	  
+    	  
+    	  Map returnObject = new HashMap();
+    	  try {
+    		  // MultipartHttpServletRequest 생성 
+    		  Iterator iter = mhsr.getFileNames();
+    		  System.out.println(iter);
+    		  MultipartFile mfile = null;
+    		  String fieldName = "";
+    		  List resultList = new ArrayList();
+    		  
+    		// 값이 나올때까지 
+              while (iter.hasNext()) { 
+                  fieldName = (String) iter.next(); // 내용을 가져와서 
+                  mfile = mhsr.getFile(fieldName); 
+                  String origName; 
+//                  origName = new String(mfile.getOriginalFilename().getBytes("8859_1"), "UTF-8"); //한글꺠짐 방지 
+                  origName = new String(mfile.getOriginalFilename()); //한글꺠짐 방지 
+                  
+                  request.setCharacterEncoding("utf-8");
+                  request.setAttribute("img", origName);;
+                  session.setAttribute("path", path);
+                  System.out.println("경로입니다"+path);
+                  System.out.println("origName: " + origName);
+                  // 파일명이 없다면 
+                  if ("".equals(origName)) {
+                      continue; 
+                  } 
+                  
+                  String saveFileName = origName;
+                  
+                  System.out.println("saveFileName : " + saveFileName);
+                  
+                  // 설정한 path에 파일저장 
+                  File serverFile = new File(path + File.separator + saveFileName);
+                  mfile.transferTo(serverFile);
+                  
+                  Map file = new HashMap();
+                  file.put("origName", origName); file.put("sfile", serverFile);
+                  resultList.add(file);
+              }
+              
+              returnObject.put("files", resultList); 
+              returnObject.put("params", mhsr.getParameterMap()); 
+              } catch(Exception e) {
+            	  e.printStackTrace();
+    	  }
+    	  return "bill_upload2";
+      }
+      
 	@RequestMapping("/bill_manager.do")
 	public String bill_manager() {
 		return "bill_manager";
@@ -509,7 +514,7 @@ public class GoController {
 
 	// 카카오톡 연동
 	@RequestMapping("/kakao.do")
-	public String kakao(@RequestParam String code,OAuthToken ot) {
+	public String kakao(@RequestParam String code,OAuthToken ot,UsersVO u_vo,HttpSession session) {
 		// 카카오톡 코드르 받아옴
 		System.out.println(code + "카카오톡 코드");
 		RestTemplate rt = new RestTemplate();
@@ -551,18 +556,13 @@ public class GoController {
 		String re = refresh_token_expires_in[1].replace("\"","");
 		re = re.replace("}","");
 		int re2 = Integer.parseInt(re);
-		 ot.setAccess_token(a);
-		 System.out.println(ot.getAccess_token()+"바꾼 a토큰값");
+		 ot.setAccess_token(a);		
 		 ot.setToken_type(t);
-		 System.out.println(ot.getToken_type()+"토큰타입값");
-		 ot.setRefresh_token(r);
-		 System.out.println(ot.getRefresh_token()+"리플레쉬 토큰타입값");
-		 ot.setExpires_in(e1);
-		 System.out.println(ot.getExpires_in()+"expires값");
-		 ot.setScope(s);
-		 System.out.println(ot.getScope()+"scope값");
+		 ot.setRefresh_token(r);		
+		 ot.setExpires_in(e1);	
+		 ot.setScope(s);		 
 		 ot.setRefresh_token_expires_in(re2);
-		 System.out.println(ot.getRefresh_token_expires_in()+"마지막꺼값");
+		
 		
 		 RestTemplate rt2 = new RestTemplate(); // httpHeader 오브젝트 생성
 		  HttpHeaders headers2 = new HttpHeaders(); 		 
@@ -579,10 +579,24 @@ public class GoController {
 				 kakaoProfile, 
 				 String.class); //회원 정보까지 조회하는게 response2.getbodey()
 		  System.out.println(response2.getBody()+"출력해줘 카톡내용 제발 시팔!!!!!!");
-		  
-		  
-		  
-		 
+		  // 받은 내용값 슬라이싱 하기...
+		  String want = response2.getBody();
+		  String want_data[]=want.split(",");
+		  String nick[] = want_data[2].split(":");
+		  String email[] = want_data[9].split(":");
+		  String nick_name = nick[2].replace("\"","");
+		  nick_name = nick_name.replace("}", "");
+		  String e_mail = email[1].replace("\"","");
+		  e_mail = e_mail.replace("}", "");
+		  System.out.println(nick_name+"카카오톡에서 가져온값들");
+		  System.out.println(e_mail+"카카오톡에서 가져온값들");
+		  // 가져온값을 DB,세션에 에 담는다
+		  u_vo.setUser_id(e_mail);
+		  u_vo.setUser_pw("1111");
+		  u_vo.setUser_name(nick_name);
+		  u_vo.setUser_bank("등록하셔야합니다.");
+		  session.setAttribute("ka_uvo", u_vo);
+		  		 
 		 // ObjectMapper objectMapper2 = new ObjectMapper(); // 여기다가 json으로 담아낼 예정
 		//  kakaoProfileVO p_vo= null;
 		  
@@ -592,7 +606,7 @@ public class GoController {
 		 // }catch(JsonMappingException e) { e.printStackTrace(); }catch(IOException e) {
 		 // e.printStackTrace(); } //카카오 프로파일에 모든정보를 매퍼로 담는과정이다.
 		 
-		return "redirect:/index_main.do";
+		return "redirect:/kaselect.do";
 	}
 	//카카오 로그인하느 부분
 	@RequestMapping("/kakao_login.do")
@@ -607,7 +621,38 @@ public class GoController {
 		return "redirect:" + loginUrl.toString();
 	}
 	
+	@RequestMapping("/kaselect.do")
+	public String kaselect(HttpSession session,UsersVO u_vo) {
 	
-
-
+	UsersVO	vo = (UsersVO)session.getAttribute("ka_uvo");
+	UsersVO new_vo=GoMapper.kaselect(vo.getUser_id());
+	System.out.println(new_vo+"검색하고온 값");
+	if(new_vo==null) {
+		// 회원가입
+		System.out.println("박");
+		
+		GoMapper.UsersInsert(vo);
+		
+		
+		
+		System.out.println("카카오톡 회원가입완료 or 로그인성공");
+		UsersVO kvo=GoMapper.kaselect(vo.getUser_id());
+		session.setAttribute("login", kvo);
+		
+		return "redirect:/index_main.do"; 
+		
+	}else {
+		//로그인
+		
+		System.out.println("정");
+		session.setAttribute("login", vo);
+		System.out.println("카카오톡 로그인 성공");
+		return "redirect:/index_main.do"; 
+	}
+	
+		
+		
+	}
+	
+	
 }

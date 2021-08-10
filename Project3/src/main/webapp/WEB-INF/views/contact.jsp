@@ -231,11 +231,7 @@ System.out.println(u_vo+"||||이거는 맨 위에거");
     <!-- form태그가 지금은 기본적으로 무조건 submit을 진행하는데 그렇게 하지말고 javascript사용해서
     	submit시 실행할 별도의 함수 지정할 것!
     	---빈칸인지 아닌지 여부 판별해서
-    	-- 그렇지 않은 경우에는 보내주기!
-    
-     -->
-    
-    
+    	-- 그렇지 않은 경우에는 보내주기! -->
     
     <!-- Js Plugins -->
     <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>

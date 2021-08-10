@@ -57,7 +57,6 @@
 	<div class="humberger__menu__wrapper">
 		<div class="humberger__menu__logo">
 			<a href="./index_main.do"><img
-
 				src="${cpath}/resources/img/logo1.png" alt=""></a>
 
 		</div>
@@ -136,26 +135,36 @@
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 업로드</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">문의하기</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+											업로드</a></li>
+									<li><a
+										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+											분석</a></li>
 								</ul></li>
-							<li><a href="${cpath}/communityList.do" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
+							<li><a href="${cpath}/communityList.do"
+								style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
 							%>
@@ -179,21 +188,12 @@
 							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
 						&emsp; <a href="./mypage_main.do"
 							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
-						
+
 						<%
 							}
 						%>
 					</nav>
 				</div>
-				<!--<div class="col-lg-3"> 
-                       <div class="header__cart">
-                         <ul>
-                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
-                    </div>
-                </div>-->
 			</div>
 			<div class="humberger__open">
 				<i class="fa fa-bars"></i>
@@ -221,35 +221,36 @@
 				</form>
 			</div>-->
 			<br>
-	<%
-		if (u_vo == null) {
-	%>				
+			<%
+				if (u_vo == null) {
+			%>
 			<div class="hero__item set-bg"
 				data-setbg="${cpath}/resources/img/hero/logout_banner.png">
 				<div class="hero__text">
-					<a style="font-size: 20px; color: black;">사이트</a>
-					<a style="font-size: 20px; color: midnight;">접속을 환영합니다!</a><br>
+					<a style="font-size: 20px; color: black;">사이트</a> <a
+						style="font-size: 20px; color: midnight;">접속을 환영합니다!</a><br>
 					<h2>고지서 관리가 필요하시다면?</h2>
 					<p>로그인 혹은 회원가입 후 이용해주세요</p>
-					<a href="./login_main2.do" class="primary-btn">로그인</a>
-					<a href="./join_main2.do" class="primary-btn">회원가입</a>
-	<%
-		} else {
-	%>		<div class="hero__item set-bg"
-				data-setbg="${cpath}/resources/img/hero/login_banner.png">
-				<div class="hero__text">
-					<a style="font-size: 28px; color: black; font-weight: bold;"><%=u_vo.getUser_name()%></a>
-					<a style="font-size: 20px; color: midnight;">님 접속을 환영합니다!</a><br>
-					<h2>고지서 관리를 시작하시려면?</h2>
-					<p>고지서를 업로드 해서 목록에 넣어주세요</p>
-					<a href="./bill_upload.do" class="primary-btn">업로드 하기</a>
-	<%
-		}
-	%>
-				</div>
+					<a href="./login_main2.do" class="primary-btn">로그인</a> <a
+						href="./join_main2.do" class="primary-btn">회원가입</a>
+					<%
+						} else {
+					%>
+					<div class="hero__item set-bg"
+						data-setbg="${cpath}/resources/img/hero/login_banner.png">
+						<div class="hero__text">
+							<a style="font-size: 28px; color: black; font-weight: bold;"><%=u_vo.getUser_name()%></a>
+							<a style="font-size: 20px; color: midnight;">님 접속을 환영합니다!</a><br>
+							<h2>고지서 관리를 시작하시려면?</h2>
+							<p>고지서를 업로드 해서 목록에 넣어주세요</p>
+							<a href="./bill_upload.do" class="primary-btn">업로드 하기</a>
+							<%
+								}
+							%>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
 	</section>
 	<!-- Hero Section End -->
 	<br>
@@ -260,7 +261,8 @@
 	<section class="categories">
 		<div class="container">
 			<div class="row">
-				<a style="font-size: 20px; color: midnight; font-weight: bold;">※ 고지서가 기존 목록에 있는 경우에만 표출됩니다.</a><br>
+				<a style="font-size: 20px; color: midnight; font-weight: bold;">※
+					고지서가 기존 목록에 있는 경우에만 표출됩니다.</a><br>
 				<div class="categories__slider owl-carousel">
 					<!--  반복문을 통해 리스트에 있는 값  불러오기 -->
 					<c:forEach var="n_vo" items="${n_list}">
@@ -286,14 +288,12 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="banner__pic">
-						<img src="${cpath}/resources/img/banner/banner_left.png"
-							alt="">
+						<img src="${cpath}/resources/img/banner/banner_left.png" alt="">
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-6">
 					<div class="banner__pic">
-						<img src="${cpath}/resources/img/banner/banner_right.png"
-							alt="">
+						<img src="${cpath}/resources/img/banner/banner_right.png" alt="">
 					</div>
 				</div>
 			</div>
@@ -302,47 +302,6 @@
 	<%
 		}
 	%>
-
-	<%-- <div class="col-lg-3">
-						<div class="categories__item set-bg"
-							data-setbg="${cpath}/resources/img/categories/cat-1.jpg">
-							<h5>
-								<a href="#">스인재아파트 2021년 1월 관리비</a>
-							</h5>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="categories__item set-bg"
-							data-setbg="${cpath}/resources/img/categories/cat-2.jpg">
-							<h5>
-								<a href="#">스인재아파트 2021년 2월 관리비</a>
-							</h5>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="categories__item set-bg"
-							data-setbg="${cpath}/resources/img/categories/cat-3.jpg">
-							<h5>
-								<a href="#">스인재아파트 2021년 3월 관리비</a>
-							</h5>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="categories__item set-bg"
-							data-setbg="${cpath}/resources/img/categories/cat-4.jpg">
-							<h5>
-								<a href="#">주정차위반 과태료</a>
-							</h5>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="categories__item set-bg"
-							data-setbg="${cpath}/resources/img/categories/cat-5.jpg">
-							<h5>
-								<a href="#">속도위반 과태료</a>
-							</h5>
-						</div>
-					</div> --%>
 
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>

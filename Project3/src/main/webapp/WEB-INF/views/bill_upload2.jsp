@@ -243,8 +243,8 @@ label {
 			<div class="container" align="center">
 
 				<!--  <label style="font-size:20px; color: midnight; margin-ieft: auto; margin-top: 50px;">금액</label>
-			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
-			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
+         <label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
+         <label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
 
 				<input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
 					style="height: 40px; margin: auto; margin-top: 0px; text-align: center;"
@@ -277,27 +277,38 @@ label {
 				<p>고지서 제목</p>
 				<input type="text" name="notice_title">
 				<p>이미지 파일명</p>
+				<%
+					request.setCharacterEncoding("utf-8");
+				%>
 				<input type="text" name="img"
-					value="<%=session.getAttribute("img")%>" readonly="readonly">
+					value="<%=request.getAttribute("img")%>" readonly="readonly">
 				<input type="hidden" name="path"
 					value="<%=session.getAttribute("path")%>">
 				<button type="submit" class="site-btn">고지서 저장</button>
 				<h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
 	</form>
-	<br>
-	<div id="div_img" style="margin: 0 auto;"></div>
 	</div>
 	</section>
+	<div id="div_img" style="margin: 0px auto;"></div>
+	</form>
 
 	<!-- Contact Form End -->
+	<div id="div_img" style="margin-left: 30%; margin-right: 30%">
+
+		<p>ㅤ</p>
+		<h3 style="text-align: center">< 고지서 이미지 ></h3>
+		<p>ㅤ</p>
+	</div>
 
 	<script src="${cpath }/resources/js/jquery-3.3.1.min.js"></script>
 	<script>
 		// 이미지 태그 가져오기
 		var img = document.getElementById("img");
+		var path_img = encodeURI($('input[name=img]').val());
 		var path = {
 			'path' : $('input[name=path]').val() + "\\",
 			'img' : $('input[name=img]').val()
+
 		}
 		$.ajax({
 			type : 'post',
@@ -331,7 +342,7 @@ label {
 				})
 			},
 			error : function() {
-				alert('요청 실패쓰');
+				alert($('input[name=img]').val());
 			}
 		})
 
@@ -349,7 +360,10 @@ label {
 		// div 태그의 value 값은 가져온 json data의 infertext(OCR 결과)이다.
 		function data_send(tex) {
 			$('#inp_chn').attr('value', $('#' + tex).attr('value'))
-			var data = $('input[name=pay_money]').val().replace(/,/, "");
+			var data = $('input[name=pay_money]').val().replace(
+					/[,-.=.!.@.#.%.&.*._.$.(.)ㄱ-ㅎㅏ-ㅣ가-힣]/g, "");
+			/* data.replace(/[,-=!@#$%^&*_+.]/g,"")
+			data.replace(/[.).(]/g,"") */
 			console.log(data);
 			$('input[name=pay_money]').attr('value', data);
 			console.log(typeof parseInt(data));
