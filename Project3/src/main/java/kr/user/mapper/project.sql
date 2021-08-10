@@ -45,7 +45,7 @@ value ('박세욱','123','박세욱','광주');
 insert into users(user_id,user_pw,user_name,user_bank)
 value ('신현준','123','신현준','농협');
 insert into users(user_id,user_pw,user_name,user_bank)
-value ('김성길','123','김성길','신한');
+value ('나연호','123','나연호','신한');
 
 
 
@@ -75,25 +75,19 @@ create table notice(
 
 -- 고지서 가데이터 ( 유저 1~3번까지 )
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (1, '관리비', '5월달 관리비', '2021.05.24', '78900', '농협', 'car_sample2.jpg');
+	value (1, '관리비', '1월달 관리비', '2021.01.24', '78900', '농협', 'car_sample2.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (1, '관리비', '6월달 관리비', '2021.06.22', '85650', '광주', 'car_sample3.jpg');
+	value (1, '관리비', '2월달 관리비', '2021.02.22', '85650', '광주', 'car_sample3.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (1, '관리비', '7월달 관리비', '2021.07.11', '90650', '우리', 'car_sample5.jpg');
+	value (1, '관리비', '3월달 관리비', '2021.03.11', '90650', '우리', 'car_sample5.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (1, '관리비', '8월달 관리비', '2021.08.42', '120260', '신협', 'car_sample3.jpg');
+	value (1, '관리비', '4월달 관리비', '2021.04.12', '120260', '신협', 'car_sample3.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (1, '관리비', '9월달 관리비', '2021.09.24', '90520', '부산', 'car_sample3.jpg');
-	
-	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (1, '관리비', '10월달 관리비', '2021.10.24', '80520', '카카오뱅크', 'car_sample7.jpg');
-	
-	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (1, '관리비', '11월달 관리비', '2021.11.24', '95025', '토스', 'car_sample10.jpg');
+	value (1, '관리비', '5월달 관리비', '2021.05.24', '90520', '부산', 'car_sample3.jpg');
 	
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
@@ -117,25 +111,21 @@ create table notice(
 	
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '관리비', '5월달 관리비', '2021.05.24', '78900', '농협', 'car_sample2.jpg');
+	value (2, '관리비', '1월달 관리비', '2021.01.24', '78900', '농협', 'car_sample2.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '관리비', '6월달 관리비', '2021.06.22', '85650', '광주', 'car_sample3.jpg');
+	value (2, '관리비', '2월달 관리비', '2021.02.22', '85650', '광주', 'car_sample3.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '관리비', '7월달 관리비', '2021.07.11', '90650', '우리', 'car_sample5.jpg');
+	value (2, '관리비', '3월달 관리비', '2021.03.11', '90650', '우리', 'car_sample5.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '관리비', '8월달 관리비', '2021.08.42', '120260', '신협', 'car_sample3.jpg');
+	value (2, '관리비', '4월달 관리비', '2021.04.12', '120260', '신협', 'car_sample3.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '관리비', '9월달 관리비', '2021.09.24', '90520', '부산', 'car_sample3.jpg');
+	value (2, '관리비', '5월달 관리비', '2021.05.24', '90520', '부산', 'car_sample3.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '관리비', '10월달 관리비', '2021.10.24', '80520', '카카오뱅크', 'car_sample7.jpg');
-	
-	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (2, '관리비', '11월달 관리비', '2021.11.24', '95025', '토스', 'car_sample10.jpg');
 	
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
@@ -161,25 +151,19 @@ create table notice(
 	
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (3, '관리비', '5월달 관리비', '2021.05.24', '78900', '농협', 'car_sample2.jpg');
+	value (3, '관리비', '1월달 관리비', '2021.01.24', '78900', '농협', 'car_sample2.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (3, '관리비', '6월달 관리비', '2021.06.22', '85650', '광주', 'car_sample3.jpg');
+	value (3, '관리비', '2월달 관리비', '2021.02.22', '85650', '광주', 'car_sample3.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (3, '관리비', '7월달 관리비', '2021.07.11', '90650', '우리', 'car_sample5.jpg');
+	value (3, '관리비', '3월달 관리비', '2021.03.11', '90650', '우리', 'car_sample5.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (3, '관리비', '8월달 관리비', '2021.08.42', '120260', '신협', 'car_sample3.jpg');
+	value (3, '관리비', '4월달 관리비', '2021.04.23', '120260', '신협', 'car_sample3.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (3, '관리비', '9월달 관리비', '2021.09.24', '90520', '부산', 'car_sample3.jpg');
-	
-	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (3, '관리비', '10월달 관리비', '2021.10.24', '80520', '카카오뱅크', 'car_sample7.jpg');
-	
-	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (3, '관리비', '11월달 관리비', '2021.11.24', '95025', '토스', 'car_sample10.jpg');
+	value (3, '관리비', '5월달 관리비', '2021.05.24', '90520', '부산', 'car_sample3.jpg');
 	
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)

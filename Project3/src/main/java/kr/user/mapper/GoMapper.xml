@@ -49,14 +49,14 @@
     <!-- 고지서 셀렉터 -->
      <select id="NoticeSelect"  parameterType = "String"
          resultType="kr.user.mapper.NoticeVO" >
-        select * from notice where user_num = #{user_num}
+        select * from notice where user_num = #{user_num}  ORDER BY notice_num desc;
     </select>
     
      
    <!--  고지서번호로 하나 행만 뽑아기  -->
      <select id="NoticeOne"  parameterType = "String"
          resultType="kr.user.mapper.NoticeVO" >
-        select * from notice where notice_num = #{notice_num}
+        select * from notice where notice_num = #{notice_num} 
     </select>
     
     
