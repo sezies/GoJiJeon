@@ -14,8 +14,7 @@
 <title>고지서 관리 서비스</title>
 <style>
 input {
-	vertical-align:middle
-	position: absolute;
+	vertical-align: middle position: absolute;
 }
 
 label {
@@ -65,7 +64,7 @@ label {
 	if (session.getAttribute("login") != null) {
 		u_vo = (UsersVO) session.getAttribute("login");
 		System.out.println(u_vo + "||||이거는 맨 위에거");
-		System.out.println(u_vo.getUser_num()+"고지서부분 유저넘값넘오오는지");
+		System.out.println(u_vo.getUser_num() + "고지서부분 유저넘값넘오오는지");
 	}
 	%>
 
@@ -182,7 +181,8 @@ label {
 									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
 											분석</a></li>
 								</ul></li>
-							<li><a href="${cpath}/communityList.do" style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="${cpath}/communityList.do"
+								style="font-size: 20px;">커뮤니티</a></li>
 							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
@@ -238,120 +238,131 @@ label {
 
 	<!-- Contact Form Begin -->
 	<form action="${cpath}/NoticeInsert.do" method="post">
-	<section class="contact-form spad">
-	
-		<div class="container" align="center">
-		
-			<!--  <label style="font-size:20px; color: midnight; margin-ieft: auto; margin-top: 50px;">금액</label>
+		<section class="contact-form spad">
+
+			<div class="container" align="center">
+
+				<!--  <label style="font-size:20px; color: midnight; margin-ieft: auto; margin-top: 50px;">금액</label>
 			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
 			<label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
-			
-			<input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
-				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" oninput='fill_inp()'>&nbsp;
-			<input name='pay_day' class="inp" disabled="disabled" type="text" placeholder='납부 기한'
-				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
-			<input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
-				style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
-			
-			<input type="hidden" name="user_num" value="<%=u_vo.getUser_num()%>" readonly="readonly">
-			<p>고지서 종류 선택</p>
-			<!-- <input type="number" name="notice_code" > -->
-			<div>
-			<input type="radio" id="관리비" name="notice_code" value="관리비">관리비
-			</div>
-			<div>
-			<input type="radio" id="자동차세" name="notice_code" value="자동차세">자동차세
-			</div>
-			<div>
-			<input type="radio" id="지방세" name="notice_code" value="지방세">지방세
-			</div>
-			<div>
-			<input type="radio" id="주민세" name="notice_code" value="주민세">주민세
-			</div>
-			<div>
-			<input type="radio" id="과태료" name="notice_code" value="과태료">과태료
-			</div>
-			
-			<p>고지서 제목</p>
-			<input type="text" name="notice_title">
-			<p>이미지 파일명</p>
-			<input type="text" name="img" value="<%=session.getAttribute("img")%>" readonly="readonly">
-			<input type="hidden" name="path" value="<%=session.getAttribute("path")%>">
-			<button type="submit" class="site-btn">고지서 저장</button>
-			<h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
-			</form>
-		</div>
-	</section>
-		<div id="div_img" style="margin:0px auto;"></div>
-	<!-- Contact Form End -->
 
+				<input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
+					style="height: 40px; margin: auto; margin-top: 0px; text-align: center;"
+					oninput='fill_inp()'>&nbsp; <input name='pay_day'
+					class="inp" disabled="disabled" type="text" placeholder='납부 기한'
+					style="height: 40px; margin: auto; margin-top: 0px; text-align: center;"
+					onchange='fill_inp()'>&nbsp; <input name="pay_bank"
+					class="inp" disabled="disabled" type="text" placeholder='납부 은행'
+					style="height: 40px; margin: auto; margin-top: 0px; text-align: center;"
+					onchange='fill_inp()'>&nbsp; <input type="hidden"
+					name="user_num" value="<%=u_vo.getUser_num()%>" readonly="readonly">
+				<p>고지서 종류 선택</p>
+				<!-- <input type="number" name="notice_code" > -->
+				<div>
+					<input type="radio" id="관리비" name="notice_code" value="관리비">관리비
+				</div>
+				<div>
+					<input type="radio" id="자동차세" name="notice_code" value="자동차세">자동차세
+				</div>
+				<div>
+					<input type="radio" id="지방세" name="notice_code" value="지방세">지방세
+				</div>
+				<div>
+					<input type="radio" id="주민세" name="notice_code" value="주민세">주민세
+				</div>
+				<div>
+					<input type="radio" id="과태료" name="notice_code" value="과태료">과태료
+				</div>
+				<p>고지서 제목</p>
+				<input type="text" name="notice_title">
+				<p>이미지 파일명</p>
+				<input type="text" name="img"
+					value="<%=session.getAttribute("img")%>" readonly="readonly">
+				<input type="hidden" name="path"
+					value="<%=session.getAttribute("path")%>">
+				<button type="submit" class="site-btn">고지서 저장</button>
+				<h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
+			</div>
+		</section>
+	</form>
+
+	<!-- Contact Form End -->
+	<div id="div_img" style="margin-left:30%; margin-right:30%"></div>
 	<script src="${cpath }/resources/js/jquery-3.3.1.min.js"></script>
 	<script>
-      // 이미지 태그 가져오기
-      var img = document.getElementById("img");
-      var path = {'path':$('input[name=path]').val()+"\\",'img':$('input[name=img]').val()}
-      $.ajax({
-        type : 'post',
-        url : 'http://127.0.0.1:5000/',
-        data :path ,
-        dataType : 'json',
-        success : function(res) {
-        	console.log(path);
-           $('#div_img').append("<img id='img' src='resources/img/"+res.im_path+"'>")
-           $.each(res.fields, function(a,b){
-              // cor --> 영역 처리 되어있는 부분의 x,y 좌표 값
-              var cor = res.fields[a].boundingPoly.vertices
-              
-              // tex --> 선택한 영역의 OCR 결과(text값)
-              var tex = res.fields[a].inferText
-              
-              // 미리 hover를 주었기 때문에 해당 좌표값을 기준으로 div 태그를 생성
-              // id 값은 해당 영역의 json 기반 번호(인덱스값)이고, value값은 text값을 줌
-              // 클릭 시 data_send라는 function을 통해 선택한 영역의 value 값을 input 태그에 채움
-              $('#div_img').append("<div style='margin-left:"+cor[0].x+"px;margin-top:"
-                 +cor[0].y+"px;padding-left:"+(cor[2].x-cor[0].x)+"px;padding-top:"+
-                 (cor[2].y-cor[0].y)+"px;' class='div_rec' value='"+res.fields[a].inferText+
-                 "' onclick='data_send("+a+")' id='"+a+"'></div>")
-              })
-        },
-        error : function() {
-           alert('요청 실패쓰');
-        }
-      })
-      
-      // back 버튼을 위한 함수
-      // class 명이 inp_re인 놈들을 다 비활성화 시키고 class는 inp, id 값은 inp_chn으로 전환
-      // value 값은 초기화 한다.
-      function re_inp() {
-         $(".inp_re").attr("disabled",true).attr("class","inp").attr("id","inp_chn").attr("value","")
-         $("#inp_chn").attr("disabled",false);
-      }
-      
-      // div 태그 클릭시 발생하는 함수
-      // id가 inp_chn인 녀석의 value 값을 클릭한 div 태그의 value 값으로 바꾼다
-      // div 태그의 value 값은 가져온 json data의 infertext(OCR 결과)이다.
-      function data_send(tex){
-    	  $('#inp_chn').attr('value', $('#'+tex).attr('value'))
-    	  var data = $('input[name=pay_money]').val().replace(/,/,"");
-    	  console.log(data);
-    	  $('input[name=pay_money]').attr('value', data);    	  
-    	  console.log(typeof parseInt(data));    	  
-          fill_inp();
-    	 
-    	 
-         
-      }
-      
-      // div 태그 클릭과 동시에 발생하는 함수
-      // id가 inp_chn인 녀석을 읽기만 가능하게 하고, class 값을 inp_re로 변경, id 값은 초기화 시킨다.
-      function fill_inp() {
-         $("#inp_chn").attr("readonly",true).attr("class","inp_re").attr('id',"");
-         $(".inp").attr('id',"inp_chn").attr("class","")
-         $("#inp_chn").attr("disabled",false);
-      }
-      
-      
-   </script>
+		// 이미지 태그 가져오기
+		var img = document.getElementById("img");
+		var path = {
+			'path' : $('input[name=path]').val() + "\\",
+			'img' : $('input[name=img]').val()
+		}
+		$.ajax({
+			type : 'post',
+			url : 'http://127.0.0.1:5000/',
+			data : path,
+			dataType : 'json',
+			success : function(res) {
+				console.log(path);
+				$('#div_img').append(
+						"<img id='img' src='resources/img/"+res.im_path+"'>")
+				$.each(res.fields, function(a, b) {
+					// cor --> 영역 처리 되어있는 부분의 x,y 좌표 값
+					var cor = res.fields[a].boundingPoly.vertices
+
+					// tex --> 선택한 영역의 OCR 결과(text값)
+					var tex = res.fields[a].inferText
+
+					// 미리 hover를 주었기 때문에 해당 좌표값을 기준으로 div 태그를 생성
+					// id 값은 해당 영역의 json 기반 번호(인덱스값)이고, value값은 text값을 줌
+					// 클릭 시 data_send라는 function을 통해 선택한 영역의 value 값을 input 태그에 채움
+					$('#div_img').append(
+							"<div style='margin-left:" + cor[0].x
+									+ "px;margin-top:" + cor[0].y
+									+ "px;padding-left:"
+									+ (cor[2].x - cor[0].x) + "px;padding-top:"
+									+ (cor[2].y - cor[0].y)
+									+ "px;' class='div_rec' value='"
+									+ res.fields[a].inferText
+									+ "' onclick='data_send(" + a + ")' id='"
+									+ a + "'></div>")
+				})
+			},
+			error : function() {
+				alert('요청 실패쓰');
+			}
+		})
+
+		// back 버튼을 위한 함수
+		// class 명이 inp_re인 놈들을 다 비활성화 시키고 class는 inp, id 값은 inp_chn으로 전환
+		// value 값은 초기화 한다.
+		function re_inp() {
+			$(".inp_re").attr("disabled", true).attr("class", "inp").attr("id",
+					"inp_chn").attr("value", "")
+			$("#inp_chn").attr("disabled", false);
+		}
+
+		// div 태그 클릭시 발생하는 함수
+		// id가 inp_chn인 녀석의 value 값을 클릭한 div 태그의 value 값으로 바꾼다
+		// div 태그의 value 값은 가져온 json data의 infertext(OCR 결과)이다.
+		function data_send(tex) {
+			$('#inp_chn').attr('value', $('#' + tex).attr('value'))
+			var data = $('input[name=pay_money]').val().replace(/,/, "");
+			console.log(data);
+			$('input[name=pay_money]').attr('value', data);
+			console.log(typeof parseInt(data));
+			fill_inp();
+
+		}
+
+		// div 태그 클릭과 동시에 발생하는 함수
+		// id가 inp_chn인 녀석을 읽기만 가능하게 하고, class 값을 inp_re로 변경, id 값은 초기화 시킨다.
+		function fill_inp() {
+			$("#inp_chn").attr("readonly", true).attr("class", "inp_re").attr(
+					'id', "");
+			$(".inp").attr('id', "inp_chn").attr("class", "")
+			$("#inp_chn").attr("disabled", false);
+		}
+	</script>
 
 
 	<!-- Js Plugins -->
