@@ -282,9 +282,11 @@ function ajaxHtml(data){
 		<div class="container">
 			<!-- <div class="row"> 
 				<div class="col-lg-8 col-md-7 order-md-1 order-1"> -->
-			<div class="blog__details__text">
+			<div class="blog__details__text" style="text-align: center;">
 				<!-- 좌측 그래프를 선택하면 해당 아이프레임에 노출되도록... 
 						<!-- 최근고지서 부분 불러오는부분 -->
+				<button type="button" class="site-btn"
+							onclick="location.href='${cpath}/comWrite.do'">다음달 요금 예측</button>
 				<table
 					style="margin-left: auto; margin-right: auto; text-align: center;">
 					<tr style="border-bottom: 1px solid #dee2e6;" bgcolor="EBFBFF"
