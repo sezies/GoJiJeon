@@ -287,7 +287,13 @@ label {
 	</form>
 
 	<!-- Contact Form End -->
-	<div id="div_img" style="margin-left:30%; margin-right:30%"></div>
+	<div id="div_img" style="margin-left:30%; margin-right:30%">
+	
+	<p>ㅤ</p>
+	<h3 style="text-align:center"> < 고지서 이미지 > </h3>
+	<p>ㅤ</p>
+	</div>
+
 	<script src="${cpath }/resources/js/jquery-3.3.1.min.js"></script>
 	<script>
 		// 이미지 태그 가져오기
