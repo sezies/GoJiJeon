@@ -26,7 +26,9 @@
     <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
-
+<!-- 카카오 스크립트 -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
@@ -205,6 +207,10 @@ u_vo = (UsersVO)session.getAttribute("login");
                             <div class="checkout__input">
                               <button type="submit" class="site-btn" style="height:40px; width:250px; margin-left:15px;">로그인</button>
                               <br><br>
+                              <a href="${cpath}/kakao_login.do"><img style= "width:150px;"  src="${cpath}/resources/img/login/kakao_login_medium_narrow.png">카카오톡 로그인연동</a>
+                              
+     
+                              
                               &nbsp;&nbsp;
                               <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/kakao_login.png"></button>
                               &nbsp;
@@ -215,7 +221,19 @@ u_vo = (UsersVO)session.getAttribute("login");
                             </div>
                         </div>  
                          </div>
-                         </form>       
+                         </form>      
+                         <ul>
+	<li onclick="kakaoLogin();">
+      <a href="javascript:void(0)">
+          <span>카카오 로그인</span>
+      </a>
+	</li>
+	<li onclick="kakaoLogout();">
+      <a href="javascript:void(0)">
+          <span>카카오 로그아웃</span>
+      </a>
+	</li>
+</ul> 
     </section>
     <!-- Checkout Section End -->
 
@@ -228,7 +246,49 @@ u_vo = (UsersVO)session.getAttribute("login");
     <script src="${cpath}/resources/js/mixitup.min.js"></script>
     <script src="${cpath}/resources/js/owl.carousel.min.js"></script>
     <script src="${cpath}/resources/js/main.js"></script>
-
+<!-- 카카오 스크립트 -->
+ <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+Kakao.init('872dd0096ddc56941782a158a2761043'); //발급받은 키 중 javascript키를 사용해준다.
+console.log(Kakao.isInitialized()); // sdk초기화여부판단
+//카카오로그인
+/* Kakao.Auth.authorize({
+                  redirectUri: 'http://localhost:8081/controller/kakao.do'
+                })  */ 
+function kakaoLogin() {
+    Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({
+          url: "redirect:/index_main.do",
+          success: function (response) {
+        	  console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+//카카오로그아웃  
+function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) {
+      Kakao.API.request({
+        url: '/v1/user/unlink',
+        success: function (response) {
+        	console.log(response)
+        },
+        fail: function (error) {
+          console.log(error)
+        },
+      })
+      Kakao.Auth.setAccessToken(undefined)
+    }
+  }  
+</script> 
 </body>
 
 </html>
