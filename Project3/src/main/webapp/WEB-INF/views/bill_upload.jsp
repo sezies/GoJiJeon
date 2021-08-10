@@ -250,6 +250,14 @@
 	</section>
 	<!-- Contact Form End -->
 	<script>
+	
+	
+	var btn = document.querySelector("button");
+	btn.onclick = function (){
+		alert("OCR 분석 중입니다.");
+	}
+		
+	
 		/* var formdata = new FormData($('#fileform')[0]);
 		
 		$.ajax({

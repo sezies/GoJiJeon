@@ -301,6 +301,7 @@ label {
 		var path = {
 			'path' : $('input[name=path]').val() + "\\",
 			'img' : $('input[name=img]').val()
+
 		}
 		$.ajax({
 			type : 'post',
