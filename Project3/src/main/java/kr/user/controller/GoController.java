@@ -449,7 +449,7 @@ public class GoController {
          // 값집어넣기
          @RequestMapping("/NoticeInsert.do")
          public String NoticeInsert(NoticeVO vo) {
-        	
+        	System.out.println("들어오긴 하니");
             GoMapper.NoticeInsert(vo); //정장
             System.out.println("고지서 등록하기"+vo);
             return "redirect:/index_main.do"; //WEB-INF/views//UsersList.do.jsp
