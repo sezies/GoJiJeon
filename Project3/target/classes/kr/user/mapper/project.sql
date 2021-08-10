@@ -97,7 +97,7 @@ values ('car_sample1.jpg')
 
 drop table test_img;
 
-delete from notice where notice_code ='0';
+delete from notice where notice_code ='과태료';
 update notice set(user_num) = '1' where(notice_num)='1';
 
 
