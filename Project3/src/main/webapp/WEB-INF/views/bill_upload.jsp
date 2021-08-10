@@ -256,7 +256,7 @@
 	
 	var btn = document.querySelector("button");
 	btn.onclick = function (){
-		alert("OCR 분석 중입니다.");
+		alert("고지서 사진을  분석 중입니다.");
 	}
 		
 	
