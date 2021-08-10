@@ -64,4 +64,8 @@ public interface GoMapper {
 	// 아이디 중복체크
 	public UsersVO ID_Check(String user_id);
 	
+	// 카카오톡 회원 DB찾기
+	public UsersVO kaselect(String user_id);
+	
+	
 }

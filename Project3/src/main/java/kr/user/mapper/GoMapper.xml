@@ -162,8 +162,10 @@
    </select>
     
     
-    
-    
+    <!-- 카카오톡 회원찾기 -->
+     <select id = "kaselect" parameterType="String" resultType="kr.user.mapper.UsersVO" >
+    select * from users where user_id = #{user_id}
+   </select>
     
 
 </mapper>

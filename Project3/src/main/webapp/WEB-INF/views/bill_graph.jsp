@@ -43,9 +43,12 @@
 	type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
 	type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script type="text/javascript">
 
 function getJson(notice_num){		
@@ -91,19 +94,17 @@ function ajaxHtml(data){
 </script>
 </head>
 
-<body >
-<%
-UsersVO u_vo = null;
-if(session.getAttribute("login")!= null){
-u_vo = (UsersVO)session.getAttribute("login");
-}
-List<NoticeVO> t_list = (List<NoticeVO>)session.getAttribute("t_list");
-List<NoticeVO> n_list = (List<NoticeVO>)session.getAttribute("n_list");
+<body>
+	<%
+		UsersVO u_vo = null;
+	if (session.getAttribute("login") != null) {
+		u_vo = (UsersVO) session.getAttribute("login");
+	}
+	List<NoticeVO> t_list = (List<NoticeVO>) session.getAttribute("t_list");
+	List<NoticeVO> n_list = (List<NoticeVO>) session.getAttribute("n_list");
 
-DecimalFormat formatter = new DecimalFormat("###,###");
-
-
-%>
+	DecimalFormat formatter = new DecimalFormat("###,###");
+	%>
 
 
 	<!-- Page Preloder -->
@@ -192,26 +193,36 @@ DecimalFormat formatter = new DecimalFormat("###,###");
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 업로드</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">문의하기</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+											업로드</a></li>
+									<li><a
+										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+											분석</a></li>
 								</ul></li>
-							<li><a href="${cpath}/communityList.do" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
+							<li><a href="${cpath}/communityList.do"
+								style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
 							%>
@@ -267,85 +278,90 @@ DecimalFormat formatter = new DecimalFormat("###,###");
 	<!-- Breadcrumb Section End -->
 
 	<!-- Blog Details Section Begin -->
-	 <section class="blog-details spad">
+	<section class="blog-details spad">
 		<div class="container">
-			 <!-- <div class="row"> 
+			<!-- <div class="row"> 
 				<div class="col-lg-8 col-md-7 order-md-1 order-1"> -->
-					<div class="blog__details__text"> 
-						<!-- 좌측 그래프를 선택하면 해당 아이프레임에 노출되도록... 
+			<div class="blog__details__text" style="text-align: center;">
+				<!-- 좌측 그래프를 선택하면 해당 아이프레임에 노출되도록... 
 						<!-- 최근고지서 부분 불러오는부분 -->
-						<table style="margin-left: auto; margin-right: auto; text-align: center;">
-						<tr style="border-bottom: 1px solid #dee2e6;" bgcolor="EBFBFF"; height=45px; >
-							<td width="10%"><h5>최근 5개월<h5></td>							
-							<td width="10%"><h5>고지서<h5></td>
-							<td width="10%"><h5>납부 비용<h5></td>							
-							<td width="10%"><h5>상세 내역<h5></td>
-						</tr>
-							
-						<div class="blog__sidebar__item">
-					
+				<button type="button" class="site-btn"
+							onclick="location.href='${cpath}/comWrite.do'">다음달 요금 예측</button>
+				<table
+					style="margin-left: auto; margin-right: auto; text-align: center;">
+					<tr style="border-bottom: 1px solid #dee2e6;" bgcolor="EBFBFF"
+						; height=45px;>
+						<td width="10%"><h5>
+								최근 5개월
+								<h5></td>
+						<td width="10%"><h5>
+								고지서
+								<h5></td>
+						<td width="10%"><h5>
+								납부 비용
+								<h5></td>
+						<td width="10%"><h5>
+								상세 내역
+								<h5></td>
+					</tr>
+					<div class="blog__sidebar__item">
 						<!-- 	<div class="blog__sidebar__recent">	 -->
-						<%if(t_list.size()>=5){%>
-						<%for (int i =0; i<5;i++){  %>	
+						<%
+							if (t_list.size() >= 5) {
+						%>
+						<%
+							for (int i = 0; i < 5; i++) {
+						%>
 						<!-- <div class="blog__sidebar__recent__item__text" > -->
 						<tr style="border-bottom: 1px solid #dee2e6;">
-							<td><font color="#b4b4b4";><%=t_list.get(i).getPay_day() %></font></td>							
+							<td><font color="#b4b4b4";><%=t_list.get(i).getPay_day()%></font></td>
 							<td><%=t_list.get(i).getNotice_title()%></td>
 							<td><%=formatter.format(t_list.get(i).getPay_money())%></td>
-														
-							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인 하기</button></td>							
+
+							<td><button class="btn btn-info btn-sm"
+									onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인
+									하기</button></td>
 						</tr>
-						
-							<!-- </div> -->
-						<% }} else{%>
-						<%for (int i =0; i<t_list.size();i++){  %>	
+						<%
+							}
+						} else {
+						%>
+						<%
+							for (int i = 0; i < t_list.size(); i++) {
+						%>
 						<!-- <div class="blog__sidebar__recent__item__text" > -->
 						<tr style="border-bottom: 1px solid #dee2e6;">
-							<td><%=t_list.get(i).getPay_day() %></td>							
+							<td><%=t_list.get(i).getPay_day()%></td>
 							<td><h6><%=t_list.get(i).getNotice_title()%></h6></td>
 							<td><%=formatter.format(t_list.get(i).getPay_money())%></td>
-							
-							<td><button class="btn btn-info btn-sm" onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인 하기</button></td>
-						</tr>
-							<%}} %>
-						
-							<!-- </div> -->
-						
-						
-						
-						
-						
-						
-						
-						
-							
-								<!-- </div> -->
-						</div>					
-						</table>
-						
-						
-						<br><br><br>
-							<!-- 최근고지서 부분 불러오는부분 -->	
-						
-						<div id="c_list" align="center">						
-						</div>
-						
-						
-						
-						
-					
-						<p>ㅤ</p>
-						
-						<h2 align="center">"<%=u_vo.getUser_name()%>"님의 월별 관리비 추이</h2>
-												<!-- 그래프 부분 -->
-						<p>ㅤ</p>
-				<div align="center" style="width: 600px; height: 600px; margin-left: 250px;">
-	<!--차트가 그려질 부분-->
-	
-	<canvas align="center" id="myChart"></canvas>
-</div>
 
-<script type="text/javascript">
+							<td><button class="btn btn-info btn-sm"
+									onclick="getJson(<%=t_list.get(i).getNotice_num()%>)">확인
+									하기</button></td>
+						</tr>
+						<%
+							}
+						}
+						%>
+					</div>
+				</table>
+				<br> <br> <br>
+				<!-- 최근고지서 부분 불러오는부분 -->
+				<div id="c_list" align="center"></div>
+				<p>ㅤ</p>
+				<h2 align="center">
+					"<%=u_vo.getUser_name()%>"님의 월별 관리비 추이
+				</h2>
+				<!-- 그래프 부분 -->
+				<p>ㅤ</p>
+				<div align="center"
+					style="width: 600px; height: 600px; margin-left: 250px;">
+					<!--차트가 그려질 부분-->
+
+					<canvas align="center" id="myChart"></canvas>
+				</div>
+
+				<script type="text/javascript">
             var context = document
                 .getElementById('myChart')
                 .getContext('2d');
@@ -356,16 +372,17 @@ DecimalFormat formatter = new DecimalFormat("###,###");
                     labels: [
                         //x 축
                         //'1','2','3','4','5','6','7'                  
-                    	<%if(t_list.size()==0){%>  
+                    	<%if (t_list.size() == 0) {%>  
                        	'등록된 고지서가 없습니다.'
-                    	<%}else if(t_list.size()>5){%>
+                    	<%} else if (t_list.size() > 5) {%>
                     	 '<%=t_list.get(4).getPay_day()%>',
                      	'<%=t_list.get(3).getPay_day()%>',
                      	'<%=t_list.get(2).getPay_day()%>',
                      	'<%=t_list.get(1).getPay_day()%>',
                      	'<%=t_list.get(0).getPay_day()%>'
-                    	<%}else{ for(int i =t_list.size(); i>0;i--){%>
-                    	'<%=t_list.get(i-1).getPay_day()%>',
+                    	<%} else {
+for (int i = t_list.size(); i > 0; i--) {%>
+                    	'<%=t_list.get(i - 1).getPay_day()%>',
                     	<%}%>
                     	<%}%>
                     ],
@@ -376,16 +393,17 @@ DecimalFormat formatter = new DecimalFormat("###,###");
                             data: [
                             	
                             	//25,20,23,26,25 //x축 label에 대응되는 데이터 값
-                            	<%if(t_list.size()==0){%>  
+                            	<%if (t_list.size() == 0) {%>  
                             	0
-                            	<%}else if(t_list.size()>5){%>
+                            	<%} else if (t_list.size() > 5) {%>
                             	<%=t_list.get(4).getPay_money()%>,
                             	<%=t_list.get(3).getPay_money()%>,
                             	<%=t_list.get(2).getPay_money()%>,
                             	<%=t_list.get(1).getPay_money()%>,
                             	<%=t_list.get(0).getPay_money()%>
-                            	<%}else{ for(int i =t_list.size(); i>0;i--){%>                        	
-                            	<%=t_list.get(i-1).getPay_money()%>,	
+                            	<%} else {
+for (int i = t_list.size(); i > 0; i--) {%>                        	
+                            	<%=t_list.get(i - 1).getPay_money()%>,	
                             	<%}%>
                             	<%}%>
                             ],
@@ -433,13 +451,7 @@ DecimalFormat formatter = new DecimalFormat("###,###");
                 }
             });
         </script>
-				
-						
-						
-						
-			 		</div>
-			 <!--	</div> 
-			 </div>  -->
+			</div>
 		</div>
 	</section>
 	<!-- Blog Details Section End -->

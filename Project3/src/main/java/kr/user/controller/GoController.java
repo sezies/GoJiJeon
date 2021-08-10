@@ -33,14 +33,18 @@ import javax.xml.ws.Response;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.MultipartRequest;
@@ -50,161 +54,152 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.google.api.client.json.Json;
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
-import com.google.gson.JsonObject;
 import com.mysql.jdbc.PreparedStatement.ParseInfo;
 
 import kr.user.mapper.ContactVO;
 import kr.user.mapper.GoMapper;
 import kr.user.mapper.NoticeVO;
+import kr.user.mapper.OAuthToken;
 import kr.user.mapper.UsersVO;
 import kr.user.mapper.boardVO;
 import kr.user.mapper.imgVO;
 
 
-
 @Controller
 public class GoController {
 
-   // 유저부분
-       @Autowired	
-       GoMapper GoMapper;
-	
-       
-      // HandLerMapping : 요청URL <--> Method
-      @RequestMapping("/UsersList.do")
-      public String UsersList(HttpServletRequest request){
-         // 데이터베이스에서 게시판리스트를 가져오기(Model-DAO-SQL)
-         List<UsersVO> list=GoMapper.UsersList();      
-         request.setAttribute("list",list);
-         return "UsersList"; //  -->viewResolver --> /WEB-INF/views/boardList.jsp
-      }
-      @RequestMapping("/UsersListAjax.do")
-      public @ResponseBody List<UsersVO> UsersListAjax() {
-       //게시판 리스트를 JSON형식으로 JS클라이언트에게 내려보낸다.
-         List<UsersVO> list = GoMapper.UsersListAjax();
-         return list; // list->JSON
-      }
-      
-      
-		/* 회원가입 */
-      @RequestMapping("/UsersJoin.do")
-      public String UsersJoin(UsersVO vo, RedirectAttributes rttr) {
-    	  
-    	  System.out.println(vo.getUser_id());
-    	
-    	  
-    	  
+	// 유저부분
+	@Autowired
+	GoMapper GoMapper;
+
+	// HandLerMapping : 요청URL <--> Method
+	@RequestMapping("/UsersList.do")
+	public String UsersList(HttpServletRequest request) {
+		// 데이터베이스에서 게시판리스트를 가져오기(Model-DAO-SQL)
+		List<UsersVO> list = GoMapper.UsersList();
+		request.setAttribute("list", list);
+		return "UsersList"; // -->viewResolver --> /WEB-INF/views/boardList.jsp
+	}
+
+	@RequestMapping("/UsersListAjax.do")
+	public @ResponseBody List<UsersVO> UsersListAjax() {
+		// 게시판 리스트를 JSON형식으로 JS클라이언트에게 내려보낸다.
+		List<UsersVO> list = GoMapper.UsersListAjax();
+		return list; // list->JSON
+	}
+
+	/* 회원가입 */
+	@RequestMapping("/UsersJoin.do")
+	public String UsersJoin(UsersVO vo, RedirectAttributes rttr) {
+
+		System.out.println(vo.getUser_id());
+
 		/* 회원가입 정보를 모두 입력하지 않은 경우 다시 회원가입페이지로 돌아가고, DB에 담기지 않음 */
-    	  if (vo.getUser_id().equals("") || vo.getUser_name().equals("") || vo.getUser_pw().equals("") || vo.getUser_bank().equals("")  )  {
-    		  rttr.addFlashAttribute("msg", false);
-    		  return "redirect:/join_main2.do";
-    	  }
-    	  else {
-				/* 회원가입 정보를 모두 입력한 경우 디비에 데이터가 담기고 로그인페이지로 넘어감 */
-    		  GoMapper.UsersJoin(vo);
-    		  return "login_main2";
-}
-      }
-      
-      
-      
-      @RequestMapping("/Join.do")
-      public String Join() {
-    	  return "join_main2";
-      }
-      
-      
-      @RequestMapping("/UsersForm.do")
-      public String UsersForm() {
-         return "UsersForm"; //UsersForm.jsp
-      }
-      @RequestMapping("/UsersInsert.do")
-      public String UsersInsert(UsersVO vo) {
-         GoMapper.UsersInsert(vo); //정장
-         return "redirect:/UsersList.do"; //WEB-INF/views//UsersList.do.jsp
-         
-      }
-      @RequestMapping("/UsersContent.do")
-      public String UsersContent(@RequestParam("user_num") int user_num, Model model) { //?idx=10
-         UsersVO vo=GoMapper.UsersContent(user_num);
-         model.addAttribute("vo",vo);
-         return "UsersContent"; // UsersContent.jsp
-      }
-      // 회원 업데이트
-      @RequestMapping("/UsersUpdate.do")
-      public String UsersUpdate(UsersVO vo,HttpSession session,Model model) {
+		if (vo.getUser_id().equals("") || vo.getUser_name().equals("") || vo.getUser_pw().equals("")
+				|| vo.getUser_bank().equals("")) {
+			rttr.addFlashAttribute("msg", false);
+			return "redirect:/join_main2.do";
+		} else {
+			/* 회원가입 정보를 모두 입력한 경우 디비에 데이터가 담기고 로그인페이지로 넘어감 */
+			GoMapper.UsersJoin(vo);
+			return "login_main2";
+		}
+	}
 
-    	  UsersVO u_vo = null;
-    	  if(session.getAttribute("login")!= null){
-    	  u_vo = (UsersVO)session.getAttribute("login");
-    	  int num =u_vo.getUser_num();
-    	  vo.setUser_num(num);   	  
-    	  System.out.println(vo.getUser_num()+"user_num");
-    	  GoMapper.UsersUpdate(vo);
-    	  session.setAttribute("login", vo);
-    	  }
-          return "redirect:/index_main.do";
+	@RequestMapping("/Join.do")
+	public String Join() {
+		return "join_main2";
+	}
 
-      }
-      
-      
-      
-      
-      @RequestMapping("/UsersDelete.do")
-      public String UsersDelete(@RequestParam("user_num") int user_num) {
-         GoMapper.UsersDelete(user_num);
-         return "redirect:/UsersList.do";
-      }
-            
-      @RequestMapping("/index")
-      public String index_main2() {
-         return "index_main";
-      }
-      // 로그인 리스트 불러오기
-      @RequestMapping("/index_main.do")
-      public String index_main(UsersVO vo,HttpSession session,HttpServletRequest request) {
-    	  UsersVO u_vo = null;
-    	  if(session.getAttribute("login")!= null){
-    	  u_vo = (UsersVO)session.getAttribute("login");
-    	  System.out.println(u_vo+"||||로그인 리스트쪽 불러온값");
-    	  int num=u_vo.getUser_num();
-    	  List<NoticeVO> n_list=GoMapper.NoticeList(num); //1번 고맵퍼
-    	  System.out.println(num+"num의값 로그인시 리스트");
-    	  request.setAttribute("n_list",n_list);
-    	  session.setAttribute("n_list",n_list);
-    	  }
-    	  
-    	  return "index_main";
-      }
+	@RequestMapping("/UsersForm.do")
+	public String UsersForm() {
+		return "UsersForm"; // UsersForm.jsp
+	}
 
-      /* 로그인 2*/
-      @RequestMapping("/UsersLogin.do")
-      public String UsersLogin(UsersVO vo,HttpSession session,Model model,HttpServletResponse response,RedirectAttributes rttr,HttpServletRequest request) throws IOException {         
-               
-         if(session.getAttribute("UsersLogin")!=null) {
-            session.removeAttribute("UsersLogin");
-         }
-         UsersVO u_vo=GoMapper.UsersLogin(vo);
-         
-         if(u_vo!=null) {
-            session.setAttribute("login", u_vo);
-            System.out.println("세션넘기기성공");
-            // 고지서 부르기 
-            
-            //
-            return "redirect:/index_main.do";
-         }else {
-            System.out.println("세션넘기기실패");
-            //로그인 실패시 문구
-            rttr.addFlashAttribute("msg", false);
-            //로그인 실패시 alert창
+	@RequestMapping("/UsersInsert.do")
+	public String UsersInsert(UsersVO vo) {
+		GoMapper.UsersInsert(vo); // 정장
+		return "redirect:/UsersList.do"; // WEB-INF/views//UsersList.do.jsp
+
+	}
+
+	@RequestMapping("/UsersContent.do")
+	public String UsersContent(@RequestParam("user_num") int user_num, Model model) { // ?idx=10
+		UsersVO vo = GoMapper.UsersContent(user_num);
+		model.addAttribute("vo", vo);
+		return "UsersContent"; // UsersContent.jsp
+	}
+
+	// 회원 업데이트
+	@RequestMapping("/UsersUpdate.do")
+	public String UsersUpdate(UsersVO vo, HttpSession session, Model model) {
+
+		UsersVO u_vo = null;
+		if (session.getAttribute("login") != null) {
+			u_vo = (UsersVO) session.getAttribute("login");
+			int num = u_vo.getUser_num();
+			vo.setUser_num(num);
+			System.out.println(vo.getUser_num() + "user_num");
+			GoMapper.UsersUpdate(vo);
+			session.setAttribute("login", vo);
+		}
+		return "redirect:/index_main.do";
+
+	}
+
+	@RequestMapping("/UsersDelete.do")
+	public String UsersDelete(@RequestParam("user_num") int user_num) {
+		GoMapper.UsersDelete(user_num);
+		return "redirect:/UsersList.do";
+	}
+
+	@RequestMapping("/index")
+	public String index_main2() {
+		return "index_main";
+	}
+
+	// 로그인 리스트 불러오기
+	@RequestMapping("/index_main.do")
+	public String index_main(UsersVO vo, HttpSession session, HttpServletRequest request) {
+		UsersVO u_vo = null;
+		if (session.getAttribute("login") != null) {
+			u_vo = (UsersVO) session.getAttribute("login");
+			int num = u_vo.getUser_num();
+			List<NoticeVO> n_list = GoMapper.NoticeList(num); // 1번 고맵퍼
+			request.setAttribute("n_list", n_list);
+			session.setAttribute("n_list", n_list);
+		}
+
+		return "index_main";
+	}
+
+	/* 로그인 2 */
+	@RequestMapping("/UsersLogin.do")
+	public String UsersLogin(UsersVO vo, HttpSession session, Model model, HttpServletResponse response,
+			RedirectAttributes rttr, HttpServletRequest request) throws IOException {
+
+		if (session.getAttribute("UsersLogin") != null) {
+			session.removeAttribute("UsersLogin");
+		}
+		UsersVO u_vo = GoMapper.UsersLogin(vo);
+
+		if (u_vo != null) {
+			session.setAttribute("login", u_vo);
+			System.out.println("세션넘기기성공");
+			// 고지서 부르기
+
+			//
+			return "redirect:/index_main.do";
+		} else {
+			System.out.println("세션넘기기실패");
+			// 로그인 실패시 문구
+			rttr.addFlashAttribute("msg", false);
+			// 로그인 실패시 alert창
 //            response.setContentType("text/html; charset=UTF-8");
 //            PrintWriter out = response.getWriter();
 //
@@ -213,72 +208,72 @@ public class GoController {
 //            out.println("</script>");
 //
 //            out.flush();
-            
-            return "redirect:/login_main2.do";
-         }
-      }
-      /* 로그아웃 */
-      @RequestMapping("/UsersLogout.do")
-      public String UsersLogout(HttpSession session) {
-         session.invalidate();
-         System.out.println("로그아웃성공");
-         //세션 삭제
-         return "redirect:/index_main.do"; 
-      }
-      
-      
-      @RequestMapping("/login_main2.do")
-      public String login_main2() {
-         return "login_main2";
-      }
-      
-      @RequestMapping("/join_main.do")
-      public String join_main() {
-         return "join_main";
-      }
-      
-      @RequestMapping("/join_main2.do")
-      public String join_main2() {
-         return "join_main2";
-      }
-      
-      @RequestMapping("/bill_upload.do")
-      public String bill_upload() {
-         return "bill_upload";
-      }
-      
-      //회원 탈퇴 부분
-      @RequestMapping("/delete.do")
-      public String delete() {    	  
-         return "delete";
-      }
-      //회원 탈퇴 부분
-      @RequestMapping("/delete2.do")
-      public String delete2(UsersVO vo ,HttpSession session,RedirectAttributes rttr,HttpServletResponse response) {
-    	  UsersVO u_vo = null;
-    	  if(session.getAttribute("login")!= null){
-    	  u_vo = (UsersVO)session.getAttribute("login");
-    	  }
-    	  if(u_vo.getUser_id().equals(vo.getUser_id()) && u_vo.getUser_pw().equals(vo.getUser_pw())){
-    		  GoMapper.delete2(vo);
-        	  System.out.println("회원탈퇴 성공");
-        	  session.invalidate();
-             return "redirect:/index_main.do";
-    	  }else {
-    		  System.out.println("회원탈퇴 실패");
-    		  rttr.addFlashAttribute("msg", false);
-    		  return  "redirect:/delete.do";
-    	  }
-    	  
-    	  
-      }
-      
-      
-      
-      // 이미지 이름 저장 하는 메소드
-      @RequestMapping("/bill_upload2.do")
-      public String bill_upload2(MultipartHttpServletRequest mhsr, HttpSession session, HttpServletRequest request) throws IOException{
+
+			return "redirect:/login_main2.do";
+		}
+	}
+
+	/* 로그아웃 */
+	@RequestMapping("/UsersLogout.do")
+	public String UsersLogout(HttpSession session) {
+		session.invalidate();
+		System.out.println("로그아웃성공");
+		// 세션 삭제
+		return "redirect:/index_main.do";
+	}
+
+	@RequestMapping("/login_main2.do")
+	public String login_main2() {
+		return "login_main2";
+	}
+
+	@RequestMapping("/join_main.do")
+	public String join_main() {
+		return "join_main";
+	}
+
+	@RequestMapping("/join_main2.do")
+	public String join_main2() {
+		return "join_main2";
+	}
+
+	@RequestMapping("/bill_upload.do")
+	public String bill_upload() {
+		return "bill_upload";
+	}
+
+	// 회원 탈퇴 부분
+	@RequestMapping("/delete.do")
+	public String delete() {
+		return "delete";
+	}
+
+	// 회원 탈퇴 부분
+	@RequestMapping("/delete2.do")
+	public String delete2(UsersVO vo, HttpSession session, RedirectAttributes rttr, HttpServletResponse response) {
+		UsersVO u_vo = null;
+		if (session.getAttribute("login") != null) {
+			u_vo = (UsersVO) session.getAttribute("login");
+		}
+		if (u_vo.getUser_id().equals(vo.getUser_id()) && u_vo.getUser_pw().equals(vo.getUser_pw())) {
+			GoMapper.delete2(vo);
+			System.out.println("회원탈퇴 성공");
+			session.invalidate();
+			return "redirect:/index_main.do";
+		} else {
+			System.out.println("회원탈퇴 실패");
+			rttr.addFlashAttribute("msg", false);
+			return "redirect:/delete.do";
+		}
+
+	}
+
+	// 이미지 이름 저장 하는 메소드
+	@RequestMapping("/bill_upload2.do")
+	public String bill_upload2(MultipartHttpServletRequest mhsr, HttpSession session, HttpServletRequest request)
+			throws IOException {
 //    	  String path = "C:/Users/smhrd/git/GoJiJeon/Project3/src/main/webapp/resources/img";
+
     	  mhsr.setCharacterEncoding("UTF-8");
     	  String path = mhsr.getSession().getServletContext().getRealPath("/resources/img");
     	  
@@ -413,26 +408,6 @@ public class GoController {
       }
    
 
-      // 노티스부분
-      //@Autowired
-      
-      
-      
-      
-      //고지서 리스트 불러오기 기능
-         @RequestMapping("/NoticeList.do")
-         public String NoticeList(HttpServletRequest request, @RequestParam("user_num") String user_num){
-            // 데이터베이스에서 게시판리스트를 가져오기(Model-DAO-SQL)
-        	 
-        	 System.out.println("유저넘버 = " + user_num);
-        	 
-        	List<NoticeVO> list =  GoMapper.NoticeSelect(user_num);
-        	
-        	request.setAttribute("list", list);
-            
-
-            return "bill_manager"; //  -->viewResolver --> /WEB-INF/views/boardList.jsp
-         }
 
          
          //github.com/2021-SMHRD-KDT-Bigdata-3/GoJiJeon.git
@@ -577,6 +552,148 @@ public class GoController {
          
          
          
-         
-         
+
+	// 카카오톡 연동
+	@RequestMapping("/kakao.do")
+	public String kakao(@RequestParam String code,OAuthToken ot,UsersVO u_vo,HttpSession session) {
+		// 카카오톡 코드르 받아옴
+		System.out.println(code + "카카오톡 코드");
+		RestTemplate rt = new RestTemplate();
+		// httpHeader 오브젝트 생성
+		HttpHeaders headers = new HttpHeaders();
+		// 현재 http 형식이 key-value 형식임을 알린다
+		headers.add("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+		// httpBoddy 오브젝트 생성
+		MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
+		params.add("grant_type", "authorization_code");
+		params.add("client_id", "872dd0096ddc56941782a158a2761043");
+		params.add("redirect_uri", "http://localhost:8081/controller/kakao.do");
+		// 방금 받은 코드임
+		params.add("code", code);
+		// body data와 header값을 가지고 있는 하나의 httpEntity가 된다
+		// body값 header 값을 둘다 하나로 마든다
+		HttpEntity<MultiValueMap<String, String>> kakaoTokenRequest = new HttpEntity<>(params, headers);
+		// http 요청하기 post방식으로 - response변수의 응답받음
+		ResponseEntity<String> response = rt.exchange("https://kauth.kakao.com/oauth/token", HttpMethod.POST,
+				kakaoTokenRequest, String.class);
+	
+		//문자열 정리해주기
+		String  json = response.getBody();
+		System.out.println("json값"+json);
+		String data[]=json.split(",");		
+		String access_token[] = data[0].split(":");
+		String token_type[] = data[1].split(":");
+		String refresh_token[] = data[2].split(":");
+		String expires_in[] = data[3].split(":");
+		String scope[] = data[4].split(":");
+		String refresh_token_expires_in[]=data[5].split(":");
+		
+		String a = access_token[1].replace("\"","");
+		String t = token_type[1].replace("\"","");
+		String r = refresh_token[1].replace("\"","");
+		String e = expires_in[1].replace("\"","");
+		int e1 = Integer.parseInt(e);
+		String s = scope[1].replace("\"","");
+		String re = refresh_token_expires_in[1].replace("\"","");
+		re = re.replace("}","");
+		int re2 = Integer.parseInt(re);
+		 ot.setAccess_token(a);		
+		 ot.setToken_type(t);
+		 ot.setRefresh_token(r);		
+		 ot.setExpires_in(e1);	
+		 ot.setScope(s);		 
+		 ot.setRefresh_token_expires_in(re2);
+		
+		
+		 RestTemplate rt2 = new RestTemplate(); // httpHeader 오브젝트 생성
+		  HttpHeaders headers2 = new HttpHeaders(); 		 
+		  headers2.add("Authorization","Bearer"+" "+ot.getAccess_token()); // 현재 http형식이 key -value 형식임을 알린다
+		  headers2.add("Content-type","application/x-www-form-urlencoded;charset=utf-8"); 
+		  System.out.println(headers2+"헤드안에 들어간값");
+		  
+		  //body data와 header값을 가지고 있는 하나의 httpEntity가 된다 // body값 header 값을 둘다 하나로마든다
+		  
+		  HttpEntity<MultiValueMap<String, String>> kakaoProfile = new HttpEntity<>(headers2); 
+		  
+		  ResponseEntity<String> response2 = rt2.exchange("https://kapi.kakao.com/v2/user/me", 
+				 HttpMethod.POST,
+				 kakaoProfile, 
+				 String.class); //회원 정보까지 조회하는게 response2.getbodey()
+		  System.out.println(response2.getBody()+"출력해줘 카톡내용 제발 시팔!!!!!!");
+		  // 받은 내용값 슬라이싱 하기...
+		  String want = response2.getBody();
+		  String want_data[]=want.split(",");
+		  String nick[] = want_data[2].split(":");
+		  String email[] = want_data[9].split(":");
+		  String nick_name = nick[2].replace("\"","");
+		  nick_name = nick_name.replace("}", "");
+		  String e_mail = email[1].replace("\"","");
+		  e_mail = e_mail.replace("}", "");
+		  System.out.println(nick_name+"카카오톡에서 가져온값들");
+		  System.out.println(e_mail+"카카오톡에서 가져온값들");
+		  // 가져온값을 DB,세션에 에 담는다
+		  u_vo.setUser_id(e_mail);
+		  u_vo.setUser_pw("1111");
+		  u_vo.setUser_name(nick_name);
+		  u_vo.setUser_bank("등록하셔야합니다.");
+		  session.setAttribute("ka_uvo", u_vo);
+		  		 
+		 // ObjectMapper objectMapper2 = new ObjectMapper(); // 여기다가 json으로 담아낼 예정
+		//  kakaoProfileVO p_vo= null;
+		  
+		//  try { p_vo = objectMapper2.readValue(response2.getBody(),p_vo.getClass());
+		  
+		 // }catch(JsonParseException e) { e.printStackTrace();
+		 // }catch(JsonMappingException e) { e.printStackTrace(); }catch(IOException e) {
+		 // e.printStackTrace(); } //카카오 프로파일에 모든정보를 매퍼로 담는과정이다.
+		 
+		return "redirect:/kaselect.do";
+	}
+	//카카오 로그인하느 부분
+	@RequestMapping("/kakao_login.do")
+	public String kakao_login() {
+		StringBuffer loginUrl = new StringBuffer();
+		loginUrl.append("https://kauth.kakao.com/oauth/authorize?client_id=");
+		loginUrl.append("872dd0096ddc56941782a158a2761043");
+		loginUrl.append("&redirect_uri=");
+		loginUrl.append("http://localhost:8081/controller/kakao.do");
+		loginUrl.append("&response_type=code");
+
+		return "redirect:" + loginUrl.toString();
+	}
+	
+	@RequestMapping("/kaselect.do")
+	public String kaselect(HttpSession session,UsersVO u_vo) {
+	
+	UsersVO	vo = (UsersVO)session.getAttribute("ka_uvo");
+	UsersVO new_vo=GoMapper.kaselect(vo.getUser_id());
+	System.out.println(new_vo+"검색하고온 값");
+	if(new_vo==null) {
+		// 회원가입
+		System.out.println("박");
+		
+		GoMapper.UsersInsert(vo);
+		
+		
+		
+		System.out.println("카카오톡 회원가입완료 or 로그인성공");
+		UsersVO kvo=GoMapper.kaselect(vo.getUser_id());
+		session.setAttribute("login", kvo);
+		
+		return "redirect:/index_main.do"; 
+		
+	}else {
+		//로그인
+		
+		System.out.println("정");
+		session.setAttribute("login", vo);
+		System.out.println("카카오톡 로그인 성공");
+		return "redirect:/index_main.do"; 
+	}
+	
+		
+		
+	}
+	
+	
 }
