@@ -39,20 +39,17 @@
 	type="text/css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css"
 	type="text/css">
-	
-	
-	
-	
+
+
+
+
 <style>
-
-
-			#img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
+#img {
+	width: 100%;
+	height: 350px;
+	object-fit: cover;
 }
-	
-	
+
 textarea {
 	width: 100%;
 }
@@ -258,9 +255,12 @@ textarea {
 						<h4>${vo.user_id}</h4>${vo.board_day}
 						<img id="img" src="${cpath}/resources/img/${vo.board_img}" alt="">
 						<p>${vo.board_content}</p>
-						<button style="height:45px; font-size:14px;" type="button" class="site-btn"	onclick="location.href='communityList.do'">목록으로</button>
-						<button style="height:45px; font-size:14px;" type="button" class="site-btn"	onclick="location.href='#'">수정하기</button>	
-						<button style="height:45px; font-size:14px;" type="button" class="site-btn"	onclick="location.href='#'">삭제하기</button>		
+						<button style="height: 45px; font-size: 14px;" type="button"
+							class="site-btn" onclick="location.href='communityList.do'">목록으로</button>
+						<button style="height: 45px; font-size: 14px;" type="button"
+							class="site-btn" onclick="location.href='#'">수정하기</button>
+						<button style="height: 45px; font-size: 14px;" type="button"
+							class="site-btn" onclick="location.href='#'">삭제하기</button>
 					</div>
 				</div>
 			</div>
@@ -303,18 +303,20 @@ textarea {
 					<form action="#">
 						<div class="row">
 							<div class="col-lg-2 col-md-2">
-								<input style="width: 180px;" type="text" value="<%=u_vo.getUser_name()%>"readonly placeholder="작성자">
+								<input style="width: 180px;" type="text"
+									value="<%=u_vo.getUser_name()%>" readonly placeholder="작성자">
 							</div>
 							<div class="col-lg-2 col-md-2">
 								<input style="width: 180px;" type="password" placeholder="비밀번호">
 							</div>
 							<div class="col-lg-5 text-center">
-								<textarea style="height:50px;" placeholder="댓글을 입력해주세요"></textarea>
+								<textarea style="height: 50px;" placeholder="댓글을 입력해주세요"></textarea>
 							</div>
 							<div class="col-lg-3 col-md-3">
-								<button style="height:45px; font-size:14px;" type="submit" class="site-btn">댓글 달기</button>
+								<button style="height: 45px; font-size: 14px;" type="submit"
+									class="site-btn">댓글 달기</button>
 							</div>
-							
+
 						</div>
 					</form>
 				</div>

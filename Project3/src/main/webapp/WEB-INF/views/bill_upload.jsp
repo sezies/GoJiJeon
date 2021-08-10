@@ -160,7 +160,8 @@
 									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
 											분석</a></li>
 								</ul></li>
-							<li><a href="${cpath}/communityList.do" style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="${cpath}/communityList.do"
+								style="font-size: 20px;">커뮤니티</a></li>
 							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
@@ -219,8 +220,8 @@
 	<br>
 	<div class="map">
 		<p align="middle">
-			<iframe src="${cpath}/resources/img/bill/bill6.jpg"
-				style="width: 500px; height: 500px; border: 0;" allowfullscreen=""
+			<iframe src="${cpath}/resources/img/bill/illust.jpg"
+				style="width: 600px; height: 600px; border: 0;" allowfullscreen=""
 				aria-hidden="false" tabindex="0"></iframe>
 		</p>
 	</div>
@@ -235,7 +236,8 @@
 			<div class="checkout__form">
 				<h4>고지서 파일 올리기</h4>
 				<%-- <form action="${cpath}/bill_upload2.do" method="post"> --%>
-				<form id="fileform" method="post" action="${cpath}/bill_upload2.do" enctype="Multipart/form-data">
+				<form id="fileform" method="post" action="${cpath}/bill_upload2.do"
+					enctype="Multipart/form-data">
 					<div class="row">
 						<div class="col-lg-6 text-center">
 							<input type="file" name="img">
@@ -274,8 +276,6 @@
 			error: function (e) {
 				alert("실패");
 			} }); */
-
-		
 	</script>
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>

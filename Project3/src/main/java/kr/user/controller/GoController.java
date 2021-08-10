@@ -264,6 +264,7 @@ public class GoController {
       @RequestMapping("/bill_upload2.do")
       public String bill_upload2(MultipartHttpServletRequest mhsr, HttpSession session, HttpServletRequest request) throws IOException{
 //    	  String path = "C:/Users/smhrd/git/GoJiJeon/Project3/src/main/webapp/resources/img";
+    	  mhsr.setCharacterEncoding("UTF-8");
     	  String path = mhsr.getSession().getServletContext().getRealPath("/resources/img");
     	  
     	  
@@ -282,9 +283,11 @@ public class GoController {
                   fieldName = (String) iter.next(); // 내용을 가져와서 
                   mfile = mhsr.getFile(fieldName); 
                   String origName; 
-                  origName = new String(mfile.getOriginalFilename().getBytes("8859_1"), "UTF-8"); //한글꺠짐 방지 
+//                  origName = new String(mfile.getOriginalFilename().getBytes("8859_1"), "UTF-8"); //한글꺠짐 방지 
+                  origName = new String(mfile.getOriginalFilename()); //한글꺠짐 방지 
                   
-                  session.setAttribute("img", origName);
+                  request.setCharacterEncoding("utf-8");
+                  request.setAttribute("img", origName);;
                   session.setAttribute("path", path);
                   System.out.println("경로입니다"+path);
                   System.out.println("origName: " + origName);
@@ -446,7 +449,7 @@ public class GoController {
          // 값집어넣기
          @RequestMapping("/NoticeInsert.do")
          public String NoticeInsert(NoticeVO vo) {
-        	
+        	System.out.println("들어오긴 하니");
             GoMapper.NoticeInsert(vo); //정장
             System.out.println("고지서 등록하기"+vo);
             return "redirect:/index_main.do"; //WEB-INF/views//UsersList.do.jsp

@@ -21,7 +21,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
 	rel="stylesheet">
-	
+
 
 
 <!-- Css Styles -->
@@ -44,49 +44,57 @@
 </head>
 
 <body>
-<%
-UsersVO u_vo = null;
-if(session.getAttribute("login")!= null){
-u_vo = (UsersVO)session.getAttribute("login");
-System.out.println(u_vo+"||||이거는 맨 위에거");
-}
+	<%
+		UsersVO u_vo = null;
+	if (session.getAttribute("login") != null) {
+		u_vo = (UsersVO) session.getAttribute("login");
+		System.out.println(u_vo + "||||이거는 맨 위에거");
+	}
 
-u_vo = (UsersVO)session.getAttribute("login");
-%>
-
-
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
+	u_vo = (UsersVO) session.getAttribute("login");
+	%>
 
 
-    <!-- Humberger Begin -->
-    <div class="humberger__menu__overlay"></div>
-    <div class="humberger__menu__wrapper">
-        <div class="humberger__menu__logo">
-            <a href="./index_main.do"><img src="${cpath}/resources/img/logo1.png" alt=""></a>
-        </div>
-        <!-- <div class="humberger__menu__cart">
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+
+	<!-- Humberger Begin -->
+	<div class="humberger__menu__overlay"></div>
+	<div class="humberger__menu__wrapper">
+		<div class="humberger__menu__logo">
+			<a href="./index_main.do"><img
+				src="${cpath}/resources/img/logo1.png" alt=""></a>
+		</div>
+		<!-- <div class="humberger__menu__cart">
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
             <div class="header__cart__price">item: <span>$150.00</span></div>
         </div> -->
-        <div class="humberger__menu__widget">
-            <div class="header__top__right__auth">
-                 <%if(u_vo==null) {%>
-                <a href="./login_main2.do"><i class="fa fa-user"></i>로그인</a>
-                <a href="./join_main2.do"><i class="fa fa-user"></i>회원가입</a>
-                <%}else {%>
-                 <a href="${cpath}/UsersLogout.do"><i class="fa fa-user"></i>로그아웃</a>
-                <a href="./mypage_main.do"><i class="fa fa-user"></i>마이페이지</a>
-                <%} %>
-            </div>
-        </div>
-        <nav class="humberger__menu__nav mobile-menu">
-            <ul><%
+		<div class="humberger__menu__widget">
+			<div class="header__top__right__auth">
+				<%
+					if (u_vo == null) {
+				%>
+				<a href="./login_main2.do"><i class="fa fa-user"></i>로그인</a> <a
+					href="./join_main2.do"><i class="fa fa-user"></i>회원가입</a>
+				<%
+					} else {
+				%>
+				<a href="${cpath}/UsersLogout.do"><i class="fa fa-user"></i>로그아웃</a>
+				<a href="./mypage_main.do"><i class="fa fa-user"></i>마이페이지</a>
+				<%
+					}
+				%>
+			</div>
+		</div>
+		<nav class="humberger__menu__nav mobile-menu">
+			<ul>
+				<%
 					if (u_vo == null) {
 				%>
 				<li><a href="#">고지서 서랍</a>
@@ -112,132 +120,107 @@ u_vo = (UsersVO)session.getAttribute("login");
 				<li><a href="./contact.do">문의하기</a></li>
 				<%
 					}
-				%></ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="header__top__right__social">
-            <!--  <a href="#"><i class="fa fa-facebook"></i></a>
+				%>
+			</ul>
+		</nav>
+		<div id="mobile-menu-wrap"></div>
+		<div class="header__top__right__social">
+			<!--  <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
             <a href="#"><i class="fa fa-linkedin"></i></a>
             <a href="#"><i class="fa fa-pinterest-p"></i></a>-->
-        </div>
-        <div class="humberger__menu__contact">
-            <ul>
-               <!-- <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+		</div>
+		<div class="humberger__menu__contact">
+			<ul>
+				<!-- <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
                 <li>Free Shipping for all Order of $99</li>-->
-            </ul>
-        </div>
-    </div>
-    <!-- Humberger End -->
+			</ul>
+		</div>
+	</div>
+	<!-- Humberger End -->
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <!--
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                            </div>
-                            <div class="header__top__right__language">
-                                <img src="${cpath}/resources/img/language.png" alt="">
-                                <div>English</div>
-                                <span class="arrow_carrot-down"></span>
-                                <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
-                                </ul>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="./index_main.do"><img src="${cpath}/resources/img/logo1.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <nav class="header__menu">
-                        <ul><%
+	<!-- Header Section Begin -->
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="header__logo">
+						<a href="./index_main.do"><img
+							src="${cpath}/resources/img/logo1.png" alt=""></a>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<nav class="header__menu">
+						<ul>
+							<%
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 업로드</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 16px;">고지서 분석</a></li>
 								</ul></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')" style="font-size:20px;">문의하기</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 20px;">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size:20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size:16px;">고지서 업로드</a></li>
-									<li><a href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>" style="font-size:16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size:16px;">고지서 분석</a></li>
+									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+											업로드</a></li>
+									<li><a
+										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
+										style="font-size: 16px;">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+											분석</a></li>
 								</ul></li>
-							<li><a href="${cpath}/communityList.do" style="font-size:20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size:20px;">문의하기</a></li>
+							<li><a href="${cpath}/communityList.do"
+								style="font-size: 20px;">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
 							<%
 								}
-							%></ul>
-                    </nav>
-                </div>
-                <div class="col-lg-2">
-                    <nav class="header__menu">
-                           <!--  로그인 배너 (찐) -->
-                         <%if(u_vo==null) {%>
-                            <a href="./login_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">로그인</a>
-                            &emsp;&emsp;&emsp;
-                            <a href="./join_main2.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">회원가입</a>
-                          <%}else {%>
-                            <a href="${cpath}/UsersLogout.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;" >로그아웃</a>
-                            &emsp;
-                            <a href="./mypage_main.do" style="font-size:12px; color:gray; font-weight:bold; letter-spacing :2px;">마이페이지</a>
-                            <%} %>
-                    </nav>
-                </div>
-                   <!--<div class="col-lg-3"> 
-                       <div class="header__cart">
-                         <ul>
-                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-                        </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
-                    </div>
-                </div>-->
-            </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
+							%>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-lg-2">
+					<nav class="header__menu">
+						<!--  로그인 배너 (찐) -->
+						<%
+							if (u_vo == null) {
+						%>
+						<a href="./login_main2.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그인</a>
+						&emsp;&emsp;&emsp; <a href="./join_main2.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">회원가입</a>
+						<%
+							} else {
+						%>
+						<a href="${cpath}/UsersLogout.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
+						&emsp; <a href="./mypage_main.do"
+							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
+						<%
+							}
+						%>
+					</nav>
+				</div>
+			</div>
+			<div class="humberger__open">
+				<i class="fa fa-bars"></i>
+			</div>
+		</div>
+	</header>
+	<!-- Header Section End -->
 
 
 	<!-- Breadcrumb Section Begin -->
@@ -256,305 +239,65 @@ u_vo = (UsersVO)session.getAttribute("login");
 	</section>
 	<!-- Breadcrumb Section End -->
 
-    <!-- Featured Section Begin -->
-    <section class="featured spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                    <a style="font-size: 44px; color: black; font-weight: bold;"><%=u_vo.getUser_name()%></a>
-					<a style="font-size: 32px; color: midnight; font-weight: bold;">님의 고지서 종류</a><br>
-					 <!--  <button type="button" class="site-btn" onclick="location.href='bill_manager.do'" style="height:40px; text-align: justify;">새로고침</button>-->
-                    </div>
-                    <div class="featured__controls">
-                        <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".관리비">관리비</li>
-                            <li data-filter=".자동차세">자동차세</li>
-                            <li data-filter=".지방세">지방세</li>
-                            <li data-filter=".주민세">주민세</li>
-                            <li data-filter=".과태료">과태료</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-  <!-- a --><div class="row featured__filter">
-                <c:forEach var = "vo" items = "${list}"> 
-                <div class="col-lg-3 col-md-4 col-sm-6 mix ${vo.notice_code}">
-                
-                    <div class="featured__item">
-                       <div style="height:200px; border: 3px solid white;border-radius: 7px;-moz-border-radius: 7px;-khtml-border-radius: 7px;-webkit-border-radius: 7px;" 
-                       class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/${vo.img}" onclick="location.href='${cpath}/bill_contents.do?notice_num=${vo.notice_num}' ">
-                           <!--     <ul>
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul> -->
-                        </div> 	
-
-
-                        <div class="featured__item__text">
-                            <h6><a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">납부기한 : ${vo.pay_day}</a></h6>
-                            <h6><a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">고지서 명 : ${vo.notice_title}</a></h6>
-                            <h5>납부할 금액 : <fmt:formatNumber value="${vo.pay_money}" pattern="#,###"/> 원</h5>
-                        </div>
-                    </div>
-                </div>
-                </c:forEach>
-                <%-- <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-2.jpg">
-                            <ul class="featured__item__pic__hover">
-                                 <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix slowfood fresh-meat">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-3.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix slowfood oranges">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-4.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix slowfood vegetables">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-5.jpg">
-                            <ul class="featured__item__pic__hover">
-                               <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-6.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges vegetables">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-7.jpg">
-                            <ul class="featured__item__pic__hover">
-                               <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges vegetables">
-                    <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="${cpath}/resources/img/featured/feature-8.jpg">
-                            <ul class="featured__item__pic__hover">
-                                <!--<li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>-->
-                            </ul>
-                        </div>
-                        <div class="featured__item__text">
-                            <h6><a href="./bill_contents.do">Crab Pool Security</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div> --%>
-<!-- a --> </div>
-        </div>
-    </section>
-    <!-- Featured Section End -->
-	<%-- <!-- Featured Section Begin -->
+	<!-- Featured Section Begin -->
 	<section class="featured spad">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="section-title">
-						<h2>내 고지서 종류</h2>
+						<a style="font-size: 44px; color: black; font-weight: bold;"><%=u_vo.getUser_name()%></a>
+						<a style="font-size: 32px; color: midnight; font-weight: bold;">님의
+							고지서 종류</a><br>
+						<!--  <button type="button" class="site-btn" onclick="location.href='bill_manager.do'" style="height:40px; text-align: justify;">새로고침</button>-->
 					</div>
 					<div class="featured__controls">
 						<ul>
 							<li class="active" data-filter="*">All</li>
-							<li data-filter=".aptfees">관리비</li>
-							<li data-filter=".carfees">자동차세</li>
-							<li data-filter=".localfees">지방세</li>
-							<li data-filter=".usefees">각종 요금</li>
-							<li data-filter=".finefees">과태료</li>
+							<li data-filter=".관리비">관리비</li>
+							<li data-filter=".자동차세">자동차세</li>
+							<li data-filter=".지방세">지방세</li>
+							<li data-filter=".주민세">주민세</li>
+							<li data-filter=".과태료">과태료</li>
 						</ul>
 					</div>
 				</div>
 			</div>
+			<!-- a -->
 			<div class="row featured__filter">
-				<div class="col-lg-3 col-md-4 col-sm-6 mix usefees fresh-meat">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/bill/bill1.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">2019년 10월 도시가스 요금</a>
-							</h6>
-							<h5>5,840원</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix carfees fastfood">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/bill/bill2.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">2018년 자동차세</a>
-							</h6>
-							<h5>71,040</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix usefees fresh-meat">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/bill/bill3.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">2020년 7월 도시가스 요금</a>
-							</h6>
-							<h5>14,900원</h5>
+				<c:forEach var="vo" items="${list}">
+					<div class="col-lg-3 col-md-4 col-sm-6 mix ${vo.notice_code}">
+
+						<div class="featured__item">
+							<div
+								style="height: 200px; border: 3px solid white; border-radius: 7px; -moz-border-radius: 7px; -khtml-border-radius: 7px; -webkit-border-radius: 7px;"
+								class="featured__item__pic set-bg"
+								data-setbg="${cpath}/resources/img/${vo.img}"
+								onclick="location.href='${cpath}/bill_contents.do?notice_num=${vo.notice_num}' ">
+							</div>
+
+
+							<div class="featured__item__text">
+								<h6>
+									<a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">납부기한
+										: ${vo.pay_day}</a>
+								</h6>
+								<h6>
+									<a href="${cpath}/bill_contents.do?notice_num=${vo.notice_num}">고지서
+										명 : ${vo.notice_title}</a>
+								</h6>
+								<h5>
+									납부할 금액 :
+									<fmt:formatNumber value="${vo.pay_money}" pattern="#,###" />
+									원
+								</h5>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix localfees oranges">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/bill/bill4.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">2019년 지방세</a>
-							</h6>
-							<h5>194,890원</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix carfees vegetables">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/bill/bill5.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">2018년 자동차세</a>
-							</h6>
-							<h5>116,320원</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix carfees fastfood">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/bill/bill6.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">2020년 자동차세</a>
-							</h6>
-							<h5>330,050원</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix usefees vegetables">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/bill/bill1.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">2019년 11월 도시가스 요금</a>
-							</h6>
-							<h5>5,840원</h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 mix carfees vegetables">
-					<div class="featured__item">
-						<div class="featured__item__pic set-bg"
-							data-setbg="${cpath}/resources/img/bill/bill2.jpg">
-							<ul class="featured__item__pic__hover">
-							</ul>
-						</div>
-						<div class="featured__item__text">
-							<h6>
-								<a href="./bill_contents.do">2018년 자동차세</a>
-							</h6>
-							<h5>71,040</h5>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</section>
-	<!-- Featured Section End --> --%>
+	<!-- Featured Section End -->
 
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
