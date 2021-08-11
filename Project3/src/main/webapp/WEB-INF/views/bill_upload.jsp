@@ -267,14 +267,6 @@ body {
 			</div>
 		</div>
 	</section>
-	<!-- Contact Form End -->
-	<script>
-		var btn = document.querySelector("button");
-		btn.onclick = function() {
-			alert("고지서 사진을  분석 중입니다.");
-		}
-	</script>
-	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/bootstrap.min.js"></script>

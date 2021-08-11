@@ -255,25 +255,14 @@ label {
          <label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
          <label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
          
-         <h4 style="margin-bottom:10px;">고지서 제목</h4>
          <input style="width:300px;text-align:center" type="text" name="notice_title" placeholder="고지서 제목을 입력해주세요">
-             <p>ㅤ</p>
-             
+             <p></p>
           <p>고지서 종류 선택</p>
          <!-- <input type="number" name="notice_code" > -->
-         <div>
          <input type="radio" id="관리비" name="notice_code" value="관리비">관리비
-         </div>
-         <div>
          <input type="radio" id="자동차세" name="notice_code" value="자동차세">자동차세
-         </div>
-         <div>
          <input type="radio" id="지방세" name="notice_code" value="지방세">지방세
-         </div>
-         <div>
          <input type="radio" id="주민세" name="notice_code" value="주민세">주민세
-         </div>
-         <div>
          <input type="radio" id="과태료" name="notice_code" value="과태료">과태료
              
          <p>ㅤ</p>
@@ -283,36 +272,24 @@ label {
             style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
          <input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
             style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
+         <button name="reset_btn" class="btn_inp" disabled="disabled"><img src="${cpath }/resources/img/reset.jpg"
+            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onclick='re_inp()'></button>&nbsp;
          
          <input type="hidden" name="user_num" value="<%=u_vo.getUser_num()%>" readonly="readonly">
          
-         </div>
      
      	 <p>ㅤ</p>
-         <p>이미지 파일명</p>
          <%request.setCharacterEncoding("utf-8"); %>
          <input type="text" name="img" value="<%=request.getAttribute("img")%>" readonly="readonly">
          <input type="hidden" name="path" value="<%=session.getAttribute("path")%>">
          <input type="hidden" name="notice_json">
          <input type="hidden" name="notice_json_name">
          <button type="submit" class="site-btn">고지서 저장</button>
-          <p>ㅤ</p>
-         <h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
       </div>
    </section>
   </form>
   
-  <!-- Map Begin -->
 	<!-- 고지서 파일은 선택하면 해당 아이프레임에 노출되도록... -->
-	<br>
-	<div class="map">
-		<p align="middle">
-			<iframe src="${cpath}/resources/img/bill/bill_how.png"
-				style="width: 610px; height: 453px; border: 0;" allowfullscreen=""
-				aria-hidden="false" tabindex="0"></iframe>
-		</p>
-	</div>
-	<!-- Map End -->
 
    <!-- Contact Form End -->
    <div id="div_img" style="margin-left:30%; margin-right:30%">
