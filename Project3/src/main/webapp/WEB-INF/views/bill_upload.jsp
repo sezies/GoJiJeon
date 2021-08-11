@@ -220,8 +220,8 @@
 	<br>
 	<div class="map">
 		<p align="middle">
-			<iframe src="${cpath}/resources/img/bill/bill_upload.png"
-				style="width: 571px; height: 400px; border: 0;" allowfullscreen=""
+			<iframe src="${cpath}/resources/img/bill/bill_how.png"
+				style="width: 610px; height: 453px; border: 0;" allowfullscreen=""
 				aria-hidden="false" tabindex="0"></iframe>
 		</p>
 	</div>
