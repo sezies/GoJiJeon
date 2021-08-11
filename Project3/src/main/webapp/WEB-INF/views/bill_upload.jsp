@@ -245,6 +245,7 @@
 						<div class="checkout__input">
 							<button type="submit" class="site-btn">파일 업로드</button>
 						</div>
+						<input type="hidden" name='json_test'>
 					</div>
 				</form>
 			</div>
@@ -258,27 +259,11 @@
 	btn.onclick = function (){
 		alert("고지서 사진을  분석 중입니다.");
 	}
-		
 	
-		/* var formdata = new FormData($('#fileform')[0]);
-		
-		$.ajax({
-			type: "POST",
-			enctype: 'multipart/form-data', // 필수
-			url: '/bill_upload2.do',
-			data: formData, // 필수
-			processData: false, // 필수
-			contentType: false, // 필수
-			cache: false,
-			success: function (result) {
-				alert("성공");
-			},
-			error: function (e) {
-				alert("실패");
-			} }); */
 	</script>
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
+	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/bootstrap.min.js"></script>
 	<script src="${cpath}/resources/js/jquery.nice-select.min.js"></script>
 	<script src="${cpath}/resources/js/jquery-ui.min.js"></script>

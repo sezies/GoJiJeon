@@ -189,7 +189,7 @@ create table notice(
 	
 	
 	
-	
+select notice_num from notice order by notice_num desc limit 1;
 	
 select * from notice where user_num='1';
 select * from notice;
