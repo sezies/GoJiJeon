@@ -211,7 +211,7 @@ body {
 
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-section set-bg"
-		data-setbg="${cpath}/resources/img/menu_banner.png" style="width: 1140px; margin:auto;">
+		data-setbg="${cpath}/resources/img/menu_banner.png">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
