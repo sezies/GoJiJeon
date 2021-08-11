@@ -6,6 +6,13 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
+
+<style type="text/css">
+body {
+  font-family:'NanumSquare_0';
+}
+</style>
+
 <meta charset="UTF-8">
 <meta name="description" content="Ogani Template">
 <meta name="keywords" content="Ogani, unica, creative, html">
@@ -13,6 +20,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>고지서 관리 서비스</title>
 <style>
+
 input {
 	vertical-align: middle position: absolute;
 }
@@ -146,42 +154,42 @@ label {
 					</div>
 				</div>
 				<div class="col-lg-7">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:45px;">
 						<ul>
 							<%
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 업로드</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 관리</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 분석</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;">고지서 업로드</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 관리</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 분석</a></li>
 								</ul></li>
+							<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">커뮤니티</a></li>
 							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">커뮤니티</a></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+									<li><a href="./bill_upload.do" style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서
 											업로드</a></li>
 									<li><a
 										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
-										style="font-size: 16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서
 											분석</a></li>
 								</ul></li>
 							<li><a href="${cpath}/communityList.do"
-								style="font-size: 20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">문의하기</a></li>
 							<%
 								}
 							%>
@@ -189,22 +197,25 @@ label {
 					</nav>
 				</div>
 				<div class="col-lg-2">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:35px;">
 						<!--  로그인 배너 (찐) -->
 						<%
 							if (u_vo == null) {
 						%>
 						<a href="./login_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그인</a>
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;"></a>
 						&emsp;&emsp;&emsp; <a href="./join_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">회원가입</a>
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;"></a>
 						<%
 							} else {
 						%>
 						<a href="${cpath}/UsersLogout.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
-						&emsp; <a href="./mypage_main.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;">로그아웃</a>
+						&emsp;
+						<br> 
+						<a href="./mypage_main.do"
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;">마이페이지</a>
+
 						<%
 							}
 						%>
@@ -244,15 +255,11 @@ label {
          <label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
          <label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
          
-         <input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
-            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" oninput='fill_inp()'>&nbsp;
-         <input name='pay_day' class="inp" disabled="disabled" type="text" placeholder='납부 기한'
-            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
-         <input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
-            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
-         
-         <input type="hidden" name="user_num" value="<%=u_vo.getUser_num()%>" readonly="readonly">
-         <p>고지서 종류 선택</p>
+         <h4 style="margin-bottom:10px;">고지서 제목</h4>
+         <input style="width:300px;text-align:center" type="text" name="notice_title" placeholder="고지서 제목을 입력해주세요">
+             <p>ㅤ</p>
+             
+          <p>고지서 종류 선택</p>
          <!-- <input type="number" name="notice_code" > -->
          <div>
          <input type="radio" id="관리비" name="notice_code" value="관리비">관리비
@@ -268,10 +275,20 @@ label {
          </div>
          <div>
          <input type="radio" id="과태료" name="notice_code" value="과태료">과태료
-         </div>
+             
+         <p>ㅤ</p>
+         <input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
+            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" oninput='fill_inp()'>&nbsp;
+         <input name='pay_day' class="inp" disabled="disabled" type="text" placeholder='납부 기한'
+            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
+         <input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
+            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
          
-         <p>고지서 제목</p>
-         <input type="text" name="notice_title">
+         <input type="hidden" name="user_num" value="<%=u_vo.getUser_num()%>" readonly="readonly">
+         
+         </div>
+     
+     	 <p>ㅤ</p>
          <p>이미지 파일명</p>
          <%request.setCharacterEncoding("utf-8"); %>
          <input type="text" name="img" value="<%=request.getAttribute("img")%>" readonly="readonly">
@@ -279,10 +296,23 @@ label {
          <input type="hidden" name="notice_json">
          <input type="hidden" name="notice_json_name">
          <button type="submit" class="site-btn">고지서 저장</button>
+          <p>ㅤ</p>
          <h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
       </div>
    </section>
   </form>
+  
+  <!-- Map Begin -->
+	<!-- 고지서 파일은 선택하면 해당 아이프레임에 노출되도록... -->
+	<br>
+	<div class="map">
+		<p align="middle">
+			<iframe src="${cpath}/resources/img/bill/bill_how.png"
+				style="width: 610px; height: 453px; border: 0;" allowfullscreen=""
+				aria-hidden="false" tabindex="0"></iframe>
+		</p>
+	</div>
+	<!-- Map End -->
 
    <!-- Contact Form End -->
    <div id="div_img" style="margin-left:30%; margin-right:30%">

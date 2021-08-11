@@ -7,6 +7,13 @@
 <html lang="zxx">
 
 <head>
+
+<style type="text/css">
+body {
+  font-family:'NanumSquare_0';
+}
+</style>
+
 <meta charset="UTF-8">
 <meta name="description" content="Ogani Template">
 <meta name="keywords" content="Ogani, unica, creative, html">
@@ -125,42 +132,42 @@
 					</div>
 				</div>
 				<div class="col-lg-7">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:45px;">
 						<ul>
 							<%
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 업로드</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 관리</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 분석</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;">고지서 업로드</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 관리</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 분석</a></li>
 								</ul></li>
+							<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">커뮤니티</a></li>
 							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">커뮤니티</a></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+									<li><a href="./bill_upload.do" style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서
 											업로드</a></li>
 									<li><a
 										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
-										style="font-size: 16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서
 											분석</a></li>
 								</ul></li>
 							<li><a href="${cpath}/communityList.do"
-								style="font-size: 20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">문의하기</a></li>
 							<%
 								}
 							%>
@@ -180,7 +187,7 @@
 
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-section set-bg"
-		data-setbg="${cpath}/resources/img/menu_banner.png">
+		data-setbg="${cpath}/resources/img/menu_banner.png" style="width: 1140px; margin:auto;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -233,12 +240,11 @@
                             <div class="checkout__input">
                               <button type="submit" class="site-btn" style="height:40px; width:250px; margin-left:15px;">로그인</button>
                               <br><br>
-                              <a href="${cpath}/kakao_login.do"><img style= "width:150px;"  src="${cpath}/resources/img/login/kakao_login_medium_narrow.png">카카오톡 로그인연동</a>
+                              <a href="${cpath}/kakao_login.do"><img style="height:40px;" src="${cpath}/resources/img/login/kakao_login.png"></a>
                               
      
                               
-                              &nbsp;&nbsp;
-                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/kakao_login.png"></button>
+                              
                               &nbsp;
                               <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/naver_login.png"></button>
                               &nbsp;
@@ -248,18 +254,7 @@
                         </div>  
                          </div>
                          </form>      
-                         <ul>
-	<li onclick="kakaoLogin();">
-      <a href="javascript:void(0)">
-          <span>카카오 로그인</span>
-      </a>
-	</li>
-	<li onclick="kakaoLogout();">
-      <a href="javascript:void(0)">
-          <span>카카오 로그아웃</span>
-      </a>
-	</li>
-</ul> 
+              
     </section>
     <!-- Checkout Section End -->
 
@@ -274,49 +269,7 @@
     <script src="${cpath}/resources/js/mixitup.min.js"></script>
     <script src="${cpath}/resources/js/owl.carousel.min.js"></script>
     <script src="${cpath}/resources/js/main.js"></script>
-<!-- 카카오 스크립트 -->
- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<script>
-Kakao.init('872dd0096ddc56941782a158a2761043'); //발급받은 키 중 javascript키를 사용해준다.
-console.log(Kakao.isInitialized()); // sdk초기화여부판단
-//카카오로그인
-/* Kakao.Auth.authorize({
-                  redirectUri: 'http://localhost:8081/controller/kakao.do'
-                })  */ 
-function kakaoLogin() {
-    Kakao.Auth.login({
-      success: function (response) {
-        Kakao.API.request({
-          url: "redirect:/index_main.do",
-          success: function (response) {
-        	  console.log(response)
-          },
-          fail: function (error) {
-            console.log(error)
-          },
-        })
-      },
-      fail: function (error) {
-        console.log(error)
-      },
-    })
-  }
-//카카오로그아웃  
-function kakaoLogout() {
-    if (Kakao.Auth.getAccessToken()) {
-      Kakao.API.request({
-        url: '/v1/user/unlink',
-        success: function (response) {
-        	console.log(response)
-        },
-        fail: function (error) {
-          console.log(error)
-        },
-      })
-      Kakao.Auth.setAccessToken(undefined)
-    }
-  }  
-</script> 
+
 
 </body>
 

@@ -7,6 +7,13 @@
 <html lang="zxx">
 
 <head>
+
+<style type="text/css">
+body {
+  font-family:'NanumSquare_0';
+}
+</style>
+
 <meta charset="UTF-8">
 <meta name="description" content="Ogani Template">
 <meta name="keywords" content="Ogani, unica, creative, html">
@@ -144,42 +151,42 @@
 					</div>
 				</div>
 				<div class="col-lg-7">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:45px;">
 						<ul>
 							<%
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 업로드</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 관리</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 분석</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;">고지서 업로드</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 관리</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 분석</a></li>
 								</ul></li>
+							<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">커뮤니티</a></li>
 							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">커뮤니티</a></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+									<li><a href="./bill_upload.do" style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서
 											업로드</a></li>
 									<li><a
 										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
-										style="font-size: 16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서
 											분석</a></li>
 								</ul></li>
 							<li><a href="${cpath}/communityList.do"
-								style="font-size: 20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">문의하기</a></li>
 							<%
 								}
 							%>
@@ -187,22 +194,25 @@
 					</nav>
 				</div>
 				<div class="col-lg-2">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:35px;">
 						<!--  로그인 배너 (찐) -->
 						<%
 							if (u_vo == null) {
 						%>
 						<a href="./login_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그인</a>
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;"></a>
 						&emsp;&emsp;&emsp; <a href="./join_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">회원가입</a>
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;"></a>
 						<%
 							} else {
 						%>
 						<a href="${cpath}/UsersLogout.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
-						&emsp; <a href="./mypage_main.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;">로그아웃</a>
+						&emsp;
+						<br> 
+						<a href="./mypage_main.do"
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;">마이페이지</a>
+
 						<%
 							}
 						%>
