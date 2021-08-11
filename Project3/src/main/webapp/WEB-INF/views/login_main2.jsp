@@ -19,23 +19,19 @@
 	href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
 	rel="stylesheet">
 
-<!-- Css Styles -->
-<link rel="stylesheet" href="${cpath}/resources/css/bootstrap.min.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="${cpath}/resources/css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="${cpath}/resources/css/elegant-icons.css"
-	type="text/css">
-<link rel="stylesheet" href="${cpath}/resources/css/nice-select.css"
-	type="text/css">
-<link rel="stylesheet" href="${cpath}/resources/css/jquery-ui.min.css"
-	type="text/css">
-<link rel="stylesheet"
-	href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css"
-	type="text/css">
-<link rel="stylesheet" href="${cpath}/resources/css/style.css"
-	type="text/css">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="${cpath}/resources/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="${cpath}/resources/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="${cpath}/resources/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="${cpath}/resources/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="${cpath}/resources/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="${cpath}/resources/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="${cpath}/resources/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="${cpath}/resources/css/style.css" type="text/css">
+<!-- 카카오 스크립트 -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -200,77 +196,127 @@
 	</section>
 	<!-- Breadcrumb Section End -->
 
-	<!-- Checkout Section Begin -->
-	<section class="checkout spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12"></div>
-			</div>
-			<div class="checkout__form">
-				<h4>로그인 화면</h4>
-				<div class="row">
-					<form action="${cpath}/UsersLogin.do" method="post">
-						<div class="col-lg-8 col-md-6">
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="checkout__input">
-										<p>아이디</p>
-										<input type="text" name="user_id" style="width: 250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-									</div>
-								</div>
-								<div class="col-lg-8 col-md-6">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="checkout__input">
-												<p>비밀번호</p>
-												<input type="password" name="user_pw" style="width: 250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- 로그인실패시 문구 -->
-								<c:if test="${msg==false}">
-									<h4 style="color: #f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</h4>
-								</c:if>
-								<div class="checkout__input">
-									<button type="submit" class="site-btn"
-										style="height: 40px; width: 250px; margin-left: 15px;">로그인</button>
-									<br>
-									<br> &nbsp;&nbsp;
-									<button type="button" class="btm_image" id="kakao_login"
-										onClick="alert('추후 지원 예정입니다.')">
-										<img style="height: 40px;"
-											src="${cpath}/resources/img/login/kakao_login.png">
-									</button>
-									&nbsp;
-									<button type="button" class="btm_image" id="kakao_login"
-										onClick="alert('추후 지원 예정입니다.')">
-										<img style="height: 40px;"
-											src="${cpath}/resources/img/login/naver_login.png">
-									</button>
-									&nbsp;
-									<button type="button" class="btm_image" id="kakao_login"
-										onClick="alert('추후 지원 예정입니다.')">
-										<img style="height: 40px;"
-											src="${cpath}/resources/img/login/google_login.png">
-									</button>
-									<!--  <button type="button" class="site-btn" onclick="location.href='join_main2.do' ">회원가입 하기</button>-->
-								</div>
-							</div>
-						</div>
-					</form>
-	</section>
-	<!-- Checkout Section End -->
 
-	<!-- Js Plugins -->
-	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
-	<script src="${cpath}/resources/js/bootstrap.min.js"></script>
-	<script src="${cpath}/resources/js/jquery.nice-select.min.js"></script>
-	<script src="${cpath}/resources/js/jquery-ui.min.js"></script>
-	<script src="${cpath}/resources/js/jquery.slicknav.js"></script>
-	<script src="${cpath}/resources/js/mixitup.min.js"></script>
-	<script src="${cpath}/resources/js/owl.carousel.min.js"></script>
-	<script src="${cpath}/resources/js/main.js"></script>
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+            <div class="checkout__form">
+                <h4>로그인 화면</h4>
+                <div class="row">
+                <form action="${cpath}/UsersLogin.do" method="post">
+                        <div class="col-lg-8 col-md-6">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>아이디</p>
+                                        <input type="text" name="user_id" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-6">
+                                <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="checkout__input">
+                                        <p>비밀번호</p>
+                                        <input type="password" name="user_pw" style="width:250px;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                    </div>
+                                </div>
+								</div>
+                            </div>
+                            <!-- 로그인실패시 문구 -->   
+                            <c:if test="${msg==false}">
+                            	<h4 style="color:#f00;">가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.</h4>
+                            </c:if>
+                            <div class="checkout__input">
+                              <button type="submit" class="site-btn" style="height:40px; width:250px; margin-left:15px;">로그인</button>
+                              <br><br>
+                              <a href="${cpath}/kakao_login.do"><img style= "width:150px;"  src="${cpath}/resources/img/login/kakao_login_medium_narrow.png">카카오톡 로그인연동</a>
+                              
+     
+                              
+                              &nbsp;&nbsp;
+                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/kakao_login.png"></button>
+                              &nbsp;
+                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/naver_login.png"></button>
+                              &nbsp;
+                              <button type="button" class="btm_image" id="kakao_login" onClick="alert('추후 지원 예정입니다.')"><img style="height:40px;" src="${cpath}/resources/img/login/google_login.png"></button>
+                              <!--  <button type="button" class="site-btn" onclick="location.href='join_main2.do' ">회원가입 하기</button>-->
+                            </div>
+                        </div>  
+                         </div>
+                         </form>      
+                         <ul>
+	<li onclick="kakaoLogin();">
+      <a href="javascript:void(0)">
+          <span>카카오 로그인</span>
+      </a>
+	</li>
+	<li onclick="kakaoLogout();">
+      <a href="javascript:void(0)">
+          <span>카카오 로그아웃</span>
+      </a>
+	</li>
+</ul> 
+    </section>
+    <!-- Checkout Section End -->
+
+
+
+    <!-- Js Plugins -->
+    <script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
+    <script src="${cpath}/resources/js/bootstrap.min.js"></script>
+    <script src="${cpath}/resources/js/jquery.nice-select.min.js"></script>
+    <script src="${cpath}/resources/js/jquery-ui.min.js"></script>
+    <script src="${cpath}/resources/js/jquery.slicknav.js"></script>
+    <script src="${cpath}/resources/js/mixitup.min.js"></script>
+    <script src="${cpath}/resources/js/owl.carousel.min.js"></script>
+    <script src="${cpath}/resources/js/main.js"></script>
+<!-- 카카오 스크립트 -->
+ <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+Kakao.init('872dd0096ddc56941782a158a2761043'); //발급받은 키 중 javascript키를 사용해준다.
+console.log(Kakao.isInitialized()); // sdk초기화여부판단
+//카카오로그인
+/* Kakao.Auth.authorize({
+                  redirectUri: 'http://localhost:8081/controller/kakao.do'
+                })  */ 
+function kakaoLogin() {
+    Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({
+          url: "redirect:/index_main.do",
+          success: function (response) {
+        	  console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+//카카오로그아웃  
+function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) {
+      Kakao.API.request({
+        url: '/v1/user/unlink',
+        success: function (response) {
+        	console.log(response)
+        },
+        fail: function (error) {
+          console.log(error)
+        },
+      })
+      Kakao.Auth.setAccessToken(undefined)
+    }
+  }  
+</script> 
 
 </body>
 

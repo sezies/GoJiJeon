@@ -26,7 +26,7 @@ public interface GoMapper {
 	public void NoticeUpdate(NoticeVO vo); // update~ SQL	
 	public void NoticeDelete(int idx); // delete~ SQL
 	public List<NoticeVO> NoticeListAjax(int n_num); // ajax SQL
-	
+	public int NoticeSelect_notice_num();
 	// 고지서 셀렉터
 	public List<NoticeVO> NoticeSelect(String user_num);
 	public NoticeVO NoticeOne(String notice_num);
@@ -63,5 +63,9 @@ public interface GoMapper {
 	
 	// 아이디 중복체크
 	public UsersVO ID_Check(String user_id);
+	
+	// 카카오톡 회원 DB찾기
+	public UsersVO kaselect(String user_id);
+	
 	
 }
