@@ -1,3 +1,5 @@
+<%@page import="org.springframework.beans.factory.annotation.Autowired"%>
+<%@page import="kr.user.mapper.GoMapper"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="kr.user.mapper.NoticeVO"%>
@@ -14,6 +16,13 @@
 <html lang="zxx">
 
 <head>
+
+<style type="text/css">
+body {
+  font-family:'NanumSquare_0';
+}
+</style>
+
 <meta charset="UTF-8">
 <meta name="description" content="Ogani Template">
 <meta name="keywords" content="Ogani, unica, creative, html">
@@ -187,42 +196,42 @@ function ajaxHtml(data){
 					</div>
 				</div>
 				<div class="col-lg-7">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:45px;">
 						<ul>
 							<%
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 업로드</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 관리</a></li>
-									<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 분석</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;">고지서 업로드</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 관리</a></li>
+									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 분석</a></li>
 								</ul></li>
+							<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">커뮤니티</a></li>
 							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">커뮤니티</a></li>
-							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+									<li><a href="./bill_upload.do" style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서
 											업로드</a></li>
 									<li><a
 										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
-										style="font-size: 16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+										style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 20px; font-family: NanumSquare_0; letter-spacing: 1px;"">고지서
 											분석</a></li>
 								</ul></li>
 							<li><a href="${cpath}/communityList.do"
-								style="font-size: 20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 24px; font-family: NanumSquare_0; letter-spacing: 1px;"">문의하기</a></li>
 							<%
 								}
 							%>
@@ -230,22 +239,25 @@ function ajaxHtml(data){
 					</nav>
 				</div>
 				<div class="col-lg-2">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:35px;">
 						<!--  로그인 배너 (찐) -->
 						<%
 							if (u_vo == null) {
 						%>
 						<a href="./login_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그인</a>
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;"></a>
 						&emsp;&emsp;&emsp; <a href="./join_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">회원가입</a>
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;"></a>
 						<%
 							} else {
 						%>
 						<a href="${cpath}/UsersLogout.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
-						&emsp; <a href="./mypage_main.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;">로그아웃</a>
+						&emsp;
+						<br> 
+						<a href="./mypage_main.do"
+							style="font-size: 20px; color: gray; font-weight: bold; font-family: NanumSquare_0; letter-spacing: 1px;">마이페이지</a>
+
 						<%
 							}
 						%>
@@ -285,9 +297,18 @@ function ajaxHtml(data){
 			<div class="blog__details__text" style="text-align: center;">
 				<!-- 좌측 그래프를 선택하면 해당 아이프레임에 노출되도록... 
 						<!-- 최근고지서 부분 불러오는부분 -->
+				
+				<%
+				int recently_money = Integer.parseInt((String)request.getAttribute("recently_money").toString());
+				System.out.println(recently_money);
+				%>
 				<button type="button" class="site-btn"
-							onclick="location.href='${cpath}/comWrite.do'">다음달 요금 예측</button>
-				<table
+							onclick="run_model(<%=recently_money%>)">다음달 요금 예측</button>
+					<div class="blog__sidebar__item">
+					
+						
+					</div>
+				<table id="list_table"
 					style="margin-left: auto; margin-right: auto; text-align: center;">
 					<tr style="border-bottom: 1px solid #dee2e6;" bgcolor="EBFBFF"
 						; height=45px;>
@@ -304,7 +325,6 @@ function ajaxHtml(data){
 								상세 내역
 								<h5></td>
 					</tr>
-					<div class="blog__sidebar__item">
 						<!-- 	<div class="blog__sidebar__recent">	 -->
 						<%
 							if (t_list.size() >= 5) {
@@ -343,7 +363,7 @@ function ajaxHtml(data){
 							}
 						}
 						%>
-					</div>
+					
 				</table>
 				<br> <br> <br>
 				<!-- 최근고지서 부분 불러오는부분 -->
@@ -450,6 +470,33 @@ for (int i = t_list.size(); i > 0; i--) {%>
                     }
                 }
             });
+            console.log($("#list_table>tr").eq(0).text());
+            function run_model(num) {
+            	 console.log("들어옵니다");
+            	 
+            	 $.ajax({
+            	        type : 'post',
+            	        url : 'http://127.0.0.1:8082/test',
+            	        data :{"test":num} ,
+            	        dataType : 'json',
+            	        success : function(res) {
+            	        	$(".blog__sidebar__item").append("<table style='margin-left: auto; margin-right: auto; text-align: center;'>"+
+            	               	 "<tr style='border-bottom: 1px solid #dee2e6;' bgcolor='EBFBFF'>"+
+            	               	 "<td width='10%'><h5>이번달 금액</h5></td>"+
+            	               	 "<td width='10%'><h5>다음달 예측 금액</h5></td></tr>"+
+            	               	 "<tr style='border-bottom: 1px solid #dee2e6;'>"+
+            	               	 "<td width='10%'><h5>"+
+            	               	$("#list_table tbody").children().eq(1).children().eq(2).text()
+            	               	 +"</h5></td>"+
+            	               	 "<td width='10%'><h5>"+res+"</h5></td>"
+            	               	 )
+            	               	 
+            	        },
+            	        error : function(e) {
+            	        	console.log(e);
+            	        }
+            	      })
+			}
         </script>
 			</div>
 		</div>
