@@ -218,6 +218,15 @@
 	<!-- Map Begin -->
 	<!-- 고지서 파일은 선택하면 해당 아이프레임에 노출되도록... -->
 	<br>
+	<div class="map">
+		<p align="middle">
+			<iframe src="${cpath}/resources/img/bill/illust.jpg"
+				style="width: 564px; height: 461px; border: 0;" allowfullscreen=""
+				aria-hidden="false" tabindex="0"></iframe>
+		</p>
+	</div>
+	<!-- Map End -->
+	<br>
 	
 
 	<!-- Contact Form Begin -->
