@@ -135,36 +135,36 @@
 								if (u_vo == null) {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
 									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 업로드</a></li>
+										style="font-size: 20px;">고지서 업로드</a></li>
 									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 관리</a></li>
+										style="font-size: 20px;">고지서 관리</a></li>
 									<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
-										style="font-size: 16px;">고지서 분석</a></li>
+										style="font-size: 20px;">고지서 분석</a></li>
 								</ul></li>
 							<li><a href="${cpath}/login_main2.do" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">커뮤니티</a></li>
+								style="font-size: 24px;">커뮤니티</a></li>
 							<li><a href="#" onClick="alert('로그인 후 이용해주세요')"
-								style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px;">문의하기</a></li>
 							<%
 								} else {
 							%>
 							<li class="active">
-							<li><a href="#" style="font-size: 20px;">고지서 서랍</a>
+							<li><a href="#" style="font-size: 24px;">고지서 서랍</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./bill_upload.do" style="font-size: 16px;">고지서
+									<li><a href="./bill_upload.do" style="font-size: 20px;">고지서
 											업로드</a></li>
 									<li><a
 										href="${cpath}/NoticeList.do?user_num=<%=u_vo.getUser_num()%>"
-										style="font-size: 16px;">고지서 관리</a></li>
-									<li><a href="./bill_graph.do" style="font-size: 16px;">고지서
+										style="font-size: 20px;">고지서 관리</a></li>
+									<li><a href="./bill_graph.do" style="font-size: 20px;">고지서
 											분석</a></li>
 								</ul></li>
 							<li><a href="${cpath}/communityList.do"
-								style="font-size: 20px;">커뮤니티</a></li>
-							<li><a href="./contact.do" style="font-size: 20px;">문의하기</a></li>
+								style="font-size: 24px;">커뮤니티</a></li>
+							<li><a href="./contact.do" style="font-size: 24px;">문의하기</a></li>
 							<%
 								}
 							%>
@@ -178,16 +178,18 @@
 							if (u_vo == null) {
 						%>
 						<a href="./login_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;"></a>
+							style="font-size: 20px; color: gray; font-weight: bold; letter-spacing: 2px;"></a>
 						&emsp;&emsp;&emsp; <a href="./join_main2.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;"></a>
+							style="font-size: 20px; color: gray; font-weight: bold; letter-spacing: 2px;"></a>
 						<%
 							} else {
 						%>
 						<a href="${cpath}/UsersLogout.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
-						&emsp; <a href="./mypage_main.do"
-							style="font-size: 12px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
+							style="font-size: 20px; color: gray; font-weight: bold; letter-spacing: 2px;">로그아웃</a>
+						&emsp;
+						<br> 
+						<a href="./mypage_main.do"
+							style="font-size: 20px; color: gray; font-weight: bold; letter-spacing: 2px;">마이페이지</a>
 
 						<%
 							}
