@@ -287,9 +287,9 @@ label {
    <!-- Contact Form End -->
    <div id="div_img" style="margin-left:30%; margin-right:30%">
    
-   <p>ㅤ</p>
-   <h3 style="text-align:center"> < 고지서 이미지 > </h3>
-   <p>ㅤ</p>
+  <!--  <p>ㅤ</p> -->
+   <h3 id="htag_guide" style="text-align:center"> < 잠시만 기다려주세요 > </h3>
+   <!-- <p>ㅤ</p> -->
    </div>
    <script src="${cpath }/resources/js/jquery-3.3.1.min.js"></script>
    <script>
@@ -299,11 +299,12 @@ label {
       var path = {'path':$('input[name=path]').val()+"\\",'img':$('input[name=img]').val()}
       $.ajax({
         type : 'post',
-        url : 'http://127.0.0.1:5000/',
+        url : 'http://127.0.0.1:8082/',
         data :path ,
         dataType : 'json',
         success : function(res) {
            console.log(path);
+           $("#htag_guide").remove()
            $('input[name=notice_json]').attr("value",JSON.stringify(res));
            //console.log($('input[name=notice_json]').val());
            $('#div_img').append("<img id='img' src='resources/img/"+res.im_path+"'>")

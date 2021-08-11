@@ -1,3 +1,5 @@
+<%@page import="org.springframework.beans.factory.annotation.Autowired"%>
+<%@page import="kr.user.mapper.GoMapper"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="kr.user.mapper.NoticeVO"%>
@@ -285,9 +287,18 @@ function ajaxHtml(data){
 			<div class="blog__details__text" style="text-align: center;">
 				<!-- 좌측 그래프를 선택하면 해당 아이프레임에 노출되도록... 
 						<!-- 최근고지서 부분 불러오는부분 -->
+				
+				<%
+				int recently_money = Integer.parseInt((String)request.getAttribute("recently_money").toString());
+				System.out.println(recently_money);
+				%>
 				<button type="button" class="site-btn"
-							onclick="location.href='${cpath}/comWrite.do'">다음달 요금 예측</button>
-				<table
+							onclick="run_model(<%=recently_money%>)">다음달 요금 예측</button>
+					<div class="blog__sidebar__item">
+					
+						
+					</div>
+				<table id="list_table"
 					style="margin-left: auto; margin-right: auto; text-align: center;">
 					<tr style="border-bottom: 1px solid #dee2e6;" bgcolor="EBFBFF"
 						; height=45px;>
@@ -304,7 +315,6 @@ function ajaxHtml(data){
 								상세 내역
 								<h5></td>
 					</tr>
-					<div class="blog__sidebar__item">
 						<!-- 	<div class="blog__sidebar__recent">	 -->
 						<%
 							if (t_list.size() >= 5) {
@@ -343,7 +353,7 @@ function ajaxHtml(data){
 							}
 						}
 						%>
-					</div>
+					
 				</table>
 				<br> <br> <br>
 				<!-- 최근고지서 부분 불러오는부분 -->
@@ -450,6 +460,33 @@ for (int i = t_list.size(); i > 0; i--) {%>
                     }
                 }
             });
+            console.log($("#list_table>tr").eq(0).text());
+            function run_model(num) {
+            	 console.log("들어옵니다");
+            	 
+            	 $.ajax({
+            	        type : 'post',
+            	        url : 'http://127.0.0.1:8082/test',
+            	        data :{"test":num} ,
+            	        dataType : 'json',
+            	        success : function(res) {
+            	        	$(".blog__sidebar__item").append("<table style='margin-left: auto; margin-right: auto; text-align: center;'>"+
+            	               	 "<tr style='border-bottom: 1px solid #dee2e6;' bgcolor='EBFBFF'>"+
+            	               	 "<td width='10%'><h5>이번달 금액</h5></td>"+
+            	               	 "<td width='10%'><h5>다음달 예측 금액</h5></td></tr>"+
+            	               	 "<tr style='border-bottom: 1px solid #dee2e6;'>"+
+            	               	 "<td width='10%'><h5>"+
+            	               	$("#list_table tbody").children().eq(1).children().eq(0).text()
+            	               	 +"</h5></td>"+
+            	               	 "<td width='10%'><h5>"+res+"</h5></td>"
+            	               	 )
+            	               	 
+            	        },
+            	        error : function(e) {
+            	        	console.log(e);
+            	        }
+            	      })
+			}
         </script>
 			</div>
 		</div>

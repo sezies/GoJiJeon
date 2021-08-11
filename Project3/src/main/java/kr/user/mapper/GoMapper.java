@@ -27,6 +27,7 @@ public interface GoMapper {
 	public void NoticeDelete(int idx); // delete~ SQL
 	public List<NoticeVO> NoticeListAjax(int n_num); // ajax SQL
 	public int NoticeSelect_notice_num();
+	public int NoticeSelect_pay_money(int user_num);
 	// 고지서 셀렉터
 	public List<NoticeVO> NoticeSelect(String user_num);
 	public NoticeVO NoticeOne(String notice_num);
