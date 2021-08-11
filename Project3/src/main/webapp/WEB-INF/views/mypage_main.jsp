@@ -235,10 +235,7 @@ body {
 	<!-- Checkout Section Begin -->
 	<section class="checkout spad">
 		<div class="container">
-			<form action="${cpath}/delete.do" method="post">
-				<button style="margin: 0 auto; width: 150px;" class="site-btn">회원
-					탈퇴하기</button>
-			</form>
+			
 			<br>
 			<div class="row">
 				<div class="col-lg-12"></div>
@@ -287,6 +284,10 @@ body {
 						</div>
 					</div>
 				</form>
+				<form action="${cpath}/delete.do" method="post">
+				<button style="margin: 0 auto; width: 150px;" class="site-btn">회원
+					탈퇴하기</button>
+			</form>
 			</div>
 		</div>
 	</section>

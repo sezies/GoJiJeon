@@ -75,10 +75,10 @@ create table notice(
 
 -- 고지서 가데이터 ( 유저 1~3번까지 )
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (1, '관리비', '1월달 관리비', '2021.01.24', '78900', '농협', 'car_sample2.jpg');
+	value (3, '관리비', '1월달 관리비', '2021.01.24', '78900', '농협', 'car_sample2.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
-	value (1, '관리비', '2월달 관리비', '2021.02.22', '85650', '광주', 'car_sample3.jpg');
+	value (3, '관리비', '2월달 관리비', '2021.02.22', '85650', '광주', 'car_sample3.jpg');
 	
 	insert into notice(user_num, notice_code, notice_title, pay_day, pay_money, pay_bank, img)
 	value (1, '관리비', '3월달 관리비', '2021.03.11', '90650', '우리', 'car_sample5.jpg');
