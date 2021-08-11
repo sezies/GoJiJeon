@@ -195,7 +195,7 @@ body {
 					</div>
 				</div>
 				<div class="col-lg-7">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:45px;">
 						<ul>
 							<%
 								if (u_vo == null) {

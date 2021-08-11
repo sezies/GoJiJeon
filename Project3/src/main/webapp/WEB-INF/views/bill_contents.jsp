@@ -147,7 +147,7 @@ body {
 							src="${cpath}/resources/img/logo1.png" alt=""></a>
 					</div>
 				</div>
-				<div class="col-lg-7">
+				<div class="col-lg-7" style="padding-top:45px;">
 					<nav class="header__menu">
 						<ul>
 							<%
@@ -191,7 +191,7 @@ body {
 					</nav>
 				</div>
 				<div class="col-lg-2">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:35px;">
 						<!--  로그인 배너 (찐) -->
 						<%
 							if (u_vo == null) {
