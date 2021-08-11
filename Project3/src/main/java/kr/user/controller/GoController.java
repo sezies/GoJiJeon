@@ -4,8 +4,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -30,6 +33,7 @@ import javax.servlet.http.HttpSession;
 import javax.swing.text.html.HTMLEditorKit.Parser;
 import javax.xml.ws.Response;
 
+import org.apache.http.HttpConnection;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +64,7 @@ import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
+import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement.ParseInfo;
 
 import kr.user.mapper.ContactVO;
@@ -543,7 +548,7 @@ public class GoController {
       // httpBoddy 오브젝트 생성
       MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
       params.add("grant_type", "authorization_code");
-      params.add("client_id", "872dd0096ddc56941782a158a2761043");
+      params.add("client_id", "ecb5b19528bf0b940b476be09249a694");
       params.add("redirect_uri", "http://localhost:8081/controller/kakao.do");
       // 방금 받은 코드임
       params.add("code", code);
@@ -596,7 +601,7 @@ public class GoController {
              HttpMethod.POST,
              kakaoProfile, 
              String.class); //회원 정보까지 조회하는게 response2.getbodey()
-        System.out.println(response2.getBody()+"출력해줘 카톡내용 제발 시팔!!!!!!");
+        System.out.println(response2.getBody()+"출력해줘 카톡내용 제발 !!!!!!");
         // 받은 내용값 슬라이싱 하기...
         String want = response2.getBody();
         String want_data[]=want.split(",");
@@ -614,6 +619,24 @@ public class GoController {
         u_vo.setUser_name(nick_name);
         u_vo.setUser_bank("등록하셔야합니다.");
         session.setAttribute("ka_uvo", u_vo);
+        
+        
+        // 카카오톡 필요없으니 여기서 바로 연결을 끊어버린다
+        RestTemplate rt3 = new RestTemplate(); // httpHeader 오브젝트 생성
+        HttpHeaders headers3 = new HttpHeaders();        
+        headers3.add("Authorization","Bearer"+" "+ot.getAccess_token()); // 현재 http형식이 key -value 형식임을 알린다
+        headers3.add("Content-type","application/x-www-form-urlencoded;charset=utf-8"); 
+        
+        HttpEntity<MultiValueMap<String, String>> kakaologout = new HttpEntity<>(headers3); 
+        
+        ResponseEntity<String> response3 = rt3.exchange("https://kapi.kakao.com/v1/user/unlink", 
+             HttpMethod.POST,
+             kakaologout, 
+             String.class); 
+        
+        
+        
+        
                
        // ObjectMapper objectMapper2 = new ObjectMapper(); // 여기다가 json으로 담아낼 예정
       //  kakaoProfileVO p_vo= null;
@@ -631,7 +654,7 @@ public class GoController {
    public String kakao_login() {
       StringBuffer loginUrl = new StringBuffer();
       loginUrl.append("https://kauth.kakao.com/oauth/authorize?client_id=");
-      loginUrl.append("872dd0096ddc56941782a158a2761043");
+      loginUrl.append("ecb5b19528bf0b940b476be09249a694");
       loginUrl.append("&redirect_uri=");
       loginUrl.append("http://localhost:8081/controller/kakao.do");
       loginUrl.append("&response_type=code");
@@ -649,12 +672,11 @@ public class GoController {
       // 회원가입
       System.out.println("박");
       
-      GoMapper.UsersInsert(vo);
-      
-      
-      
+      GoMapper.UsersInsert(vo);      
       System.out.println("카카오톡 회원가입완료 or 로그인성공");
+      
       UsersVO kvo=GoMapper.kaselect(vo.getUser_id());
+      System.out.println("kaselect 하고온 값"+kvo);
       session.setAttribute("login", kvo);
       
       return "redirect:/index_main.do"; 
@@ -663,7 +685,8 @@ public class GoController {
       //로그인
       
       System.out.println("정");
-      session.setAttribute("login", vo);
+      UsersVO kvo=GoMapper.kaselect(vo.getUser_id());
+      session.setAttribute("login", kvo);
       System.out.println("카카오톡 로그인 성공");
       return "redirect:/index_main.do"; 
    }
