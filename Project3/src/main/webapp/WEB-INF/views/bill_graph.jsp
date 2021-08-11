@@ -486,7 +486,7 @@ for (int i = t_list.size(); i > 0; i--) {%>
             	               	 "<td width='10%'><h5>다음달 예측 금액</h5></td></tr>"+
             	               	 "<tr style='border-bottom: 1px solid #dee2e6;'>"+
             	               	 "<td width='10%'><h5>"+
-            	               	$("#list_table tbody").children().eq(1).children().eq(0).text()
+            	               	$("#list_table tbody").children().eq(1).children().eq(2).text()
             	               	 +"</h5></td>"+
             	               	 "<td width='10%'><h5>"+res+"</h5></td>"
             	               	 )
