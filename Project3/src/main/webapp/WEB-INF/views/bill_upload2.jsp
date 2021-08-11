@@ -244,15 +244,11 @@ label {
          <label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 125px;">기한</label>
          <label style="font-size:20px; color: midnight; margin-left: auto; margin-top: 200px;">은행</label> -->
          
-         <input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
-            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" oninput='fill_inp()'>&nbsp;
-         <input name='pay_day' class="inp" disabled="disabled" type="text" placeholder='납부 기한'
-            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
-         <input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
-            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
-         
-         <input type="hidden" name="user_num" value="<%=u_vo.getUser_num()%>" readonly="readonly">
-         <p>고지서 종류 선택</p>
+         <h4 style="margin-bottom:10px;">고지서 제목</h4>
+         <input style="width:300px;text-align:center" type="text" name="notice_title" placeholder="고지서 제목을 입력해주세요">
+             <p>ㅤ</p>
+             
+          <p>고지서 종류 선택</p>
          <!-- <input type="number" name="notice_code" > -->
          <div>
          <input type="radio" id="관리비" name="notice_code" value="관리비">관리비
@@ -267,11 +263,21 @@ label {
          <input type="radio" id="주민세" name="notice_code" value="주민세">주민세
          </div>
          <div>
-         <input type="radio" id="과태료" name="notice_code" value="과태료">과태료
-         </div>
+         <input type="radio" id="과태료" name="notice_code" value="과태료">과태료   
+             
+         <p>ㅤ</p>
+         <input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
+            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" oninput='fill_inp()'>&nbsp;
+         <input name='pay_day' class="inp" disabled="disabled" type="text" placeholder='납부 기한'
+            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
+         <input name="pay_bank" class="inp" disabled="disabled" type="text" placeholder='납부 은행'
+            style="height:40px; margin: auto; margin-top: 0px; text-align:center;" onchange='fill_inp()'>&nbsp;
          
-         <p>고지서 제목</p>
-         <input type="text" name="notice_title">
+         <input type="hidden" name="user_num" value="<%=u_vo.getUser_num()%>" readonly="readonly">
+         
+         </div>
+     
+     	 <p>ㅤ</p>
          <p>이미지 파일명</p>
          <%request.setCharacterEncoding("utf-8"); %>
          <input type="text" name="img" value="<%=request.getAttribute("img")%>" readonly="readonly">
@@ -279,6 +285,7 @@ label {
          <input type="hidden" name="notice_json">
          <input type="hidden" name="notice_json_name">
          <button type="submit" class="site-btn">고지서 저장</button>
+          <p>ㅤ</p>
          <h4>아래 고지서에서 해당 항목을 순서대로 클릭해주세요</h4>
       </div>
    </section>
