@@ -227,7 +227,7 @@
 	</div>
 	<!-- Map End -->
 	<br>
-	
+
 
 	<!-- Contact Form Begin -->
 	<section class="contact-form spad">
@@ -237,10 +237,12 @@
 			</div>
 			<div class="checkout__form">
 				<h4>고지서 파일 올리기</h4>
-				<a style="font-size: 20px; color: steelblue; font-weight: bold; letter-spacing: 1px;">내가 가지고 있는 고지서를 업로드해주세요</a>
+				<a
+					style="font-size: 20px; color: steelblue; font-weight: bold; letter-spacing: 1px;">내가
+					가지고 있는 고지서를 업로드해주세요</a> <br> <a
+					style="font-size: 16px; color: slategray; font-weight: bold; letter-spacing: 1px;">[관리비/자동차세/지방세/주민세/과태료]</a>
 				<br>
-				<a style="font-size: 16px; color: slategray; font-weight: bold; letter-spacing: 1px;">[관리비/자동차세/지방세/주민세/과태료]</a>
-				<br><br>
+				<br>
 				<%-- <form action="${cpath}/bill_upload2.do" method="post"> --%>
 				<form id="fileform" method="post" action="${cpath}/bill_upload2.do"
 					enctype="Multipart/form-data">
@@ -259,13 +261,10 @@
 	</section>
 	<!-- Contact Form End -->
 	<script>
-	
-	
-	var btn = document.querySelector("button");
-	btn.onclick = function (){
-		alert("고지서 사진을  분석 중입니다.");
-	}
-	
+		var btn = document.querySelector("button");
+		btn.onclick = function() {
+			alert("고지서 사진을  분석 중입니다.");
+		}
 	</script>
 	<!-- Js Plugins -->
 	<script src="${cpath}/resources/js/jquery-3.3.1.min.js"></script>
