@@ -318,7 +318,7 @@ label {
       var path = {'path':$('input[name=path]').val()+"\\",'img':$('input[name=img]').val()}
       $.ajax({
         type : 'post',
-        url : 'http://127.0.0.1:5000/',
+        url : 'http://127.0.0.1:8082/',
         data :path ,
         dataType : 'json',
         success : function(res) {
