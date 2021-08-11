@@ -478,8 +478,10 @@ for (int i = t_list.size(); i > 0; i--) {%>
             	        type : 'post',
             	        url : 'http://127.0.0.1:8082/test',
             	        data :{"test":num} ,
-            	        dataType : 'json',
+            	        dataType : 'text',
             	        success : function(res) {
+            	        	/* var res = String(test) */
+            	        	
             	        	$(".blog__sidebar__item").append("<table style='margin-left: auto; margin-right: auto; text-align: center;'>"+
             	               	 "<tr style='border-bottom: 1px solid #dee2e6;' bgcolor='EBFBFF'>"+
             	               	 "<td width='10%'><h5>이번달 금액</h5></td>"+
