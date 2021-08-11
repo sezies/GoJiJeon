@@ -263,7 +263,7 @@ label {
          <input type="radio" id="주민세" name="notice_code" value="주민세">주민세
          </div>
          <div>
-         <input type="radio" id="과태료" name="notice_code" value="과태료">과태료   
+         <input type="radio" id="과태료" name="notice_code" value="과태료">과태료
              
          <p>ㅤ</p>
          <input name="pay_money" id="inp_chn" type="text" placeholder='납부 금액'
@@ -290,6 +290,18 @@ label {
       </div>
    </section>
   </form>
+  
+  <!-- Map Begin -->
+	<!-- 고지서 파일은 선택하면 해당 아이프레임에 노출되도록... -->
+	<br>
+	<div class="map">
+		<p align="middle">
+			<iframe src="${cpath}/resources/img/bill/bill_how.png"
+				style="width: 610px; height: 453px; border: 0;" allowfullscreen=""
+				aria-hidden="false" tabindex="0"></iframe>
+		</p>
+	</div>
+	<!-- Map End -->
 
    <!-- Contact Form End -->
    <div id="div_img" style="margin-left:30%; margin-right:30%">

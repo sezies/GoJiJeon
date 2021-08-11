@@ -218,14 +218,7 @@
 	<!-- Map Begin -->
 	<!-- 고지서 파일은 선택하면 해당 아이프레임에 노출되도록... -->
 	<br>
-	<div class="map">
-		<p align="middle">
-			<iframe src="${cpath}/resources/img/bill/bill_how.png"
-				style="width: 610px; height: 453px; border: 0;" allowfullscreen=""
-				aria-hidden="false" tabindex="0"></iframe>
-		</p>
-	</div>
-	<!-- Map End -->
+	
 
 	<!-- Contact Form Begin -->
 	<section class="contact-form spad">
@@ -235,6 +228,10 @@
 			</div>
 			<div class="checkout__form">
 				<h4>고지서 파일 올리기</h4>
+				<a style="font-size: 20px; color: steelblue; font-weight: bold; letter-spacing: 1px;">내가 가지고 있는 고지서를 업로드해주세요</a>
+				<br>
+				<a style="font-size: 16px; color: slategray; font-weight: bold; letter-spacing: 1px;">[관리비/자동차세/지방세/주민세/과태료]</a>
+				<br><br>
 				<%-- <form action="${cpath}/bill_upload2.do" method="post"> --%>
 				<form id="fileform" method="post" action="${cpath}/bill_upload2.do"
 					enctype="Multipart/form-data">
