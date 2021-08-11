@@ -129,7 +129,7 @@
 					</div>
 				</div>
 				<div class="col-lg-7">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:45px;">
 						<ul>
 							<%
 								if (u_vo == null) {
@@ -172,7 +172,7 @@
 					</nav>
 				</div>
 				<div class="col-lg-2">
-					<nav class="header__menu">
+					<nav class="header__menu" style="padding-top:35px;">
 						<!--  로그인 배너 (찐) -->
 						<%
 							if (u_vo == null) {
