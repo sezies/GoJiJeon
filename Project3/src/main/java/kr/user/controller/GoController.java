@@ -350,7 +350,8 @@ public class GoController {
          // 비용과 날짜를 통한 리스트 불러오기
          List<NoticeVO> t_list = GoMapper.testlist(num); // 1번 고맵퍼
          session.setAttribute("t_list", t_list);
-         System.out.println("t_list를 세션에 담았습니다" + t_list);
+         int recently_money = GoMapper.NoticeSelect_pay_money(num);
+         request.setAttribute("recently_money", recently_money);
       }
       return "bill_graph";
    }

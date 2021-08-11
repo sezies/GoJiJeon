@@ -189,12 +189,12 @@ create table notice(
 	
 	
 	
-select notice_num from notice order by notice_num desc limit 1;
+select pay_money, user_num from notice order by pay_day desc;
 	
 select * from notice where user_num='1';
 select * from notice;
 drop table notice;
-select * from notice where user_num='1' order by pay_day desc;
+select * from notice where user_num='1' order by pay_day desc limit 1;
 insert into notice(notice_code,img) values('1','car_sample1.jpg')
 
 --이미지 테스트
