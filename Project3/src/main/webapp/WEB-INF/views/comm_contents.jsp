@@ -7,6 +7,13 @@
 <html lang="zxx">
 
 <head>
+
+<style type="text/css">
+body {
+  font-family:'NanumSquare_0';
+}
+</style>
+
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.11.3.js"></script>
 <script type="text/javascript" src="${cpath}/resources/js/reply.js"></script>

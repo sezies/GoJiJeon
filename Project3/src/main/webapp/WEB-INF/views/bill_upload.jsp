@@ -7,6 +7,13 @@
 <html lang="zxx">
 
 <head>
+
+<style type="text/css">
+body {
+  font-family:'NanumSquare_0';
+}
+</style>
+
 <meta charset="UTF-8">
 <meta name="description" content="Ogani Template">
 <meta name="keywords" content="Ogani, unica, creative, html">

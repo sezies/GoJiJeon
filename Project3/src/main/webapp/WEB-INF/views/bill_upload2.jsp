@@ -6,6 +6,13 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
+
+<style type="text/css">
+body {
+  font-family:'NanumSquare_0';
+}
+</style>
+
 <meta charset="UTF-8">
 <meta name="description" content="Ogani Template">
 <meta name="keywords" content="Ogani, unica, creative, html">
@@ -13,6 +20,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>고지서 관리 서비스</title>
 <style>
+
 input {
 	vertical-align: middle position: absolute;
 }
